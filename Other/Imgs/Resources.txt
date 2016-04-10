@@ -1,0 +1,1 @@
+build-simplified - http://developer.android.com/tools/building/index.html
