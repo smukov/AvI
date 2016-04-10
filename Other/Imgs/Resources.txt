@@ -1,1 +1,3 @@
+Here, I'll keep the references to website where I got the images from.
+
 build-simplified - http://developer.android.com/tools/building/index.html
