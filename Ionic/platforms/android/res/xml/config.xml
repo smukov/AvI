@@ -21,6 +21,8 @@
         <param name="onload" value="true" />
     </feature>
     <allow-intent href="market:*" />
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-targetSdkVersion" value="23" />
     <name>Ionic</name>
     <description>An Ionic Framework and Cordova project.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
