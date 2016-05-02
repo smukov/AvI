@@ -18,35 +18,66 @@ var _ionicNative = require('ionic-native');
 
 var _tabs = require('./pages/tabs/tabs');
 
+var _page = require('./pages/page1/page1');
+
+var _page2 = require('./pages/page2/page2');
+
+var _page3 = require('./pages/page3/page3');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // http://ionicframework.com/docs/v2/api/config/Config/
 var MyApp = exports.MyApp = (_dec = (0, _ionicAngular.App)({
-  template: '<ion-nav [root]="rootPage"></ion-nav>',
+  //template: '<ion-nav [root]="rootPage"></ion-nav>',
+  templateUrl: 'build/app.html',
   config: {} }), _dec(_class = function () {
   _createClass(MyApp, null, [{
     key: 'parameters',
+
+    //this gets injected into constructor below, it's the order that matters
     get: function get() {
-      return [[_ionicAngular.Platform]];
+      return [[_ionicAngular.IonicApp], [_ionicAngular.Platform], [_ionicAngular.MenuController]];
     }
   }]);
 
-  function MyApp(platform) {
+  function MyApp(app, platform, menu) {
     _classCallCheck(this, MyApp);
 
-    this.rootPage = _tabs.TabsPage;
+    this.app = app;
+    this.platform = platform;
+    this.menu = menu;
+    this.initializeApp();
 
-    platform.ready().then(function () {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      _ionicNative.StatusBar.styleDefault();
-    });
+    // set our app's pages
+    this.pages = [{ title: 'Page 1', component: _page.Page1 }, { title: 'Page 2', component: _page2.Page2 }, { title: 'Page 3', component: _page3.Page3 }];
+
+    this.rootPage = _page.Page1;
   }
+
+  _createClass(MyApp, [{
+    key: 'initializeApp',
+    value: function initializeApp() {
+      this.platform.ready().then(function () {
+        // Okay, so the platform is ready and our plugins are available.
+        // Here you can do any higher level native things you might need.
+        _ionicNative.StatusBar.styleDefault();
+      });
+    }
+  }, {
+    key: 'openPage',
+    value: function openPage(page) {
+      // close the menu when clicking a link from the menu
+      this.menu.close();
+      // navigate to the new page if it is not the current page
+      var nav = this.app.getComponent('nav');
+      nav.setRoot(page.component);
+    }
+  }]);
 
   return MyApp;
 }()) || _class);
 
-},{"./pages/tabs/tabs":5,"es6-shim":259,"ionic-angular":340,"ionic-native":363}],2:[function(require,module,exports){
+},{"./pages/page1/page1":2,"./pages/page2/page2":3,"./pages/page3/page3":4,"./pages/tabs/tabs":5,"es6-shim":259,"ionic-angular":340,"ionic-native":363}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
