@@ -85,6 +85,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Page1 = undefined;
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _dec, _class;
 
 var _ionicAngular = require('ionic-angular');
@@ -93,9 +95,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Page1 = exports.Page1 = (_dec = (0, _ionicAngular.Page)({
   templateUrl: 'build/pages/page1/page1.html'
-}), _dec(_class = function Page1() {
-  _classCallCheck(this, Page1);
-}) || _class);
+}), _dec(_class = function () {
+  _createClass(Page1, null, [{
+    key: 'parameters',
+    get: function get() {
+      return [[_ionicAngular.NavController], [_ionicAngular.NavParams]];
+    }
+  }]);
+
+  function Page1(nav, navParams) {
+    _classCallCheck(this, Page1);
+
+    this.nav = nav;
+
+    // If we navigated to this page, we will have an item available as a nav param
+    this.selectedItem = navParams.get('item');
+  }
+
+  return Page1;
+}()) || _class);
 
 },{"ionic-angular":340}],3:[function(require,module,exports){
 'use strict';
