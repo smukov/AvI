@@ -20,11 +20,24 @@
 // Both iOS and MD colors can be further customized if colors
 // are different per mode.
 
+$background-ios-color: #FAFAFA;
+$background-md-color: #FAFAFA;
+$background-wp-color: #FAFAFA;
+
+$list-background-color: #FAFAFA;
+
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
+  dark-primary:   #1976D2,
+  primary:        #2196F3,
+  light:          #BBDEFB,
+  text-icons:     #FFFFFF,
+  secondary:      #FFC107,
+  primary-text:   #212121,
+  secondary-text: #727272,
+  divider:        #B6B6B6,
+  background-color:     #FAFAFA,
+
   danger:     #f53d3d,
-  light:      #f4f4f4,
   dark:       #222,
   favorite:   #69BB7B
 );
