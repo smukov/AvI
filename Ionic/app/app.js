@@ -1,5 +1,7 @@
 import 'es6-shim';
 import {App, Platform, IonicApp, MenuController} from 'ionic-angular';
+import {ViewChild} from '@angular/core';
+import {Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {Page1} from './pages/page1/page1';
@@ -10,9 +12,13 @@ import {Page3} from './pages/page3/page3';
 @App({
   //template: '<ion-nav [root]="rootPage"></ion-nav>',
   templateUrl: 'build/app.html',
+  queries: {
+    nav: new ViewChild('content')
+  },
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
+
   //this gets injected into constructor below, it's the order that matters
   static get parameters() {
     return [[IonicApp], [Platform], [MenuController]];
@@ -46,7 +52,7 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    let nav = this.app.getComponent('nav');
-    nav.setRoot(page.component);
+    //let nav = this.app.getComponent('nav');
+    this.nav.setRoot(page.component);
   }
 }
