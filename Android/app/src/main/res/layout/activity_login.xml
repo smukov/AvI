@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.thesis.smukov.anative.LoginActivity">
+    tools:context="com.thesis.smukov.anative.LoginActivity"
+    >
 
     <!-- Login progress -->
     <ProgressBar
@@ -19,77 +20,57 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <GridLayout
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/welcome"
+        android:id="@+id/textView1"
+        android:layout_gravity="center_horizontal" />
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/sign_in_with"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btnFacebookLogin"
+        style="?android:textAppearanceInverse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:rowCount="7"
-        android:columnCount="1">
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in_facebook"
+        android:textStyle="bold"
+        android:background="@color/facebook"
+         />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/welcome"
-            android:id="@+id/textView1"
-            android:layout_gravity="center_horizontal"
-            android:layout_row="0"
-            android:layout_column="0" />
+    <Button
+        android:id="@+id/btnGooglePlusLogin"
+        style="?android:textAppearanceInverse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in_googleplus"
+        android:textStyle="bold"
+        android:background="@color/googleplus"
+         />
 
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="40dp"
-            android:layout_row="1"
-            android:layout_column="0" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/sign_in_with"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal"
-            android:layout_row="2"
-            android:layout_column="0" />
-
-        <Button
-            android:id="@+id/btnFacebookLogin"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/sign_in_facebook"
-            android:textStyle="bold"
-            android:background="@color/facebook"
-            android:textColor="@color/colorBackground"
-            android:layout_row="4"
-            android:layout_column="0" />
-
-        <Button
-            android:id="@+id/btnGooglePlusLogin"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/sign_in_googleplus"
-            android:textStyle="bold"
-            android:background="@color/googleplus"
-            android:textColor="@color/colorBackground"
-            android:layout_row="5"
-            android:layout_column="0" />
-
-        <Button
-            android:id="@+id/btnLinkedInLogin"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/sign_in_linkedin"
-            android:textStyle="bold"
-            android:background="@color/linkedin"
-            android:textColor="@color/colorBackground"
-            android:layout_row="6"
-            android:layout_column="0" />
-    </GridLayout>
+    <Button
+        android:id="@+id/btnLinkedInLogin"
+        style="?android:textAppearanceInverse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in_linkedin"
+        android:textStyle="bold"
+        android:background="@color/linkedin"
+         />
 
 </LinearLayout>
