@@ -19,4 +19,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="sign_in_facebook">Facebook</string>
+    <string name="sign_in_googleplus">Google+</string>
+    <string name="sign_in_linkedin">LinkedIn</string>
+    <string name="welcome">Welcome to Native</string>
+    <string name="sign_in_with">Sign In With:</string>
 </resources>

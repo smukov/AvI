@@ -14,4 +14,8 @@
     <color name="colorDark">#222</color>
     <color name="colorFavorite">#69BB7B</color>
 
+    <color name="facebook">#3b5998</color>
+    <color name="googleplus">#dc4e41</color>
+    <color name="linkedin">#0077b5</color>
+
 </resources>
