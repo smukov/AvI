@@ -8,6 +8,7 @@ import {TabsPage} from './pages/tabs/tabs';
 import {Page1} from './pages/page1/page1';
 import {Page2} from './pages/page2/page2';
 import {Page3} from './pages/page3/page3';
+import {LoginPage} from './pages/loginPage/loginPage';
 
 
 @Component({
@@ -30,14 +31,14 @@ export class MyApp {
     this.menu = menu;
     this.initializeApp();
 
-    // set our app's pages
+    // set our app's pages (they appear in menu)
     this.pages = [
         { title: 'Page 1', component: Page1 },
         { title: 'Page 2', component: Page2 },
         { title: 'Page 3', component: Page3 }
     ];
 
-    this.rootPage = Page1;
+    this.rootPage = LoginPage;
   }
 
   initializeApp() {
