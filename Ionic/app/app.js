@@ -1,5 +1,6 @@
 import 'es6-shim';
-import {App, Platform, IonicApp, MenuController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {ionicBootstrap, Platform, App, MenuController} from 'ionic-angular';
 import {ViewChild} from '@angular/core';
 import {Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
@@ -9,19 +10,18 @@ import {Page2} from './pages/page2/page2';
 import {Page3} from './pages/page3/page3';
 
 
-@App({
+@Component({
   //template: '<ion-nav [root]="rootPage"></ion-nav>',
   templateUrl: 'build/app.html',
   queries: {
     nav: new ViewChild('content')
-  },
-  config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+  }
 })
 export class MyApp {
 
   //this gets injected into constructor below, it's the order that matters
   static get parameters() {
-    return [[IonicApp], [Platform], [MenuController]];
+    return [[App], [Platform], [MenuController]];
   }
 
   constructor(app, platform, menu) {
@@ -56,3 +56,8 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+
+//https://github.com/driftyco/ionic/blob/2.0/CHANGELOG.md#steps-to-upgrade-to-beta-8
+ionicBootstrap(MyApp, [], {
+
+}); // http://ionicframework.com/docs/v2/api/config/Config/);
