@@ -1,0 +1,18 @@
+.loginPage {
+
+  .Aligner {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    // min-height: 24em;
+    justify-content: center;
+  }
+
+  .Aligner-item {
+    flex: 1;
+  }
+
+  button {
+    margin-top: 15px;
+  }
+}
