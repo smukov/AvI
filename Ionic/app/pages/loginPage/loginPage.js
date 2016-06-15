@@ -12,7 +12,7 @@ export class LoginPage {
     return [[NavController]];
   }
 
-  constructor(nav, navParams) {
+  constructor(nav) {
     this.nav = nav;
     this.nextPage = Page1;
   }
