@@ -120,7 +120,7 @@ var LoginPage = exports.LoginPage = (_dec = (0, _core.Component)({
     }
   }]);
 
-  function LoginPage(nav, navParams) {
+  function LoginPage(nav) {
     _classCallCheck(this, LoginPage);
 
     this.nav = nav;

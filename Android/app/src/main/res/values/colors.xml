@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#1976D2</color>
-    <color name="colorAccent">#FFC107</color><!--colorSecondary in Ionic -->
+    <color name="colorAccent">#FF5722</color><!--colorSecondary in Ionic -->
     <color name="colorLight">#BBDEFB</color>
     <color name="colorTextIcons">#FFFFFF</color>
     <color name="colorPrimaryText">#212121</color>
