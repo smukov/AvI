@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.thesis.smukov.anative.interfaces.INavigationFragment;
+
 /**
  * Created by smukov on 18-Jun-16.
  */
-public class ContactFragment extends Fragment{
+public class ContactFragment extends Fragment
+    implements INavigationFragment {
 
     View myView;
     TextView profileName;
@@ -29,5 +32,10 @@ public class ContactFragment extends Fragment{
 
         profileName = (TextView) view.findViewById(R.id.profile_name);
         profileName.setText("Dr. Gregory House");
+    }
+
+    @Override
+    public void handleFabAction(int actionId) {
+
     }
 }
