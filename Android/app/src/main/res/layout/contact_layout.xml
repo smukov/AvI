@@ -5,22 +5,27 @@
 
     <include layout="@layout/profile_header"/>
 
-    <EditText
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/txtEmployment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:inputType="text"
-        android:hint="@string/hint_employment"
+        android:text="@string/hint_employment"
+        android:textSize="16sp"
         android:ellipsize="middle"
-        android:id="@+id/txtEmployment" />
+         />
 
 
-    <EditText
+    <TextView
+        android:id="@+id/txtEducation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtEducation"
+        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:inputType="text"
         android:hint="@string/hint_faculty" />
 
     <Space
@@ -36,14 +41,13 @@
         android:text="Interests"
         android:labelFor="@+id/txtInterests"/>
 
-    <EditText
+    <TextView
+        android:id="@id/txtInterests"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@id/txtInterests"
+        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/hint_interests" />
+        android:text="@string/hint_interests" />
 
     <Space
         android:layout_width="20dp"
@@ -58,14 +62,13 @@
         android:text="Knowledgeable In"
         android:labelFor="@+id/txtKnowledgeable"/>
 
-    <EditText
+    <TextView
+        android:id="@id/txtKnowledgeable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@id/txtKnowledgeable"
+        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/hint_knowledgeable" />
+        android:text="@string/hint_knowledgeable" />
 
     <Space
         android:layout_width="20dp"
@@ -80,13 +83,12 @@
         android:text="Current Goals"
         android:labelFor="@+id/txtCurrentGoals"/>
 
-    <EditText
+    <TextView
+        android:id="@id/txtCurrentGoals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@id/txtCurrentGoals"
+        android:textSize="16sp"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/hint_goals" />
+        android:text="@string/hint_goals" />
 
 </LinearLayout>
