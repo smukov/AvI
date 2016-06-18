@@ -93,6 +93,10 @@ public class NavigationActivity extends AppCompatActivity
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new ProfileFragment())
                     .commit();
+        } else if (id == R.id.nav_contacts) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new ContactFragment())
+                    .commit();
         } else if (id == R.id.nav_settings) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, new SettingsFragment())
