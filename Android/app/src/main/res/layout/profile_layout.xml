@@ -3,6 +3,15 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/hugh"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
