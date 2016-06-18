@@ -3,6 +3,7 @@ package com.thesis.smukov.anative;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -14,10 +15,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.thesis.smukov.anative.interfaces.INavigationFragment;
+
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
+    INavigationFragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,21 +93,22 @@ public class NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_my_profile) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new ProfileFragment())
-                    .commit();
-        } else if (id == R.id.nav_contacts) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new ContactFragment())
-                    .commit();
+        if (id == R.id.nav_contacts) {
+            currentFragment =  new ContactFragment();
+
         } else if (id == R.id.nav_settings) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new SettingsFragment())
-                    .commit();
+            currentFragment = new SettingsFragment();
+
         } else if (id == R.id.nav_send_feedback) {
 
+        } else {
+            //by default always go to nav_my_profile fragment
+            currentFragment = new ProfileFragment();
         }
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, (Fragment) currentFragment)
+                .commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
