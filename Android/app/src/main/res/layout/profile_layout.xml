@@ -5,4 +5,88 @@
 
     <include layout="@layout/profile_header"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:hint="@string/hint_employment"
+        android:ellipsize="middle"
+        android:id="@+id/txtEmployment" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtEducation"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:hint="@string/hint_faculty" />
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Interests"
+        android:labelFor="@+id/txtInterests"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@id/txtInterests"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/hint_interests" />
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Knowledgeable In"
+        android:labelFor="@+id/txtKnowledgeable"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@id/txtKnowledgeable"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/hint_knowledgeable" />
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Current Goals"
+        android:labelFor="@+id/txtCurrentGoals"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@id/txtCurrentGoals"
+        android:layout_gravity="center_horizontal"
+        android:hint="@string/hint_goals" />
+
 </LinearLayout>
