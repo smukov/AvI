@@ -2,6 +2,7 @@ package com.thesis.smukov.anative.NavigationFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,9 @@ public class SettingsFragment extends BaseNavigationFragment {
 
     @Override
     protected void prepareFloatingActionButton(){
+        if(fab == null){
+            fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+        }
         fab.hide();
     }
 }

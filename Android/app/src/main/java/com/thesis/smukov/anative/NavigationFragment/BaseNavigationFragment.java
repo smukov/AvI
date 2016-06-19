@@ -11,10 +11,5 @@ public abstract class BaseNavigationFragment extends Fragment
     protected View myView;
     protected FloatingActionButton fab;
 
-    @Override
-    public void setFloatingActionButton(FloatingActionButton fab) {
-        this.fab = fab;
-    }
-
     protected abstract void prepareFloatingActionButton();
 }

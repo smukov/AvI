@@ -2,6 +2,7 @@ package com.thesis.smukov.anative.NavigationFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -37,6 +38,10 @@ public class ContactFragment extends BaseNavigationFragment {
 
     @Override
     protected void prepareFloatingActionButton(){
+        if(fab == null){
+            fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+        }
+
         fab.show();
         fab.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.ic_forum_black_24dp));
         fab.setOnClickListener(new View.OnClickListener() {

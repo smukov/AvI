@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@id/txtInterests"
+        android:id="@+id/txtInterests"
         android:layout_gravity="center_horizontal"
         android:hint="@string/hint_interests" />
 
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@id/txtKnowledgeable"
+        android:id="@+id/txtKnowledgeable"
         android:layout_gravity="center_horizontal"
         android:hint="@string/hint_knowledgeable" />
 
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@id/txtCurrentGoals"
+        android:id="@+id/txtCurrentGoals"
         android:layout_gravity="center_horizontal"
         android:hint="@string/hint_goals" />
 

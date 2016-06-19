@@ -54,7 +54,6 @@ public class NavigationActivity extends AppCompatActivity
 
         //instantiate the fragmentManager and set the default view to profile
         currentFragment = new ProfileFragment();
-        currentFragment.setFloatingActionButton(fab);
         fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame ,(Fragment) currentFragment)
@@ -112,7 +111,6 @@ public class NavigationActivity extends AppCompatActivity
             currentFragment = new ProfileFragment();
         }
 
-        currentFragment.setFloatingActionButton(fab);
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, (Fragment) currentFragment)
                 .commit();
