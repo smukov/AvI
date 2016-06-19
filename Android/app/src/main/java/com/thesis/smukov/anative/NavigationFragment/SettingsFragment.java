@@ -1,21 +1,17 @@
-package com.thesis.smukov.anative;
+package com.thesis.smukov.anative.NavigationFragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.thesis.smukov.anative.interfaces.INavigationFragment;
+import com.thesis.smukov.anative.R;
 
 /**
  * Created by smuko on 15-Jun-16.
  */
-public class SettingsFragment extends Fragment
-        implements INavigationFragment {
-
-    View myView;
+public class SettingsFragment extends BaseNavigationFragment {
 
     @Nullable
     @Override
@@ -25,7 +21,14 @@ public class SettingsFragment extends Fragment
     }
 
     @Override
-    public void handleFabAction(int actionId) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        prepareFloatingActionButton();
+    }
+
+    @Override
+    protected void prepareFloatingActionButton(){
+        fab.hide();
     }
 }
