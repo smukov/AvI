@@ -88,7 +88,7 @@ var MyApp = exports.MyApp = (_dec = (0, _core.Component)({
 
 (0, _ionicAngular.ionicBootstrap)(MyApp, [], {}); // http://ionicframework.com/docs/v2/api/config/Config/);
 
-},{"./pages/loginPage/loginPage":2,"./pages/page1/page1":3,"./pages/page2/page2":4,"./pages/page3/page3":5,"./pages/tabs/tabs":6,"@angular/core":139,"es6-shim":308,"ionic-angular":391,"ionic-native":415}],2:[function(require,module,exports){
+},{"./pages/loginPage/loginPage":2,"./pages/page1/page1":3,"./pages/page2/page2":4,"./pages/page3/page3":5,"./pages/tabs/tabs":6,"@angular/core":139,"es6-shim":286,"ionic-angular":369,"ionic-native":394}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -137,7 +137,7 @@ var LoginPage = exports.LoginPage = (_dec = (0, _core.Component)({
   return LoginPage;
 }()) || _class);
 
-},{"../page1/page1":3,"@angular/core":139,"ionic-angular":391}],3:[function(require,module,exports){
+},{"../page1/page1":3,"@angular/core":139,"ionic-angular":369}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -177,7 +177,7 @@ var Page1 = exports.Page1 = (_dec = (0, _core.Component)({
   return Page1;
 }()) || _class);
 
-},{"@angular/core":139,"ionic-angular":391}],4:[function(require,module,exports){
+},{"@angular/core":139,"ionic-angular":369}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1209,7 +1209,7 @@ var EventEmitter = (function (_super) {
 }(Subject_1.Subject));
 exports.EventEmitter = EventEmitter;
 
-},{"./lang":25,"./promise":26,"rxjs/Observable":473,"rxjs/Subject":475,"rxjs/observable/PromiseObservable":479,"rxjs/operator/toPromise":480}],20:[function(require,module,exports){
+},{"./lang":25,"./promise":26,"rxjs/Observable":452,"rxjs/Subject":454,"rxjs/observable/PromiseObservable":458,"rxjs/operator/toPromise":459}],20:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8522,7 +8522,7 @@ var SimpleExpressionChecker = (function () {
 
 },{"../../src/facade/collection":86,"../../src/facade/exceptions":88,"../../src/facade/lang":89,"./ast":81,"./lexer":82,"@angular/core":139}],84:[function(require,module,exports){
 arguments[4][19][0].apply(exports,arguments)
-},{"./lang":89,"./promise":90,"dup":19,"rxjs/Observable":473,"rxjs/Subject":475,"rxjs/observable/PromiseObservable":479,"rxjs/operator/toPromise":480}],85:[function(require,module,exports){
+},{"./lang":89,"./promise":90,"dup":19,"rxjs/Observable":452,"rxjs/Subject":454,"rxjs/observable/PromiseObservable":458,"rxjs/operator/toPromise":459}],85:[function(require,module,exports){
 arguments[4][20][0].apply(exports,arguments)
 },{"dup":20}],86:[function(require,module,exports){
 arguments[4][21][0].apply(exports,arguments)
@@ -24476,7 +24476,7 @@ function _createDependency(token, optional, lowerBoundVisibility, upperBoundVisi
 
 },{"../../src/facade/collection":170,"../../src/facade/lang":173,"../reflection/reflection":201,"./forward_ref":158,"./metadata":160,"./provider":162,"./provider_util":163,"./reflective_exceptions":164,"./reflective_key":166}],168:[function(require,module,exports){
 arguments[4][19][0].apply(exports,arguments)
-},{"./lang":173,"./promise":174,"dup":19,"rxjs/Observable":473,"rxjs/Subject":475,"rxjs/observable/PromiseObservable":479,"rxjs/operator/toPromise":480}],169:[function(require,module,exports){
+},{"./lang":173,"./promise":174,"dup":19,"rxjs/Observable":452,"rxjs/Subject":454,"rxjs/observable/PromiseObservable":458,"rxjs/operator/toPromise":459}],169:[function(require,module,exports){
 arguments[4][20][0].apply(exports,arguments)
 },{"dup":20}],170:[function(require,module,exports){
 arguments[4][21][0].apply(exports,arguments)
@@ -31214,7 +31214,7 @@ var JSONPBackend_ = (function (_super) {
 }(JSONPBackend));
 exports.JSONPBackend_ = JSONPBackend_;
 
-},{"../../src/facade/exceptions":226,"../../src/facade/lang":227,"../base_response_options":221,"../enums":222,"../interfaces":231,"../static_response":233,"./browser_jsonp":216,"@angular/core":139,"rxjs/Observable":473}],219:[function(require,module,exports){
+},{"../../src/facade/exceptions":226,"../../src/facade/lang":227,"../base_response_options":221,"../enums":222,"../interfaces":231,"../static_response":233,"./browser_jsonp":216,"@angular/core":139,"rxjs/Observable":452}],219:[function(require,module,exports){
 "use strict";
 var enums_1 = require('../enums');
 var static_response_1 = require('../static_response');
@@ -31312,7 +31312,7 @@ var XHRBackend = (function () {
 }());
 exports.XHRBackend = XHRBackend;
 
-},{"../../src/facade/lang":227,"../base_response_options":221,"../enums":222,"../headers":228,"../http_utils":230,"../static_response":233,"./browser_xhr":217,"@angular/core":139,"rxjs/Observable":473}],220:[function(require,module,exports){
+},{"../../src/facade/lang":227,"../base_response_options":221,"../enums":222,"../headers":228,"../http_utils":230,"../static_response":233,"./browser_xhr":217,"@angular/core":139,"rxjs/Observable":452}],220:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36325,1828 +36325,6 @@ function sanitizeUrl(url) {
 exports.sanitizeUrl = sanitizeUrl;
 
 },{}],286:[function(require,module,exports){
-"use strict";
-/**
-* @module
-* @description
-* Maps application URLs into application states, to support deep-linking and navigation.
-*/
-var router_1 = require('./src/router');
-exports.Router = router_1.Router;
-exports.RouterOutletMap = router_1.RouterOutletMap;
-var segments_1 = require('./src/segments');
-exports.RouteSegment = segments_1.RouteSegment;
-exports.UrlSegment = segments_1.UrlSegment;
-exports.Tree = segments_1.Tree;
-exports.UrlTree = segments_1.UrlTree;
-exports.RouteTree = segments_1.RouteTree;
-var decorators_1 = require('./src/metadata/decorators');
-exports.Routes = decorators_1.Routes;
-var metadata_1 = require('./src/metadata/metadata');
-exports.Route = metadata_1.Route;
-var router_url_serializer_1 = require('./src/router_url_serializer');
-exports.RouterUrlSerializer = router_url_serializer_1.RouterUrlSerializer;
-exports.DefaultRouterUrlSerializer = router_url_serializer_1.DefaultRouterUrlSerializer;
-var router_providers_1 = require('./src/router_providers');
-exports.ROUTER_PROVIDERS = router_providers_1.ROUTER_PROVIDERS;
-var router_outlet_1 = require('./src/directives/router_outlet');
-var router_link_1 = require('./src/directives/router_link');
-/**
- * A list of directives. To use the router directives like {@link RouterOutlet} and
- * {@link RouterLink}, add this to your `directives` array in the {@link View} decorator of your
- * component.
- *
- * ```
- * import {Component} from '@angular/core';
- * import {ROUTER_DIRECTIVES, Routes} from '@angular/router-deprecated';
- *
- * @Component({directives: [ROUTER_DIRECTIVES]})
- * @RouteConfig([
- *  {...},
- * ])
- * class AppCmp {
- *    // ...
- * }
- *
- * bootstrap(AppCmp);
- * ```
- */
-exports.ROUTER_DIRECTIVES = [router_outlet_1.RouterOutlet, router_link_1.RouterLink];
-
-},{"./src/directives/router_link":289,"./src/directives/router_outlet":290,"./src/metadata/decorators":300,"./src/metadata/metadata":301,"./src/router":303,"./src/router_providers":304,"./src/router_url_serializer":306,"./src/segments":307}],287:[function(require,module,exports){
-"use strict";
-/**
-* Name of the default outlet outlet.
-* @type {string}
-*/
-exports.DEFAULT_OUTLET_NAME = "__DEFAULT";
-
-},{}],288:[function(require,module,exports){
-"use strict";
-var core_1 = require('@angular/core');
-exports.makeDecorator = core_1.__core_private__.makeDecorator;
-
-},{"@angular/core":139}],289:[function(require,module,exports){
-"use strict";
-var core_1 = require('@angular/core');
-var router_1 = require('../router');
-var segments_1 = require('../segments');
-var lang_1 = require('../facade/lang');
-var async_1 = require('../facade/async');
-var RouterLink = (function () {
-    function RouterLink(_routeSegment, _router) {
-        var _this = this;
-        this._routeSegment = _routeSegment;
-        this._router = _router;
-        this._commands = [];
-        this.isActive = false;
-        // because auxiliary links take existing primary and auxiliary routes into account,
-        // we need to update the link whenever params or other routes change.
-        this._subscription =
-            async_1.ObservableWrapper.subscribe(_router.changes, function (_) { _this._updateTargetUrlAndHref(); });
-    }
-    RouterLink.prototype.ngOnDestroy = function () { async_1.ObservableWrapper.dispose(this._subscription); };
-    Object.defineProperty(RouterLink.prototype, "routerLink", {
-        set: function (data) {
-            if (lang_1.isArray(data)) {
-                this._commands = data;
-            }
-            else {
-                this._commands = [data];
-            }
-            this._updateTargetUrlAndHref();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RouterLink.prototype.onClick = function () {
-        // If no target, or if target is _self, prevent default browser behavior
-        if (!lang_1.isString(this.target) || this.target == '_self') {
-            this._router.navigate(this._commands, this._routeSegment);
-            return false;
-        }
-        return true;
-    };
-    RouterLink.prototype._updateTargetUrlAndHref = function () {
-        var tree = this._router.createUrlTree(this._commands, this._routeSegment);
-        if (lang_1.isPresent(tree)) {
-            this.href = this._router.serializeUrl(tree);
-            this.isActive = this._router.urlTree.contains(tree);
-        }
-        else {
-            this.isActive = false;
-        }
-    };
-    RouterLink.decorators = [
-        { type: core_1.Directive, args: [{ selector: '[routerLink]' },] },
-    ];
-    RouterLink.ctorParameters = [
-        { type: segments_1.RouteSegment, decorators: [{ type: core_1.Optional },] },
-        { type: router_1.Router, },
-    ];
-    RouterLink.propDecorators = {
-        'target': [{ type: core_1.Input },],
-        'href': [{ type: core_1.HostBinding },],
-        'isActive': [{ type: core_1.HostBinding, args: ['class.router-link-active',] },],
-        'routerLink': [{ type: core_1.Input },],
-        'onClick': [{ type: core_1.HostListener, args: ["click",] },],
-    };
-    return RouterLink;
-}());
-exports.RouterLink = RouterLink;
-
-},{"../facade/async":291,"../facade/lang":296,"../router":303,"../segments":307,"@angular/core":139}],290:[function(require,module,exports){
-"use strict";
-var core_1 = require('@angular/core');
-var router_1 = require('../router');
-var constants_1 = require('../constants');
-var lang_1 = require('../facade/lang');
-var RouterOutlet = (function () {
-    function RouterOutlet(parentOutletMap, _location, name) {
-        this._location = _location;
-        parentOutletMap.registerOutlet(lang_1.isBlank(name) ? constants_1.DEFAULT_OUTLET_NAME : name, this);
-    }
-    RouterOutlet.prototype.unload = function () {
-        this._loaded.destroy();
-        this._loaded = null;
-    };
-    Object.defineProperty(RouterOutlet.prototype, "loadedComponent", {
-        /**
-         * Returns the loaded component.
-         */
-        get: function () { return lang_1.isPresent(this._loaded) ? this._loaded.instance : null; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RouterOutlet.prototype, "isLoaded", {
-        /**
-         * Returns true is the outlet is not empty.
-         */
-        get: function () { return lang_1.isPresent(this._loaded); },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Called by the Router to instantiate a new component.
-     */
-    RouterOutlet.prototype.load = function (factory, providers, outletMap) {
-        this.outletMap = outletMap;
-        var inj = core_1.ReflectiveInjector.fromResolvedProviders(providers, this._location.parentInjector);
-        this._loaded = this._location.createComponent(factory, this._location.length, inj, []);
-        return this._loaded;
-    };
-    RouterOutlet.decorators = [
-        { type: core_1.Directive, args: [{ selector: 'router-outlet' },] },
-    ];
-    RouterOutlet.ctorParameters = [
-        { type: router_1.RouterOutletMap, },
-        { type: core_1.ViewContainerRef, },
-        { type: undefined, decorators: [{ type: core_1.Attribute, args: ['name',] },] },
-    ];
-    return RouterOutlet;
-}());
-exports.RouterOutlet = RouterOutlet;
-
-},{"../constants":287,"../facade/lang":296,"../router":303,"@angular/core":139}],291:[function(require,module,exports){
-arguments[4][19][0].apply(exports,arguments)
-},{"./lang":296,"./promise":297,"dup":19,"rxjs/Observable":473,"rxjs/Subject":475,"rxjs/observable/PromiseObservable":479,"rxjs/operator/toPromise":480}],292:[function(require,module,exports){
-arguments[4][20][0].apply(exports,arguments)
-},{"dup":20}],293:[function(require,module,exports){
-arguments[4][21][0].apply(exports,arguments)
-},{"./lang":296,"dup":21}],294:[function(require,module,exports){
-arguments[4][22][0].apply(exports,arguments)
-},{"./base_wrapped_exception":292,"./collection":293,"./lang":296,"dup":22}],295:[function(require,module,exports){
-arguments[4][23][0].apply(exports,arguments)
-},{"./base_wrapped_exception":292,"./exception_handler":294,"dup":23}],296:[function(require,module,exports){
-(function (global){
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var globalScope;
-if (typeof window === 'undefined') {
-    if (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope) {
-        // TODO: Replace any with WorkerGlobalScope from lib.webworker.d.ts #3492
-        globalScope = self;
-    }
-    else {
-        globalScope = global;
-    }
-}
-else {
-    globalScope = window;
-}
-function scheduleMicroTask(fn) {
-    Zone.current.scheduleMicroTask('scheduleMicrotask', fn);
-}
-exports.scheduleMicroTask = scheduleMicroTask;
-exports.IS_DART = false;
-// Need to declare a new variable for global here since TypeScript
-// exports the original value of the symbol.
-var _global = globalScope;
-exports.global = _global;
-exports.Type = Function;
-function getTypeNameForDebugging(type) {
-    if (type['name']) {
-        return type['name'];
-    }
-    return typeof type;
-}
-exports.getTypeNameForDebugging = getTypeNameForDebugging;
-exports.Math = _global.Math;
-exports.Date = _global.Date;
-var _devMode = true;
-var _modeLocked = false;
-function lockMode() {
-    _modeLocked = true;
-}
-exports.lockMode = lockMode;
-/**
- * Disable Angular's development mode, which turns off assertions and other
- * checks within the framework.
- *
- * One important assertion this disables verifies that a change detection pass
- * does not result in additional changes to any bindings (also known as
- * unidirectional data flow).
- */
-function enableProdMode() {
-    if (_modeLocked) {
-        // Cannot use BaseException as that ends up importing from facade/lang.
-        throw 'Cannot enable prod mode after platform setup.';
-    }
-    _devMode = false;
-}
-exports.enableProdMode = enableProdMode;
-function assertionsEnabled() {
-    return _devMode;
-}
-exports.assertionsEnabled = assertionsEnabled;
-// TODO: remove calls to assert in production environment
-// Note: Can't just export this and import in in other files
-// as `assert` is a reserved keyword in Dart
-_global.assert = function assert(condition) {
-    // TODO: to be fixed properly via #2830, noop for now
-};
-function isPresent(obj) {
-    return obj !== undefined && obj !== null;
-}
-exports.isPresent = isPresent;
-function isBlank(obj) {
-    return obj === undefined || obj === null;
-}
-exports.isBlank = isBlank;
-function isBoolean(obj) {
-    return typeof obj === "boolean";
-}
-exports.isBoolean = isBoolean;
-function isNumber(obj) {
-    return typeof obj === "number";
-}
-exports.isNumber = isNumber;
-function isString(obj) {
-    return typeof obj === "string";
-}
-exports.isString = isString;
-function isFunction(obj) {
-    return typeof obj === "function";
-}
-exports.isFunction = isFunction;
-function isType(obj) {
-    return isFunction(obj);
-}
-exports.isType = isType;
-function isStringMap(obj) {
-    return typeof obj === 'object' && obj !== null;
-}
-exports.isStringMap = isStringMap;
-var STRING_MAP_PROTO = Object.getPrototypeOf({});
-function isStrictStringMap(obj) {
-    return isStringMap(obj) && Object.getPrototypeOf(obj) === STRING_MAP_PROTO;
-}
-exports.isStrictStringMap = isStrictStringMap;
-function isPromise(obj) {
-    return obj instanceof _global.Promise;
-}
-exports.isPromise = isPromise;
-function isArray(obj) {
-    return Array.isArray(obj);
-}
-exports.isArray = isArray;
-function isDate(obj) {
-    return obj instanceof exports.Date && !isNaN(obj.valueOf());
-}
-exports.isDate = isDate;
-function noop() { }
-exports.noop = noop;
-function stringify(token) {
-    if (typeof token === 'string') {
-        return token;
-    }
-    if (token === undefined || token === null) {
-        return '' + token;
-    }
-    if (token.name) {
-        return token.name;
-    }
-    if (token.overriddenName) {
-        return token.overriddenName;
-    }
-    var res = token.toString();
-    var newLineIndex = res.indexOf("\n");
-    return (newLineIndex === -1) ? res : res.substring(0, newLineIndex);
-}
-exports.stringify = stringify;
-// serialize / deserialize enum exist only for consistency with dart API
-// enums in typescript don't need to be serialized
-function serializeEnum(val) {
-    return val;
-}
-exports.serializeEnum = serializeEnum;
-function deserializeEnum(val, values) {
-    return val;
-}
-exports.deserializeEnum = deserializeEnum;
-function resolveEnumToken(enumValue, val) {
-    return enumValue[val];
-}
-exports.resolveEnumToken = resolveEnumToken;
-var StringWrapper = (function () {
-    function StringWrapper() {
-    }
-    StringWrapper.fromCharCode = function (code) { return String.fromCharCode(code); };
-    StringWrapper.charCodeAt = function (s, index) { return s.charCodeAt(index); };
-    StringWrapper.split = function (s, regExp) { return s.split(regExp); };
-    StringWrapper.equals = function (s, s2) { return s === s2; };
-    StringWrapper.stripLeft = function (s, charVal) {
-        if (s && s.length) {
-            var pos = 0;
-            for (var i = 0; i < s.length; i++) {
-                if (s[i] != charVal)
-                    break;
-                pos++;
-            }
-            s = s.substring(pos);
-        }
-        return s;
-    };
-    StringWrapper.stripRight = function (s, charVal) {
-        if (s && s.length) {
-            var pos = s.length;
-            for (var i = s.length - 1; i >= 0; i--) {
-                if (s[i] != charVal)
-                    break;
-                pos--;
-            }
-            s = s.substring(0, pos);
-        }
-        return s;
-    };
-    StringWrapper.replace = function (s, from, replace) {
-        return s.replace(from, replace);
-    };
-    StringWrapper.replaceAll = function (s, from, replace) {
-        return s.replace(from, replace);
-    };
-    StringWrapper.slice = function (s, from, to) {
-        if (from === void 0) { from = 0; }
-        if (to === void 0) { to = null; }
-        return s.slice(from, to === null ? undefined : to);
-    };
-    StringWrapper.replaceAllMapped = function (s, from, cb) {
-        return s.replace(from, function () {
-            var matches = [];
-            for (var _i = 0; _i < arguments.length; _i++) {
-                matches[_i - 0] = arguments[_i];
-            }
-            // Remove offset & string from the result array
-            matches.splice(-2, 2);
-            // The callback receives match, p1, ..., pn
-            return cb(matches);
-        });
-    };
-    StringWrapper.contains = function (s, substr) { return s.indexOf(substr) != -1; };
-    StringWrapper.compare = function (a, b) {
-        if (a < b) {
-            return -1;
-        }
-        else if (a > b) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    };
-    return StringWrapper;
-}());
-exports.StringWrapper = StringWrapper;
-var StringJoiner = (function () {
-    function StringJoiner(parts) {
-        if (parts === void 0) { parts = []; }
-        this.parts = parts;
-    }
-    StringJoiner.prototype.add = function (part) { this.parts.push(part); };
-    StringJoiner.prototype.toString = function () { return this.parts.join(""); };
-    return StringJoiner;
-}());
-exports.StringJoiner = StringJoiner;
-var NumberParseError = (function (_super) {
-    __extends(NumberParseError, _super);
-    function NumberParseError(message) {
-        _super.call(this);
-        this.message = message;
-    }
-    NumberParseError.prototype.toString = function () { return this.message; };
-    return NumberParseError;
-}(Error));
-exports.NumberParseError = NumberParseError;
-var NumberWrapper = (function () {
-    function NumberWrapper() {
-    }
-    NumberWrapper.toFixed = function (n, fractionDigits) { return n.toFixed(fractionDigits); };
-    NumberWrapper.equal = function (a, b) { return a === b; };
-    NumberWrapper.parseIntAutoRadix = function (text) {
-        var result = parseInt(text);
-        if (isNaN(result)) {
-            throw new NumberParseError("Invalid integer literal when parsing " + text);
-        }
-        return result;
-    };
-    NumberWrapper.parseInt = function (text, radix) {
-        if (radix == 10) {
-            if (/^(\-|\+)?[0-9]+$/.test(text)) {
-                return parseInt(text, radix);
-            }
-        }
-        else if (radix == 16) {
-            if (/^(\-|\+)?[0-9ABCDEFabcdef]+$/.test(text)) {
-                return parseInt(text, radix);
-            }
-        }
-        else {
-            var result = parseInt(text, radix);
-            if (!isNaN(result)) {
-                return result;
-            }
-        }
-        throw new NumberParseError("Invalid integer literal when parsing " + text + " in base " +
-            radix);
-    };
-    // TODO: NaN is a valid literal but is returned by parseFloat to indicate an error.
-    NumberWrapper.parseFloat = function (text) { return parseFloat(text); };
-    Object.defineProperty(NumberWrapper, "NaN", {
-        get: function () { return NaN; },
-        enumerable: true,
-        configurable: true
-    });
-    NumberWrapper.isNaN = function (value) { return isNaN(value); };
-    NumberWrapper.isInteger = function (value) { return Number.isInteger(value); };
-    return NumberWrapper;
-}());
-exports.NumberWrapper = NumberWrapper;
-exports.RegExp = _global.RegExp;
-var RegExpWrapper = (function () {
-    function RegExpWrapper() {
-    }
-    RegExpWrapper.create = function (regExpStr, flags) {
-        if (flags === void 0) { flags = ''; }
-        flags = flags.replace(/g/g, '');
-        return new _global.RegExp(regExpStr, flags + 'g');
-    };
-    RegExpWrapper.firstMatch = function (regExp, input) {
-        // Reset multimatch regex state
-        regExp.lastIndex = 0;
-        return regExp.exec(input);
-    };
-    RegExpWrapper.test = function (regExp, input) {
-        regExp.lastIndex = 0;
-        return regExp.test(input);
-    };
-    RegExpWrapper.matcher = function (regExp, input) {
-        // Reset regex state for the case
-        // someone did not loop over all matches
-        // last time.
-        regExp.lastIndex = 0;
-        return { re: regExp, input: input };
-    };
-    RegExpWrapper.replaceAll = function (regExp, input, replace) {
-        var c = regExp.exec(input);
-        var res = '';
-        regExp.lastIndex = 0;
-        var prev = 0;
-        while (c) {
-            res += input.substring(prev, c.index);
-            res += replace(c);
-            prev = c.index + c[0].length;
-            regExp.lastIndex = prev;
-            c = regExp.exec(input);
-        }
-        res += input.substring(prev);
-        return res;
-    };
-    return RegExpWrapper;
-}());
-exports.RegExpWrapper = RegExpWrapper;
-var RegExpMatcherWrapper = (function () {
-    function RegExpMatcherWrapper() {
-    }
-    RegExpMatcherWrapper.next = function (matcher) {
-        return matcher.re.exec(matcher.input);
-    };
-    return RegExpMatcherWrapper;
-}());
-exports.RegExpMatcherWrapper = RegExpMatcherWrapper;
-var FunctionWrapper = (function () {
-    function FunctionWrapper() {
-    }
-    FunctionWrapper.apply = function (fn, posArgs) { return fn.apply(null, posArgs); };
-    return FunctionWrapper;
-}());
-exports.FunctionWrapper = FunctionWrapper;
-// JS has NaN !== NaN
-function looseIdentical(a, b) {
-    return a === b || typeof a === "number" && typeof b === "number" && isNaN(a) && isNaN(b);
-}
-exports.looseIdentical = looseIdentical;
-// JS considers NaN is the same as NaN for map Key (while NaN !== NaN otherwise)
-// see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-function getMapKey(value) {
-    return value;
-}
-exports.getMapKey = getMapKey;
-function normalizeBlank(obj) {
-    return isBlank(obj) ? null : obj;
-}
-exports.normalizeBlank = normalizeBlank;
-function normalizeBool(obj) {
-    return isBlank(obj) ? false : obj;
-}
-exports.normalizeBool = normalizeBool;
-function isJsObject(o) {
-    return o !== null && (typeof o === "function" || typeof o === "object");
-}
-exports.isJsObject = isJsObject;
-function print(obj) {
-    console.log(obj);
-}
-exports.print = print;
-function warn(obj) {
-    console.warn(obj);
-}
-exports.warn = warn;
-// Can't be all uppercase as our transpiler would think it is a special directive...
-var Json = (function () {
-    function Json() {
-    }
-    Json.parse = function (s) { return _global.JSON.parse(s); };
-    Json.stringify = function (data) {
-        // Dart doesn't take 3 arguments
-        return _global.JSON.stringify(data, null, 2);
-    };
-    return Json;
-}());
-exports.Json = Json;
-var DateWrapper = (function () {
-    function DateWrapper() {
-    }
-    DateWrapper.create = function (year, month, day, hour, minutes, seconds, milliseconds) {
-        if (month === void 0) { month = 1; }
-        if (day === void 0) { day = 1; }
-        if (hour === void 0) { hour = 0; }
-        if (minutes === void 0) { minutes = 0; }
-        if (seconds === void 0) { seconds = 0; }
-        if (milliseconds === void 0) { milliseconds = 0; }
-        return new exports.Date(year, month - 1, day, hour, minutes, seconds, milliseconds);
-    };
-    DateWrapper.fromISOString = function (str) { return new exports.Date(str); };
-    DateWrapper.fromMillis = function (ms) { return new exports.Date(ms); };
-    DateWrapper.toMillis = function (date) { return date.getTime(); };
-    DateWrapper.now = function () { return new exports.Date(); };
-    DateWrapper.toJson = function (date) { return date.toJSON(); };
-    return DateWrapper;
-}());
-exports.DateWrapper = DateWrapper;
-function setValueOnPath(global, path, value) {
-    var parts = path.split('.');
-    var obj = global;
-    while (parts.length > 1) {
-        var name = parts.shift();
-        if (obj.hasOwnProperty(name) && isPresent(obj[name])) {
-            obj = obj[name];
-        }
-        else {
-            obj = obj[name] = {};
-        }
-    }
-    if (obj === undefined || obj === null) {
-        obj = {};
-    }
-    obj[parts.shift()] = value;
-}
-exports.setValueOnPath = setValueOnPath;
-var _symbolIterator = null;
-function getSymbolIterator() {
-    if (isBlank(_symbolIterator)) {
-        if (isPresent(globalScope.Symbol) && isPresent(Symbol.iterator)) {
-            _symbolIterator = Symbol.iterator;
-        }
-        else {
-            // es6-shim specific logic
-            var keys = Object.getOwnPropertyNames(Map.prototype);
-            for (var i = 0; i < keys.length; ++i) {
-                var key = keys[i];
-                if (key !== 'entries' && key !== 'size' &&
-                    Map.prototype[key] === Map.prototype['entries']) {
-                    _symbolIterator = key;
-                }
-            }
-        }
-    }
-    return _symbolIterator;
-}
-exports.getSymbolIterator = getSymbolIterator;
-function evalExpression(sourceUrl, expr, declarations, vars) {
-    var fnBody = declarations + "\nreturn " + expr + "\n//# sourceURL=" + sourceUrl;
-    var fnArgNames = [];
-    var fnArgValues = [];
-    for (var argName in vars) {
-        fnArgNames.push(argName);
-        fnArgValues.push(vars[argName]);
-    }
-    return new (Function.bind.apply(Function, [void 0].concat(fnArgNames.concat(fnBody))))().apply(void 0, fnArgValues);
-}
-exports.evalExpression = evalExpression;
-function isPrimitive(obj) {
-    return !isJsObject(obj);
-}
-exports.isPrimitive = isPrimitive;
-function hasConstructor(value, type) {
-    return value.constructor === type;
-}
-exports.hasConstructor = hasConstructor;
-function bitWiseOr(values) {
-    return values.reduce(function (a, b) { return a | b; });
-}
-exports.bitWiseOr = bitWiseOr;
-function bitWiseAnd(values) {
-    return values.reduce(function (a, b) { return a & b; });
-}
-exports.bitWiseAnd = bitWiseAnd;
-function escape(s) {
-    return _global.encodeURI(s);
-}
-exports.escape = escape;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-
-},{}],297:[function(require,module,exports){
-arguments[4][26][0].apply(exports,arguments)
-},{"dup":26}],298:[function(require,module,exports){
-"use strict";
-var lang_1 = require('./facade/lang');
-function hasLifecycleHook(name, obj) {
-    if (lang_1.isBlank(obj))
-        return false;
-    var type = obj.constructor;
-    if (!(type instanceof lang_1.Type))
-        return false;
-    return name in type.prototype;
-}
-exports.hasLifecycleHook = hasLifecycleHook;
-
-},{"./facade/lang":296}],299:[function(require,module,exports){
-"use strict";
-var segments_1 = require('./segments');
-var lang_1 = require('./facade/lang');
-var exceptions_1 = require('./facade/exceptions');
-var collection_1 = require('./facade/collection');
-// TODO: vsavkin: should reuse segments
-function link(segment, routeTree, urlTree, commands) {
-    if (commands.length === 0)
-        return urlTree;
-    var normalizedCommands = _normalizeCommands(commands);
-    if (_navigateToRoot(normalizedCommands)) {
-        return new segments_1.UrlTree(new segments_1.TreeNode(urlTree.root, []));
-    }
-    var startingNode = _findStartingNode(normalizedCommands, urlTree, segment, routeTree);
-    var updated = normalizedCommands.commands.length > 0 ?
-        _updateMany(collection_1.ListWrapper.clone(startingNode.children), normalizedCommands.commands) : [];
-    var newRoot = _constructNewTree(segments_1.rootNode(urlTree), startingNode, updated);
-    return new segments_1.UrlTree(newRoot);
-}
-exports.link = link;
-function _navigateToRoot(normalizedChange) {
-    return normalizedChange.isAbsolute && normalizedChange.commands.length === 1 && normalizedChange.commands[0] == "/";
-}
-var _NormalizedNavigationCommands = (function () {
-    function _NormalizedNavigationCommands(isAbsolute, numberOfDoubleDots, commands) {
-        this.isAbsolute = isAbsolute;
-        this.numberOfDoubleDots = numberOfDoubleDots;
-        this.commands = commands;
-    }
-    return _NormalizedNavigationCommands;
-}());
-function _normalizeCommands(commands) {
-    ;
-    '';
-    if (lang_1.isString(commands[0]) && commands.length === 1 && commands[0] == "/") {
-        return new _NormalizedNavigationCommands(true, 0, commands);
-    }
-    var numberOfDoubleDots = 0;
-    var isAbsolute = false;
-    var res = [];
-    for (var i = 0; i < commands.length; ++i) {
-        var c = commands[i];
-        if (!lang_1.isString(c)) {
-            res.push(c);
-            continue;
-        }
-        var parts = c.split('/');
-        for (var j = 0; j < parts.length; ++j) {
-            var cc = parts[j];
-            // first exp is treated in a special way
-            if (i == 0) {
-                if (j == 0 && cc == ".") {
-                }
-                else if (j == 0 && cc == "") {
-                    isAbsolute = true;
-                }
-                else if (cc == "..") {
-                    numberOfDoubleDots++;
-                }
-                else if (cc != '') {
-                    res.push(cc);
-                }
-            }
-            else {
-                if (cc != '') {
-                    res.push(cc);
-                }
-            }
-        }
-    }
-    return new _NormalizedNavigationCommands(isAbsolute, numberOfDoubleDots, res);
-}
-function _findUrlSegment(segment, routeTree, urlTree, numberOfDoubleDots) {
-    var s = segment;
-    while (s.urlSegments.length === 0) {
-        s = routeTree.parent(s);
-    }
-    var urlSegment = collection_1.ListWrapper.last(s.urlSegments);
-    var path = urlTree.pathFromRoot(urlSegment);
-    if (path.length <= numberOfDoubleDots) {
-        throw new exceptions_1.BaseException("Invalid number of '../'");
-    }
-    return path[path.length - 1 - numberOfDoubleDots];
-}
-function _findStartingNode(normalizedChange, urlTree, segment, routeTree) {
-    if (normalizedChange.isAbsolute) {
-        return segments_1.rootNode(urlTree);
-    }
-    else {
-        var urlSegment = _findUrlSegment(segment, routeTree, urlTree, normalizedChange.numberOfDoubleDots);
-        return _findMatchingNode(urlSegment, segments_1.rootNode(urlTree));
-    }
-}
-function _findMatchingNode(segment, node) {
-    if (node.value === segment)
-        return node;
-    for (var _i = 0, _a = node.children; _i < _a.length; _i++) {
-        var c = _a[_i];
-        var r = _findMatchingNode(segment, c);
-        if (lang_1.isPresent(r))
-            return r;
-    }
-    return null;
-}
-function _constructNewTree(node, original, updated) {
-    if (node === original) {
-        return new segments_1.TreeNode(node.value, updated);
-    }
-    else {
-        return new segments_1.TreeNode(node.value, node.children.map(function (c) { return _constructNewTree(c, original, updated); }));
-    }
-}
-function _update(node, commands) {
-    var rest = commands.slice(1);
-    var next = rest.length === 0 ? null : rest[0];
-    var outlet = _outlet(commands);
-    var segment = _segment(commands);
-    // reach the end of the tree => create new tree nodes.
-    if (lang_1.isBlank(node) && !lang_1.isStringMap(next)) {
-        var urlSegment = new segments_1.UrlSegment(segment, {}, outlet);
-        var children = rest.length === 0 ? [] : [_update(null, rest)];
-        return new segments_1.TreeNode(urlSegment, children);
-    }
-    else if (lang_1.isBlank(node) && lang_1.isStringMap(next)) {
-        var urlSegment = new segments_1.UrlSegment(segment, next, outlet);
-        return _recurse(urlSegment, node, rest.slice(1));
-    }
-    else if (outlet != node.value.outlet) {
-        return node;
-    }
-    else if (lang_1.isStringMap(segment)) {
-        var newSegment = new segments_1.UrlSegment(node.value.segment, segment, node.value.outlet);
-        return _recurse(newSegment, node, rest);
-    }
-    else if (lang_1.isStringMap(next)) {
-        var urlSegment = new segments_1.UrlSegment(segment, next, outlet);
-        return _recurse(urlSegment, node, rest.slice(1));
-    }
-    else {
-        var urlSegment = new segments_1.UrlSegment(segment, {}, outlet);
-        return _recurse(urlSegment, node, rest);
-    }
-}
-function _recurse(urlSegment, node, rest) {
-    if (rest.length === 0) {
-        return new segments_1.TreeNode(urlSegment, []);
-    }
-    return new segments_1.TreeNode(urlSegment, _updateMany(collection_1.ListWrapper.clone(node.children), rest));
-}
-function _updateMany(nodes, commands) {
-    var outlet = _outlet(commands);
-    var nodesInRightOutlet = nodes.filter(function (c) { return c.value.outlet == outlet; });
-    if (nodesInRightOutlet.length > 0) {
-        var nodeRightOutlet = nodesInRightOutlet[0]; // there can be only one
-        nodes[nodes.indexOf(nodeRightOutlet)] = _update(nodeRightOutlet, commands);
-    }
-    else {
-        nodes.push(_update(null, commands));
-    }
-    return nodes;
-}
-function _segment(commands) {
-    if (!lang_1.isString(commands[0]))
-        return commands[0];
-    var parts = commands[0].toString().split(":");
-    return parts.length > 1 ? parts[1] : commands[0];
-}
-function _outlet(commands) {
-    if (!lang_1.isString(commands[0]))
-        return null;
-    var parts = commands[0].toString().split(":");
-    return parts.length > 1 ? parts[0] : null;
-}
-
-},{"./facade/collection":293,"./facade/exceptions":295,"./facade/lang":296,"./segments":307}],300:[function(require,module,exports){
-"use strict";
-var metadata_1 = require("./metadata");
-var core_private_1 = require('../core_private');
-/**
- * Defines routes for a given component.
- *
- * It takes an array of {@link RouteMetadata}s.
- */
-exports.Routes = core_private_1.makeDecorator(metadata_1.RoutesMetadata);
-
-},{"../core_private":288,"./metadata":301}],301:[function(require,module,exports){
-"use strict";
-var lang_1 = require("../facade/lang");
-/**
- * Information about a route.
- *
- * It has the following properties:
- * - `path` is a string that uses the route matcher DSL.
- * - `component` a component type.
- *
- * ### Example
- * ```
- * import {Routes} from '@angular/router';
- *
- * @Routes([
- *   {path: '/home', component: HomeCmp}
- * ])
- * class MyApp {}
- * ```
- *
- * @ts2dart_const
- */
-var RouteMetadata = (function () {
-    function RouteMetadata() {
-    }
-    Object.defineProperty(RouteMetadata.prototype, "path", {
-        get: function () { },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RouteMetadata.prototype, "component", {
-        get: function () { },
-        enumerable: true,
-        configurable: true
-    });
-    return RouteMetadata;
-}());
-exports.RouteMetadata = RouteMetadata;
-/**
- * See {@link RouteMetadata} for more information.
- * @ts2dart_const
- */
-var Route = (function () {
-    function Route(_a) {
-        var _b = _a === void 0 ? {} : _a, path = _b.path, component = _b.component;
-        this.path = path;
-        this.component = component;
-    }
-    Route.prototype.toString = function () { return "@Route(" + this.path + ", " + lang_1.stringify(this.component) + ")"; };
-    return Route;
-}());
-exports.Route = Route;
-/**
- * Defines routes for a given component.
- *
- * It takes an array of {@link RouteMetadata}s.
- * @ts2dart_const
- */
-var RoutesMetadata = (function () {
-    function RoutesMetadata(routes) {
-        this.routes = routes;
-    }
-    RoutesMetadata.prototype.toString = function () { return "@Routes(" + this.routes + ")"; };
-    return RoutesMetadata;
-}());
-exports.RoutesMetadata = RoutesMetadata;
-
-},{"../facade/lang":296}],302:[function(require,module,exports){
-"use strict";
-var segments_1 = require('./segments');
-var metadata_1 = require('./metadata/metadata');
-var lang_1 = require('./facade/lang');
-var collection_1 = require('./facade/collection');
-var promise_1 = require('./facade/promise');
-var core_1 = require('@angular/core');
-var constants_1 = require('./constants');
-var core_2 = require('@angular/core');
-// TODO: vsavkin: recognize should take the old tree and merge it
-function recognize(componentResolver, type, url) {
-    var matched = new _MatchResult(type, [url.root], {}, segments_1.rootNode(url).children, []);
-    return _constructSegment(componentResolver, matched).then(function (roots) { return new segments_1.RouteTree(roots[0]); });
-}
-exports.recognize = recognize;
-function _recognize(componentResolver, parentType, url) {
-    var metadata = _readMetadata(parentType); // should read from the factory instead
-    if (lang_1.isBlank(metadata)) {
-        throw new core_1.BaseException("Component '" + lang_1.stringify(parentType) + "' does not have route configuration");
-    }
-    var match;
-    try {
-        match = _match(metadata, url);
-    }
-    catch (e) {
-        return promise_1.PromiseWrapper.reject(e, null);
-    }
-    var main = _constructSegment(componentResolver, match);
-    var aux = _recognizeMany(componentResolver, parentType, match.aux).then(_checkOutletNameUniqueness);
-    return promise_1.PromiseWrapper.all([main, aux]).then(collection_1.ListWrapper.flatten);
-}
-function _recognizeMany(componentResolver, parentType, urls) {
-    var recognized = urls.map(function (u) { return _recognize(componentResolver, parentType, u); });
-    return promise_1.PromiseWrapper.all(recognized).then(collection_1.ListWrapper.flatten);
-}
-function _constructSegment(componentResolver, matched) {
-    return componentResolver.resolveComponent(matched.component)
-        .then(function (factory) {
-        var urlOutlet = matched.consumedUrlSegments.length === 0 ||
-            lang_1.isBlank(matched.consumedUrlSegments[0].outlet) ?
-            constants_1.DEFAULT_OUTLET_NAME :
-            matched.consumedUrlSegments[0].outlet;
-        var segment = new segments_1.RouteSegment(matched.consumedUrlSegments, matched.parameters, urlOutlet, matched.component, factory);
-        if (matched.leftOverUrl.length > 0) {
-            return _recognizeMany(componentResolver, matched.component, matched.leftOverUrl)
-                .then(function (children) { return [new segments_1.TreeNode(segment, children)]; });
-        }
-        else {
-            return _recognizeLeftOvers(componentResolver, matched.component)
-                .then(function (children) { return [new segments_1.TreeNode(segment, children)]; });
-        }
-    });
-}
-function _recognizeLeftOvers(componentResolver, parentType) {
-    return componentResolver.resolveComponent(parentType)
-        .then(function (factory) {
-        var metadata = _readMetadata(parentType);
-        if (lang_1.isBlank(metadata)) {
-            return [];
-        }
-        var r = metadata.routes.filter(function (r) { return r.path == "" || r.path == "/"; });
-        if (r.length === 0) {
-            return promise_1.PromiseWrapper.resolve([]);
-        }
-        else {
-            return _recognizeLeftOvers(componentResolver, r[0].component)
-                .then(function (children) {
-                return componentResolver.resolveComponent(r[0].component)
-                    .then(function (factory) {
-                    var segment = new segments_1.RouteSegment([], {}, constants_1.DEFAULT_OUTLET_NAME, r[0].component, factory);
-                    return [new segments_1.TreeNode(segment, children)];
-                });
-            });
-        }
-    });
-}
-function _match(metadata, url) {
-    for (var _i = 0, _a = metadata.routes; _i < _a.length; _i++) {
-        var r = _a[_i];
-        var matchingResult = _matchWithParts(r, url);
-        if (lang_1.isPresent(matchingResult)) {
-            return matchingResult;
-        }
-    }
-    var availableRoutes = metadata.routes.map(function (r) { return ("'" + r.path + "'"); }).join(", ");
-    throw new core_1.BaseException("Cannot match any routes. Current segment: '" + url.value + "'. Available routes: [" + availableRoutes + "].");
-}
-function _matchWithParts(route, url) {
-    var path = route.path.startsWith("/") ? route.path.substring(1) : route.path;
-    if (path == "*") {
-        return new _MatchResult(route.component, [], null, [], []);
-    }
-    var parts = path.split("/");
-    var positionalParams = {};
-    var consumedUrlSegments = [];
-    var lastParent = null;
-    var lastSegment = null;
-    var current = url;
-    for (var i = 0; i < parts.length; ++i) {
-        if (lang_1.isBlank(current))
-            return null;
-        var p_1 = parts[i];
-        var isLastSegment = i === parts.length - 1;
-        var isLastParent = i === parts.length - 2;
-        var isPosParam = p_1.startsWith(":");
-        if (!isPosParam && p_1 != current.value.segment)
-            return null;
-        if (isLastSegment) {
-            lastSegment = current;
-        }
-        if (isLastParent) {
-            lastParent = current;
-        }
-        if (isPosParam) {
-            positionalParams[p_1.substring(1)] = current.value.segment;
-        }
-        consumedUrlSegments.push(current.value);
-        current = collection_1.ListWrapper.first(current.children);
-    }
-    var p = lastSegment.value.parameters;
-    var parameters = collection_1.StringMapWrapper.merge(p, positionalParams);
-    var axuUrlSubtrees = lang_1.isPresent(lastParent) ? lastParent.children.slice(1) : [];
-    return new _MatchResult(route.component, consumedUrlSegments, parameters, lastSegment.children, axuUrlSubtrees);
-}
-function _checkOutletNameUniqueness(nodes) {
-    var names = {};
-    nodes.forEach(function (n) {
-        var segmentWithSameOutletName = names[n.value.outlet];
-        if (lang_1.isPresent(segmentWithSameOutletName)) {
-            var p = segmentWithSameOutletName.stringifiedUrlSegments;
-            var c = n.value.stringifiedUrlSegments;
-            throw new core_1.BaseException("Two segments cannot have the same outlet name: '" + p + "' and '" + c + "'.");
-        }
-        names[n.value.outlet] = n.value;
-    });
-    return nodes;
-}
-var _MatchResult = (function () {
-    function _MatchResult(component, consumedUrlSegments, parameters, leftOverUrl, aux) {
-        this.component = component;
-        this.consumedUrlSegments = consumedUrlSegments;
-        this.parameters = parameters;
-        this.leftOverUrl = leftOverUrl;
-        this.aux = aux;
-    }
-    return _MatchResult;
-}());
-function _readMetadata(componentType) {
-    var metadata = core_2.reflector.annotations(componentType).filter(function (f) { return f instanceof metadata_1.RoutesMetadata; });
-    return collection_1.ListWrapper.first(metadata);
-}
-
-},{"./constants":287,"./facade/collection":293,"./facade/lang":296,"./facade/promise":297,"./metadata/metadata":301,"./segments":307,"@angular/core":139}],303:[function(require,module,exports){
-"use strict";
-var core_1 = require('@angular/core');
-var lang_1 = require('./facade/lang');
-var collection_1 = require('./facade/collection');
-var async_1 = require('./facade/async');
-var collection_2 = require('./facade/collection');
-var core_2 = require('@angular/core');
-var recognize_1 = require('./recognize');
-var link_1 = require('./link');
-var segments_1 = require('./segments');
-var lifecycle_reflector_1 = require('./lifecycle_reflector');
-var constants_1 = require('./constants');
-/**
- * @internal
- */
-var RouterOutletMap = (function () {
-    function RouterOutletMap() {
-        /** @internal */
-        this._outlets = {};
-    }
-    RouterOutletMap.prototype.registerOutlet = function (name, outlet) { this._outlets[name] = outlet; };
-    return RouterOutletMap;
-}());
-exports.RouterOutletMap = RouterOutletMap;
-/**
- * The `Router` is responsible for mapping URLs to components.
- *
- * You can see the state of the router by inspecting the read-only fields `router.urlTree`
- * and `router.routeTree`.
- */
-var Router = (function () {
-    /**
-     * @internal
-     */
-    function Router(_rootComponent, _rootComponentType, _componentResolver, _urlSerializer, _routerOutletMap, _location) {
-        this._rootComponent = _rootComponent;
-        this._rootComponentType = _rootComponentType;
-        this._componentResolver = _componentResolver;
-        this._urlSerializer = _urlSerializer;
-        this._routerOutletMap = _routerOutletMap;
-        this._location = _location;
-        this._changes = new async_1.EventEmitter();
-        this._prevTree = this._createInitialTree();
-        this._setUpLocationChangeListener();
-        this.navigateByUrl(this._location.path());
-    }
-    Object.defineProperty(Router.prototype, "urlTree", {
-        /**
-         * Returns the current url tree.
-         */
-        get: function () { return this._urlTree; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Router.prototype, "routeTree", {
-        /**
-         * Returns the current route tree.
-         */
-        get: function () { return this._prevTree; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Router.prototype, "changes", {
-        /**
-         * An observable or url changes from the router.
-         */
-        get: function () { return this._changes; },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Navigate based on the provided url. This navigation is always absolute.
-     *
-     * ### Usage
-     *
-     * ```
-     * router.navigateByUrl("/team/33/user/11");
-     * ```
-     */
-    Router.prototype.navigateByUrl = function (url) {
-        return this._navigate(this._urlSerializer.parse(url));
-    };
-    /**
-     * Navigate based on the provided array of commands and a starting point.
-     * If no segment is provided, the navigation is absolute.
-     *
-     * ### Usage
-     *
-     * ```
-     * router.navigate(['team', 33, 'team', '11], segment);
-     * ```
-     */
-    Router.prototype.navigate = function (commands, segment) {
-        return this._navigate(this.createUrlTree(commands, segment));
-    };
-    /**
-     * @internal
-     */
-    Router.prototype.dispose = function () { async_1.ObservableWrapper.dispose(this._locationSubscription); };
-    /**
-     * Applies an array of commands to the current url tree and creates
-     * a new url tree.
-     *
-     * When given a segment, applies the given commands starting from the segment.
-     * When not given a segment, applies the given command starting from the root.
-     *
-     * ### Usage
-     *
-     * ```
-     * // create /team/33/user/11
-     * router.createUrlTree(['/team', 33, 'user', 11]);
-     *
-     * // create /team/33;expand=true/user/11
-     * router.createUrlTree(['/team', 33, {expand: true}, 'user', 11]);
-     *
-     * // you can collapse static fragments like this
-     * router.createUrlTree(['/team/33/user', userId]);
-     *
-     * // assuming the current url is `/team/33/user/11` and the segment points to `user/11`
-     *
-     * // navigate to /team/33/user/11/details
-     * router.createUrlTree(['details'], segment);
-     *
-     * // navigate to /team/33/user/22
-     * router.createUrlTree(['../22'], segment);
-     *
-     * // navigate to /team/44/user/22
-     * router.createUrlTree(['../../team/44/user/22'], segment);
-     * ```
-     */
-    Router.prototype.createUrlTree = function (commands, segment) {
-        var s = lang_1.isPresent(segment) ? segment : this._prevTree.root;
-        return link_1.link(s, this._prevTree, this.urlTree, commands);
-    };
-    /**
-     * Serializes a {@link UrlTree} into a string.
-     */
-    Router.prototype.serializeUrl = function (url) { return this._urlSerializer.serialize(url); };
-    Router.prototype._createInitialTree = function () {
-        var root = new segments_1.RouteSegment([new segments_1.UrlSegment("", {}, null)], {}, constants_1.DEFAULT_OUTLET_NAME, this._rootComponentType, null);
-        return new segments_1.RouteTree(new segments_1.TreeNode(root, []));
-    };
-    Router.prototype._setUpLocationChangeListener = function () {
-        var _this = this;
-        this._locationSubscription = this._location.subscribe(function (change) { _this._navigate(_this._urlSerializer.parse(change['url'])); });
-    };
-    Router.prototype._navigate = function (url) {
-        var _this = this;
-        this._urlTree = url;
-        return recognize_1.recognize(this._componentResolver, this._rootComponentType, url)
-            .then(function (currTree) {
-            return new _LoadSegments(currTree, _this._prevTree)
-                .load(_this._routerOutletMap, _this._rootComponent)
-                .then(function (updated) {
-                if (updated) {
-                    _this._prevTree = currTree;
-                    _this._location.go(_this._urlSerializer.serialize(_this._urlTree));
-                    _this._changes.emit(null);
-                }
-            });
-        });
-    };
-    return Router;
-}());
-exports.Router = Router;
-var _LoadSegments = (function () {
-    function _LoadSegments(currTree, prevTree) {
-        this.currTree = currTree;
-        this.prevTree = prevTree;
-        this.deactivations = [];
-        this.performMutation = true;
-    }
-    _LoadSegments.prototype.load = function (parentOutletMap, rootComponent) {
-        var _this = this;
-        var prevRoot = lang_1.isPresent(this.prevTree) ? segments_1.rootNode(this.prevTree) : null;
-        var currRoot = segments_1.rootNode(this.currTree);
-        return this.canDeactivate(currRoot, prevRoot, parentOutletMap, rootComponent)
-            .then(function (res) {
-            _this.performMutation = true;
-            if (res) {
-                _this.loadChildSegments(currRoot, prevRoot, parentOutletMap, [rootComponent]);
-            }
-            return res;
-        });
-    };
-    _LoadSegments.prototype.canDeactivate = function (currRoot, prevRoot, outletMap, rootComponent) {
-        var _this = this;
-        this.performMutation = false;
-        this.loadChildSegments(currRoot, prevRoot, outletMap, [rootComponent]);
-        var allPaths = async_1.PromiseWrapper.all(this.deactivations.map(function (r) { return _this.checkCanDeactivatePath(r); }));
-        return allPaths.then(function (values) { return values.filter(function (v) { return v; }).length === values.length; });
-    };
-    _LoadSegments.prototype.checkCanDeactivatePath = function (path) {
-        var _this = this;
-        var curr = async_1.PromiseWrapper.resolve(true);
-        var _loop_1 = function(p) {
-            curr = curr.then(function (_) {
-                if (lifecycle_reflector_1.hasLifecycleHook("routerCanDeactivate", p)) {
-                    return p.routerCanDeactivate(_this.prevTree, _this.currTree);
-                }
-                else {
-                    return _;
-                }
-            });
-        };
-        for (var _i = 0, _a = collection_1.ListWrapper.reversed(path); _i < _a.length; _i++) {
-            var p = _a[_i];
-            _loop_1(p);
-        }
-        return curr;
-    };
-    _LoadSegments.prototype.loadChildSegments = function (currNode, prevNode, outletMap, components) {
-        var _this = this;
-        var prevChildren = lang_1.isPresent(prevNode) ?
-            prevNode.children.reduce(function (m, c) {
-                m[c.value.outlet] = c;
-                return m;
-            }, {}) :
-            {};
-        currNode.children.forEach(function (c) {
-            _this.loadSegments(c, prevChildren[c.value.outlet], outletMap, components);
-            collection_2.StringMapWrapper.delete(prevChildren, c.value.outlet);
-        });
-        collection_2.StringMapWrapper.forEach(prevChildren, function (v, k) { return _this.unloadOutlet(outletMap._outlets[k], components); });
-    };
-    _LoadSegments.prototype.loadSegments = function (currNode, prevNode, parentOutletMap, components) {
-        var curr = currNode.value;
-        var prev = lang_1.isPresent(prevNode) ? prevNode.value : null;
-        var outlet = this.getOutlet(parentOutletMap, currNode.value);
-        if (segments_1.equalSegments(curr, prev)) {
-            this.loadChildSegments(currNode, prevNode, outlet.outletMap, components.concat([outlet.loadedComponent]));
-        }
-        else {
-            this.unloadOutlet(outlet, components);
-            if (this.performMutation) {
-                var outletMap = new RouterOutletMap();
-                var loadedComponent = this.loadNewSegment(outletMap, curr, prev, outlet);
-                this.loadChildSegments(currNode, prevNode, outletMap, components.concat([loadedComponent]));
-            }
-        }
-    };
-    _LoadSegments.prototype.loadNewSegment = function (outletMap, curr, prev, outlet) {
-        var resolved = core_1.ReflectiveInjector.resolve([core_1.provide(RouterOutletMap, { useValue: outletMap }), core_1.provide(segments_1.RouteSegment, { useValue: curr })]);
-        var ref = outlet.load(segments_1.routeSegmentComponentFactory(curr), resolved, outletMap);
-        if (lifecycle_reflector_1.hasLifecycleHook("routerOnActivate", ref.instance)) {
-            ref.instance.routerOnActivate(curr, prev, this.currTree, this.prevTree);
-        }
-        return ref.instance;
-    };
-    _LoadSegments.prototype.getOutlet = function (outletMap, segment) {
-        var outlet = outletMap._outlets[segment.outlet];
-        if (lang_1.isBlank(outlet)) {
-            if (segment.outlet == constants_1.DEFAULT_OUTLET_NAME) {
-                throw new core_2.BaseException("Cannot find default outlet");
-            }
-            else {
-                throw new core_2.BaseException("Cannot find the outlet " + segment.outlet);
-            }
-        }
-        return outlet;
-    };
-    _LoadSegments.prototype.unloadOutlet = function (outlet, components) {
-        var _this = this;
-        if (lang_1.isPresent(outlet) && outlet.isLoaded) {
-            collection_2.StringMapWrapper.forEach(outlet.outletMap._outlets, function (v, k) { return _this.unloadOutlet(v, components); });
-            if (this.performMutation) {
-                outlet.unload();
-            }
-            else {
-                this.deactivations.push(components.concat([outlet.loadedComponent]));
-            }
-        }
-    };
-    return _LoadSegments;
-}());
-
-},{"./constants":287,"./facade/async":291,"./facade/collection":293,"./facade/lang":296,"./lifecycle_reflector":298,"./link":299,"./recognize":302,"./segments":307,"@angular/core":139}],304:[function(require,module,exports){
-"use strict";
-var router_providers_common_1 = require('./router_providers_common');
-var platform_browser_1 = require('@angular/platform-browser');
-var common_1 = require('@angular/common');
-/**
- * A list of {@link Provider}s. To use the router, you must add this to your application.
- *
- * ```
- * import {Component} from '@angular/core';
- * import {
- *   ROUTER_DIRECTIVES,
- *   ROUTER_PROVIDERS,
- *   Routes
- * } from '@angular/router';
- *
- * @Component({directives: [ROUTER_DIRECTIVES]})
- * @Routes([
- *  {...},
- * ])
- * class AppCmp {
- *   // ...
- * }
- *
- * bootstrap(AppCmp, [ROUTER_PROVIDERS]);
- * ```
- */
-exports.ROUTER_PROVIDERS = [
-    router_providers_common_1.ROUTER_PROVIDERS_COMMON,
-    /*@ts2dart_Provider*/ { provide: common_1.PlatformLocation, useClass: platform_browser_1.BrowserPlatformLocation },
-];
-
-},{"./router_providers_common":305,"@angular/common":7,"@angular/platform-browser":247}],305:[function(require,module,exports){
-"use strict";
-var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var router_1 = require('./router');
-var router_url_serializer_1 = require('./router_url_serializer');
-var core_2 = require('@angular/core');
-var core_3 = require('@angular/core');
-/**
- * The Platform agnostic ROUTER PROVIDERS
- */
-exports.ROUTER_PROVIDERS_COMMON = [
-    router_1.RouterOutletMap,
-    /*@ts2dart_Provider*/ { provide: router_url_serializer_1.RouterUrlSerializer, useClass: router_url_serializer_1.DefaultRouterUrlSerializer },
-    /*@ts2dart_Provider*/ { provide: common_1.LocationStrategy, useClass: common_1.PathLocationStrategy }, common_1.Location,
-    /*@ts2dart_Provider*/ {
-        provide: router_1.Router,
-        useFactory: routerFactory,
-        deps: /*@ts2dart_const*/ [core_2.ApplicationRef, core_1.ComponentResolver, router_url_serializer_1.RouterUrlSerializer, router_1.RouterOutletMap, common_1.Location],
-    },
-];
-function routerFactory(app, componentResolver, urlSerializer, routerOutletMap, location) {
-    if (app.componentTypes.length == 0) {
-        throw new core_3.BaseException("Bootstrap at least one component before injecting Router.");
-    }
-    // TODO: vsavkin this should not be null
-    var router = new router_1.Router(null, app.componentTypes[0], componentResolver, urlSerializer, routerOutletMap, location);
-    app.registerDisposeListener(function () { return router.dispose(); });
-    return router;
-}
-
-},{"./router":303,"./router_url_serializer":306,"@angular/common":7,"@angular/core":139}],306:[function(require,module,exports){
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var segments_1 = require('./segments');
-var core_1 = require('@angular/core');
-var lang_1 = require('./facade/lang');
-/**
- * Defines a way to serialize/deserialize a url tree.
- */
-var RouterUrlSerializer = (function () {
-    function RouterUrlSerializer() {
-    }
-    return RouterUrlSerializer;
-}());
-exports.RouterUrlSerializer = RouterUrlSerializer;
-/**
- * A default implementation of the serialization.
- */
-var DefaultRouterUrlSerializer = (function (_super) {
-    __extends(DefaultRouterUrlSerializer, _super);
-    function DefaultRouterUrlSerializer() {
-        _super.apply(this, arguments);
-    }
-    DefaultRouterUrlSerializer.prototype.parse = function (url) {
-        var root = new _UrlParser().parse(url);
-        return new segments_1.UrlTree(root);
-    };
-    DefaultRouterUrlSerializer.prototype.serialize = function (tree) { return _serializeUrlTreeNode(segments_1.rootNode(tree)); };
-    return DefaultRouterUrlSerializer;
-}(RouterUrlSerializer));
-exports.DefaultRouterUrlSerializer = DefaultRouterUrlSerializer;
-function _serializeUrlTreeNode(node) {
-    return "" + node.value + _serializeChildren(node);
-}
-function _serializeUrlTreeNodes(nodes) {
-    var main = nodes[0].value.toString();
-    var auxNodes = nodes.slice(1);
-    var aux = auxNodes.length > 0 ? "(" + auxNodes.map(_serializeUrlTreeNode).join("//") + ")" : "";
-    var children = _serializeChildren(nodes[0]);
-    return "" + main + aux + children;
-}
-function _serializeChildren(node) {
-    if (node.children.length > 0) {
-        return "/" + _serializeUrlTreeNodes(node.children);
-    }
-    else {
-        return "";
-    }
-}
-var SEGMENT_RE = lang_1.RegExpWrapper.create('^[^\\/\\(\\)\\?;=&#]+');
-function matchUrlSegment(str) {
-    var match = lang_1.RegExpWrapper.firstMatch(SEGMENT_RE, str);
-    return lang_1.isPresent(match) ? match[0] : '';
-}
-var QUERY_PARAM_VALUE_RE = lang_1.RegExpWrapper.create('^[^\\(\\)\\?;&#]+');
-function matchUrlQueryParamValue(str) {
-    var match = lang_1.RegExpWrapper.firstMatch(QUERY_PARAM_VALUE_RE, str);
-    return lang_1.isPresent(match) ? match[0] : '';
-}
-var _UrlParser = (function () {
-    function _UrlParser() {
-    }
-    _UrlParser.prototype.peekStartsWith = function (str) { return this._remaining.startsWith(str); };
-    _UrlParser.prototype.capture = function (str) {
-        if (!this._remaining.startsWith(str)) {
-            throw new core_1.BaseException("Expected \"" + str + "\".");
-        }
-        this._remaining = this._remaining.substring(str.length);
-    };
-    _UrlParser.prototype.parse = function (url) {
-        this._remaining = url;
-        if (url == '' || url == '/') {
-            return new segments_1.TreeNode(new segments_1.UrlSegment('', {}, null), []);
-        }
-        else {
-            return this.parseRoot();
-        }
-    };
-    _UrlParser.prototype.parseRoot = function () {
-        var segments = this.parseSegments();
-        return new segments_1.TreeNode(new segments_1.UrlSegment('', {}, null), segments);
-    };
-    _UrlParser.prototype.parseSegments = function (outletName) {
-        if (outletName === void 0) { outletName = null; }
-        if (this._remaining.length == 0) {
-            return [];
-        }
-        if (this.peekStartsWith('/')) {
-            this.capture('/');
-        }
-        var path = matchUrlSegment(this._remaining);
-        this.capture(path);
-        if (path.indexOf(":") > -1) {
-            var parts = path.split(":");
-            outletName = parts[0];
-            path = parts[1];
-        }
-        var matrixParams = {};
-        if (this.peekStartsWith(';')) {
-            matrixParams = this.parseMatrixParams();
-        }
-        var aux = [];
-        if (this.peekStartsWith('(')) {
-            aux = this.parseAuxiliaryRoutes();
-        }
-        var children = [];
-        if (this.peekStartsWith('/') && !this.peekStartsWith('//')) {
-            this.capture('/');
-            children = this.parseSegments();
-        }
-        var segment = new segments_1.UrlSegment(path, matrixParams, outletName);
-        var node = new segments_1.TreeNode(segment, children);
-        return [node].concat(aux);
-    };
-    _UrlParser.prototype.parseQueryParams = function () {
-        var params = {};
-        this.capture('?');
-        this.parseQueryParam(params);
-        while (this._remaining.length > 0 && this.peekStartsWith('&')) {
-            this.capture('&');
-            this.parseQueryParam(params);
-        }
-        return params;
-    };
-    _UrlParser.prototype.parseMatrixParams = function () {
-        var params = {};
-        while (this._remaining.length > 0 && this.peekStartsWith(';')) {
-            this.capture(';');
-            this.parseParam(params);
-        }
-        return params;
-    };
-    _UrlParser.prototype.parseParam = function (params) {
-        var key = matchUrlSegment(this._remaining);
-        if (lang_1.isBlank(key)) {
-            return;
-        }
-        this.capture(key);
-        var value = "true";
-        if (this.peekStartsWith('=')) {
-            this.capture('=');
-            var valueMatch = matchUrlSegment(this._remaining);
-            if (lang_1.isPresent(valueMatch)) {
-                value = valueMatch;
-                this.capture(value);
-            }
-        }
-        params[key] = value;
-    };
-    _UrlParser.prototype.parseQueryParam = function (params) {
-        var key = matchUrlSegment(this._remaining);
-        if (lang_1.isBlank(key)) {
-            return;
-        }
-        this.capture(key);
-        var value = "true";
-        if (this.peekStartsWith('=')) {
-            this.capture('=');
-            var valueMatch = matchUrlQueryParamValue(this._remaining);
-            if (lang_1.isPresent(valueMatch)) {
-                value = valueMatch;
-                this.capture(value);
-            }
-        }
-        params[key] = value;
-    };
-    _UrlParser.prototype.parseAuxiliaryRoutes = function () {
-        var segments = [];
-        this.capture('(');
-        while (!this.peekStartsWith(')') && this._remaining.length > 0) {
-            segments = segments.concat(this.parseSegments("aux"));
-            if (this.peekStartsWith('//')) {
-                this.capture('//');
-            }
-        }
-        this.capture(')');
-        return segments;
-    };
-    return _UrlParser;
-}());
-
-},{"./facade/lang":296,"./segments":307,"@angular/core":139}],307:[function(require,module,exports){
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var collection_1 = require('./facade/collection');
-var lang_1 = require('./facade/lang');
-var Tree = (function () {
-    function Tree(root) {
-        this._root = root;
-    }
-    Object.defineProperty(Tree.prototype, "root", {
-        get: function () { return this._root.value; },
-        enumerable: true,
-        configurable: true
-    });
-    Tree.prototype.parent = function (t) {
-        var p = this.pathFromRoot(t);
-        return p.length > 1 ? p[p.length - 2] : null;
-    };
-    Tree.prototype.children = function (t) {
-        var n = _findNode(t, this._root);
-        return lang_1.isPresent(n) ? n.children.map(function (t) { return t.value; }) : null;
-    };
-    Tree.prototype.firstChild = function (t) {
-        var n = _findNode(t, this._root);
-        return lang_1.isPresent(n) && n.children.length > 0 ? n.children[0].value : null;
-    };
-    Tree.prototype.pathFromRoot = function (t) { return _findPath(t, this._root, []).map(function (s) { return s.value; }); };
-    Tree.prototype.contains = function (tree) { return _contains(this._root, tree._root); };
-    return Tree;
-}());
-exports.Tree = Tree;
-var UrlTree = (function (_super) {
-    __extends(UrlTree, _super);
-    function UrlTree(root) {
-        _super.call(this, root);
-    }
-    return UrlTree;
-}(Tree));
-exports.UrlTree = UrlTree;
-var RouteTree = (function (_super) {
-    __extends(RouteTree, _super);
-    function RouteTree(root) {
-        _super.call(this, root);
-    }
-    return RouteTree;
-}(Tree));
-exports.RouteTree = RouteTree;
-function rootNode(tree) {
-    return tree._root;
-}
-exports.rootNode = rootNode;
-function _findNode(expected, c) {
-    // TODO: vsavkin remove it once recognize is fixed
-    if (expected instanceof RouteSegment && equalSegments(expected, c.value))
-        return c;
-    if (expected === c.value)
-        return c;
-    for (var _i = 0, _a = c.children; _i < _a.length; _i++) {
-        var cc = _a[_i];
-        var r = _findNode(expected, cc);
-        if (lang_1.isPresent(r))
-            return r;
-    }
-    return null;
-}
-function _findPath(expected, c, collected) {
-    collected.push(c);
-    // TODO: vsavkin remove it once recognize is fixed
-    if (_equalValues(expected, c.value))
-        return collected;
-    for (var _i = 0, _a = c.children; _i < _a.length; _i++) {
-        var cc = _a[_i];
-        var r = _findPath(expected, cc, collection_1.ListWrapper.clone(collected));
-        if (lang_1.isPresent(r))
-            return r;
-    }
-    return null;
-}
-function _contains(tree, subtree) {
-    if (!_equalValues(tree.value, subtree.value))
-        return false;
-    var _loop_1 = function(subtreeNode) {
-        var s = tree.children.filter(function (child) { return _equalValues(child.value, subtreeNode.value); });
-        if (s.length === 0)
-            return { value: false };
-        if (!_contains(s[0], subtreeNode))
-            return { value: false };
-    };
-    for (var _i = 0, _a = subtree.children; _i < _a.length; _i++) {
-        var subtreeNode = _a[_i];
-        var state_1 = _loop_1(subtreeNode);
-        if (typeof state_1 === "object") return state_1.value;
-    }
-    return true;
-}
-function _equalValues(a, b) {
-    if (a instanceof RouteSegment)
-        return equalSegments(a, b);
-    if (a instanceof UrlSegment)
-        return equalUrlSegments(a, b);
-    return a === b;
-}
-var TreeNode = (function () {
-    function TreeNode(value, children) {
-        this.value = value;
-        this.children = children;
-    }
-    return TreeNode;
-}());
-exports.TreeNode = TreeNode;
-var UrlSegment = (function () {
-    function UrlSegment(segment, parameters, outlet) {
-        this.segment = segment;
-        this.parameters = parameters;
-        this.outlet = outlet;
-    }
-    UrlSegment.prototype.toString = function () {
-        var outletPrefix = lang_1.isBlank(this.outlet) ? "" : this.outlet + ":";
-        return "" + outletPrefix + this.segment + _serializeParams(this.parameters);
-    };
-    return UrlSegment;
-}());
-exports.UrlSegment = UrlSegment;
-function _serializeParams(params) {
-    var res = "";
-    collection_1.StringMapWrapper.forEach(params, function (v, k) { return res += ";" + k + "=" + v; });
-    return res;
-}
-var RouteSegment = (function () {
-    function RouteSegment(urlSegments, parameters, outlet, type, componentFactory) {
-        this.urlSegments = urlSegments;
-        this.parameters = parameters;
-        this.outlet = outlet;
-        this._type = type;
-        this._componentFactory = componentFactory;
-    }
-    RouteSegment.prototype.getParam = function (param) {
-        return lang_1.isPresent(this.parameters) ? this.parameters[param] : null;
-    };
-    Object.defineProperty(RouteSegment.prototype, "type", {
-        get: function () { return this._type; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RouteSegment.prototype, "stringifiedUrlSegments", {
-        get: function () { return this.urlSegments.map(function (s) { return s.toString(); }).join("/"); },
-        enumerable: true,
-        configurable: true
-    });
-    return RouteSegment;
-}());
-exports.RouteSegment = RouteSegment;
-function serializeRouteSegmentTree(tree) {
-    return _serializeRouteSegmentTree(tree._root);
-}
-exports.serializeRouteSegmentTree = serializeRouteSegmentTree;
-function _serializeRouteSegmentTree(node) {
-    var v = node.value;
-    var children = node.children.map(function (c) { return _serializeRouteSegmentTree(c); }).join(", ");
-    return v.outlet + ":" + v.stringifiedUrlSegments + "(" + lang_1.stringify(v.type) + ") [" + children + "]";
-}
-function equalSegments(a, b) {
-    if (lang_1.isBlank(a) && !lang_1.isBlank(b))
-        return false;
-    if (!lang_1.isBlank(a) && lang_1.isBlank(b))
-        return false;
-    if (a._type !== b._type)
-        return false;
-    if (a.outlet != b.outlet)
-        return false;
-    return collection_1.StringMapWrapper.equals(a.parameters, b.parameters);
-}
-exports.equalSegments = equalSegments;
-function equalUrlSegments(a, b) {
-    if (lang_1.isBlank(a) && !lang_1.isBlank(b))
-        return false;
-    if (!lang_1.isBlank(a) && lang_1.isBlank(b))
-        return false;
-    if (a.segment != b.segment)
-        return false;
-    if (a.outlet != b.outlet)
-        return false;
-    if (lang_1.isBlank(a.parameters)) {
-        console.log("a", a);
-    }
-    if (lang_1.isBlank(b.parameters)) {
-        console.log("b", b);
-    }
-    return collection_1.StringMapWrapper.equals(a.parameters, b.parameters);
-}
-exports.equalUrlSegments = equalUrlSegments;
-function routeSegmentComponentFactory(a) {
-    return a._componentFactory;
-}
-exports.routeSegmentComponentFactory = routeSegmentComponentFactory;
-
-},{"./facade/collection":293,"./facade/lang":296}],308:[function(require,module,exports){
 (function (process,global){
  /*!
   * https://github.com/paulmillr/es6-shim
@@ -41889,7 +40067,7 @@ exports.routeSegmentComponentFactory = routeSegmentComponentFactory;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"_process":414}],309:[function(require,module,exports){
+},{"_process":393}],287:[function(require,module,exports){
 "use strict";
 var dom_1 = require('../util/dom');
 var util_1 = require('../util/util');
@@ -42549,7 +40727,7 @@ var TRANSFORMS = {
 var CSS_VALUE_REGEX = /(^-?\d*\.?\d*)(.*)/;
 var AnimationRegistry = {};
 
-},{"../util/dom":407,"../util/util":413}],310:[function(require,module,exports){
+},{"../util/dom":385,"../util/util":392}],288:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -42606,7 +40784,7 @@ var FadeOut = (function (_super) {
 }(animation_1.Animation));
 animation_1.Animation.register('fade-out', FadeOut);
 
-},{"./animation":309}],311:[function(require,module,exports){
+},{"./animation":287}],289:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
@@ -42665,7 +40843,7 @@ __export(require('./components/toggle/toggle'));
 __export(require('./components/toolbar/toolbar'));
 __export(require('./components/virtual-scroll/virtual-scroll'));
 
-},{"./components/action-sheet/action-sheet":312,"./components/alert/alert":313,"./components/app/app":314,"./components/badge/badge":316,"./components/button/button":317,"./components/checkbox/checkbox":318,"./components/content/content":319,"./components/datetime/datetime":320,"./components/icon/icon":321,"./components/img/img":322,"./components/infinite-scroll/infinite-scroll":324,"./components/infinite-scroll/infinite-scroll-content":323,"./components/input/input":326,"./components/item/item":331,"./components/item/item-sliding":330,"./components/label/label":332,"./components/list/list":333,"./components/loading/loading":334,"./components/menu/menu":340,"./components/menu/menu-close":335,"./components/menu/menu-controller":336,"./components/menu/menu-toggle":338,"./components/menu/menu-types":339,"./components/modal/modal":341,"./components/nav/nav":348,"./components/nav/nav-controller":342,"./components/nav/nav-params":343,"./components/nav/nav-push":345,"./components/nav/nav-router":347,"./components/nav/view-controller":350,"./components/navbar/navbar":351,"./components/option/option":352,"./components/picker/picker":353,"./components/popover/popover":354,"./components/radio/radio-button":355,"./components/radio/radio-group":356,"./components/range/range":357,"./components/refresher/refresher":359,"./components/refresher/refresher-content":358,"./components/scroll/scroll":360,"./components/searchbar/searchbar":361,"./components/segment/segment":362,"./components/select/select":363,"./components/show-hide-when/show-hide-when":364,"./components/slides/slides":365,"./components/spinner/spinner":367,"./components/tabs/tab":370,"./components/tabs/tabs":371,"./components/tap-click/tap-click":374,"./components/toast/toast":375,"./components/toggle/toggle":376,"./components/toolbar/toolbar":377,"./components/virtual-scroll/virtual-scroll":379}],312:[function(require,module,exports){
+},{"./components/action-sheet/action-sheet":290,"./components/alert/alert":291,"./components/app/app":292,"./components/badge/badge":294,"./components/button/button":295,"./components/checkbox/checkbox":296,"./components/content/content":297,"./components/datetime/datetime":298,"./components/icon/icon":299,"./components/img/img":300,"./components/infinite-scroll/infinite-scroll":302,"./components/infinite-scroll/infinite-scroll-content":301,"./components/input/input":304,"./components/item/item":309,"./components/item/item-sliding":308,"./components/label/label":310,"./components/list/list":311,"./components/loading/loading":312,"./components/menu/menu":318,"./components/menu/menu-close":313,"./components/menu/menu-controller":314,"./components/menu/menu-toggle":316,"./components/menu/menu-types":317,"./components/modal/modal":319,"./components/nav/nav":326,"./components/nav/nav-controller":320,"./components/nav/nav-params":321,"./components/nav/nav-push":323,"./components/nav/nav-router":325,"./components/nav/view-controller":328,"./components/navbar/navbar":329,"./components/option/option":330,"./components/picker/picker":331,"./components/popover/popover":332,"./components/radio/radio-button":333,"./components/radio/radio-group":334,"./components/range/range":335,"./components/refresher/refresher":337,"./components/refresher/refresher-content":336,"./components/scroll/scroll":338,"./components/searchbar/searchbar":339,"./components/segment/segment":340,"./components/select/select":341,"./components/show-hide-when/show-hide-when":342,"./components/slides/slides":343,"./components/spinner/spinner":345,"./components/tabs/tab":348,"./components/tabs/tabs":349,"./components/tap-click/tap-click":352,"./components/toast/toast":353,"./components/toggle/toggle":354,"./components/toolbar/toolbar":355,"./components/virtual-scroll/virtual-scroll":357}],290:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -42686,6 +40864,7 @@ var animation_1 = require('../../animations/animation');
 var transition_1 = require('../../transitions/transition');
 var config_1 = require('../../config/config');
 var util_1 = require('../../util/util');
+var key_1 = require('../../util/key');
 var nav_params_1 = require('../nav/nav-params');
 var view_controller_1 = require('../nav/view-controller');
 /**
@@ -42892,7 +41071,6 @@ var ActionSheetCmp = (function () {
         this._config = _config;
         this._elementRef = _elementRef;
         this.d = params.data;
-        this.created = Date.now();
         if (this.d.cssClass) {
             renderer.setElementClass(_elementRef.nativeElement, this.d.cssClass, true);
         }
@@ -42944,10 +41122,11 @@ var ActionSheetCmp = (function () {
         if (focusableEle) {
             focusableEle.focus();
         }
+        this.enabled = true;
     };
     ActionSheetCmp.prototype._keyUp = function (ev) {
-        if (this.isEnabled() && this._viewCtrl.isLast()) {
-            if (ev.keyCode === 27) {
+        if (this.enabled && this._viewCtrl.isLast()) {
+            if (ev.keyCode === key_1.Key.ESCAPE) {
                 void 0;
                 this.bdClick();
             }
@@ -42955,7 +41134,7 @@ var ActionSheetCmp = (function () {
     };
     ActionSheetCmp.prototype.click = function (button, dismissDelay) {
         var _this = this;
-        if (!this.isEnabled()) {
+        if (!this.enabled) {
             return;
         }
         var shouldDismiss = true;
@@ -42973,7 +41152,7 @@ var ActionSheetCmp = (function () {
         }
     };
     ActionSheetCmp.prototype.bdClick = function () {
-        if (this.isEnabled() && this.d.enableBackdropDismiss) {
+        if (this.enabled && this.d.enableBackdropDismiss) {
             if (this.d.cancelButton) {
                 this.click(this.d.cancelButton, 1);
             }
@@ -42984,10 +41163,6 @@ var ActionSheetCmp = (function () {
     };
     ActionSheetCmp.prototype.dismiss = function (role) {
         return this._viewCtrl.dismiss(null, role);
-    };
-    ActionSheetCmp.prototype.isEnabled = function () {
-        var tm = this._config.getNumber('overlayCreatedDiff', 750);
-        return (this.created + tm < Date.now());
     };
     __decorate([
         core_1.HostListener('body:keyup', ['$event']), 
@@ -43114,7 +41289,7 @@ var ActionSheetWpSlideOut = (function (_super) {
 transition_1.Transition.register('action-sheet-wp-slide-out', ActionSheetWpSlideOut);
 var actionSheetIds = -1;
 
-},{"../../animations/animation":309,"../../config/config":382,"../../transitions/transition":401,"../../util/util":413,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139}],313:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/config":360,"../../transitions/transition":379,"../../util/key":389,"../../util/util":392,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139}],291:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -43135,6 +41310,7 @@ var animation_1 = require('../../animations/animation');
 var transition_1 = require('../../transitions/transition');
 var config_1 = require('../../config/config');
 var util_1 = require('../../util/util');
+var key_1 = require('../../util/key');
 var nav_params_1 = require('../nav/nav-params');
 var view_controller_1 = require('../nav/view-controller');
 /**
@@ -43282,7 +41458,7 @@ var view_controller_1 = require('../nav/view-controller');
  *     text: 'Ok',
  *     handler: () => {
  *       // user has clicked the alert button
- *       // begin the alert's dimiss transition
+ *       // begin the alert's dismiss transition
  *       let navTransition = alert.dismiss();
  *
  *       // start some async method
@@ -43445,7 +41621,6 @@ var AlertCmp = (function () {
         this.subHdrId = 'alert-subhdr-' + this.id;
         this.msgId = 'alert-msg-' + this.id;
         this.activeId = '';
-        this.created = Date.now();
         this.lastClick = 0;
         if (this.d.message) {
             this.descId = this.msgId;
@@ -43496,8 +41671,8 @@ var AlertCmp = (function () {
         }
     };
     AlertCmp.prototype._keyUp = function (ev) {
-        if (this.isEnabled() && this._viewCtrl.isLast()) {
-            if (ev.keyCode === 13) {
+        if (this.enabled && this._viewCtrl.isLast()) {
+            if (ev.keyCode === key_1.Key.ENTER) {
                 if (this.lastClick + 1000 < Date.now()) {
                     // do not fire this click if there recently was already a click
                     // this can happen when the button has focus and used the enter
@@ -43508,7 +41683,7 @@ var AlertCmp = (function () {
                     this.btnClick(button);
                 }
             }
-            else if (ev.keyCode === 27) {
+            else if (ev.keyCode === key_1.Key.ESCAPE) {
                 void 0;
                 this.bdClick();
             }
@@ -43523,10 +41698,11 @@ var AlertCmp = (function () {
         if (focusableEle) {
             focusableEle.focus();
         }
+        this.enabled = true;
     };
     AlertCmp.prototype.btnClick = function (button, dismissDelay) {
         var _this = this;
-        if (!this.isEnabled()) {
+        if (!this.enabled) {
             return;
         }
         // keep the time of the most recent button click
@@ -43547,7 +41723,7 @@ var AlertCmp = (function () {
         }
     };
     AlertCmp.prototype.rbClick = function (checkedInput) {
-        if (this.isEnabled()) {
+        if (this.enabled) {
             this.d.inputs.forEach(function (input) {
                 input.checked = (checkedInput === input);
             });
@@ -43555,12 +41731,12 @@ var AlertCmp = (function () {
         }
     };
     AlertCmp.prototype.cbClick = function (checkedInput) {
-        if (this.isEnabled()) {
+        if (this.enabled) {
             checkedInput.checked = !checkedInput.checked;
         }
     };
     AlertCmp.prototype.bdClick = function () {
-        if (this.isEnabled() && this.d.enableBackdropDismiss) {
+        if (this.enabled && this.d.enableBackdropDismiss) {
             var cancelBtn = this.d.buttons.find(function (b) { return b.role === 'cancel'; });
             if (cancelBtn) {
                 this.btnClick(cancelBtn, 1);
@@ -43592,10 +41768,6 @@ var AlertCmp = (function () {
             values[i.name] = i.value;
         });
         return values;
-    };
-    AlertCmp.prototype.isEnabled = function () {
-        var tm = this._config.getNumber('overlayCreatedDiff', 750);
-        return (this.created + tm < Date.now());
     };
     __decorate([
         core_1.HostListener('body:keyup', ['$event']), 
@@ -43772,7 +41944,7 @@ var AlertWpPopOut = (function (_super) {
 transition_1.Transition.register('alert-wp-pop-out', AlertWpPopOut);
 var alertIds = -1;
 
-},{"../../animations/animation":309,"../../config/config":382,"../../transitions/transition":401,"../../util/util":413,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139}],314:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/config":360,"../../transitions/transition":379,"../../util/key":389,"../../util/util":392,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139}],292:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -43785,33 +41957,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var config_1 = require('../../config/config');
 var click_block_1 = require('../../util/click-block');
+var config_1 = require('../../config/config');
 var platform_1 = require('../../platform/platform');
 /**
  * Ionic App utility service.
  */
 var App = (function () {
-    function App(_config, _clickBlock, platform) {
-        var _this = this;
+    function App(_config, _clickBlock, _platform) {
         this._config = _config;
         this._clickBlock = _clickBlock;
+        this._platform = _platform;
         this._disTime = 0;
         this._scrollTime = 0;
         this._title = '';
         this._titleSrv = new platform_browser_1.Title();
         this._rootNav = null;
-        platform.backButton.subscribe(function () {
-            var activeNav = _this.getActiveNav();
-            if (activeNav) {
-                if (activeNav.length() === 1) {
-                    platform.exitApp();
-                }
-                else {
-                    activeNav.pop();
-                }
-            }
-        });
+        // listen for hardware back button events
+        // register this back button action with a default priority
+        _platform.registerBackButtonAction(this.navPop.bind(this));
     }
     /**
      * Sets the document title.
@@ -43830,7 +41994,7 @@ var App = (function () {
      * while views transition, a modal slides up, an action-sheet
      * slides up, etc. After the transition completes it is set back to `true`.
      * @param {boolean} isEnabled
-     * @param {boolean} fallback  When `isEnabled` is set to `false`, this argument
+     * @param {number} duration  When `isEnabled` is set to `false`, this argument
      * is used to set the maximum number of milliseconds that app will wait until
      * it will automatically enable the app again. It's basically a fallback incase
      * something goes wrong during a transition and the app wasn't re-enabled correctly.
@@ -43838,13 +42002,15 @@ var App = (function () {
     App.prototype.setEnabled = function (isEnabled, duration) {
         if (duration === void 0) { duration = 700; }
         this._disTime = (isEnabled ? 0 : Date.now() + duration);
+        var CLICK_BLOCK_BUFFER_IN_MILLIS = 64;
         if (this._clickBlock) {
-            if (duration > 32) {
-                // only do a click block if the duration is longer than XXms
-                this._clickBlock.show(true, duration + 64);
+            if (isEnabled || duration <= 32) {
+                // disable the click block if it's enabled, or the duration is tiny
+                this._clickBlock.show(false, 0);
             }
             else {
-                this._clickBlock.show(false, 0);
+                // show the click block for duration + some number
+                this._clickBlock.show(true, duration + CLICK_BLOCK_BUFFER_IN_MILLIS);
             }
         }
     };
@@ -43899,6 +42065,65 @@ var App = (function () {
     /**
      * @private
      */
+    App.prototype.navPop = function () {
+        // function used to climb up all parent nav controllers
+        function navPop(nav) {
+            if (nav) {
+                if (nav.length && nav.length() > 1) {
+                    // this nav controller has more than one view
+                    // pop the current view on this nav and we're done here
+                    void 0;
+                    return nav.pop();
+                }
+                else if (nav.previousTab) {
+                    // FYI, using "nav instanceof Tabs" throws a Promise runtime error for whatever reason, idk
+                    // this is a Tabs container
+                    // see if there is a valid previous tab to go to
+                    var prevTab = nav.previousTab(true);
+                    if (prevTab) {
+                        void 0;
+                        nav.select(prevTab);
+                        return Promise.resolve();
+                    }
+                }
+                // try again using the parent nav (if there is one)
+                return navPop(nav.parent);
+            }
+            // nerp, never found nav that could pop off a view
+            return null;
+        }
+        // app must be enabled and there must be a
+        // root nav controller for go back to work
+        if (this._rootNav && this.isEnabled()) {
+            // first check if the root navigation has any overlays
+            // opened in it's portal, like alert/actionsheet/popup
+            var portal = this._rootNav.getPortal && this._rootNav.getPortal();
+            if (portal && portal.length() > 0) {
+                // there is an overlay view in the portal
+                // let's pop this one off to go back
+                void 0;
+                return portal.pop();
+            }
+            // next get the active nav, check itself and climb up all
+            // of its parent navs until it finds a nav that can pop
+            var navPromise = navPop(this.getActiveNav());
+            if (navPromise === null) {
+                // no views to go back to
+                // let's exit the app
+                if (this._config.getBoolean('navExitApp', true)) {
+                    void 0;
+                    this._platform.exitApp();
+                }
+            }
+            else {
+                return navPromise;
+            }
+        }
+        return Promise.resolve();
+    };
+    /**
+     * @private
+     */
     App.prototype.getRegisteredComponent = function (cls) {
         // deprecated warning: added 2016-04-28, beta7
         void 0;
@@ -43932,7 +42157,7 @@ var App = (function () {
 }());
 exports.App = App;
 
-},{"../../config/config":382,"../../platform/platform":392,"../../util/click-block":405,"@angular/core":139,"@angular/platform-browser":247}],315:[function(require,module,exports){
+},{"../../config/config":360,"../../platform/platform":370,"../../util/click-block":383,"@angular/core":139,"@angular/platform-browser":247}],293:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44008,7 +42233,7 @@ var Backdrop = (function () {
 }());
 exports.Backdrop = Backdrop;
 
-},{"../../util/util":413,"@angular/core":139}],316:[function(require,module,exports){
+},{"../../util/util":392,"@angular/core":139}],294:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44068,7 +42293,7 @@ var Badge = (function () {
 }());
 exports.Badge = Badge;
 
-},{"../../config/config":382,"@angular/core":139}],317:[function(require,module,exports){
+},{"../../config/config":360,"@angular/core":139}],295:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44279,6 +42504,13 @@ var Button = (function () {
     /**
      * @private
      */
+    Button.prototype.ngAfterContentChecked = function () {
+        this._readIcon(this._elementRef.nativeElement);
+        this._assignCss(true);
+    };
+    /**
+     * @private
+     */
     Button.prototype.addClass = function (className) {
         this._renderer.setElementClass(this._elementRef.nativeElement, className, true);
     };
@@ -44318,6 +42550,8 @@ var Button = (function () {
                 }
             }
         }
+        // Remove any classes that are set already
+        this._setClass(this._icon, false);
         if (nodes.length > 1) {
             if (nodes[0] === ICON && nodes[1] === TEXT) {
                 this._icon = 'icon-left';
@@ -44485,7 +42719,7 @@ var IGNORE_ATTRS = /_ng|button|left|right/;
 var TEXT = 1;
 var ICON = 2;
 
-},{"../../config/config":382,"../../util/util":413,"@angular/core":139}],318:[function(require,module,exports){
+},{"../../config/config":360,"../../util/util":392,"@angular/core":139}],296:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44703,7 +42937,7 @@ var Checkbox = (function () {
 }());
 exports.Checkbox = Checkbox;
 
-},{"../../util/form":410,"../../util/util":413,"../item/item":331,"@angular/common":7,"@angular/core":139}],319:[function(require,module,exports){
+},{"../../util/form":388,"../../util/util":392,"../item/item":309,"@angular/common":7,"@angular/core":139}],297:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -45082,7 +43316,7 @@ var Content = (function (_super) {
 }(ion_1.Ion));
 exports.Content = Content;
 
-},{"../../config/config":382,"../../util/dom":407,"../../util/keyboard":411,"../../util/scroll-view":412,"../app/app":314,"../ion":328,"../nav/view-controller":350,"@angular/core":139}],320:[function(require,module,exports){
+},{"../../config/config":360,"../../util/dom":385,"../../util/keyboard":390,"../../util/scroll-view":391,"../app/app":292,"../ion":306,"../nav/view-controller":328,"@angular/core":139}],298:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -45618,6 +43852,14 @@ var DateTime = (function () {
     /**
      * @private
      */
+    DateTime.prototype.checkHasValue = function (inputValue) {
+        if (this._item) {
+            this._item.setCssClass('input-has-value', !!(inputValue && inputValue !== ''));
+        }
+    };
+    /**
+     * @private
+     */
     DateTime.prototype.updateText = function () {
         // create the text of the formatted data
         this._text = datetime_util_1.renderDateTime(this.displayFormat, this._value, this._locale);
@@ -45677,6 +43919,7 @@ var DateTime = (function () {
         void 0;
         this.setValue(val);
         this.updateText();
+        this.checkHasValue(val);
     };
     /**
      * @private
@@ -45702,6 +43945,7 @@ var DateTime = (function () {
             void 0;
             _this.setValue(val);
             _this.updateText();
+            _this.checkHasValue(val);
             // convert DateTimeData value to iso datetime format
             fn(datetime_util_1.convertDataToISO(_this._value));
             _this.onTouched();
@@ -45899,7 +44143,7 @@ function convertToArrayOfStrings(input, type) {
     }
 }
 
-},{"../../config/config":382,"../../util/datetime-util":406,"../../util/form":410,"../../util/util":413,"../item/item":331,"../nav/nav-controller":342,"../picker/picker":353,"@angular/common":7,"@angular/core":139}],321:[function(require,module,exports){
+},{"../../config/config":360,"../../util/datetime-util":384,"../../util/form":388,"../../util/util":392,"../item/item":309,"../nav/nav-controller":320,"../picker/picker":331,"@angular/common":7,"@angular/core":139}],299:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -46084,7 +44328,7 @@ var Icon = (function () {
 }());
 exports.Icon = Icon;
 
-},{"../../config/config":382,"@angular/core":139}],322:[function(require,module,exports){
+},{"../../config/config":360,"@angular/core":139}],300:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -46115,14 +44359,20 @@ var Img = (function () {
             tmpImg.src = util_1.isPresent(val) ? val : '';
             this._src = util_1.isPresent(val) ? val : '';
             this._normalizeSrc = tmpImg.src;
-            this._update();
+            if (this._init) {
+                this._update();
+            }
         },
         enumerable: true,
         configurable: true
     });
+    Img.prototype.ngOnInit = function () {
+        this._init = true;
+        this._update();
+    };
     Img.prototype._update = function () {
         var _this = this;
-        if (this._enabled && this._src !== '' && this.isVisible()) {
+        if (this._enabled && this._src !== '') {
             // actively update the image
             for (var i = this._imgs.length - 1; i >= 0; i--) {
                 if (this._imgs[i].src === this._normalizeSrc) {
@@ -46142,8 +44392,14 @@ var Img = (function () {
             if (!this._imgs.length) {
                 this._zone.runOutsideAngular(function () {
                     var img = new Image();
-                    img.style.width = _this._w;
-                    img.style.height = _this._h;
+                    img.style.width = _this._width;
+                    img.style.height = _this._height;
+                    if (util_1.isPresent(_this.alt)) {
+                        img.alt = _this.alt;
+                    }
+                    if (util_1.isPresent(_this.title)) {
+                        img.title = _this.title;
+                    }
                     img.addEventListener('load', function () {
                         if (img.src === _this._normalizeSrc) {
                             _this._elementRef.nativeElement.appendChild(img);
@@ -46172,20 +44428,30 @@ var Img = (function () {
         this._enabled = shouldEnable;
         this._update();
     };
-    Img.prototype.isVisible = function () {
-        var bounds = this._elementRef.nativeElement.getBoundingClientRect();
-        return bounds.bottom > 0 && bounds.top < this._platform.height();
-    };
     Object.defineProperty(Img.prototype, "width", {
         set: function (val) {
-            this._w = (typeof val === 'number') ? val + 'px' : val;
+            this._w = getUnitValue(val);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Img.prototype, "height", {
         set: function (val) {
-            this._h = (typeof val === 'number') ? val + 'px' : val;
+            this._h = getUnitValue(val);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Img.prototype, "_width", {
+        get: function () {
+            return util_1.isPresent(this._w) ? this._w : '';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Img.prototype, "_height", {
+        get: function () {
+            return util_1.isPresent(this._h) ? this._h : '';
         },
         enumerable: true,
         configurable: true
@@ -46205,6 +44471,22 @@ var Img = (function () {
         __metadata('design:type', Object), 
         __metadata('design:paramtypes', [Object])
     ], Img.prototype, "height", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], Img.prototype, "alt", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], Img.prototype, "title", void 0);
+    __decorate([
+        core_1.HostBinding('style.width'), 
+        __metadata('design:type', String)
+    ], Img.prototype, "_width", null);
+    __decorate([
+        core_1.HostBinding('style.height'), 
+        __metadata('design:type', String)
+    ], Img.prototype, "_height", null);
     Img = __decorate([
         core_1.Component({
             selector: 'ion-img',
@@ -46217,8 +44499,24 @@ var Img = (function () {
     return Img;
 }());
 exports.Img = Img;
+function getUnitValue(val) {
+    if (util_1.isPresent(val)) {
+        if (typeof val === 'string') {
+            if (val.indexOf('%') > -1 || val.indexOf('px') > -1) {
+                return val;
+            }
+            if (val.length) {
+                return val + 'px';
+            }
+        }
+        else if (typeof val === 'number') {
+            return val + 'px';
+        }
+    }
+    return '';
+}
 
-},{"../../platform/platform":392,"../../util/dom":407,"../../util/util":413,"@angular/core":139}],323:[function(require,module,exports){
+},{"../../platform/platform":370,"../../util/dom":385,"../../util/util":392,"@angular/core":139}],301:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -46276,7 +44574,7 @@ var InfiniteScrollContent = (function () {
 }());
 exports.InfiniteScrollContent = InfiniteScrollContent;
 
-},{"../../config/config":382,"./infinite-scroll":324,"@angular/core":139}],324:[function(require,module,exports){
+},{"../../config/config":360,"./infinite-scroll":302,"@angular/core":139}],302:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -46542,7 +44840,7 @@ var STATE_ENABLED = 'enabled';
 var STATE_DISABLED = 'disabled';
 var STATE_LOADING = 'loading';
 
-},{"../content/content":319,"@angular/core":139}],325:[function(require,module,exports){
+},{"../content/content":297,"@angular/core":139}],303:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47091,7 +45389,7 @@ function getScrollAssistDuration(distanceToScroll) {
     return Math.min(400, Math.max(150, duration));
 }
 
-},{"../../util/dom":407,"../../util/util":413,"./native-input":327,"@angular/core":139}],326:[function(require,module,exports){
+},{"../../util/dom":385,"../../util/util":392,"./native-input":305,"@angular/core":139}],304:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -47313,7 +45611,7 @@ var TextArea = (function (_super) {
 }(input_base_1.InputBase));
 exports.TextArea = TextArea;
 
-},{"../../config/config":382,"../../platform/platform":392,"../../util/form":410,"../app/app":314,"../content/content":319,"../item/item":331,"../nav/nav-controller":342,"./input-base":325,"./native-input":327,"@angular/common":7,"@angular/core":139}],327:[function(require,module,exports){
+},{"../../config/config":360,"../../platform/platform":370,"../../util/form":388,"../app/app":292,"../content/content":297,"../item/item":309,"../nav/nav-controller":320,"./input-base":303,"./native-input":305,"@angular/common":7,"@angular/core":139}],305:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47542,7 +45840,7 @@ var NextInput = (function () {
 }());
 exports.NextInput = NextInput;
 
-},{"../../config/config":382,"../../util/dom":407,"@angular/common":7,"@angular/core":139}],328:[function(require,module,exports){
+},{"../../config/config":360,"../../util/dom":385,"@angular/common":7,"@angular/core":139}],306:[function(require,module,exports){
 "use strict";
 var dom_1 = require('../util/dom');
 var ids = 0;
@@ -47578,192 +45876,100 @@ var Ion = (function () {
 }());
 exports.Ion = Ion;
 
-},{"../util/dom":407}],329:[function(require,module,exports){
+},{"../util/dom":385}],307:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var hammer_1 = require('../../gestures/hammer');
 var drag_gesture_1 = require('../../gestures/drag-gesture');
 var dom_1 = require('../../util/dom');
+var DRAG_THRESHOLD = 20;
+var MAX_ATTACK_ANGLE = 20;
 var ItemSlidingGesture = (function (_super) {
     __extends(ItemSlidingGesture, _super);
     function ItemSlidingGesture(list, listEle) {
-        var _this = this;
         _super.call(this, listEle, {
             direction: 'x',
             threshold: DRAG_THRESHOLD
         });
         this.list = list;
         this.listEle = listEle;
-        this.canDrag = true;
-        this.data = {};
-        this.openItems = 0;
-        this.preventDrag = false;
-        this.dragEnded = true;
+        this.selectedContainer = null;
+        this.openContainer = null;
         this.listen();
-        this.onTap = function (ev) {
-            if (!isFromOptionButtons(ev.target)) {
-                var didClose = _this.closeOpened();
-                if (didClose) {
-                    void 0;
-                    preventDefault(ev);
-                }
-            }
-        };
-        this.onMouseOut = function (ev) {
-            if (ev.target.tagName === 'ION-ITEM-SLIDING') {
-                void 0;
-                _this.onDragEnd(ev);
-            }
-        };
     }
+    ItemSlidingGesture.prototype.onTapCallback = function (ev) {
+        if (isFromOptionButtons(ev.target)) {
+            return;
+        }
+        var didClose = this.closeOpened();
+        if (didClose) {
+            void 0;
+            ev.preventDefault();
+        }
+    };
     ItemSlidingGesture.prototype.onDragStart = function (ev) {
-        var itemContainerEle = getItemContainer(ev.target);
-        if (!itemContainerEle) {
+        var angle = Math.abs(ev.angle);
+        if (angle > MAX_ATTACK_ANGLE && Math.abs(angle - 180) > MAX_ATTACK_ANGLE) {
+            this.closeOpened();
+            return false;
+        }
+        if (this.selectedContainer) {
             void 0;
             return false;
         }
-        this.closeOpened(itemContainerEle);
-        var openAmout = this.getOpenAmount(itemContainerEle);
-        var itemData = this.get(itemContainerEle);
-        this.preventDrag = (openAmout > 0);
-        if (this.preventDrag) {
-            this.closeOpened();
+        var container = getContainer(ev);
+        if (!container) {
             void 0;
-            preventDefault(ev);
-            return;
+            return false;
         }
-        itemContainerEle.classList.add('active-slide');
-        this.set(itemContainerEle, 'offsetX', openAmout);
-        this.set(itemContainerEle, 'startX', ev.center[this.direction]);
-        this.dragEnded = false;
+        // Close open container if it is not the selected one.
+        if (container !== this.openContainer) {
+            this.closeOpened();
+        }
+        this.selectedContainer = container;
+        this.openContainer = container;
+        container.startSliding(ev.center.x);
         return true;
     };
     ItemSlidingGesture.prototype.onDrag = function (ev) {
-        var _this = this;
-        if (this.dragEnded || this.preventDrag || Math.abs(ev.deltaY) > 30) {
-            void 0;
-            this.preventDrag = true;
-            return;
+        if (this.selectedContainer) {
+            this.selectedContainer.moveSliding(ev.center.x);
+            ev.preventDefault();
         }
-        var itemContainerEle = getItemContainer(ev.target);
-        if (!itemContainerEle || !isActive(itemContainerEle)) {
-            void 0;
-            return;
-        }
-        var itemData = this.get(itemContainerEle);
-        if (!itemData.optsWidth) {
-            itemData.optsWidth = getOptionsWidth(itemContainerEle);
-            if (!itemData.optsWidth) {
-                void 0;
-                return;
-            }
-        }
-        var x = ev.center[this.direction];
-        var delta = x - itemData.startX;
-        var newX = Math.max(0, itemData.offsetX - delta);
-        if (newX > itemData.optsWidth) {
-            // Calculate the new X position, capped at the top of the buttons
-            newX = -Math.min(-itemData.optsWidth, -itemData.optsWidth + (((delta + itemData.optsWidth) * 0.4)));
-        }
-        if (newX > 5 && ev.srcEvent.type.indexOf('mouse') > -1 && !itemData.hasMouseOut) {
-            itemContainerEle.addEventListener('mouseout', this.onMouseOut);
-            itemData.hasMouseOut = true;
-        }
-        dom_1.nativeRaf(function () {
-            if (!_this.dragEnded && !_this.preventDrag) {
-                isItemActive(itemContainerEle, true);
-                _this.open(itemContainerEle, newX, false);
-            }
-        });
+        return;
     };
     ItemSlidingGesture.prototype.onDragEnd = function (ev) {
         var _this = this;
-        this.preventDrag = false;
-        this.dragEnded = true;
-        var itemContainerEle = getItemContainer(ev.target);
-        if (!itemContainerEle || !isActive(itemContainerEle)) {
-            void 0;
-            return;
-        }
-        // If we are currently dragging, we want to snap back into place
-        // The final resting point X will be the width of the exposed buttons
-        var itemData = this.get(itemContainerEle);
-        var restingPoint = itemData.optsWidth;
-        // Check if the drag didn't clear the buttons mid-point
-        // and we aren't moving fast enough to swipe open
-        if (this.getOpenAmount(itemContainerEle) < (restingPoint / 2)) {
-            // If we are going left but too slow, or going right, go back to resting
-            if (ev.direction & hammer_1.DIRECTION_RIGHT || Math.abs(ev.velocityX) < 0.3) {
-                restingPoint = 0;
+        if (this.selectedContainer) {
+            ev.preventDefault();
+            var openAmount = this.selectedContainer.endSliding(ev.velocityX);
+            this.selectedContainer = null;
+            // TODO: I am not sure listening for a tap event is the best idea
+            // we should try mousedown/touchstart
+            if (openAmount === 0) {
+                this.openContainer = null;
+                this.off('tap', this.onTap);
+                this.onTap = null;
             }
-        }
-        itemContainerEle.removeEventListener('mouseout', this.onMouseOut);
-        itemData.hasMouseOut = false;
-        dom_1.nativeRaf(function () {
-            _this.open(itemContainerEle, restingPoint, true);
-        });
-    };
-    ItemSlidingGesture.prototype.closeOpened = function (doNotCloseEle) {
-        var didClose = false;
-        if (this.openItems) {
-            var openItemElements = this.listEle.querySelectorAll('.active-slide');
-            for (var i = 0; i < openItemElements.length; i++) {
-                if (openItemElements[i] !== doNotCloseEle) {
-                    this.open(openItemElements[i], 0, true);
-                    didClose = true;
-                }
-            }
-        }
-        return didClose;
-    };
-    ItemSlidingGesture.prototype.open = function (itemContainerEle, openAmount, isFinal) {
-        var _this = this;
-        var slidingEle = itemContainerEle.querySelector('ion-item,[ion-item]');
-        if (!slidingEle) {
-            void 0;
-            return;
-        }
-        this.set(itemContainerEle, 'openAmount', openAmount);
-        clearTimeout(this.get(itemContainerEle).timerId);
-        if (openAmount) {
-            this.openItems++;
-        }
-        else {
-            var timerId = setTimeout(function () {
-                if (slidingEle.style[dom_1.CSS.transform] === '') {
-                    isItemActive(itemContainerEle, false);
-                    _this.openItems--;
-                }
-            }, 400);
-            this.set(itemContainerEle, 'timerId', timerId);
-        }
-        slidingEle.style[dom_1.CSS.transition] = (isFinal ? '' : 'none');
-        slidingEle.style[dom_1.CSS.transform] = (openAmount ? 'translate3d(' + -openAmount + 'px,0,0)' : '');
-        if (isFinal) {
-            if (openAmount) {
-                isItemActive(itemContainerEle, true);
+            else if (!this.onTap) {
+                this.onTap = function (event) { return _this.onTapCallback(event); };
                 this.on('tap', this.onTap);
             }
-            else {
-                this.off('tap', this.onTap);
-            }
         }
     };
-    ItemSlidingGesture.prototype.getOpenAmount = function (itemContainerEle) {
-        return this.get(itemContainerEle).openAmount || 0;
-    };
-    ItemSlidingGesture.prototype.get = function (itemContainerEle) {
-        return this.data[itemContainerEle && itemContainerEle.$ionSlide] || {};
-    };
-    ItemSlidingGesture.prototype.set = function (itemContainerEle, key, value) {
-        if (!this.data[itemContainerEle.$ionSlide]) {
-            this.data[itemContainerEle.$ionSlide] = {};
+    ItemSlidingGesture.prototype.closeOpened = function () {
+        if (this.openContainer) {
+            this.openContainer.close();
+            this.openContainer = null;
+            this.selectedContainer = null;
+            this.off('tap', this.onTap);
+            this.onTap = null;
+            return true;
         }
-        this.data[itemContainerEle.$ionSlide][key] = value;
+        return false;
     };
     ItemSlidingGesture.prototype.unlisten = function () {
         _super.prototype.unlisten.call(this);
@@ -47772,32 +45978,18 @@ var ItemSlidingGesture = (function (_super) {
     return ItemSlidingGesture;
 }(drag_gesture_1.DragGesture));
 exports.ItemSlidingGesture = ItemSlidingGesture;
-function isItemActive(ele, isActive) {
-    ele.classList[isActive ? 'add' : 'remove']('active-slide');
-    ele.classList[isActive ? 'add' : 'remove']('active-options');
-}
-function preventDefault(ev) {
-    void 0;
-    ev.preventDefault();
-}
-function getItemContainer(ele) {
-    return dom_1.closest(ele, 'ion-item-sliding', true);
+function getContainer(ev) {
+    var ele = dom_1.closest(ev.target, 'ion-item-sliding', true);
+    if (ele) {
+        return ele['$ionComponent'];
+    }
+    return null;
 }
 function isFromOptionButtons(ele) {
     return !!dom_1.closest(ele, 'ion-item-options', true);
 }
-function getOptionsWidth(itemContainerEle) {
-    var optsEle = itemContainerEle.querySelector('ion-item-options');
-    if (optsEle) {
-        return optsEle.offsetWidth;
-    }
-}
-function isActive(itemContainerEle) {
-    return itemContainerEle.classList.contains('active-slide');
-}
-var DRAG_THRESHOLD = 20;
 
-},{"../../gestures/drag-gesture":386,"../../gestures/hammer":388,"../../util/dom":407}],330:[function(require,module,exports){
+},{"../../gestures/drag-gesture":364,"../../util/dom":385}],308:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47813,6 +46005,57 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var core_1 = require('@angular/core');
 var list_1 = require('../list/list');
+var item_1 = require('./item');
+var util_1 = require('../../util/util');
+var dom_1 = require('../../util/dom');
+var SWIPE_FACTOR = 1.1;
+var ELASTIC_FACTOR = 0.55;
+/**
+ * @private
+ */
+var ItemOptions = (function () {
+    function ItemOptions(_elementRef, _renderer) {
+        this._elementRef = _elementRef;
+        this._renderer = _renderer;
+        this.ionSwipe = new core_1.EventEmitter();
+    }
+    /**
+     * @private
+     */
+    ItemOptions.prototype.setCssStyle = function (property, value) {
+        this._renderer.setElementStyle(this._elementRef.nativeElement, property, value);
+    };
+    /**
+     * @private
+     */
+    ItemOptions.prototype.getSides = function () {
+        if (util_1.isPresent(this.side) && this.side === 'left') {
+            return 1 /* Left */;
+        }
+        else {
+            return 2 /* Right */;
+        }
+    };
+    ItemOptions.prototype.width = function () {
+        return this._elementRef.nativeElement.offsetWidth;
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ItemOptions.prototype, "side", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ItemOptions.prototype, "ionSwipe", void 0);
+    ItemOptions = __decorate([
+        core_1.Directive({
+            selector: 'ion-item-options',
+        }), 
+        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+    ], ItemOptions);
+    return ItemOptions;
+}());
+exports.ItemOptions = ItemOptions;
 /**
  * @name ItemSliding
  *
@@ -47821,14 +46064,22 @@ var list_1 = require('../list/list');
  * an [Item](../Item) component as a child and a [List](../../list/List) component as
  * a parent. All buttons to reveal can be placed in the `<ion-item-options>` element.
  *
- * ### Button Layout
- * If an icon is placed with text in the option button, by default it will
- * display the icon on top of the text. This can be changed to display the icon
- * to the left of the text by setting `icon-left` as an attribute on the
- * `<ion-item-options>` element.
+ * ### Swipe Direction
+ * By default, the buttons are revealed when the sliding item is swiped from right to left,
+ * so the buttons are placed in the right side. But it's also possible to reveal them
+ * in the right side (sliding from left to right) by setting the `side` attribute
+ * on the `ion-item-options` element. Up to 2 `ion-item-options` can used at the same time
+ * in order to reveal two different sets of buttons depending the swipping direction.
  *
  * ```html
- * <ion-item-options icon-left>
+ * <ion-item-options side="right">
+ *   <button (click)="archive(item)">
+ *     <ion-icon name="archive"></ion-icon>
+ *     Archive
+ *   </button>
+ * </ion-item-options>
+
+ * <ion-item-options>
  *   <button (click)="archive(item)">
  *     <ion-icon name="archive"></ion-icon>
  *     Archive
@@ -47836,17 +46087,55 @@ var list_1 = require('../list/list');
  * </ion-item-options>
  * ```
  *
+ * ### Listening for events (ionDrag) and (ionSwipe)
+ * It's possible to know the current relative position of the sliding item by subscribing
+ * to the (ionDrag)` event.
+ *
+ * ```html
+ * <ion-item-options side="right">
+ *   <button (click)="archive(item)">
+ *     <ion-icon name="archive"></ion-icon>
+ *     Archive
+ *   </button>
+ * </ion-item-options>
+
+ * <ion-item-options>
+ *   <button (click)="archive(item)">
+ *     <ion-icon name="archive"></ion-icon>
+ *     Archive
+ *   </button>
+ * </ion-item-options>
+ * ```
+ *
+ * ### Button Layout
+ * If an icon is placed with text in the option button, by default it will
+ * display the icon on top of the text. This can be changed to display the icon
+ * to the left of the text by setting `icon-left` as an attribute on the
+ * `<ion-item-options>` element.
+ *
+ * ```html
+ * <ion-item-sliding (ionDrag)="ondrag($event)">
+ *   <ion-item>Item</ion-item>
+ *   <ion-item-options>
+ *     <button>Favorite</button>
+ *   </ion-item-options>
+ * </ion-item-sliding>
+ * ```
  *
  * @usage
  * ```html
  * <ion-list>
- *   <ion-item-sliding>
+ *   <ion-item-sliding #item>
  *     <ion-item>
  *       Item
  *     </ion-item>
  *     <ion-item-options>
  *       <button (click)="favorite(item)">Favorite</button>
  *       <button danger (click)="share(item)">Share</button>
+ *     </ion-item-options>
+
+ *     <ion-item-options side="right">
+ *       <button (click)="unread(item)">Unread</button>
  *     </ion-item-options>
  *   </ion-item-sliding>
  * </ion-list>
@@ -47858,11 +46147,216 @@ var list_1 = require('../list/list');
  * @see {@link ../../list/List List API Docs}
  */
 var ItemSliding = (function () {
-    function ItemSliding(_list, elementRef) {
+    function ItemSliding(_list, _renderer, _elementRef) {
         this._list = _list;
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._openAmount = 0;
+        this._startX = 0;
+        this._optsWidthRightSide = 0;
+        this._optsWidthLeftSide = 0;
+        this._timer = null;
+        this._optsDirty = true;
+        this._state = 0 /* Disabled */;
+        this.slidingPercent = 0;
+        /**
+         * @output {event} Expression to evaluate when the sliding position changes.
+         * It reports the relative position.
+         *
+         * ```ts
+         * ondrag(percent) {
+         *   if (percent > 0) {
+         *     // positive
+         *     console.log('right side');
+         *   } else {
+         *     // negative
+         *     console.log('left side');
+         *   }
+         *   if (Math.abs(percent) > 1) {
+         *     console.log('overscroll');
+         *   }
+         * }
+         * ```
+         *
+         */
+        this.ionDrag = new core_1.EventEmitter();
         _list.enableSlidingItems(true);
-        elementRef.nativeElement.$ionSlide = ++slideIds;
+        _elementRef.nativeElement.$ionComponent = this;
+        _renderer.setElementClass(_elementRef.nativeElement, 'item-wrapper', true);
     }
+    Object.defineProperty(ItemSliding.prototype, "_itemOptions", {
+        /**
+         * @private
+         */
+        set: function (itemOptions) {
+            var sides = 0;
+            for (var _i = 0, _a = itemOptions.toArray(); _i < _a.length; _i++) {
+                var item = _a[_i];
+                var side = item.getSides();
+                if (side === 1 /* Left */) {
+                    this._leftOptions = item;
+                }
+                else {
+                    this._rightOptions = item;
+                }
+                sides |= item.getSides();
+            }
+            this._optsDirty = true;
+            this._sides = sides;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @private
+     */
+    ItemSliding.prototype.startSliding = function (startX) {
+        if (this._timer) {
+            clearTimeout(this._timer);
+            this._timer = null;
+        }
+        if (this._openAmount === 0) {
+            this._optsDirty = true;
+            this._setState(1 /* Enabled */);
+        }
+        this._startX = startX + this._openAmount;
+        this.item.setCssStyle(dom_1.CSS.transition, 'none');
+    };
+    /**
+     * @private
+     */
+    ItemSliding.prototype.moveSliding = function (x) {
+        if (this._optsDirty) {
+            this.calculateOptsWidth();
+            return;
+        }
+        var openAmount = this._startX - x;
+        switch (this._sides) {
+            case 2 /* Right */:
+                openAmount = Math.max(0, openAmount);
+                break;
+            case 1 /* Left */:
+                openAmount = Math.min(0, openAmount);
+                break;
+            case 3 /* Both */: break;
+            default: return;
+        }
+        if (openAmount > this._optsWidthRightSide) {
+            var optsWidth = this._optsWidthRightSide;
+            openAmount = optsWidth + (openAmount - optsWidth) * ELASTIC_FACTOR;
+        }
+        else if (openAmount < -this._optsWidthLeftSide) {
+            var optsWidth = -this._optsWidthLeftSide;
+            openAmount = optsWidth + (openAmount - optsWidth) * ELASTIC_FACTOR;
+        }
+        this._setOpenAmount(openAmount, false);
+        return openAmount;
+    };
+    /**
+     * @private
+     */
+    ItemSliding.prototype.endSliding = function (velocity) {
+        var restingPoint = (this._openAmount > 0)
+            ? this._optsWidthRightSide
+            : -this._optsWidthLeftSide;
+        // Check if the drag didn't clear the buttons mid-point
+        // and we aren't moving fast enough to swipe open
+        var isCloseDirection = (this._openAmount > 0) === !(velocity < 0);
+        var isMovingFast = Math.abs(velocity) > 0.3;
+        var isOnCloseZone = Math.abs(this._openAmount) < Math.abs(restingPoint / 2);
+        if (shouldClose(isCloseDirection, isMovingFast, isOnCloseZone)) {
+            restingPoint = 0;
+        }
+        this.fireSwipeEvent();
+        this._setOpenAmount(restingPoint, true);
+        return restingPoint;
+    };
+    ItemSliding.prototype.fireSwipeEvent = function () {
+        if (this.slidingPercent > SWIPE_FACTOR) {
+            this._rightOptions.ionSwipe.emit(this);
+        }
+        else if (this.slidingPercent < -SWIPE_FACTOR) {
+            this._leftOptions.ionSwipe.emit(this);
+        }
+    };
+    ItemSliding.prototype.calculateOptsWidth = function () {
+        var _this = this;
+        dom_1.nativeRaf(function () {
+            if (_this._optsDirty) {
+                _this._optsWidthRightSide = 0;
+                if (_this._rightOptions) {
+                    _this._optsWidthRightSide = _this._rightOptions.width();
+                }
+                _this._optsWidthLeftSide = 0;
+                if (_this._leftOptions) {
+                    _this._optsWidthLeftSide = _this._leftOptions.width();
+                }
+                _this._optsDirty = false;
+            }
+        });
+    };
+    /**
+     * @private
+     */
+    ItemSliding.prototype._setOpenAmount = function (openAmount, isFinal) {
+        var _this = this;
+        if (this._timer) {
+            clearTimeout(this._timer);
+            this._timer = null;
+        }
+        this._openAmount = openAmount;
+        var didEnd = openAmount === 0;
+        if (didEnd) {
+            // TODO: refactor. there must exist a better way
+            // if sliding ended, we wait 400ms until animation finishes
+            this._timer = dom_1.nativeTimeout(function () {
+                _this._setState(0 /* Disabled */);
+                _this._timer = null;
+            }, 400);
+            this.slidingPercent = 0;
+        }
+        else if (openAmount > 0) {
+            this._setState(2 /* Right */);
+            this.slidingPercent = openAmount / this._optsWidthRightSide;
+        }
+        else if (openAmount < 0) {
+            this._setState(3 /* Left */);
+            this.slidingPercent = openAmount / this._optsWidthLeftSide;
+        }
+        if (!isFinal) {
+            this.setClass('active-swipe-right', this.slidingPercent > SWIPE_FACTOR);
+            this.setClass('active-swipe-left', this.slidingPercent < -SWIPE_FACTOR);
+        }
+        else {
+            this.item.setCssStyle(dom_1.CSS.transition, '');
+        }
+        this.ionDrag.emit(this.slidingPercent);
+        this.item.setCssStyle(dom_1.CSS.transform, (didEnd ? '' : 'translate3d(' + -openAmount + 'px,0,0)'));
+    };
+    ItemSliding.prototype._setState = function (state) {
+        if (state !== this._state) {
+            this._state = state;
+            this.setClass('active-slide', state !== 0 /* Disabled */);
+            this.setClass('active-options-right', state === 2 /* Right */);
+            this.setClass('active-options-left', state === 3 /* Left */);
+            if (state === 0 /* Disabled */ || state === 1 /* Enabled */) {
+                this.setClass('active-swipe-right', false);
+                this.setClass('active-swipe-left', false);
+            }
+        }
+    };
+    /**
+     * @private
+     */
+    ItemSliding.prototype.setClass = function (className, add) {
+        this._renderer.setElementClass(this._elementRef.nativeElement, className, add);
+    };
+    /**
+     * @private
+     */
+    ItemSliding.prototype.getOpenAmount = function () {
+        return this._openAmount;
+    };
     /**
      * Close the sliding item. Items can also be closed from the [List](../../list/List).
      *
@@ -47898,25 +46392,55 @@ var ItemSliding = (function () {
      * ```
      */
     ItemSliding.prototype.close = function () {
-        this._list.closeSlidingItems();
+        this._setOpenAmount(0, true);
     };
+    __decorate([
+        core_1.ContentChild(item_1.Item), 
+        __metadata('design:type', item_1.Item)
+    ], ItemSliding.prototype, "item", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ItemSliding.prototype, "ionDrag", void 0);
+    __decorate([
+        core_1.ContentChildren(ItemOptions), 
+        __metadata('design:type', core_1.QueryList), 
+        __metadata('design:paramtypes', [core_1.QueryList])
+    ], ItemSliding.prototype, "_itemOptions", null);
     ItemSliding = __decorate([
         core_1.Component({
             selector: 'ion-item-sliding',
             template: '<ng-content select="ion-item,[ion-item]"></ng-content>' +
                 '<ng-content select="ion-item-options"></ng-content>',
             changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-            encapsulation: core_1.ViewEncapsulation.None,
+            encapsulation: core_1.ViewEncapsulation.None
         }),
         __param(0, core_1.Optional()), 
-        __metadata('design:paramtypes', [list_1.List, core_1.ElementRef])
+        __metadata('design:paramtypes', [list_1.List, core_1.Renderer, core_1.ElementRef])
     ], ItemSliding);
     return ItemSliding;
 }());
 exports.ItemSliding = ItemSliding;
-var slideIds = 0;
+function shouldClose(isCloseDirection, isMovingFast, isOnCloseZone) {
+    // The logic required to know when the sliding item should close (openAmount=0)
+    // depends on three booleans (isCloseDirection, isMovingFast, isOnCloseZone)
+    // and it ended up being too complicated to be written manually without errors
+    // so the truth table is attached below: (0=false, 1=true)
+    // isCloseDirection | isMovingFast | isOnCloseZone || shouldClose
+    //         0        |       0      |       0       ||    0
+    //         0        |       0      |       1       ||    1
+    //         0        |       1      |       0       ||    0
+    //         0        |       1      |       1       ||    0
+    //         1        |       0      |       0       ||    0
+    //         1        |       0      |       1       ||    1
+    //         1        |       1      |       0       ||    1
+    //         1        |       1      |       1       ||    1
+    // The resulting expression was generated by resolving the K-map (Karnaugh map):
+    var shouldClose = (!isMovingFast && isOnCloseZone) || (isCloseDirection && isMovingFast);
+    return shouldClose;
+}
 
-},{"../list/list":333,"@angular/core":139}],331:[function(require,module,exports){
+},{"../../util/dom":385,"../../util/util":392,"../list/list":311,"./item":309,"@angular/core":139}],309:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47935,34 +46459,218 @@ var label_1 = require('../label/label');
 /**
  * @name Item
  * @description
- * Creates a list-item that can easily be swiped, deleted, reordered, edited, and more.
+ * An item can contain text, images, and anything else. Generally it is placed in a list with other
+ * items. It can easily be swiped, deleted, reordered, edited, and more. An item is only required to
+ * be in a [List](../../list/List) if manipulating the item via gestures is required. It requires an
+ * [ItemSliding](../ItemSliding) wrapper element in order to be swiped.
  *
- * There are three common ways to use an item:
- * - Use `<ion-item>` for something that is only non-clickable text.
- * - Use `<button ion-item>` for something that can be clicked/tapped. Typically this element will also have a `(click)` handler.
- * - Use `<a ion-item>` for when the item needs to contain a `href`.
  *
- * By default, `<button ion-item>` and `<a ion-item>` will receive a right arrow icon on iOS to signal that tapping the item will reveal more information.
- * To hide this icon, add the `detail-none` attribute to the item (eg: `<button ion-item detail-none>`). To add the icon when it is not displayed by default,
- * add the `detail-push` attribute (eg: `<ion-item detail-push>`).
+ * ## Common Usage
+ * An item can be written as an `<ion-item>` element or it can be added to any element by adding
+ * `ion-item` as an attribute.
+ *
+ * ### As an Element
+ * An item should be written as a `<ion-item>` element when it is not clickable.
+ *
+ * ```html
+ * <ion-item>
+ *   Item
+ * </ion-item>
+ * ```
+ *
+ * ### As an Attribute
+ * The attribute `ion-item` should be added to a `<button>` when the item can be clicked or tapped. It
+ * should be added to an `<a>` element when the item needs to contain a `href`. It can be added as an
+ * attribute to any element to take on the item styling.
+ *
+ * ```html
+ * <button ion-item (click)="buttonClick()">
+ *   Button Item
+ * </button>
+ *
+ * <a ion-item href="https://www.ionicframework.com">
+ *   Anchor Item
+ * </a>
+ * ```
+ *
+ * ## Detail Arrows
+ * By default, `<button>` and `<a>` elements with the `ion-item` attribute will display a right arrow icon
+ * on `ios` mode. To hide the right arrow icon on either of these elements, add the `detail-none` attribute
+ * to the item. To show the right arrow icon on an element that doesn't display is naturally, add the
+ * `detail-push` attribute to the item.
+ *
+ * ```html
+ * <ion-item detail-push>
+ *   Item with Detail Arrow
+ * </ion-item>
+ *
+ * <button ion-item (click)="buttonClick()">
+ *   Button Item with Detail Arrow
+ * </button>
+ *
+ * <a ion-item detail-none href="https://www.ionicframework.com">
+ *   Anchor Item with no Detail Arrow
+ * </a>
+ * ```
+ *
+ * This feature is not enabled by default for `md` and `wp` modes, but it can be enabled by setting the
+ * Sass variables `$item-md-detail-push-show` and `$item-wp-detail-push-show`, respectively, to `true`.
+ * It can also be disabled for ios by setting `$item-ios-detail-push-show` to `false`. See the
+ * [theming documentation](http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/) for
+ * more information on overriding Sass variables.
+ *
+ *
+ * ## Item Placement
+ * Items rely heavily on content projection to position content. The item grabs content based on the
+ * element or attribute and positions it that way. This logic makes it possible to write a complex
+ * item with simple, understandable markup without having to worry about styling and positioning
+ * the elements.
+ *
+ * The below chart details the attributes item looks for and where it will place the element with
+ * that attribute inside of the item:
+ *
+ *  | Attribute      | Description                                                                                          |
+ *  |----------------|----------------------------------------------------------------------------------------------------- |
+ *  | `item-left`    | Placed to the left of all other elements, outside of the inner item.                                 |
+ *  | `item-right`   | Placed to the right of all other elements, inside of the inner item, outside of the input wrapper.   |
+ *  | `item-content` | Placed to the right of any `ion-label`, inside of the input wrapper.                                 |
+ *
+ * ### Checkboxes, Radios and Toggles
+ * [Checkboxes](../../checkbox/Checkbox) are positioned in the same place as the `item-left` attribute.
+ * [Radios](../../radio/RadioButton) and [Toggles](../../toggle/Toggle) are positioned in the same place
+ * as the `item-right` attribute. All of these components can be positioned differently by adding the
+ * `item-left` or `item-right` attribute.
+ *
+ * ### Content and Inputs
+ * A [Label](../../label/Label) is placed inside of the item to the left of all content and inputs. The
+ * following components are all placed in the same position as the `item-content` attribute: [Select](../../select/Select),
+ * [Input](../../input/Input), [TextArea](../../input/TextArea), [DateTime](../../datetime/DateTime), and
+ * [Range](../../range/Range).
+ *
+ * Any element directly placed inside of an `<ion-item>` that does not have one of the previously mentioned
+ * attributes and isn't one of the above elements will be placed inside of a [Label](../../label/Label).
  *
  *
  * @usage
- * ```html
  *
+ * ```html
  * <ion-list>
  *
- *   // default item
  *   <ion-item>
- *     {% raw %}{{item.title}}{% endraw %}
+ *     Item
+ *   </ion-item>
+ *
+ *   <ion-item detail-push>
+ *     Item with Detail Arrow
+ *   </ion-item>
+ *
+ *   <button ion-item (click)="buttonClick()">
+ *     Button Item
+ *   </button>
+ *
+ *   <button ion-item detail-none (click)="buttonClick()">
+ *     Button Item with no Detail Arrow
+ *   </button>
+ *
+ *   <a ion-item href="https://www.ionicframework.com">
+ *     Anchor Item
+ *   </a>
+ *
+ *   <ion-item no-lines>
+ *     Item with no border
+ *   </ion-item>
+ *
+ *   <ion-item text-wrap>
+ *     Multiline text that should wrap when it is too long
+ *     to fit on one line in the item.
  *   </ion-item>
  *
  * </ion-list>
+ * ```
  *
- *  ```
+ *
+ * @advanced
+ *
+ * ```html
+ * <ion-list>
+ *
+ *   <!-- Loops through and creates multiple items -->
+ *   <ion-item *ngFor="let item of items">
+ *     Item {% raw %}{{item}}{% endraw %}
+ *   </ion-item>
+ *
+ *   <!-- Button item with an icon on the left -->
+ *   <button ion-item>
+ *     <ion-icon name="star" item-left></ion-icon>
+ *     Button Item
+ *   </button>
+ *
+ *   <!-- Item with a label and content -->
+ *   <ion-item>
+ *     <ion-label>
+ *       Item Label
+ *     </ion-label>
+ *     <div item-content>
+ *       Item Content next to the label
+ *     </div>
+ *   </ion-item>
+ *
+ *   <!-- Item with left and right buttons -->
+ *   <ion-item>
+ *     <button item-left (click)="buttonClick()">Button</button>
+ *     Item
+ *     <button outline item-right (click)="buttonClick()">Outline</button>
+ *   </ion-item>
+ *
+ *   <!-- Disabled button item with left and right buttons -->
+ *   <button ion-item disabled>
+ *     <button item-left (click)="buttonClick()">
+ *       <ion-icon name="home"></ion-icon>
+ *       Left Icon
+ *     </button>
+ *     Disabled Button Item
+ *     <button outline item-right (click)="buttonClick()">
+ *       <ion-icon name="star"></ion-icon>
+ *       Left Icon
+ *     </button>
+ *   </button>
+ *
+ *   <!-- Item with an avatar on the left and button on the right -->
+ *   <ion-item>
+ *     <ion-avatar item-left>
+ *       <img src="img/my-avatar.png">
+ *     </ion-avatar>
+ *     Avatar Item
+ *     <button outline item-right>View</button>
+ *   </ion-item>
+ *
+ *   <!-- Item with a thumbnail on the right -->
+ *   <ion-item>
+ *     <h2>Item</h2>
+ *     <p>Item Paragraph</p>
+ *     <ion-thumbnail item-right>
+ *       <img src="img/my-thumbnail.png">
+ *     </ion-thumbnail>
+ *   </ion-item>
+ *
+ *   <!-- Sliding item -->
+ *   <ion-item-sliding>
+ *     <ion-item>
+ *       Item
+ *     </ion-item>
+ *     <ion-item-options>
+ *       <button primary (click)="archive()">Archive</button>
+ *     </ion-item-options>
+ *   </ion-item-sliding>
+ *
+ * </ion-list>
+ * ```
+ *
+ *
  * @demo /docs/v2/demos/item/
  * @see {@link /docs/v2/components#lists List Component Docs}
  * @see {@link ../../list/List List API Docs}
+ * @see {@link ../ItemSliding ItemSliding API Docs}
  */
 var Item = (function () {
     function Item(form, _renderer, _elementRef) {
@@ -48001,6 +46709,12 @@ var Item = (function () {
      */
     Item.prototype.setCssClass = function (cssClass, shouldAdd) {
         this._renderer.setElementClass(this._elementRef.nativeElement, cssClass, shouldAdd);
+    };
+    /**
+     * @private
+     */
+    Item.prototype.setCssStyle = function (property, value) {
+        this._renderer.setElementStyle(this._elementRef.nativeElement, property, value);
     };
     /**
      * @private
@@ -48112,7 +46826,7 @@ var Item = (function () {
 }());
 exports.Item = Item;
 
-},{"../../util/form":410,"../button/button":317,"../icon/icon":321,"../label/label":332,"@angular/core":139}],332:[function(require,module,exports){
+},{"../../util/form":388,"../button/button":295,"../icon/icon":299,"../label/label":310,"@angular/core":139}],310:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -48233,7 +46947,7 @@ var Label = (function () {
 }());
 exports.Label = Label;
 
-},{"@angular/core":139}],333:[function(require,module,exports){
+},{"@angular/core":139}],311:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -48308,19 +47022,18 @@ var List = (function (_super) {
      */
     List.prototype.enableSlidingItems = function (shouldEnable) {
         var _this = this;
-        if (this._enableSliding !== shouldEnable) {
-            this._enableSliding = shouldEnable;
-            if (shouldEnable) {
-                void 0;
-                this._zone.runOutsideAngular(function () {
-                    setTimeout(function () {
-                        _this.slidingGesture = new item_sliding_gesture_1.ItemSlidingGesture(_this, _this.ele);
-                    });
-                });
-            }
-            else {
-                this.slidingGesture && this.slidingGesture.unlisten();
-            }
+        if (this._enableSliding === shouldEnable) {
+            return;
+        }
+        this._enableSliding = shouldEnable;
+        if (shouldEnable) {
+            void 0;
+            this._zone.runOutsideAngular(function () {
+                setTimeout(function () { return _this.slidingGesture = new item_sliding_gesture_1.ItemSlidingGesture(_this, _this.ele); });
+            });
+        }
+        else {
+            this.slidingGesture && this.slidingGesture.unlisten();
         }
     };
     /**
@@ -48358,10 +47071,10 @@ exports.List = List;
  * @private
  */
 var ListHeader = (function () {
-    function ListHeader(_renderer, _elementRef, id) {
+    function ListHeader(_renderer, _elementRef, _id) {
         this._renderer = _renderer;
         this._elementRef = _elementRef;
-        this._id = id;
+        this._id = _id;
     }
     Object.defineProperty(ListHeader.prototype, "id", {
         get: function () {
@@ -48385,7 +47098,7 @@ var ListHeader = (function () {
 }());
 exports.ListHeader = ListHeader;
 
-},{"../ion":328,"../item/item-sliding-gesture":329,"@angular/core":139}],334:[function(require,module,exports){
+},{"../ion":306,"../item/item-sliding-gesture":307,"@angular/core":139}],312:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -48557,7 +47270,6 @@ var LoadingCmp = (function () {
         this._config = _config;
         this._elementRef = _elementRef;
         this.d = params.data;
-        this.created = Date.now();
         if (this.d.cssClass) {
             renderer.setElementClass(_elementRef.nativeElement, this.d.cssClass, true);
         }
@@ -48583,10 +47295,6 @@ var LoadingCmp = (function () {
     };
     LoadingCmp.prototype.dismiss = function (role) {
         return this._viewCtrl.dismiss(null, role);
-    };
-    LoadingCmp.prototype.isEnabled = function () {
-        var tm = this._config.getNumber('overlayCreatedDiff', 750);
-        return (this.created + tm < Date.now());
     };
     LoadingCmp = __decorate([
         core_1.Component({
@@ -48720,7 +47428,7 @@ var LoadingWpPopOut = (function (_super) {
 transition_1.Transition.register('loading-wp-pop-out', LoadingWpPopOut);
 var loadingIds = -1;
 
-},{"../../animations/animation":309,"../../config/config":382,"../../transitions/transition":401,"../../util/util":413,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139}],335:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/config":360,"../../transitions/transition":379,"../../util/util":392,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139}],313:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -48788,7 +47496,7 @@ var MenuClose = (function () {
 }());
 exports.MenuClose = MenuClose;
 
-},{"./menu-controller":336,"@angular/core":139}],336:[function(require,module,exports){
+},{"./menu-controller":314,"@angular/core":139}],314:[function(require,module,exports){
 "use strict";
 /**
  * @name MenuController
@@ -49069,7 +47777,7 @@ var MenuController = (function () {
 exports.MenuController = MenuController;
 var menuTypes = {};
 
-},{}],337:[function(require,module,exports){
+},{}],315:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -49143,15 +47851,20 @@ var MenuContentGesture = (function (_super) {
         var z = (this.menu.side === 'right' ? slide.min : slide.max);
         var stepValue = (slide.distance / z);
         void 0;
+        ev.srcEvent.preventDefault();
+        ev.preventDefault();
         this.menu.swipeProgress(stepValue);
     };
     MenuContentGesture.prototype.onSlideEnd = function (slide, ev) {
         var z = (this.menu.side === 'right' ? slide.min : slide.max);
-        var shouldComplete = (Math.abs(ev.velocityX) > 0.2) ||
-            (Math.abs(slide.delta) > Math.abs(z) * 0.5);
         var currentStepValue = (slide.distance / z);
+        z = Math.abs(z * 0.5);
+        var shouldCompleteRight = (ev.velocityX >= 0)
+            && (ev.velocityX > 0.2 || slide.delta > z);
+        var shouldCompleteLeft = (ev.velocityX <= 0)
+            && (ev.velocityX < -0.2 || slide.delta < -z);
         void 0;
-        this.menu.swipeEnd(shouldComplete, currentStepValue);
+        this.menu.swipeEnd(shouldCompleteLeft, shouldCompleteRight, currentStepValue);
     };
     MenuContentGesture.prototype.getElementStartPos = function (slide, ev) {
         if (this.menu.side === 'right') {
@@ -49192,7 +47905,7 @@ var MenuTargetGesture = (function (_super) {
 }(MenuContentGesture));
 exports.MenuTargetGesture = MenuTargetGesture;
 
-},{"../../gestures/slide-edge-gesture":389,"../../util/util":413}],338:[function(require,module,exports){
+},{"../../gestures/slide-edge-gesture":367,"../../util/util":392}],316:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -49347,7 +48060,7 @@ var MenuToggle = (function () {
 }());
 exports.MenuToggle = MenuToggle;
 
-},{"../nav/view-controller":350,"../navbar/navbar":351,"./menu-controller":336,"@angular/core":139}],339:[function(require,module,exports){
+},{"../nav/view-controller":328,"../navbar/navbar":329,"./menu-controller":314,"@angular/core":139}],317:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -49438,9 +48151,10 @@ var MenuPushType = (function (_super) {
             .duration(250);
         var contentOpenedX, menuClosedX, menuOpenedX;
         if (menu.side === 'right') {
+            // right side
             contentOpenedX = -menu.width() + 'px';
-            menuOpenedX = (platform.width() - menu.width()) + 'px';
-            menuClosedX = platform.width() + 'px';
+            menuClosedX = menu.width() + 'px';
+            menuOpenedX = '0px';
         }
         else {
             contentOpenedX = menu.width() + 'px';
@@ -49473,13 +48187,13 @@ var MenuOverlayType = (function (_super) {
         var closedX, openedX;
         if (menu.side === 'right') {
             // right side
-            closedX = platform.width() + 'px';
-            openedX = (platform.width() - menu.width() - 8) + 'px';
+            closedX = 8 + menu.width() + 'px';
+            openedX = '0px';
         }
         else {
             // left side
-            closedX = -menu.width() + 'px';
-            openedX = '8px';
+            closedX = -(8 + menu.width()) + 'px';
+            openedX = '0px';
         }
         var menuAni = new animation_1.Animation(menu.getMenuElement());
         menuAni.fromTo('translateX', closedX, openedX);
@@ -49492,7 +48206,7 @@ var MenuOverlayType = (function (_super) {
 }(MenuType));
 menu_controller_1.MenuController.registerType('overlay', MenuOverlayType);
 
-},{"../../animations/animation":309,"./menu-controller":336}],340:[function(require,module,exports){
+},{"../../animations/animation":287,"./menu-controller":314}],318:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -49888,12 +48602,20 @@ var Menu = (function (_super) {
     /**
      * @private
      */
-    Menu.prototype.swipeEnd = function (shouldComplete, currentStepValue) {
+    Menu.prototype.swipeEnd = function (shouldCompleteLeft, shouldCompleteRight, stepValue) {
         var _this = this;
         // user has finished dragging the menu
         if (this._isEnabled && this._isSwipeEnabled) {
             this._prevent();
-            this._getType().setProgressEnd(shouldComplete, currentStepValue, function (isOpen) {
+            var opening = !this.isOpen;
+            var shouldComplete = false;
+            if (opening) {
+                shouldComplete = (this.side === 'right') ? shouldCompleteLeft : shouldCompleteRight;
+            }
+            else {
+                shouldComplete = (this.side === 'right') ? shouldCompleteRight : shouldCompleteLeft;
+            }
+            this._getType().setProgressEnd(shouldComplete, stepValue, function (isOpen) {
                 void 0;
                 _this._after(isOpen);
             });
@@ -50092,7 +48814,7 @@ var Menu = (function (_super) {
 }(ion_1.Ion));
 exports.Menu = Menu;
 
-},{"../../config/config":382,"../../platform/platform":392,"../../util/keyboard":411,"../../util/util":413,"../backdrop/backdrop":315,"../ion":328,"./menu-controller":336,"./menu-gestures":337,"@angular/core":139}],341:[function(require,module,exports){
+},{"../../config/config":360,"../../platform/platform":370,"../../util/keyboard":390,"../../util/util":392,"../backdrop/backdrop":293,"../ion":306,"./menu-controller":314,"./menu-gestures":315,"@angular/core":139}],319:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -50113,6 +48835,7 @@ var bootstrap_1 = require('../../config/bootstrap');
 var animation_1 = require('../../animations/animation');
 var nav_params_1 = require('../nav/nav-params');
 var util_1 = require('../../util/util');
+var key_1 = require('../../util/key');
 var transition_1 = require('../../transitions/transition');
 var view_controller_1 = require('../nav/view-controller');
 var dom_1 = require('../../util/dom');
@@ -50218,13 +48941,18 @@ var dom_1 = require('../../util/dom');
  */
 var Modal = (function (_super) {
     __extends(Modal, _super);
-    function Modal(componentType, data) {
+    function Modal(componentType, data, opts) {
         if (data === void 0) { data = {}; }
+        if (opts === void 0) { opts = {}; }
         data.componentType = componentType;
+        opts.showBackdrop = util_1.isPresent(opts.showBackdrop) ? !!opts.showBackdrop : true;
+        opts.enableBackdropDismiss = util_1.isPresent(opts.enableBackdropDismiss) ? !!opts.enableBackdropDismiss : true;
+        data.opts = opts;
         _super.call(this, ModalCmp, data);
         this.modalViewType = componentType.name;
         this.viewType = 'modal';
         this.isOverlay = true;
+        this.usePortal = true;
     }
     /**
     * @private
@@ -50234,12 +48962,22 @@ var Modal = (function (_super) {
         return this._nav && this._nav.config.get(key);
     };
     /**
-     * @param {any} componentType Modal
-     * @param {object} data Modal options
+     * Create a modal with the following options
+     *
+     * | Option                | Type       | Description                                                                                                      |
+     * |-----------------------|------------|------------------------------------------------------------------------------------------------------------------|
+     * | showBackdrop          |`boolean`   | Whether to show the backdrop. Default true.                                                                      |
+     * | enableBackdropDismiss |`boolean`   | Whether the popover should be dismissed by tapping the backdrop. Default true.                                   |
+     *
+     *
+     * @param {object} componentType The Modal view
+     * @param {object} data Any data to pass to the Modal view
+     * @param {object} opts Modal options
      */
-    Modal.create = function (componentType, data) {
+    Modal.create = function (componentType, data, opts) {
         if (data === void 0) { data = {}; }
-        return new Modal(componentType, data);
+        if (opts === void 0) { opts = {}; }
+        return new Modal(componentType, data, opts);
     };
     // Override the load method and load our child component
     Modal.prototype.loaded = function (done) {
@@ -50250,43 +48988,64 @@ var Modal = (function (_super) {
             if (originalNgAfterViewInit) {
                 originalNgAfterViewInit();
             }
-            _this.instance.loadComponent().then(function (componentRef) {
-                _this.setInstance(componentRef.instance);
-                done();
-            });
+            _this.instance.loadComponent(done);
         };
     };
     return Modal;
 }(view_controller_1.ViewController));
 exports.Modal = Modal;
 var ModalCmp = (function () {
-    function ModalCmp(_loader, _navParams) {
-        this._loader = _loader;
+    function ModalCmp(_compiler, _navParams, _viewCtrl) {
+        this._compiler = _compiler;
         this._navParams = _navParams;
+        this._viewCtrl = _viewCtrl;
+        this.d = _navParams.data.opts;
     }
-    ModalCmp.prototype.loadComponent = function () {
-        var componentType = this._navParams.data.componentType;
-        bootstrap_1.addSelector(componentType, 'ion-page');
-        return this._loader.loadNextToLocation(componentType, this.viewport).then(function (componentRef) {
-            return componentRef;
+    ModalCmp.prototype.loadComponent = function (done) {
+        var _this = this;
+        bootstrap_1.addSelector(this._navParams.data.componentType, 'ion-modal-inner');
+        this._compiler.resolveComponent(this._navParams.data.componentType).then(function (componentFactory) {
+            var componentRef = _this.viewport.createComponent(componentFactory, _this.viewport.length, _this.viewport.parentInjector);
+            _this._viewCtrl.setInstance(componentRef.instance);
+            _this.enabled = true;
+            done();
         });
     };
     ModalCmp.prototype.ngAfterViewInit = function () {
         // intentionally kept empty
     };
+    ModalCmp.prototype.dismiss = function (role) {
+        return this._viewCtrl.dismiss(null, role);
+    };
+    ModalCmp.prototype.bdClick = function () {
+        if (this.enabled && this.d.enableBackdropDismiss) {
+            this.dismiss('backdrop');
+        }
+    };
+    ModalCmp.prototype._keyUp = function (ev) {
+        if (this.enabled && this._viewCtrl.isLast() && ev.keyCode === key_1.Key.ESCAPE) {
+            this.bdClick();
+        }
+    };
     __decorate([
         core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }), 
         __metadata('design:type', core_1.ViewContainerRef)
     ], ModalCmp.prototype, "viewport", void 0);
+    __decorate([
+        core_1.HostListener('body:keyup', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [KeyboardEvent]), 
+        __metadata('design:returntype', void 0)
+    ], ModalCmp.prototype, "_keyUp", null);
     ModalCmp = __decorate([
         core_1.Component({
             selector: 'ion-modal',
-            template: '<ion-backdrop disableScroll="false"></ion-backdrop>' +
+            template: '<ion-backdrop disableScroll="false" (click)="bdClick($event)"></ion-backdrop>' +
                 '<div class="modal-wrapper">' +
                 '<div #viewport></div>' +
                 '</div>'
         }), 
-        __metadata('design:paramtypes', [core_1.DynamicComponentLoader, nav_params_1.NavParams])
+        __metadata('design:paramtypes', [core_1.ComponentResolver, nav_params_1.NavParams, view_controller_1.ViewController])
     ], ModalCmp);
     return ModalCmp;
 }());
@@ -50299,18 +49058,24 @@ var ModalSlideIn = (function (_super) {
     function ModalSlideIn(enteringView, leavingView, opts) {
         _super.call(this, opts);
         var ele = enteringView.pageRef().nativeElement;
-        var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        backdrop.fromTo('opacity', 0.01, 0.4);
+        var backdropEle = ele.querySelector('ion-backdrop');
+        var backdrop = new animation_1.Animation(backdropEle);
         var wrapper = new animation_1.Animation(ele.querySelector('.modal-wrapper'));
         var page = ele.querySelector('ion-page');
+        var pageAnimation = new animation_1.Animation(page);
         // auto-add page css className created from component JS class name
         var cssClassName = util_1.pascalCaseToDashCase(enteringView.modalViewType);
-        page.classList.add(cssClassName);
+        pageAnimation.before.addClass(cssClassName);
+        pageAnimation.before.addClass('show-page');
+        backdrop.fromTo('opacity', 0.01, 0.4);
         wrapper.fromTo('translateY', '100%', '0%');
-        var DURATION = 400;
-        var EASING = 'cubic-bezier(0.36,0.66,0.04,1)';
-        this.element(enteringView.pageRef()).easing(EASING).duration(DURATION).add(backdrop).add(wrapper);
-        this.element(new core_1.ElementRef(page)).easing(EASING).duration(DURATION).before.addClass('show-page');
+        this
+            .element(enteringView.pageRef())
+            .easing('cubic-bezier(0.36,0.66,0.04,1)')
+            .duration(400)
+            .add(backdrop)
+            .add(wrapper)
+            .add(pageAnimation);
         if (enteringView.hasNavbar()) {
             // entering page has a navbar
             var enteringNavBar = new animation_1.Animation(enteringView.navbarRef());
@@ -50327,7 +49092,6 @@ var ModalSlideOut = (function (_super) {
         _super.call(this, opts);
         var ele = leavingView.pageRef().nativeElement;
         var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        backdrop.fromTo('opacity', 0.4, 0.0);
         var wrapperEle = ele.querySelector('.modal-wrapper');
         var wrapperEleRect = wrapperEle.getBoundingClientRect();
         var wrapper = new animation_1.Animation(wrapperEle);
@@ -50335,6 +49099,7 @@ var ModalSlideOut = (function (_super) {
         // so it's off-screen
         var screenDimensions = dom_1.windowDimensions();
         wrapper.fromTo('translateY', '0px', (screenDimensions.height - wrapperEleRect.top) + "px");
+        backdrop.fromTo('opacity', 0.4, 0.0);
         this
             .element(leavingView.pageRef())
             .easing('ease-out')
@@ -50351,17 +49116,22 @@ var ModalMDSlideIn = (function (_super) {
         _super.call(this, opts);
         var ele = enteringView.pageRef().nativeElement;
         var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        backdrop.fromTo('opacity', 0.01, 0.4);
         var wrapper = new animation_1.Animation(ele.querySelector('.modal-wrapper'));
-        wrapper.fromTo('translateY', '40px', '0px');
         var page = ele.querySelector('ion-page');
+        var pageAnimation = new animation_1.Animation(page);
         // auto-add page css className created from component JS class name
         var cssClassName = util_1.pascalCaseToDashCase(enteringView.modalViewType);
-        page.classList.add(cssClassName);
+        pageAnimation.before.addClass(cssClassName);
+        pageAnimation.before.addClass('show-page');
+        backdrop.fromTo('opacity', 0.01, 0.4);
+        wrapper.fromTo('translateY', '40px', '0px');
+        wrapper.fromTo('opacity', '0.01', '1.0');
         var DURATION = 280;
         var EASING = 'cubic-bezier(0.36,0.66,0.04,1)';
-        this.element(enteringView.pageRef()).easing(EASING).duration(DURATION).fadeIn().add(backdrop).add(wrapper);
-        this.element(new core_1.ElementRef(page)).easing(EASING).duration(DURATION).before.addClass('show-page');
+        this.element(enteringView.pageRef()).easing(EASING).duration(DURATION)
+            .add(backdrop)
+            .add(wrapper)
+            .add(pageAnimation);
         if (enteringView.hasNavbar()) {
             // entering page has a navbar
             var enteringNavBar = new animation_1.Animation(enteringView.navbarRef());
@@ -50378,14 +49148,14 @@ var ModalMDSlideOut = (function (_super) {
         _super.call(this, opts);
         var ele = leavingView.pageRef().nativeElement;
         var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        backdrop.fromTo('opacity', 0.4, 0.0);
         var wrapper = new animation_1.Animation(ele.querySelector('.modal-wrapper'));
+        backdrop.fromTo('opacity', 0.4, 0.0);
         wrapper.fromTo('translateY', '0px', '40px');
+        wrapper.fromTo('opacity', '1.0', '0.00');
         this
             .element(leavingView.pageRef())
             .duration(200)
             .easing('cubic-bezier(0.47,0,0.745,0.715)')
-            .fadeOut()
             .add(wrapper)
             .add(backdrop);
     }
@@ -50393,7 +49163,7 @@ var ModalMDSlideOut = (function (_super) {
 }(transition_1.Transition));
 transition_1.Transition.register('modal-md-slide-out', ModalMDSlideOut);
 
-},{"../../animations/animation":309,"../../config/bootstrap":381,"../../transitions/transition":401,"../../util/dom":407,"../../util/util":413,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139}],342:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/bootstrap":359,"../../transitions/transition":379,"../../util/dom":385,"../../util/key":389,"../../util/util":392,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139}],320:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -50404,8 +49174,8 @@ var core_1 = require('@angular/core');
 var bootstrap_1 = require('../../config/bootstrap');
 var ion_1 = require('../ion');
 var util_1 = require('../../util/util');
-var nav_params_1 = require('./nav-params');
 var menu_controller_1 = require('../menu/menu-controller');
+var nav_params_1 = require('./nav-params');
 var swipe_back_1 = require('./swipe-back');
 var transition_1 = require('../../transitions/transition');
 var view_controller_1 = require('./view-controller');
@@ -50548,23 +49318,23 @@ var view_controller_1 = require('./view-controller');
  * | duration  | `number`  | The length in milliseconds the animation should take.                                                      |
  * | easing    | `string`  | The easing for the animation.                                                                              |
  *
+ * The property 'animation' understands the following values: `md-transition`, `ios-transition` and `wp-transition`.
  *
  * @see {@link /docs/v2/components#navigation Navigation Component Docs}
  */
 var NavController = (function (_super) {
     __extends(NavController, _super);
-    function NavController(parent, _app, config, _keyboard, elementRef, _zone, _renderer, _loader) {
+    function NavController(parent, _app, config, _keyboard, elementRef, _zone, _renderer, _compiler) {
         _super.call(this, elementRef);
         this._app = _app;
         this._keyboard = _keyboard;
         this._zone = _zone;
         this._renderer = _renderer;
-        this._loader = _loader;
+        this._compiler = _compiler;
         this._transIds = 0;
         this._init = false;
         this._children = [];
         this._ids = -1;
-        this._trnsTime = 0;
         this._views = [];
         /**
          * @private
@@ -50574,16 +49344,16 @@ var NavController = (function (_super) {
          * @private
          */
         this.isPortal = false;
+        /**
+         * @private
+         */
+        this._trnsTime = 0;
         this.parent = parent;
         this.config = config;
         this._trnsDelay = config.get('pageTransitionDelay');
         this._sbEnabled = config.getBoolean('swipeBackEnabled');
         this._sbThreshold = config.getNumber('swipeBackThreshold', 40);
         this.id = (++ctrlIds).toString();
-        // build a new injector for child ViewControllers to use
-        this.providers = core_1.ReflectiveInjector.resolve([
-            core_1.provide(NavController, { useValue: this })
-        ]);
         this.viewDidLoad = new core_1.EventEmitter();
         this.viewWillEnter = new core_1.EventEmitter();
         this.viewDidEnter = new core_1.EventEmitter();
@@ -50592,6 +49362,12 @@ var NavController = (function (_super) {
         this.viewWillUnload = new core_1.EventEmitter();
         this.viewDidUnload = new core_1.EventEmitter();
     }
+    /**
+     * @private
+     */
+    NavController.prototype.getPortal = function () {
+        return this._portal;
+    };
     /**
      * @private
      */
@@ -50606,7 +49382,7 @@ var NavController = (function (_super) {
     };
     /**
      * Set the root for the current navigation stack.
-     * @param {Type} page  The name of the component you want to push on the navigation stack.
+     * @param {Page} page  The name of the component you want to push on the navigation stack.
      * @param {object} [params={}] Any nav-params you want to pass along to the next view.
      * @param {object} [opts={}] Any options you want to use pass to transtion.
      * @returns {Promise} Returns a promise which is resolved when the transition has completed.
@@ -50687,7 +49463,7 @@ var NavController = (function (_super) {
      *  }
      *```
      *
-     * @param {array<Type>} pages  An arry of page components and their params to load in the stack.
+     * @param {array<Page>} pages  An arry of page components and their params to load in the stack.
      * @param {object} [opts={}] Nav options to go with this transition.
      * @returns {Promise} Returns a promise which is resolved when the transition has completed.
      */
@@ -50779,7 +49555,7 @@ var NavController = (function (_super) {
      *    }
      * }
      * ```
-     * @param {Type} page  The page component class you want to push on to the navigation stack
+     * @param {Page} page  The page component class you want to push on to the navigation stack
      * @param {object} [params={}] Any nav-params you want to pass along to the next view
      * @param {object} [opts={}] Nav options to go with this transition.
      * @returns {Promise} Returns a promise which is resolved when the transition has completed.
@@ -50861,7 +49637,7 @@ var NavController = (function (_super) {
      * This will insert the `Info` page into the second slot of our navigation stack.
      *
      * @param {number} insertIndex  The index where to insert the page.
-     * @param {Type} page  The component you want to insert into the nav stack.
+     * @param {Page} page  The component you want to insert into the nav stack.
      * @param {object} [params={}] Any nav-params you want to pass along to the next page.
      * @param {object} [opts={}] Nav options to go with this transition.
      * @returns {Promise} Returns a promise which is resolved when the transition has completed.
@@ -50893,7 +49669,7 @@ var NavController = (function (_super) {
      * in and become the active page.
      *
      * @param {number} insertIndex  The index where you want to insert the page.
-     * @param {array<{page: Type, params=: any}>} insertPages  An array of objects, each with a `page` and optionally `params` property.
+     * @param {array<{page: Page, params=: any}>} insertPages  An array of objects, each with a `page` and optionally `params` property.
      * @param {object} [opts={}] Nav options to go with this transition.
      * @returns {Promise} Returns a promise which is resolved when the transition has completed.
      */
@@ -51417,19 +50193,33 @@ var NavController = (function (_super) {
                 isRTL: _this.config.platform.isRTL(),
                 ev: opts.ev,
             };
-            var transAnimation = transition_1.Transition.createTransition(enteringView, leavingView, transitionOpts);
+            var transAnimation = _this._createTrans(enteringView, leavingView, transitionOpts);
             _this._trans && _this._trans.destroy();
             _this._trans = transAnimation;
             if (opts.animate === false) {
                 // force it to not animate the elements, just apply the "to" styles
                 transAnimation.duration(0);
             }
-            var duration = transAnimation.getDuration();
-            var enableApp = (duration < 64);
-            // block any clicks during the transition and provide a
-            // fallback to remove the clickblock if something goes wrong
-            _this._app.setEnabled(enableApp, duration);
-            _this.setTransitioning(!enableApp, duration);
+            // check if a parent is transitioning and get the time that it ends
+            var parentTransitionEndTime = _this._getLongestTrans(Date.now());
+            if (parentTransitionEndTime > 0) {
+                // the parent is already transitioning and has disabled the app
+                // so just update the local transitioning information
+                var duration = parentTransitionEndTime - Date.now();
+                _this.setTransitioning(true, duration);
+            }
+            else {
+                // this is the only active transition (for now), so disable the app
+                var keyboardDurationPadding = 0;
+                if (_this._keyboard.isOpen()) {
+                    // add XXms to the duration the app is disabled when the keyboard is open
+                    keyboardDurationPadding = 600;
+                }
+                var duration = transAnimation.getDuration() + keyboardDurationPadding;
+                var enableApp = (duration < 64);
+                _this._app.setEnabled(enableApp, duration);
+                _this.setTransitioning(!enableApp, duration);
+            }
             if (enteringView.viewType) {
                 transAnimation.before.addClass(enteringView.viewType);
             }
@@ -51555,8 +50345,13 @@ var NavController = (function (_super) {
                 leavingView.state = STATE_ACTIVE;
                 enteringView.state = STATE_INACTIVE;
             }
-            // allow clicks and enable the app again
-            this._app && this._app.setEnabled(true);
+            // check if there is a parent actively transitioning
+            var transitionEndTime = this._getLongestTrans(Date.now());
+            // if transitionEndTime is greater than 0, there is a parent transition occurring
+            // so delegate enabling the app to the parent.  If it <= 0, go ahead and enable the app
+            if (transitionEndTime <= 0) {
+                this._app && this._app.setEnabled(true);
+            }
             this.setTransitioning(false);
             if (direction !== null && hasCompleted && !this.isPortal) {
                 // notify router of the state change if a direction was provided
@@ -51589,6 +50384,15 @@ var NavController = (function (_super) {
                 leavingView.state = STATE_INACTIVE;
             }
         }
+    };
+    /**
+     *@private
+     * This method is just a wrapper to the Transition function of same name
+     * to make it easy/possible to mock the method call by overriding the function.
+     * In testing we don't want to actually do the animation, we want to return a stub instead
+     */
+    NavController.prototype._createTrans = function (enteringView, leavingView, transitionOpts) {
+        return transition_1.Transition.createTransition(enteringView, leavingView, transitionOpts);
     };
     NavController.prototype._cleanup = function () {
         var _this = this;
@@ -51656,34 +50460,38 @@ var NavController = (function (_super) {
         if (!this._viewport || !view.componentType) {
             return;
         }
-        // add more providers to just this page
-        var providers = this.providers.concat(core_1.ReflectiveInjector.resolve([
-            core_1.provide(view_controller_1.ViewController, { useValue: view }),
-            core_1.provide(nav_params_1.NavParams, { useValue: view.getNavParams() })
-        ]));
         // automatically set "ion-page" selector
+        // TODO: see about having this set using ComponentFactory
         bootstrap_1.addSelector(view.componentType, 'ion-page');
-        // load the page component inside the nav
-        this._loader.loadNextToLocation(view.componentType, this._viewport, providers).then(function (component) {
+        this._compiler.resolveComponent(view.componentType).then(function (componentFactory) {
+            // add more providers to just this page
+            var componentProviders = core_1.ReflectiveInjector.resolve([
+                core_1.provide(NavController, { useValue: _this }),
+                core_1.provide(view_controller_1.ViewController, { useValue: view }),
+                core_1.provide(nav_params_1.NavParams, { useValue: view.getNavParams() })
+            ]);
+            var childInjector = core_1.ReflectiveInjector.fromResolvedProviders(componentProviders, _this._viewport.parentInjector);
+            var componentRef = componentFactory.create(childInjector, null, null);
+            _this._viewport.insert(componentRef.hostView, _this._viewport.length);
             // a new ComponentRef has been created
             // set the ComponentRef's instance to its ViewController
-            view.setInstance(component.instance);
+            view.setInstance(componentRef.instance);
             // the component has been loaded, so call the view controller's loaded method to load any dependencies into the dom
             view.loaded(function () {
                 // the ElementRef of the actual ion-page created
-                var pageElementRef = component.location;
+                var pageElementRef = componentRef.location;
                 // remember the ChangeDetectorRef for this ViewController
-                view.setChangeDetector(component.changeDetectorRef);
+                view.setChangeDetector(componentRef.changeDetectorRef);
                 // remember the ElementRef to the ion-page elementRef that was just created
                 view.setPageRef(pageElementRef);
                 // auto-add page css className created from component JS class name
-                var cssClassName = util_1.pascalCaseToDashCase(view.componentType['name']);
+                var cssClassName = util_1.pascalCaseToDashCase(view.componentType.name);
                 _this._renderer.setElementClass(pageElementRef.nativeElement, cssClassName, true);
                 view.onDestroy(function () {
                     // ensure the element is cleaned up for when the view pool reuses this element
                     _this._renderer.setElementAttribute(pageElementRef.nativeElement, 'class', null);
                     _this._renderer.setElementAttribute(pageElementRef.nativeElement, 'style', null);
-                    component.destroy();
+                    componentRef.destroy();
                 });
                 if (!navbarContainerRef) {
                     // there was not a navbar container ref already provided
@@ -51821,6 +50629,25 @@ var NavController = (function (_super) {
     NavController.prototype.setTransitioning = function (isTransitioning, fallback) {
         if (fallback === void 0) { fallback = 700; }
         this._trnsTime = (isTransitioning ? Date.now() + fallback : 0);
+    };
+    /**
+     * @private
+     * This method traverses the tree of parents upwards
+     * and looks at the time the transition ends (if it's transitioning)
+     * and returns the value that is the furthest into the future
+     * thus giving us the longest transition duration
+     */
+    NavController.prototype._getLongestTrans = function (now) {
+        var parentNav = this.parent;
+        var transitionEndTime = -1;
+        while (parentNav) {
+            if (parentNav._trnsTime > transitionEndTime) {
+                transitionEndTime = parentNav._trnsTime;
+            }
+            parentNav = parentNav.parent;
+        }
+        // only check if the transitionTime is greater than the current time once
+        return transitionEndTime > 0 && transitionEndTime > now ? transitionEndTime : 0;
     };
     /**
      * @private
@@ -51974,7 +50801,7 @@ var INIT_ZINDEX = 100;
 var PORTAL_ZINDEX = 9999;
 var ctrlIds = -1;
 
-},{"../../config/bootstrap":381,"../../transitions/transition":401,"../../util/util":413,"../ion":328,"../menu/menu-controller":336,"./nav-params":343,"./swipe-back":349,"./view-controller":350,"@angular/core":139}],343:[function(require,module,exports){
+},{"../../config/bootstrap":359,"../../transitions/transition":379,"../../util/util":392,"../ion":306,"../menu/menu-controller":314,"./nav-params":321,"./swipe-back":327,"./view-controller":328,"@angular/core":139}],321:[function(require,module,exports){
 "use strict";
 /**
  * @name NavParams
@@ -52031,7 +50858,7 @@ var NavParams = (function () {
 }());
 exports.NavParams = NavParams;
 
-},{}],344:[function(require,module,exports){
+},{}],322:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -52061,8 +50888,8 @@ var view_controller_1 = require('./view-controller');
  */
 var NavPortal = (function (_super) {
     __extends(NavPortal, _super);
-    function NavPortal(viewCtrl, parent, app, config, keyboard, elementRef, zone, renderer, loader, viewPort) {
-        _super.call(this, parent, app, config, keyboard, elementRef, zone, renderer, loader);
+    function NavPortal(viewCtrl, parent, app, config, keyboard, elementRef, zone, renderer, compiler, viewPort) {
+        _super.call(this, parent, app, config, keyboard, elementRef, zone, renderer, compiler);
         this.isPortal = true;
         this.setViewport(viewPort);
     }
@@ -52072,13 +50899,13 @@ var NavPortal = (function (_super) {
         }),
         __param(0, core_1.Optional()),
         __param(1, core_1.Optional()), 
-        __metadata('design:paramtypes', [view_controller_1.ViewController, nav_controller_1.NavController, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.DynamicComponentLoader, core_1.ViewContainerRef])
+        __metadata('design:paramtypes', [view_controller_1.ViewController, nav_controller_1.NavController, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.ComponentResolver, core_1.ViewContainerRef])
     ], NavPortal);
     return NavPortal;
 }(nav_controller_1.NavController));
 exports.NavPortal = NavPortal;
 
-},{"../../config/config":382,"../../util/keyboard":411,"../app/app":314,"./nav-controller":342,"./view-controller":350,"@angular/core":139}],345:[function(require,module,exports){
+},{"../../config/config":360,"../../util/keyboard":390,"../app/app":292,"./nav-controller":320,"./view-controller":328,"@angular/core":139}],323:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -52236,7 +51063,7 @@ var NavPop = (function () {
 }());
 exports.NavPop = NavPop;
 
-},{"./nav-controller":342,"./nav-registry":346,"@angular/core":139}],346:[function(require,module,exports){
+},{"./nav-controller":320,"./nav-registry":324,"@angular/core":139}],324:[function(require,module,exports){
 "use strict";
 /**
  * @private
@@ -52262,7 +51089,7 @@ var NavRegistry = (function () {
 }());
 exports.NavRegistry = NavRegistry;
 
-},{}],347:[function(require,module,exports){
+},{}],325:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -52290,7 +51117,7 @@ var NavRouter = (function () {
 }());
 exports.NavRouter = NavRouter;
 
-},{"@angular/core":139}],348:[function(require,module,exports){
+},{"@angular/core":139}],326:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -52418,8 +51245,8 @@ var view_controller_1 = require('./view-controller');
  */
 var Nav = (function (_super) {
     __extends(Nav, _super);
-    function Nav(viewCtrl, parent, app, config, keyboard, elementRef, zone, renderer, loader) {
-        _super.call(this, parent, app, config, keyboard, elementRef, zone, renderer, loader);
+    function Nav(viewCtrl, parent, app, config, keyboard, elementRef, zone, renderer, compiler) {
+        _super.call(this, parent, app, config, keyboard, elementRef, zone, renderer, compiler);
         this._hasInit = false;
         if (viewCtrl) {
             // an ion-nav can also act as an ion-page within a parent ion-nav
@@ -52501,7 +51328,7 @@ var Nav = (function (_super) {
     ], Nav.prototype, "_vp", null);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', core_1.Type)
+        __metadata('design:type', Object)
     ], Nav.prototype, "root", null);
     __decorate([
         core_1.Input(), 
@@ -52521,13 +51348,13 @@ var Nav = (function (_super) {
         }),
         __param(0, core_1.Optional()),
         __param(1, core_1.Optional()), 
-        __metadata('design:paramtypes', [view_controller_1.ViewController, nav_controller_1.NavController, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.DynamicComponentLoader])
+        __metadata('design:paramtypes', [view_controller_1.ViewController, nav_controller_1.NavController, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.ComponentResolver])
     ], Nav);
     return Nav;
 }(nav_controller_1.NavController));
 exports.Nav = Nav;
 
-},{"../../config/config":382,"../../util/keyboard":411,"../../util/util":413,"../app/app":314,"./nav-controller":342,"./nav-portal":344,"./view-controller":350,"@angular/core":139}],349:[function(require,module,exports){
+},{"../../config/config":360,"../../util/keyboard":390,"../../util/util":392,"../app/app":292,"./nav-controller":320,"./nav-portal":322,"./view-controller":328,"@angular/core":139}],327:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -52581,7 +51408,7 @@ var SwipeBackGesture = (function (_super) {
 }(slide_edge_gesture_1.SlideEdgeGesture));
 exports.SwipeBackGesture = SwipeBackGesture;
 
-},{"../../gestures/slide-edge-gesture":389,"../../util/util":413}],350:[function(require,module,exports){
+},{"../../gestures/slide-edge-gesture":367,"../../util/util":392}],328:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -53124,7 +51951,7 @@ function ctrlFn(viewCtrl, fnName) {
     }
 }
 
-},{"../../util/util":413,"./nav-params":343,"@angular/core":139}],351:[function(require,module,exports){
+},{"../../util/util":392,"./nav-params":321,"@angular/core":139}],329:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -53376,7 +52203,7 @@ var NavbarTemplate = (function () {
 }());
 exports.NavbarTemplate = NavbarTemplate;
 
-},{"../../config/config":382,"../../util/util":413,"../app/app":314,"../ion":328,"../nav/nav-controller":342,"../nav/view-controller":350,"../toolbar/toolbar":377,"@angular/core":139}],352:[function(require,module,exports){
+},{"../../config/config":360,"../../util/util":392,"../app/app":292,"../ion":306,"../nav/nav-controller":320,"../nav/view-controller":328,"../toolbar/toolbar":355,"@angular/core":139}],330:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -53466,7 +52293,7 @@ var Option = (function () {
 }());
 exports.Option = Option;
 
-},{"../../util/util":413,"@angular/core":139}],353:[function(require,module,exports){
+},{"../../util/util":392,"@angular/core":139}],331:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -53488,6 +52315,7 @@ var animation_1 = require('../../animations/animation');
 var transition_1 = require('../../transitions/transition');
 var config_1 = require('../../config/config');
 var util_1 = require('../../util/util');
+var key_1 = require('../../util/key');
 var nav_params_1 = require('../nav/nav-params');
 var view_controller_1 = require('../nav/view-controller');
 var dom_1 = require('../../util/dom');
@@ -53857,7 +52685,6 @@ var PickerDisplayCmp = (function () {
             });
         }
         this.id = (++pickerIds);
-        this.created = Date.now();
         this.lastClick = 0;
     }
     PickerDisplayCmp.prototype.ionViewLoaded = function () {
@@ -53912,8 +52739,8 @@ var PickerDisplayCmp = (function () {
         picker.ionChange.emit(this.getSelected());
     };
     PickerDisplayCmp.prototype._keyUp = function (ev) {
-        if (this.isEnabled() && this._viewCtrl.isLast()) {
-            if (ev.keyCode === 13) {
+        if (this.enabled && this._viewCtrl.isLast()) {
+            if (ev.keyCode === key_1.Key.ENTER) {
                 if (this.lastClick + 1000 < Date.now()) {
                     // do not fire this click if there recently was already a click
                     // this can happen when the button has focus and used the enter
@@ -53924,7 +52751,7 @@ var PickerDisplayCmp = (function () {
                     this.btnClick(button);
                 }
             }
-            else if (ev.keyCode === 27) {
+            else if (ev.keyCode === key_1.Key.ESCAPE) {
                 void 0;
                 this.bdClick();
             }
@@ -53939,10 +52766,11 @@ var PickerDisplayCmp = (function () {
         if (focusableEle) {
             focusableEle.focus();
         }
+        this.enabled = true;
     };
     PickerDisplayCmp.prototype.btnClick = function (button, dismissDelay) {
         var _this = this;
-        if (!this.isEnabled()) {
+        if (!this.enabled) {
             return;
         }
         // keep the time of the most recent button click
@@ -53963,7 +52791,7 @@ var PickerDisplayCmp = (function () {
         }
     };
     PickerDisplayCmp.prototype.bdClick = function () {
-        if (this.isEnabled() && this.d.enableBackdropDismiss) {
+        if (this.enabled && this.d.enableBackdropDismiss) {
             this.dismiss('backdrop');
         }
     };
@@ -53981,10 +52809,6 @@ var PickerDisplayCmp = (function () {
             };
         });
         return selected;
-    };
-    PickerDisplayCmp.prototype.isEnabled = function () {
-        var tm = this._config.getNumber('overlayCreatedDiff', 750);
-        return (this.created + tm < Date.now());
     };
     __decorate([
         core_1.ViewChildren(PickerColumnCmp), 
@@ -54059,7 +52883,7 @@ var pickerIds = -1;
 var DECELERATION_FRICTION = 0.97;
 var FRAME_MS = (1000 / 60);
 
-},{"../../animations/animation":309,"../../config/config":382,"../../transitions/transition":401,"../../util/dom":407,"../../util/util":413,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139,"@angular/platform-browser":247}],354:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/config":360,"../../transitions/transition":379,"../../util/dom":385,"../../util/key":389,"../../util/util":392,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139,"@angular/platform-browser":247}],332:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -54076,11 +52900,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
+var bootstrap_1 = require('../../config/bootstrap');
 var animation_1 = require('../../animations/animation');
 var transition_1 = require('../../transitions/transition');
 var config_1 = require('../../config/config');
 var nav_params_1 = require('../nav/nav-params');
+var key_1 = require('../../util/key');
 var util_1 = require('../../util/util');
 var dom_1 = require('../../util/dom');
 var view_controller_1 = require('../nav/view-controller');
@@ -54226,15 +53051,14 @@ exports.Popover = Popover;
 * @private
 */
 var PopoverCmp = (function () {
-    function PopoverCmp(_loader, _elementRef, _renderer, _config, _navParams, _viewCtrl) {
-        this._loader = _loader;
+    function PopoverCmp(_compiler, _elementRef, _renderer, _config, _navParams, _viewCtrl) {
+        this._compiler = _compiler;
         this._elementRef = _elementRef;
         this._renderer = _renderer;
         this._config = _config;
         this._navParams = _navParams;
         this._viewCtrl = _viewCtrl;
         this.d = _navParams.data.opts;
-        this.created = Date.now();
         if (this.d.cssClass) {
             _renderer.setElementClass(_elementRef.nativeElement, this.d.cssClass, true);
         }
@@ -54242,17 +53066,20 @@ var PopoverCmp = (function () {
     }
     PopoverCmp.prototype.ionViewWillEnter = function () {
         var _this = this;
-        this._loader.loadNextToLocation(this._navParams.data.componentType, this.viewport).then(function (componentRef) {
+        bootstrap_1.addSelector(this._navParams.data.componentType, 'ion-popover-inner');
+        this._compiler.resolveComponent(this._navParams.data.componentType).then(function (componentFactory) {
+            var componentRef = _this.viewport.createComponent(componentFactory, _this.viewport.length, _this.viewport.parentInjector);
             _this._viewCtrl.setInstance(componentRef.instance);
             // manually fire ionViewWillEnter() since PopoverCmp's ionViewWillEnter already happened
             _this._viewCtrl.fireWillEnter();
         });
     };
-    PopoverCmp.prototype.ionViewDidEnter = function () {
+    PopoverCmp.prototype.ngAfterViewInit = function () {
         var activeElement = document.activeElement;
         if (document.activeElement) {
             activeElement.blur();
         }
+        this.enabled = true;
     };
     PopoverCmp.prototype.dismiss = function (role) {
         return this._viewCtrl.dismiss(null, role);
@@ -54262,18 +53089,25 @@ var PopoverCmp = (function () {
         ev.stopPropagation();
     };
     PopoverCmp.prototype.bdClick = function () {
-        if (this.isEnabled() && this.d.enableBackdropDismiss) {
+        if (this.enabled && this.d.enableBackdropDismiss) {
             this.dismiss('backdrop');
         }
     };
-    PopoverCmp.prototype.isEnabled = function () {
-        var tm = this._config.getNumber('overlayCreatedDiff', 750);
-        return (this.created + tm < Date.now());
+    PopoverCmp.prototype._keyUp = function (ev) {
+        if (this.enabled && this._viewCtrl.isLast() && ev.keyCode === key_1.Key.ESCAPE) {
+            this.bdClick();
+        }
     };
     __decorate([
         core_1.ViewChild('viewport', { read: core_1.ViewContainerRef }), 
         __metadata('design:type', core_1.ViewContainerRef)
     ], PopoverCmp.prototype, "viewport", void 0);
+    __decorate([
+        core_1.HostListener('body:keyup', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [KeyboardEvent]), 
+        __metadata('design:returntype', void 0)
+    ], PopoverCmp.prototype, "_keyUp", null);
     PopoverCmp = __decorate([
         core_1.Component({
             selector: 'ion-popover',
@@ -54287,7 +53121,7 @@ var PopoverCmp = (function () {
                 '</div>' +
                 '</div>'
         }), 
-        __metadata('design:paramtypes', [core_1.DynamicComponentLoader, core_2.ElementRef, core_2.Renderer, config_1.Config, nav_params_1.NavParams, view_controller_1.ViewController])
+        __metadata('design:paramtypes', [core_1.ComponentResolver, core_1.ElementRef, core_1.Renderer, config_1.Config, nav_params_1.NavParams, view_controller_1.ViewController])
     ], PopoverCmp);
     return PopoverCmp;
 }());
@@ -54313,8 +53147,8 @@ var PopoverTransition = (function (_super) {
         var bodyHeight = window.innerHeight;
         // If ev was passed, use that for target element
         var targetDim = ev && ev.target && ev.target.getBoundingClientRect();
-        var targetTop = targetDim && targetDim.top || (bodyHeight / 2) - (popoverHeight / 2);
-        var targetLeft = targetDim && targetDim.left || bodyWidth / 2 - (popoverWidth / 2);
+        var targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2);
+        var targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2) - (popoverWidth / 2);
         var targetWidth = targetDim && targetDim.width || 0;
         var targetHeight = targetDim && targetDim.height || 0;
         var popoverCSS = {
@@ -54362,8 +53196,8 @@ var PopoverTransition = (function (_super) {
         var bodyHeight = window.innerHeight;
         // If ev was passed, use that for target element
         var targetDim = ev && ev.target && ev.target.getBoundingClientRect();
-        var targetTop = targetDim && targetDim.top || (bodyHeight / 2) - (popoverHeight / 2);
-        var targetLeft = targetDim && targetDim.left || bodyWidth / 2;
+        var targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2);
+        var targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2);
         var targetWidth = targetDim && targetDim.width || 0;
         var targetHeight = targetDim && targetDim.height || 0;
         // The arrow that shows above the popover on iOS
@@ -54371,6 +53205,10 @@ var PopoverTransition = (function (_super) {
         var arrowDim = arrowEle.getBoundingClientRect();
         var arrowWidth = arrowDim.width;
         var arrowHeight = arrowDim.height;
+        // If no ev was passed, hide the arrow
+        if (!targetDim) {
+            arrowEle.style.display = 'none';
+        }
         var arrowCSS = {
             top: targetTop + targetHeight,
             left: targetLeft + (targetWidth / 2) - (arrowWidth / 2)
@@ -54509,7 +53347,7 @@ var PopoverMdPopOut = (function (_super) {
 transition_1.Transition.register('popover-md-pop-out', PopoverMdPopOut);
 var popoverIds = -1;
 
-},{"../../animations/animation":309,"../../config/config":382,"../../transitions/transition":401,"../../util/dom":407,"../../util/util":413,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139}],355:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/bootstrap":359,"../../config/config":360,"../../transitions/transition":379,"../../util/dom":385,"../../util/key":389,"../../util/util":392,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139}],333:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -54707,7 +53545,7 @@ var RadioButton = (function () {
 }());
 exports.RadioButton = RadioButton;
 
-},{"../../util/form":410,"../../util/util":413,"../item/item":331,"./radio-group":356,"@angular/core":139}],356:[function(require,module,exports){
+},{"../../util/form":388,"../../util/util":392,"../item/item":309,"./radio-group":334,"@angular/core":139}],334:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -54931,7 +53769,7 @@ var RadioGroup = (function () {
 exports.RadioGroup = RadioGroup;
 var radioGroupIds = -1;
 
-},{"../../util/util":413,"../list/list":333,"@angular/common":7,"@angular/core":139}],357:[function(require,module,exports){
+},{"../../util/util":392,"../list/list":311,"@angular/common":7,"@angular/core":139}],335:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55254,6 +54092,12 @@ var Range = (function () {
      * @private
      */
     Range.prototype.pointerDown = function (ev) {
+        // TODO: we could stop listening for events instead of checking this._disabled.
+        // since there are a lot of events involved, this solution is
+        // enough for the moment
+        if (this._disabled) {
+            return;
+        }
         void 0;
         // prevent default so scrolling does not happen
         ev.preventDefault();
@@ -55296,7 +54140,7 @@ var Range = (function () {
         }
         else {
             removes.push(renderer.listenGlobal('body', 'mousemove', this.pointerMove.bind(this)));
-            removes.push(renderer.listenGlobal('body', 'mouseup', this.pointerUp.bind(this)));
+            removes.push(renderer.listenGlobal('window', 'mouseup', this.pointerUp.bind(this)));
         }
     };
     /**
@@ -55625,7 +54469,7 @@ var Range = (function () {
 }());
 exports.Range = Range;
 
-},{"../../util/dom":407,"../../util/form":410,"../../util/util":413,"../item/item":331,"@angular/common":7,"@angular/core":139}],358:[function(require,module,exports){
+},{"../../util/dom":385,"../../util/form":388,"../../util/util":392,"../item/item":309,"@angular/common":7,"@angular/core":139}],336:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55700,7 +54544,7 @@ var RefresherContent = (function () {
 }());
 exports.RefresherContent = RefresherContent;
 
-},{"../../config/config":382,"./refresher":359,"@angular/core":139}],359:[function(require,module,exports){
+},{"../../config/config":360,"./refresher":337,"@angular/core":139}],337:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -56217,7 +55061,7 @@ var STATE_REFRESHING = 'refreshing';
 var STATE_CANCELLING = 'cancelling';
 var STATE_COMPLETING = 'completing';
 
-},{"../../util/dom":407,"../../util/util":413,"../content/content":319,"@angular/core":139}],360:[function(require,module,exports){
+},{"../../util/dom":385,"../../util/util":392,"../content/content":297,"@angular/core":139}],338:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -56316,13 +55160,8 @@ var Scroll = (function (_super) {
 }(ion_1.Ion));
 exports.Scroll = Scroll;
 
-},{"../ion":328,"@angular/core":139}],361:[function(require,module,exports){
+},{"../ion":306,"@angular/core":139}],339:[function(require,module,exports){
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56338,24 +55177,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var config_1 = require('../../config/config');
-var ion_1 = require('../ion');
 var util_1 = require('../../util/util');
-/**
-* @private
-*/
-var SearchbarInput = (function () {
-    function SearchbarInput(elementRef) {
-        this.elementRef = elementRef;
-    }
-    SearchbarInput = __decorate([
-        core_1.Directive({
-            selector: '.searchbar-input',
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], SearchbarInput);
-    return SearchbarInput;
-}());
-exports.SearchbarInput = SearchbarInput;
 /**
  * @name Searchbar
  * @module ionic
@@ -56366,7 +55188,7 @@ exports.SearchbarInput = SearchbarInput;
  * ```html
  * <ion-searchbar
  *   [(ngModel)]="myInput"
- *   [hideCancelButton]="shouldHideCancel"
+ *   [showCancelButton]="shouldShowCancel"
  *   (ionInput)="onInput($event)"
  *   (ionCancel)="onCancel($event)">
  * </ion-searchbar>
@@ -56375,44 +55197,53 @@ exports.SearchbarInput = SearchbarInput;
  * @demo /docs/v2/demos/searchbar/
  * @see {@link /docs/v2/components#searchbar Searchbar Component Docs}
  */
-var Searchbar = (function (_super) {
-    __extends(Searchbar, _super);
+var Searchbar = (function () {
     function Searchbar(_elementRef, _config, ngControl) {
-        _super.call(this, _elementRef);
         this._elementRef = _elementRef;
         this._config = _config;
+        this._value = '';
+        this._shouldBlur = true;
+        this._isActive = false;
+        /**
+         * @input {string} Set the the cancel button text. Default: `"Cancel"`.
+         */
+        this.cancelButtonText = 'Cancel';
+        /**
+         * @input {boolean} Whether to hide the cancel button or not. Default: `"false"`.
+         */
+        this.showCancelButton = false;
         /**
          * @input {number} How long, in milliseconds, to wait to trigger the `input` event after each keystroke. Default `250`.
          */
         this.debounce = 250;
         /**
-         * @output {event} When the Searchbar input has changed including cleared
+         * @input {string} Set the input's placeholder. Default `"Search"`.
+         */
+        this.placeholder = 'Search';
+        /**
+         * @input {string} Set the type of the input. Values: `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"`. Default `"search"`.
+         */
+        this.type = 'search';
+        /**
+         * @output {event} When the Searchbar input has changed including cleared.
          */
         this.ionInput = new core_1.EventEmitter();
         /**
-         * @output {event} When the Searchbar input has blurred
+         * @output {event} When the Searchbar input has blurred.
          */
         this.ionBlur = new core_1.EventEmitter();
         /**
-         * @output {event} When the Searchbar input has focused
+         * @output {event} When the Searchbar input has focused.
          */
         this.ionFocus = new core_1.EventEmitter();
         /**
-         * @output {event} When the cancel button is clicked
+         * @output {event} When the cancel button is clicked.
          */
         this.ionCancel = new core_1.EventEmitter();
         /**
-         * @output {event} When the clear input button is clicked
+         * @output {event} When the clear input button is clicked.
          */
         this.ionClear = new core_1.EventEmitter();
-        /**
-         * @private
-         */
-        this.value = '';
-        /**
-         * @private
-         */
-        this.blurInput = true;
         /**
          * @private
          */
@@ -56426,54 +55257,73 @@ var Searchbar = (function (_super) {
             ngControl.valueAccessor = this;
         }
     }
+    Object.defineProperty(Searchbar.prototype, "searchbarInput", {
+        /**
+         * @private
+         */
+        set: function (searchbarInput) {
+            this._searchbarInput = searchbarInput;
+            var inputEle = searchbarInput.nativeElement;
+            // By defalt set autocomplete="off" unless specified by the input
+            var autoComplete = (this.autocomplete === '' || this.autocomplete === 'on') ? 'on' : this._config.get('autocomplete', 'off');
+            inputEle.setAttribute('autocomplete', autoComplete);
+            // by default set autocorrect="off" unless specified by the input
+            var autoCorrect = (this.autocorrect === '' || this.autocorrect === 'on') ? 'on' : this._config.get('autocorrect', 'off');
+            inputEle.setAttribute('autocorrect', autoCorrect);
+            // by default set spellcheck="false" unless specified by the input
+            var spellCheck = (this.spellcheck === '' || this.spellcheck === 'true' || this.spellcheck === true) ? true : this._config.getBoolean('spellcheck', false);
+            inputEle.setAttribute('spellcheck', spellCheck);
+            // by default set type="search" unless specified by the input
+            inputEle.setAttribute('type', this.type);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Searchbar.prototype, "value", {
+        /**
+         * @input {string} Set the input value.
+         */
+        get: function () {
+            return this._value;
+        },
+        set: function (val) {
+            this._value = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
      * @private
      * On Initialization check for attributes
      */
     Searchbar.prototype.ngOnInit = function () {
-        this.mode = this._config.get('mode');
-        var hideCancelButton = this.hideCancelButton;
-        if (typeof hideCancelButton === 'string') {
-            this.hideCancelButton = (hideCancelButton === '' || hideCancelButton === 'true');
+        var showCancelButton = this.showCancelButton;
+        if (typeof showCancelButton === 'string') {
+            this.showCancelButton = (showCancelButton === '' || showCancelButton === 'true');
         }
-        this.cancelButtonText = this.cancelButtonText || 'Cancel';
-        this.placeholder = this.placeholder || 'Search';
-        if (this.ngModel)
-            this.value = this.ngModel;
-        this.onChange(this.value);
-        this.shouldLeftAlign = this.value && this.value.trim() !== '';
-        // Using querySelector instead of searchbarInput because at this point it doesn't exist
-        this.inputElement = this._elementRef.nativeElement.querySelector('.searchbar-input');
-        this.searchIconElement = this._elementRef.nativeElement.querySelector('.searchbar-search-icon');
-        this.setElementLeft();
     };
     /**
      * @private
-     * After View Initialization check the value
+     * After View Initialization position the elements
      */
     Searchbar.prototype.ngAfterViewInit = function () {
-        // If the user passes an undefined variable to ngModel this will warn
-        // and set the value to an empty string
-        if (!util_1.isPresent(this.value)) {
-            void 0;
-            this.value = '';
-            this.onChange(this.value);
-        }
+        this.positionElements();
     };
     /**
      * @private
-     * Determines whether or not to add style to the element
-     * to center it properly (ios only)
+     * Positions the input search icon, placeholder, and the cancel button
+     * based on the input value and if it is focused. (ios only)
      */
-    Searchbar.prototype.setElementLeft = function () {
-        if (this.mode !== 'ios')
+    Searchbar.prototype.positionElements = function () {
+        if (this._config.get('mode') !== 'ios')
             return;
-        if (this.shouldLeftAlign) {
-            this.inputElement.removeAttribute('style');
-            this.searchIconElement.removeAttribute('style');
+        // Position the input placeholder & search icon
+        if (this._searchbarInput && this._searchbarIcon) {
+            this.positionInputPlaceholder(this._searchbarInput.nativeElement, this._searchbarIcon.nativeElement);
         }
-        else {
-            this.addElementLeft();
+        // Position the cancel button
+        if (this._cancelButton && this._cancelButton.nativeElement) {
+            this.positionCancelButton(this._cancelButton.nativeElement);
         }
     };
     /**
@@ -56481,20 +55331,47 @@ var Searchbar = (function (_super) {
      * Calculates the amount of padding/margin left for the elements
      * in order to center them based on the placeholder width
      */
-    Searchbar.prototype.addElementLeft = function () {
-        // Create a dummy span to get the placeholder width
-        var tempSpan = document.createElement('span');
-        tempSpan.innerHTML = this.placeholder;
-        document.body.appendChild(tempSpan);
-        // Get the width of the span then remove it
-        var textWidth = tempSpan.offsetWidth;
-        tempSpan.remove();
-        // Set the input padding left
-        var inputLeft = 'calc(50% - ' + (textWidth / 2) + 'px)';
-        this.inputElement.style.paddingLeft = inputLeft;
-        // Set the icon margin left
-        var iconLeft = 'calc(50% - ' + ((textWidth / 2) + 30) + 'px)';
-        this.searchIconElement.style.marginLeft = iconLeft;
+    Searchbar.prototype.positionInputPlaceholder = function (inputEle, iconEle) {
+        if (this.shouldAlignLeft()) {
+            inputEle.removeAttribute('style');
+            iconEle.removeAttribute('style');
+        }
+        else {
+            // Create a dummy span to get the placeholder width
+            var tempSpan = document.createElement('span');
+            tempSpan.innerHTML = this.placeholder;
+            document.body.appendChild(tempSpan);
+            // Get the width of the span then remove it
+            var textWidth = tempSpan.offsetWidth;
+            tempSpan.remove();
+            // Set the input padding left
+            var inputLeft = 'calc(50% - ' + (textWidth / 2) + 'px)';
+            inputEle.style.paddingLeft = inputLeft;
+            // Set the icon margin left
+            var iconLeft = 'calc(50% - ' + ((textWidth / 2) + 30) + 'px)';
+            iconEle.style.marginLeft = iconLeft;
+        }
+    };
+    /**
+     * @private
+     * Show the iOS Cancel button on focus, hide it offscreen otherwise
+     */
+    Searchbar.prototype.positionCancelButton = function (cancelButtonEle) {
+        if (cancelButtonEle.offsetWidth > 0) {
+            if (this._sbHasFocus) {
+                cancelButtonEle.style.marginRight = '0';
+            }
+            else {
+                cancelButtonEle.style.marginRight = -cancelButtonEle.offsetWidth + 'px';
+            }
+        }
+    };
+    /**
+     * @private
+     * Align the input placeholder left on focus or if a value exists
+     */
+    Searchbar.prototype.shouldAlignLeft = function () {
+        return ((this._value && this._value.toString().trim() !== '') || this._sbHasFocus === true);
     };
     /**
      * @private
@@ -56505,49 +55382,50 @@ var Searchbar = (function (_super) {
         var value = ev.target.value;
         clearTimeout(this._tmr);
         this._tmr = setTimeout(function () {
-            _this.value = value;
-            _this.onChange(value);
-            _this.ionInput.emit(_this);
+            _this._value = value;
+            _this.onChange(_this._value);
+            _this.ionInput.emit(ev);
         }, Math.round(this.debounce));
     };
     /**
      * @private
-     * Sets the Searchbar to focused and aligned left on input focus.
+     * Sets the Searchbar to focused and active on input focus.
      */
-    Searchbar.prototype.inputFocused = function () {
-        this.ionFocus.emit(this);
-        this.isFocused = true;
-        this.shouldLeftAlign = true;
-        this.setElementLeft();
+    Searchbar.prototype.inputFocused = function (ev) {
+        this.ionFocus.emit(ev);
+        this._sbHasFocus = true;
+        this._isActive = true;
+        this.positionElements();
     };
     /**
      * @private
      * Sets the Searchbar to not focused and checks if it should align left
      * based on whether there is a value in the searchbar or not.
      */
-    Searchbar.prototype.inputBlurred = function () {
-        // blurInput determines if it should blur
+    Searchbar.prototype.inputBlurred = function (ev) {
+        // _shouldBlur determines if it should blur
         // if we are clearing the input we still want to stay focused in the input
-        if (this.blurInput === false) {
-            this.searchbarInput.elementRef.nativeElement.focus();
-            this.blurInput = true;
+        if (this._shouldBlur === false) {
+            this._searchbarInput.nativeElement.focus();
+            this._shouldBlur = true;
             return;
         }
-        this.ionBlur.emit(this);
-        this.isFocused = false;
-        this.shouldLeftAlign = this.value && this.value.trim() !== '';
-        this.setElementLeft();
+        this.ionBlur.emit(ev);
+        this._sbHasFocus = false;
+        this.positionElements();
     };
     /**
      * @private
      * Clears the input field and triggers the control change.
      */
-    Searchbar.prototype.clearInput = function () {
-        this.ionClear.emit(this);
-        this.value = '';
-        this.onChange(this.value);
-        this.ionInput.emit(this);
-        this.blurInput = false;
+    Searchbar.prototype.clearInput = function (ev) {
+        this.ionClear.emit(ev);
+        if (util_1.isPresent(this._value) && this._value !== '') {
+            this._value = '';
+            this.onChange(this._value);
+            this.ionInput.emit(ev);
+        }
+        this._shouldBlur = false;
     };
     /**
      * @private
@@ -56555,17 +55433,19 @@ var Searchbar = (function (_super) {
      * the clearInput function doesn't want the input to blur
      * then calls the custom cancel function if the user passed one in.
      */
-    Searchbar.prototype.cancelSearchbar = function () {
-        this.ionCancel.emit(this);
-        this.clearInput();
-        this.blurInput = true;
+    Searchbar.prototype.cancelSearchbar = function (ev) {
+        this.ionCancel.emit(ev);
+        this.clearInput(ev);
+        this._shouldBlur = true;
+        this._isActive = false;
     };
     /**
      * @private
      * Write a new value to the element.
      */
-    Searchbar.prototype.writeValue = function (value) {
-        this.value = value;
+    Searchbar.prototype.writeValue = function (val) {
+        this._value = val;
+        this.positionElements();
     };
     /**
      * @private
@@ -56582,17 +55462,13 @@ var Searchbar = (function (_super) {
         this.onTouched = fn;
     };
     __decorate([
-        core_1.ViewChild(SearchbarInput), 
-        __metadata('design:type', SearchbarInput)
-    ], Searchbar.prototype, "searchbarInput", void 0);
-    __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
     ], Searchbar.prototype, "cancelButtonText", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], Searchbar.prototype, "hideCancelButton", void 0);
+    ], Searchbar.prototype, "showCancelButton", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Number)
@@ -56603,8 +55479,20 @@ var Searchbar = (function (_super) {
     ], Searchbar.prototype, "placeholder", void 0);
     __decorate([
         core_1.Input(), 
+        __metadata('design:type', String)
+    ], Searchbar.prototype, "autocomplete", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], Searchbar.prototype, "autocorrect", void 0);
+    __decorate([
+        core_1.Input(), 
         __metadata('design:type', Object)
-    ], Searchbar.prototype, "ngModel", void 0);
+    ], Searchbar.prototype, "spellcheck", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], Searchbar.prototype, "type", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -56626,40 +55514,54 @@ var Searchbar = (function (_super) {
         __metadata('design:type', core_1.EventEmitter)
     ], Searchbar.prototype, "ionClear", void 0);
     __decorate([
-        core_1.HostBinding('class.searchbar-focused'), 
+        core_1.HostBinding('class.searchbar-has-focus'), 
         __metadata('design:type', Boolean)
-    ], Searchbar.prototype, "isFocused", void 0);
+    ], Searchbar.prototype, "_sbHasFocus", void 0);
     __decorate([
-        core_1.HostBinding('class.searchbar-left-aligned'), 
-        __metadata('design:type', Boolean)
-    ], Searchbar.prototype, "shouldLeftAlign", void 0);
+        core_1.ViewChild('searchbarInput'), 
+        __metadata('design:type', core_1.ElementRef), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], Searchbar.prototype, "searchbarInput", null);
+    __decorate([
+        core_1.ViewChild('searchbarIcon'), 
+        __metadata('design:type', core_1.ElementRef)
+    ], Searchbar.prototype, "_searchbarIcon", void 0);
+    __decorate([
+        core_1.ViewChild('cancelButton', { read: core_1.ElementRef }), 
+        __metadata('design:type', core_1.ElementRef)
+    ], Searchbar.prototype, "_cancelButton", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], Searchbar.prototype, "value", null);
     Searchbar = __decorate([
         core_1.Component({
             selector: 'ion-searchbar',
             host: {
-                '[class.searchbar-has-value]': 'value',
-                '[class.searchbar-hide-cancel]': 'hideCancelButton'
+                '[class.searchbar-has-value]': '_value',
+                '[class.searchbar-active]': '_isActive',
+                '[class.searchbar-show-cancel]': 'showCancelButton',
+                '[class.searchbar-left-aligned]': 'shouldAlignLeft()'
             },
             template: '<div class="searchbar-input-container">' +
-                '<button (click)="cancelSearchbar()" (mousedown)="cancelSearchbar()" [hidden]="hideCancelButton" clear dark class="searchbar-md-cancel">' +
+                '<button (click)="cancelSearchbar($event)" (mousedown)="cancelSearchbar($event)" clear dark class="searchbar-md-cancel">' +
                 '<ion-icon name="arrow-back"></ion-icon>' +
                 '</button>' +
-                '<div class="searchbar-search-icon"></div>' +
-                '<input [value]="value" (input)="inputChanged($event)" (blur)="inputBlurred()" (focus)="inputFocused()" class="searchbar-input" type="search" [attr.placeholder]="placeholder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">' +
-                '<button clear class="searchbar-clear-icon" (click)="clearInput()" (mousedown)="clearInput()"></button>' +
+                '<div #searchbarIcon class="searchbar-search-icon"></div>' +
+                '<input #searchbarInput [(ngModel)]="_value" [attr.placeholder]="placeholder" (input)="inputChanged($event)" (blur)="inputBlurred($event)" (focus)="inputFocused($event)" class="searchbar-input">' +
+                '<button clear class="searchbar-clear-icon" (click)="clearInput($event)" (mousedown)="clearInput($event)"></button>' +
                 '</div>' +
-                '<button clear (click)="cancelSearchbar()" (mousedown)="cancelSearchbar()" [hidden]="hideCancelButton" class="searchbar-ios-cancel">{{cancelButtonText}}</button>',
-            directives: [SearchbarInput],
-            encapsulation: core_1.ViewEncapsulation.None,
+                '<button #cancelButton [tabindex]="_isActive ? 1 : -1" clear (click)="cancelSearchbar($event)" (mousedown)="cancelSearchbar($event)" class="searchbar-ios-cancel">{{cancelButtonText}}</button>',
+            encapsulation: core_1.ViewEncapsulation.None
         }),
         __param(2, core_1.Optional()), 
         __metadata('design:paramtypes', [core_1.ElementRef, config_1.Config, common_1.NgControl])
     ], Searchbar);
     return Searchbar;
-}(ion_1.Ion));
+}());
 exports.Searchbar = Searchbar;
 
-},{"../../config/config":382,"../../util/util":413,"../ion":328,"@angular/common":7,"@angular/core":139}],362:[function(require,module,exports){
+},{"../../config/config":360,"../../util/util":392,"@angular/common":7,"@angular/core":139}],340:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -56957,7 +55859,7 @@ var Segment = (function () {
 }());
 exports.Segment = Segment;
 
-},{"../../util/util":413,"@angular/common":7,"@angular/core":139}],363:[function(require,module,exports){
+},{"../../util/util":392,"@angular/common":7,"@angular/core":139}],341:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57363,6 +56265,10 @@ var Select = (function () {
     ], Select.prototype, "okText", void 0);
     __decorate([
         core_1.Input(), 
+        __metadata('design:type', String)
+    ], Select.prototype, "placeholder", void 0);
+    __decorate([
+        core_1.Input(), 
         __metadata('design:type', Object)
     ], Select.prototype, "alertOptions", void 0);
     __decorate([
@@ -57409,7 +56315,8 @@ var Select = (function () {
     Select = __decorate([
         core_1.Component({
             selector: 'ion-select',
-            template: '<div class="select-text">{{_text}}</div>' +
+            template: '<div *ngIf="!_text" class="select-placeholder select-text">{{placeholder}}</div>' +
+                '<div *ngIf="_text" class="select-text">{{_text}}</div>' +
                 '<div class="select-icon">' +
                 '<div class="select-icon-inner"></div>' +
                 '</div>' +
@@ -57434,7 +56341,7 @@ var Select = (function () {
 }());
 exports.Select = Select;
 
-},{"../../util/form":410,"../../util/util":413,"../action-sheet/action-sheet":312,"../alert/alert":313,"../item/item":331,"../nav/nav-controller":342,"../option/option":352,"@angular/common":7,"@angular/core":139}],364:[function(require,module,exports){
+},{"../../util/form":388,"../../util/util":392,"../action-sheet/action-sheet":290,"../alert/alert":291,"../item/item":309,"../nav/nav-controller":320,"../option/option":330,"@angular/common":7,"@angular/core":139}],342:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -57618,7 +56525,7 @@ var HideWhen = (function (_super) {
 }(DisplayWhen));
 exports.HideWhen = HideWhen;
 
-},{"../../platform/platform":392,"@angular/core":139}],365:[function(require,module,exports){
+},{"../../platform/platform":370,"@angular/core":139}],343:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -58383,7 +57290,7 @@ var SlideLazy = (function () {
 exports.SlideLazy = SlideLazy;
 var slidesId = -1;
 
-},{"../../animations/animation":309,"../../gestures/gesture":387,"../../util":404,"../../util/dom":407,"../../util/util":413,"../ion":328,"./swiper-widget":366,"@angular/common":7,"@angular/core":139}],366:[function(require,module,exports){
+},{"../../animations/animation":287,"../../gestures/gesture":365,"../../util":382,"../../util/dom":385,"../../util/util":392,"../ion":306,"./swiper-widget":344,"@angular/common":7,"@angular/core":139}],344:[function(require,module,exports){
 /**
  * Swiper 3.1.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -62339,7 +61246,7 @@ function Swiper(container, params) {
       }
   }
 
-},{}],367:[function(require,module,exports){
+},{}],345:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -62636,7 +61543,7 @@ var SPINNERS = {
     }
 };
 
-},{"../../config/config":382,"@angular/common":7,"@angular/core":139}],368:[function(require,module,exports){
+},{"../../config/config":360,"@angular/common":7,"@angular/core":139}],346:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -62715,7 +61622,7 @@ var TabButton = (function (_super) {
 }(ion_1.Ion));
 exports.TabButton = TabButton;
 
-},{"../../config/config":382,"../ion":328,"./tab":370,"@angular/core":139}],369:[function(require,module,exports){
+},{"../../config/config":360,"../ion":306,"./tab":348,"@angular/core":139}],347:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -62759,7 +61666,7 @@ var TabHighlight = (function () {
 }());
 exports.TabHighlight = TabHighlight;
 
-},{"../../util/dom":407,"@angular/core":139}],370:[function(require,module,exports){
+},{"../../util/dom":385,"@angular/core":139}],348:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -62892,9 +61799,9 @@ var tabs_1 = require('./tabs');
  */
 var Tab = (function (_super) {
     __extends(Tab, _super);
-    function Tab(parentTabs, app, config, keyboard, elementRef, zone, renderer, loader, _cd) {
+    function Tab(parentTabs, app, config, keyboard, elementRef, zone, renderer, compiler, _cd) {
         // A Tab is a NavController for its child pages
-        _super.call(this, parentTabs, app, config, keyboard, elementRef, zone, renderer, loader);
+        _super.call(this, parentTabs, app, config, keyboard, elementRef, zone, renderer, compiler);
         this._cd = _cd;
         this._isEnabled = true;
         this._isShown = true;
@@ -63104,13 +62011,13 @@ var Tab = (function (_super) {
             encapsulation: core_1.ViewEncapsulation.None,
         }),
         __param(0, core_1.Inject(core_1.forwardRef(function () { return tabs_1.Tabs; }))), 
-        __metadata('design:paramtypes', [tabs_1.Tabs, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.DynamicComponentLoader, core_1.ChangeDetectorRef])
+        __metadata('design:paramtypes', [tabs_1.Tabs, app_1.App, config_1.Config, keyboard_1.Keyboard, core_1.ElementRef, core_1.NgZone, core_1.Renderer, core_1.ComponentResolver, core_1.ChangeDetectorRef])
     ], Tab);
     return Tab;
 }(nav_controller_1.NavController));
 exports.Tab = Tab;
 
-},{"../../config/config":382,"../../util/keyboard":411,"../../util/util":413,"../app/app":314,"../nav/nav-controller":342,"./tabs":371,"@angular/core":139}],371:[function(require,module,exports){
+},{"../../config/config":360,"../../util/keyboard":390,"../../util/util":392,"../app/app":292,"../nav/nav-controller":320,"./tabs":349,"@angular/core":139}],349:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -63272,6 +62179,10 @@ var Tabs = (function (_super) {
         this._tabs = [];
         this._onReady = null;
         /**
+         * @private
+         */
+        this.selectHistory = [];
+        /**
          * @input {any} Expression to evaluate when the tab changes.
          */
         this.ionChange = new core_1.EventEmitter();
@@ -63311,11 +62222,6 @@ var Tabs = (function (_super) {
                 _this._highlight.select(_this.getSelected());
             });
         }
-        this._btns.toArray().forEach(function (tabButton) {
-            tabButton.ionSelect.subscribe(function (tab) {
-                _this.select(tab);
-            });
-        });
         var preloadTabs = (util_1.isBlank(this.preloadTabs) ? this._config.getBoolean('preloadTabs') : util_1.isTrueProperty(this.preloadTabs));
         // get the selected index
         var selectedIndex = this.selectedIndex ? parseInt(this.selectedIndex, 10) : 0;
@@ -63364,12 +62270,12 @@ var Tabs = (function (_super) {
         this._tabs.push(tab);
     };
     /**
-     * @param {number} index Index of the tab you want to select
+     * @param {number|Tab} tabOrIndex Index, or the Tab instance, of the tab to select.
      */
     Tabs.prototype.select = function (tabOrIndex) {
         var _this = this;
         var selectedTab = (typeof tabOrIndex === 'number' ? this.getByIndex(tabOrIndex) : tabOrIndex);
-        if (!selectedTab) {
+        if (util_1.isBlank(selectedTab)) {
             return;
         }
         var deselectedTab = this.getSelected();
@@ -63409,7 +62315,34 @@ var Tabs = (function (_super) {
                 _this._onReady();
                 _this._onReady = null;
             }
+            // track the order of which tabs have been selected, by their index
+            // do not track if the tab index is the same as the previous
+            if (_this.selectHistory[_this.selectHistory.length - 1] !== selectedTab.id) {
+                _this.selectHistory.push(selectedTab.id);
+            }
         });
+    };
+    /**
+     * Get the previously selected Tab which is currently not disabled or hidden.
+     * @param {boolean} trimHistory If the selection history should be trimmed up to the previous tab selection or not.
+     * @returns {Tab}
+     */
+    Tabs.prototype.previousTab = function (trimHistory) {
+        var _this = this;
+        if (trimHistory === void 0) { trimHistory = true; }
+        // walk backwards through the tab selection history
+        // and find the first previous tab that is enabled and shown
+        void 0;
+        for (var i = this.selectHistory.length - 2; i >= 0; i--) {
+            var tab = this._tabs.find(function (t) { return t.id === _this.selectHistory[i]; });
+            if (tab && tab.enabled && tab.show) {
+                if (trimHistory) {
+                    this.selectHistory.splice(i + 1);
+                }
+                return tab;
+            }
+        }
+        return null;
     };
     /**
      * @param {number} index Index of the tab you want to get
@@ -63513,10 +62446,6 @@ var Tabs = (function (_super) {
         core_1.ViewChild(tab_highlight_1.TabHighlight), 
         __metadata('design:type', tab_highlight_1.TabHighlight)
     ], Tabs.prototype, "_highlight", void 0);
-    __decorate([
-        core_1.ViewChildren(tab_button_1.TabButton), 
-        __metadata('design:type', Object)
-    ], Tabs.prototype, "_btns", void 0);
     Tabs = __decorate([
         core_1.Component({
             selector: 'ion-tabs',
@@ -63525,7 +62454,7 @@ var Tabs = (function (_super) {
                 '</ion-navbar-section>' +
                 '<ion-tabbar-section>' +
                 '<tabbar role="tablist">' +
-                '<a *ngFor="let t of _tabs" [tab]="t" class="tab-button" [class.tab-disabled]="!t.enabled" [class.tab-hidden]="!t.show" role="tab" href="#">' +
+                '<a *ngFor="let t of _tabs" [tab]="t" class="tab-button" [class.tab-disabled]="!t.enabled" [class.tab-hidden]="!t.show" role="tab" href="#" (ionSelect)="select($event)">' +
                 '<ion-icon *ngIf="t.tabIcon" [name]="t.tabIcon" [isActive]="t.isSelected" class="tab-button-icon"></ion-icon>' +
                 '<span *ngIf="t.tabTitle" class="tab-button-text">{{t.tabTitle}}</span>' +
                 '<ion-badge *ngIf="t.tabBadge" class="tab-badge" [ngClass]="\'badge-\' + t.tabBadgeStyle">{{t.tabBadge}}</ion-badge>' +
@@ -63567,7 +62496,7 @@ var TabNavBarAnchor = (function () {
     return TabNavBarAnchor;
 }());
 
-},{"../../config/config":382,"../../platform/platform":392,"../../util/util":413,"../app/app":314,"../ion":328,"../nav/nav-controller":342,"../nav/view-controller":350,"./tab-button":368,"./tab-highlight":369,"@angular/core":139}],372:[function(require,module,exports){
+},{"../../config/config":360,"../../platform/platform":370,"../../util/util":392,"../app/app":292,"../ion":306,"../nav/nav-controller":320,"../nav/view-controller":328,"./tab-button":346,"./tab-highlight":347,"@angular/core":139}],350:[function(require,module,exports){
 "use strict";
 var dom_1 = require('../../util/dom');
 var Activator = (function () {
@@ -63649,7 +62578,7 @@ var Activator = (function () {
 exports.Activator = Activator;
 var CLEAR_STATE_DEFERS = 5;
 
-},{"../../util/dom":407}],373:[function(require,module,exports){
+},{"../../util/dom":385}],351:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -63756,7 +62685,7 @@ var RippleActivator = (function (_super) {
 exports.RippleActivator = RippleActivator;
 var TOUCH_DOWN_ACCEL = 300;
 
-},{"../../util/dom":407,"./activator":372}],374:[function(require,module,exports){
+},{"../../util/dom":385,"./activator":350}],352:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -63919,7 +62848,7 @@ function getActivatableTarget(ele) {
     for (var x = 0; x < 4; x++) {
         if (!targetEle)
             break;
-        if (isActivatable(targetEle))
+        if (exports.isActivatable(targetEle))
             return targetEle;
         targetEle = targetEle.parentElement;
     }
@@ -63928,7 +62857,7 @@ function getActivatableTarget(ele) {
 /**
  * @private
  */
-function isActivatable(ele) {
+exports.isActivatable = function (ele) {
     if (ACTIVATABLE_ELEMENTS.test(ele.tagName)) {
         return true;
     }
@@ -63939,8 +62868,7 @@ function isActivatable(ele) {
         }
     }
     return false;
-}
-exports.isActivatable = isActivatable;
+};
 function addListener(type, listener, useCapture) {
     document.addEventListener(type, listener, useCapture);
 }
@@ -63953,7 +62881,7 @@ var POINTER_TOLERANCE = 4;
 var POINTER_MOVE_UNTIL_CANCEL = 10;
 var DISABLE_NATIVE_CLICK_AMOUNT = 2500;
 
-},{"../../config/config":382,"../../util/dom":407,"../app/app":314,"./activator":372,"./ripple":373,"@angular/core":139}],375:[function(require,module,exports){
+},{"../../config/config":360,"../../util/dom":385,"../app/app":292,"./activator":350,"./ripple":351,"@angular/core":139}],353:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -63980,12 +62908,11 @@ var view_controller_1 = require('../nav/view-controller');
 /**
  * @name Toast
  * @description
- * A Toast is a subtle notification that appears at the bottom of the
- * screen. It can be used to provide feedback about an operation or to
+ * A Toast is a subtle notification commonly used in modern applications.
+ * It can be used to provide feedback about an operation or to
  * display a system message. The toast appears on top of the app's content,
  * and can be dismissed by the app to resume user interaction with
- * the app. It includes a backdrop, which can optionally be clicked to
- * dismiss the toast.
+ * the app.
  *
  * ### Creating
  * All of the toast options should be passed in the first argument of
@@ -63994,14 +62921,18 @@ var view_controller_1 = require('../nav/view-controller');
  * true in order to display a close button on the toast. See the [create](#create)
  * method below for all available options.
  *
+ * ### Positioning
+ * Toasts can be positioned at the top, bottom or middle of the
+ * view port. The position can be passed to the `Toast.create(opts)` method.
+ * The position option is a string, and the values accepted are `top`, `bottom` and `middle`.
+ * If the position is not specified, the toast will be displayed at the bottom of the view port.
+ *
  * ### Dismissing
  * The toast can be dismissed automatically after a specific amount of time
  * by passing the number of milliseconds to display it in the `duration` of
- * the toast options. It can also be dismissed by clicking on the backdrop,
- * unless `enableBackdropDismiss` is set to `false` upon creation. If `showCloseButton`
- * is set to true, then the close button will dismiss the toast. To dismiss
- * the toast after creation, call the `dismiss()` method on the Toast instance.
- * The `onDismiss` function can be called to perform an action after the toast
+ * the toast options. If `showCloseButton` is set to true, then the close button
+ * will dismiss the toast. To dismiss the toast after creation, call the `dismiss()`
+ * method on the Toast instance. The `onDismiss` function can be called to perform an action after the toast
  * is dismissed.
  *
  * @usage
@@ -64013,7 +62944,8 @@ var view_controller_1 = require('../nav/view-controller');
  * presentToast() {
  *   let toast = Toast.create({
  *     message: 'User was added successfully',
- *     duration: 3000
+ *     duration: 3000,
+ *     position: 'top'
  *   });
  *
  *   toast.onDismiss(() => {
@@ -64032,6 +62964,10 @@ var Toast = (function (_super) {
         if (opts === void 0) { opts = {}; }
         opts.dismissOnPageChange = util_1.isPresent(opts.dismissOnPageChange) ? !!opts.dismissOnPageChange : false;
         _super.call(this, ToastCmp, opts);
+        // set the position to the bottom if not provided
+        if (!opts.position || !this.isValidPosition(opts.position)) {
+            opts.position = TOAST_POSITION_BOTTOM;
+        }
         this.viewType = 'toast';
         this.isOverlay = true;
         this.usePortal = true;
@@ -64048,6 +62984,12 @@ var Toast = (function (_super) {
         return this._nav && this._nav.config.get(key);
     };
     /**
+    * @private
+    */
+    Toast.prototype.isValidPosition = function (position) {
+        return position === TOAST_POSITION_TOP || position === TOAST_POSITION_MIDDLE || position === TOAST_POSITION_BOTTOM;
+    };
+    /**
      * @param {string} message  Toast message content
      */
     Toast.prototype.setMessage = function (message) {
@@ -64061,6 +63003,7 @@ var Toast = (function (_super) {
      *  |-----------------------|-----------|-----------------|---------------------------------------------------------------------------------------------------------------|
      *  | message               | `string`  | -               | The message for the toast. Long strings will wrap and the toast container will expand.                        |
      *  | duration              | `number`  | -               | How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.  |
+     *  | position              | `string`  | "bottom"        | The position of the toast on the screen. Accepted values: "top", "middle", "bottom".                          |
      *  | cssClass              | `string`  | -               | Any additional class for custom styles.                                                                       |
      *  | showCloseButton       | `boolean` | false           | Whether or not to show a button to close the toast.                                                           |
      *  | closeButtonText       | `string`  | "Close"         | Text to display in the close button.                                                                          |
@@ -64075,6 +63018,10 @@ var Toast = (function (_super) {
     return Toast;
 }(view_controller_1.ViewController));
 exports.Toast = Toast;
+/* Don't expose these for now - let's move to an enum or something long term */
+var TOAST_POSITION_TOP = 'top';
+var TOAST_POSITION_MIDDLE = 'middle';
+var TOAST_POSITION_BOTTOM = 'bottom';
 /**
 * @private
 */
@@ -64086,7 +63033,6 @@ var ToastCmp = (function () {
         this._elementRef = _elementRef;
         this.dismissTimeout = undefined;
         this.d = params.data;
-        this.created = Date.now();
         if (this.d.cssClass) {
             renderer.setElementClass(_elementRef.nativeElement, this.d.cssClass, true);
         }
@@ -64095,8 +63041,18 @@ var ToastCmp = (function () {
             this.hdrId = 'toast-hdr-' + this.id;
         }
     }
-    ToastCmp.prototype.ionViewDidEnter = function () {
+    ToastCmp.prototype.ngAfterViewInit = function () {
         var _this = this;
+        // if there's a `duration` set, automatically dismiss.
+        if (this.d.duration) {
+            this.dismissTimeout =
+                setTimeout(function () {
+                    _this.dismiss('backdrop');
+                }, this.d.duration);
+        }
+        this.enabled = true;
+    };
+    ToastCmp.prototype.ionViewDidEnter = function () {
         var activeElement = document.activeElement;
         if (activeElement) {
             activeElement.blur();
@@ -64105,16 +63061,9 @@ var ToastCmp = (function () {
         if (focusableEle) {
             focusableEle.focus();
         }
-        // if there's a `duration` set, automatically dismiss.
-        if (this.d.duration) {
-            this.dismissTimeout =
-                setTimeout(function () {
-                    _this.dismiss('backdrop');
-                }, this.d.duration);
-        }
     };
     ToastCmp.prototype.cbClick = function () {
-        if (this.isEnabled()) {
+        if (this.enabled) {
             this.dismiss('close');
         }
     };
@@ -64123,14 +63072,10 @@ var ToastCmp = (function () {
         this.dismissTimeout = undefined;
         return this._viewCtrl.dismiss(null, role);
     };
-    ToastCmp.prototype.isEnabled = function () {
-        var tm = this._config.getNumber('overlayCreatedDiff', 750);
-        return (this.created + tm < Date.now());
-    };
     ToastCmp = __decorate([
         core_1.Component({
             selector: 'ion-toast',
-            template: "\n    <div class=\"toast-wrapper\">\n      <div class=\"toast-container\">\n        <div class=\"toast-message\" id=\"{{hdrId}}\" *ngIf=\"d.message\">{{d.message}}</div>\n        <button clear class=\"toast-button\" *ngIf=\"d.showCloseButton\" (click)=\"cbClick()\">\n          {{ d.closeButtonText || 'Close' }}\n         </button>\n      </div>\n    </div>\n  ",
+            template: "\n    <div class=\"toast-wrapper\"\n      [class.toast-bottom]=\"d.position === 'bottom'\"\n      [class.toast-middle]=\"d.position === 'middle'\"\n      [class.toast-top]=\"d.position === 'top'\"\n      >\n      <div class=\"toast-container\">\n        <div class=\"toast-message\" id=\"{{hdrId}}\" *ngIf=\"d.message\">{{d.message}}</div>\n        <button clear class=\"toast-button\" *ngIf=\"d.showCloseButton\" (click)=\"cbClick()\">\n          {{ d.closeButtonText || 'Close' }}\n         </button>\n      </div>\n    </div>\n  ",
             host: {
                 'role': 'dialog',
                 '[attr.aria-labelledby]': 'hdrId',
@@ -64145,10 +63090,34 @@ var ToastSlideIn = (function (_super) {
     __extends(ToastSlideIn, _super);
     function ToastSlideIn(enteringView, leavingView, opts) {
         _super.call(this, opts);
+        // DOM READS
         var ele = enteringView.pageRef().nativeElement;
-        var wrapper = new animation_1.Animation(ele.querySelector('.toast-wrapper'));
-        wrapper.fromTo('translateY', '120%', '0%');
-        this.easing('cubic-bezier(.36,.66,.04,1)').duration(400).add(wrapper);
+        var wrapperEle = ele.querySelector('.toast-wrapper');
+        var wrapper = new animation_1.Animation(wrapperEle);
+        if (enteringView.data && enteringView.data.position === TOAST_POSITION_TOP) {
+            // top
+            // by default, it is -100% hidden (above the screen)
+            // so move from that to 10px below top: 0px;
+            wrapper.fromTo('translateY', '-100%', 10 + "px");
+        }
+        else if (enteringView.data && enteringView.data.position === TOAST_POSITION_MIDDLE) {
+            // Middle
+            // just center it and fade it in
+            var topPosition = Math.floor(ele.clientHeight / 2 - wrapperEle.clientHeight / 2);
+            // DOM WRITE
+            wrapperEle.style.top = topPosition + "px";
+            wrapper.fromTo('opacity', '0.01', '1.0');
+        }
+        else {
+            // bottom
+            // by default, it is 100% hidden (below the screen),
+            // so move from that to 10 px above bottom: 0px
+            wrapper.fromTo('translateY', '100%', (0 - 10) + "px");
+        }
+        var EASE = 'cubic-bezier(.36,.66,.04,1)';
+        var DURATION = 400;
+        // DOM WRITES
+        this.easing(EASE).duration(DURATION).add(wrapper);
     }
     return ToastSlideIn;
 }(transition_1.Transition));
@@ -64156,10 +63125,29 @@ var ToastSlideOut = (function (_super) {
     __extends(ToastSlideOut, _super);
     function ToastSlideOut(enteringView, leavingView, opts) {
         _super.call(this, opts);
+        // DOM reads
         var ele = leavingView.pageRef().nativeElement;
-        var wrapper = new animation_1.Animation(ele.querySelector('.toast-wrapper'));
-        wrapper.fromTo('translateY', '0%', '120%');
-        this.easing('cubic-bezier(.36,.66,.04,1)').duration(300).add(wrapper);
+        var wrapperEle = ele.querySelector('.toast-wrapper');
+        var wrapper = new animation_1.Animation(wrapperEle);
+        if (leavingView.data && leavingView.data.position === TOAST_POSITION_TOP) {
+            // top
+            // reverse arguments from enter transition
+            wrapper.fromTo('translateY', 10 + "px", '-100%');
+        }
+        else if (leavingView.data && leavingView.data.position === TOAST_POSITION_MIDDLE) {
+            // Middle
+            // just fade it out
+            wrapper.fromTo('opacity', '1.0', '0.0');
+        }
+        else {
+            // bottom
+            // reverse arguments from enter transition
+            wrapper.fromTo('translateY', (0 - 10) + "px", '100%');
+        }
+        var EASE = 'cubic-bezier(.36,.66,.04,1)';
+        var DURATION = 300;
+        // DOM writes
+        this.easing(EASE).duration(DURATION).add(wrapper);
     }
     return ToastSlideOut;
 }(transition_1.Transition));
@@ -64167,12 +63155,33 @@ var ToastMdSlideIn = (function (_super) {
     __extends(ToastMdSlideIn, _super);
     function ToastMdSlideIn(enteringView, leavingView, opts) {
         _super.call(this, opts);
+        // DOM reads
         var ele = enteringView.pageRef().nativeElement;
-        var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        var wrapper = new animation_1.Animation(ele.querySelector('.toast-wrapper'));
-        backdrop.fromTo('opacity', 0, 0);
-        wrapper.fromTo('translateY', '120%', '0%');
-        this.easing('cubic-bezier(.36,.66,.04,1)').duration(400).add(backdrop).add(wrapper);
+        var wrapperEle = ele.querySelector('.toast-wrapper');
+        var wrapper = new animation_1.Animation(wrapperEle);
+        if (enteringView.data && enteringView.data.position === TOAST_POSITION_TOP) {
+            // top
+            // by default, it is -100% hidden (above the screen)
+            // so move from that to top: 0px;
+            wrapper.fromTo('translateY', '-100%', "0px");
+        }
+        else if (enteringView.data && enteringView.data.position === TOAST_POSITION_MIDDLE) {
+            // Middle
+            // just center it and fade it in
+            var topPosition = Math.floor(ele.clientHeight / 2 - wrapperEle.clientHeight / 2);
+            // DOM WRITE
+            wrapperEle.style.top = topPosition + "px";
+            wrapper.fromTo('opacity', '0.01', '1.0');
+        }
+        else {
+            // bottom
+            // by default, it is 100% hidden (below the screen),
+            // so move from that to bottom: 0px
+            wrapper.fromTo('translateY', '100%', "0px");
+        }
+        var EASE = 'cubic-bezier(.36,.66,.04,1)';
+        var DURATION = 400;
+        this.easing(EASE).duration(DURATION).add(wrapper);
     }
     return ToastMdSlideIn;
 }(transition_1.Transition));
@@ -64180,12 +63189,29 @@ var ToastMdSlideOut = (function (_super) {
     __extends(ToastMdSlideOut, _super);
     function ToastMdSlideOut(enteringView, leavingView, opts) {
         _super.call(this, opts);
+        // DOM reads
         var ele = leavingView.pageRef().nativeElement;
-        var wrapper = new animation_1.Animation(ele.querySelector('.toast-wrapper'));
-        var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        wrapper.fromTo('translateY', '0%', '120%');
-        backdrop.fromTo('opacity', 0, 0);
-        this.easing('cubic-bezier(.36,.66,.04,1)').duration(450).add(backdrop).add(wrapper);
+        var wrapperEle = ele.querySelector('.toast-wrapper');
+        var wrapper = new animation_1.Animation(wrapperEle);
+        if (leavingView.data && leavingView.data.position === TOAST_POSITION_TOP) {
+            // top
+            // reverse arguments from enter transition
+            wrapper.fromTo('translateY', 0 + "px", '-100%');
+        }
+        else if (leavingView.data && leavingView.data.position === TOAST_POSITION_MIDDLE) {
+            // Middle
+            // just fade it out
+            wrapper.fromTo('opacity', '1.0', '0.0');
+        }
+        else {
+            // bottom
+            // reverse arguments from enter transition
+            wrapper.fromTo('translateY', 0 + "px", '100%');
+        }
+        // DOM writes
+        var EASE = 'cubic-bezier(.36,.66,.04,1)';
+        var DURATION = 450;
+        this.easing(EASE).duration(DURATION).add(wrapper);
     }
     return ToastMdSlideOut;
 }(transition_1.Transition));
@@ -64193,12 +63219,33 @@ var ToastWpPopIn = (function (_super) {
     __extends(ToastWpPopIn, _super);
     function ToastWpPopIn(enteringView, leavingView, opts) {
         _super.call(this, opts);
+        // DOM reads
         var ele = enteringView.pageRef().nativeElement;
-        var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        var wrapper = new animation_1.Animation(ele.querySelector('.toast-wrapper'));
-        wrapper.fromTo('opacity', '0.01', '1').fromTo('scale', '1.3', '1');
-        backdrop.fromTo('opacity', 0, 0);
-        this.easing('cubic-bezier(0,0 0.05,1)').duration(200).add(backdrop).add(wrapper);
+        var wrapperEle = ele.querySelector('.toast-wrapper');
+        var wrapper = new animation_1.Animation(wrapperEle);
+        if (enteringView.data && enteringView.data.position === TOAST_POSITION_TOP) {
+            // top
+            wrapper.fromTo('opacity', '0.01', '1');
+            wrapper.fromTo('scale', '1.3', '1');
+        }
+        else if (enteringView.data && enteringView.data.position === TOAST_POSITION_MIDDLE) {
+            // Middle
+            // just center it and fade it in
+            var topPosition = Math.floor(ele.clientHeight / 2 - wrapperEle.clientHeight / 2);
+            // DOM WRITE
+            wrapperEle.style.top = topPosition + "px";
+            wrapper.fromTo('opacity', '0.01', '1.0');
+            wrapper.fromTo('scale', '1.3', '1');
+        }
+        else {
+            // bottom
+            wrapper.fromTo('opacity', '0.01', '1');
+            wrapper.fromTo('scale', '1.3', '1');
+        }
+        // DOM writes
+        var EASE = 'cubic-bezier(0,0 0.05,1)';
+        var DURATION = 200;
+        this.easing(EASE).duration(DURATION).add(wrapper);
     }
     return ToastWpPopIn;
 }(transition_1.Transition));
@@ -64206,12 +63253,32 @@ var ToastWpPopOut = (function (_super) {
     __extends(ToastWpPopOut, _super);
     function ToastWpPopOut(enteringView, leavingView, opts) {
         _super.call(this, opts);
+        // DOM reads
         var ele = leavingView.pageRef().nativeElement;
-        var backdrop = new animation_1.Animation(ele.querySelector('ion-backdrop'));
-        var wrapper = new animation_1.Animation(ele.querySelector('.toast-wrapper'));
-        wrapper.fromTo('opacity', '1', '0').fromTo('scale', '1', '1.3');
-        backdrop.fromTo('opacity', 0, 0);
-        this.easing('ease-out').duration(150).add(backdrop).add(wrapper);
+        var wrapperEle = ele.querySelector('.toast-wrapper');
+        var wrapper = new animation_1.Animation(wrapperEle);
+        if (leavingView.data && leavingView.data.position === TOAST_POSITION_TOP) {
+            // top
+            // reverse arguments from enter transition
+            wrapper.fromTo('opacity', '1', '0.00');
+            wrapper.fromTo('scale', '1', '1.3');
+        }
+        else if (leavingView.data && leavingView.data.position === TOAST_POSITION_MIDDLE) {
+            // Middle
+            // just fade it out
+            wrapper.fromTo('opacity', '1.0', '0.00');
+            wrapper.fromTo('scale', '1', '1.3');
+        }
+        else {
+            // bottom
+            // reverse arguments from enter transition
+            wrapper.fromTo('opacity', '1', '0.00');
+            wrapper.fromTo('scale', '1', '1.3');
+        }
+        // DOM writes
+        var EASE = 'ease-out';
+        var DURATION = 150;
+        this.easing(EASE).duration(DURATION).add(wrapper);
     }
     return ToastWpPopOut;
 }(transition_1.Transition));
@@ -64223,7 +63290,7 @@ transition_1.Transition.register('toast-wp-slide-out', ToastWpPopOut);
 transition_1.Transition.register('toast-wp-slide-in', ToastWpPopIn);
 var toastIds = -1;
 
-},{"../../animations/animation":309,"../../config/config":382,"../../transitions/transition":401,"../../util/util":413,"../nav/nav-controller":342,"../nav/nav-params":343,"../nav/view-controller":350,"@angular/core":139}],376:[function(require,module,exports){
+},{"../../animations/animation":287,"../../config/config":360,"../../transitions/transition":379,"../../util/util":392,"../nav/nav-controller":320,"../nav/nav-params":321,"../nav/view-controller":328,"@angular/core":139}],354:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -64501,7 +63568,7 @@ var Toggle = (function () {
 }());
 exports.Toggle = Toggle;
 
-},{"../../util/dom":407,"../../util/form":410,"../../util/util":413,"../item/item":331,"@angular/common":7,"@angular/core":139}],377:[function(require,module,exports){
+},{"../../util/dom":385,"../../util/form":388,"../../util/util":392,"../item/item":309,"@angular/common":7,"@angular/core":139}],355:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -64769,7 +63836,7 @@ var ToolbarItem = (function () {
 }());
 exports.ToolbarItem = ToolbarItem;
 
-},{"../../config/config":382,"../button/button":317,"../ion":328,"../nav/view-controller":350,"../navbar/navbar":351,"@angular/core":139}],378:[function(require,module,exports){
+},{"../../config/config":360,"../button/button":295,"../ion":306,"../nav/view-controller":328,"../navbar/navbar":329,"@angular/core":139}],356:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -64825,7 +63892,7 @@ var VirtualItem = (function () {
 }());
 exports.VirtualItem = VirtualItem;
 
-},{"@angular/core":139}],379:[function(require,module,exports){
+},{"@angular/core":139}],357:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -64840,15 +63907,15 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
+var virtual_util_1 = require('./virtual-util');
 var config_1 = require('../../config/config');
 var content_1 = require('../content/content');
+var img_1 = require('../img/img');
+var util_1 = require('../../util/util');
+var dom_1 = require('../../util/dom');
 var platform_1 = require('../../platform/platform');
 var view_controller_1 = require('../nav/view-controller');
 var virtual_item_1 = require('./virtual-item');
-var virtual_util_1 = require('./virtual-util');
-var util_1 = require('../../util/util');
-var dom_1 = require('../../util/dom');
-var img_1 = require('../img/img');
 /**
  * @name VirtualScroll
  * @description
@@ -64871,7 +63938,7 @@ var img_1 = require('../img/img');
  * ```html
  * <ion-list [virtualScroll]="items">
  *
- *   <ion-item *virtualItem="#item">
+ *   <ion-item *virtualItem="let item">
  *     {% raw %}{{ item }}{% endraw %}
  *   </ion-item>
  *
@@ -64892,11 +63959,11 @@ var img_1 = require('../img/img');
  * ```html
  * <ion-list [virtualScroll]="items" [headerFn]="myHeaderFn">
  *
- *   <ion-item-divider *virtualHeader="#header">
+ *   <ion-item-divider *virtualHeader="let header">
  *     Header: {% raw %}{{ header }}{% endraw %}
  *   </ion-item-divider>
  *
- *   <ion-item *virtualItem="#item">
+ *   <ion-item *virtualItem="let item">
  *     Item: {% raw %}{{ item }}{% endraw %}
  *   </ion-item>
  *
@@ -64956,7 +64023,7 @@ var img_1 = require('../img/img');
  * ```html
  * <ion-list [virtualScroll]="items">
  *
- *   <ion-item *virtualItem="#item">
+ *   <ion-item *virtualItem="let item">
  *     <ion-avatar item-left>
  *       <ion-img [src]="item.avatarUrl"></ion-img>
  *     </ion-avatar>
@@ -65210,8 +64277,6 @@ var VirtualScroll = (function () {
             virtual_util_1.processRecords(self._data.renderHeight, self._records, self._cells, self._hdrFn, self._ftrFn, self._data);
             // ******** DOM WRITE ****************
             self.renderVirtual();
-            // ******** DOM WRITE ****************
-            self._renderer.setElementClass(self._elementRef.nativeElement, 'virtual-scroll', true);
             // list for scroll events
             self.addScrollListener();
         });
@@ -65235,11 +64300,11 @@ var VirtualScroll = (function () {
      * DOM READ THEN DOM WRITE
      */
     VirtualScroll.prototype.postRenderVirtual = function () {
-        // ******** DOM READ ****************
-        virtual_util_1.calcDimensions(this._data, this._elementRef.nativeElement.parentElement, this.approxItemWidth, this.approxItemHeight, this.approxHeaderWidth, this.approxHeaderHeight, this.approxFooterWidth, this.approxFooterHeight, this.bufferRatio);
         // ******** DOM READ THEN DOM WRITE ****************
         virtual_util_1.initReadNodes(this._nodes, this._cells, this._data);
         // ******** DOM READS ABOVE / DOM WRITES BELOW ****************
+        // ******** DOM WRITE ****************
+        this._renderer.setElementClass(this._elementRef.nativeElement, 'virtual-scroll', true);
         // ******** DOM WRITE ****************
         virtual_util_1.writeToNodes(this._nodes, this._cells, this._records.length);
         // ******** DOM WRITE ****************
@@ -65254,35 +64319,16 @@ var VirtualScroll = (function () {
         var data = this._data;
         if (this._queue === QUEUE_CHANGE_DETECTION) {
             // ******** DOM WRITE ****************
-            var node = void 0;
-            for (var i = 0; i < this._nodes.length; i++) {
-                node = this._nodes[i];
-                if (node.hasChanges) {
-                    node.view['detectChanges']();
-                    node.hasChanges = false;
-                }
-            }
-            if (this._eventAssist) {
-                // queue updating node positions in the next frame
-                this._queue = QUEUE_WRITE_TO_NODES;
-            }
-            else {
-                // update node positions right now
-                // ******** DOM WRITE ****************
-                virtual_util_1.writeToNodes(this._nodes, this._cells, this._records.length);
-                this._queue = null;
-            }
-            // ******** DOM WRITE ****************
-            this.setVirtualHeight(virtual_util_1.estimateHeight(this._records.length, this._cells[this._cells.length - 1], this._vHeight, 0.25));
-        }
-        else if (this._queue === QUEUE_WRITE_TO_NODES) {
+            this._cd.detectChanges();
             // ******** DOM WRITE ****************
             virtual_util_1.writeToNodes(this._nodes, this._cells, this._records.length);
+            // ******** DOM WRITE ****************
+            this.setVirtualHeight(virtual_util_1.estimateHeight(this._records.length, this._cells[this._cells.length - 1], this._vHeight, 0.25));
             this._queue = null;
         }
         else {
             data.scrollDiff = (data.scrollTop - this._lastCheck);
-            if (Math.abs(data.scrollDiff) > 10) {
+            if (Math.abs(data.scrollDiff) > SCROLL_DIFFERENCE_MINIMUM) {
                 // don't bother updating if the scrollTop hasn't changed much
                 this._lastCheck = data.scrollTop;
                 if (data.scrollDiff > 0) {
@@ -65296,7 +64342,7 @@ var VirtualScroll = (function () {
                 var madeChanges = virtual_util_1.populateNodeData(data.topCell, data.bottomCell, data.viewWidth, data.scrollDiff > 0, this._cells, this._records, this._nodes, this._itmTmp.viewContainer, this._itmTmp.templateRef, this._hdrTmp && this._hdrTmp.templateRef, this._ftrTmp && this._ftrTmp.templateRef, false);
                 if (madeChanges) {
                     // do not update images while scrolling
-                    this._imgs.toArray().forEach(function (img) {
+                    this._imgs.forEach(function (img) {
                         img.enable(false);
                     });
                     // queue making updates in the next frame
@@ -65314,7 +64360,7 @@ var VirtualScroll = (function () {
      */
     VirtualScroll.prototype.onScrollEnd = function () {
         // scrolling is done, allow images to be updated now
-        this._imgs.toArray().forEach(function (img) {
+        this._imgs.forEach(function (img) {
             img.enable(true);
         });
         // ******** DOM READ ****************
@@ -65448,10 +64494,10 @@ var VirtualScroll = (function () {
 }());
 exports.VirtualScroll = VirtualScroll;
 var SCROLL_END_TIMEOUT_MS = 140;
+var SCROLL_DIFFERENCE_MINIMUM = 20;
 var QUEUE_CHANGE_DETECTION = 0;
-var QUEUE_WRITE_TO_NODES = 1;
 
-},{"../../config/config":382,"../../platform/platform":392,"../../util/dom":407,"../../util/util":413,"../content/content":319,"../img/img":322,"../nav/view-controller":350,"./virtual-item":378,"./virtual-util":380,"@angular/core":139}],380:[function(require,module,exports){
+},{"../../config/config":360,"../../platform/platform":370,"../../util/dom":385,"../../util/util":392,"../content/content":297,"../img/img":300,"../nav/view-controller":328,"./virtual-item":356,"./virtual-util":358,"@angular/core":139}],358:[function(require,module,exports){
 "use strict";
 var dom_1 = require('../../util/dom');
 /**
@@ -65562,6 +64608,7 @@ function populateNodeData(startCellIndex, endCellIndex, viewportWidth, scrolling
     var lastRecordIndex = (records.length - 1);
     var viewInsertIndex = null;
     var totalNodes = nodes.length;
+    var templateRef;
     startCellIndex = Math.max(startCellIndex, 0);
     endCellIndex = Math.min(endCellIndex, cells.length - 1);
     for (var cellIndex = startCellIndex; cellIndex <= endCellIndex; cellIndex++) {
@@ -65628,11 +64675,15 @@ function populateNodeData(startCellIndex, endCellIndex, viewportWidth, scrolling
                     }
                 }
             }
+            // select which templateRef should be used for this cell
+            templateRef = cell.tmpl === TEMPLATE_HEADER ? hdrTmp : cell.tmpl === TEMPLATE_FOOTER ? ftrTmp : itmTmp;
+            if (!templateRef) {
+                void 0;
+                continue;
+            }
             availableNode = {
                 tmpl: cell.tmpl,
-                view: viewContainer.createEmbeddedView(cell.tmpl === TEMPLATE_HEADER ? hdrTmp :
-                    cell.tmpl === TEMPLATE_FOOTER ? ftrTmp :
-                        itmTmp, new VirtualContext(null, null, null), viewInsertIndex)
+                view: viewContainer.createEmbeddedView(templateRef, new VirtualContext(null, null, null), viewInsertIndex)
             };
             totalNodes = nodes.push(availableNode);
         }
@@ -65648,14 +64699,15 @@ function populateNodeData(startCellIndex, endCellIndex, viewportWidth, scrolling
     }
     if (initialLoad) {
         // add nodes that go at the very end, and only represent the last record
-        addLastNodes(nodes, viewContainer, TEMPLATE_HEADER, hdrTmp);
-        addLastNodes(nodes, viewContainer, TEMPLATE_ITEM, itmTmp);
-        addLastNodes(nodes, viewContainer, TEMPLATE_FOOTER, ftrTmp);
+        var lastNodeTempData = (records[lastRecordIndex] || {});
+        addLastNodes(nodes, viewContainer, TEMPLATE_HEADER, hdrTmp, lastNodeTempData);
+        addLastNodes(nodes, viewContainer, TEMPLATE_ITEM, itmTmp, lastNodeTempData);
+        addLastNodes(nodes, viewContainer, TEMPLATE_FOOTER, ftrTmp, lastNodeTempData);
     }
     return madeChanges;
 }
 exports.populateNodeData = populateNodeData;
-function addLastNodes(nodes, viewContainer, templateType, templateRef) {
+function addLastNodes(nodes, viewContainer, templateType, templateRef, temporaryData) {
     if (templateRef) {
         var node = {
             tmpl: templateType,
@@ -65663,7 +64715,7 @@ function addLastNodes(nodes, viewContainer, templateType, templateRef) {
             isLastRecord: true,
             hidden: true,
         };
-        node.view.context.$implicit = {};
+        node.view.context.$implicit = temporaryData;
         nodes.push(node);
     }
 }
@@ -65783,31 +64835,29 @@ function writeToNodes(nodes, cells, totalRecords) {
     var transform;
     for (var i = 0, ilen = nodes.length; i < ilen; i++) {
         node = nodes[i];
-        if (node.hidden) {
-            continue;
-        }
-        cell = cells[node.cell];
-        transform = "translate3d(" + cell.left + "px," + cell.top + "px,0px)";
-        if (node.lastTransform === transform) {
-            continue;
-        }
-        element = getElement(node);
-        if (element) {
-            // ******** DOM WRITE ****************
-            element.style[dom_1.CSS.transform] = node.lastTransform = transform;
-            // ******** DOM WRITE ****************
-            element.classList.add('virtual-position');
-            if (node.isLastRecord) {
-                // its the last record, now with data and safe to show
-                // ******** DOM WRITE ****************
-                element.classList.remove('virtual-hidden');
+        if (!node.hidden) {
+            cell = cells[node.cell];
+            transform = "translate3d(" + cell.left + "px," + cell.top + "px,0px)";
+            if (node.lastTransform !== transform) {
+                element = getElement(node);
+                if (element) {
+                    // ******** DOM WRITE ****************
+                    element.style[dom_1.CSS.transform] = node.lastTransform = transform;
+                    // ******** DOM WRITE ****************
+                    element.classList.add('virtual-position');
+                    if (node.isLastRecord) {
+                        // its the last record, now with data and safe to show
+                        // ******** DOM WRITE ****************
+                        element.classList.remove('virtual-hidden');
+                    }
+                    // https://www.w3.org/TR/wai-aria/states_and_properties#aria-posinset
+                    // ******** DOM WRITE ****************
+                    element.setAttribute('aria-posinset', (node.cell + 1).toString());
+                    // https://www.w3.org/TR/wai-aria/states_and_properties#aria-setsize
+                    // ******** DOM WRITE ****************
+                    element.setAttribute('aria-setsize', totalCells);
+                }
             }
-            // https://www.w3.org/TR/wai-aria/states_and_properties#aria-posinset
-            // ******** DOM WRITE ****************
-            element.setAttribute('aria-posinset', (node.cell + 1).toString());
-            // https://www.w3.org/TR/wai-aria/states_and_properties#aria-setsize
-            // ******** DOM WRITE ****************
-            element.setAttribute('aria-setsize', totalCells);
         }
     }
 }
@@ -65977,12 +65027,10 @@ var TEMPLATE_FOOTER = 2;
 var VIEWABLE_RENDERED_PADDING = 3;
 var REQUIRED_DOM_READS = 2;
 
-},{"../../util/dom":407}],381:[function(require,module,exports){
+},{"../../util/dom":385}],359:[function(require,module,exports){
 "use strict";
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
 var http_1 = require('@angular/http');
 var app_1 = require('../components/app/app');
 var click_block_1 = require('../util/click-block');
@@ -66001,6 +65049,27 @@ var scroll_view_1 = require('../util/scroll-view');
 var tap_click_1 = require('../components/tap-click/tap-click');
 var translate_1 = require('../translation/translate');
 var _reflect = Reflect;
+/**
+ * @name ionicBootstrap
+ * @description
+ * `ionicBootstrap` allows you to bootstrap your entire application. Similar to Angular's `bootstrap`, `ionicBootstrap`
+ * takes a root component in order to start the app. You can pass along any providers that you may want to inject into your
+ * app as an array for the second argument. You can also pass a config object as the third argument to configure your app's settings.
+ *
+ * @usage
+ *
+ * ```ts
+ * import {ionicBootstrap} from 'ionic-angular';
+ * import {Component} from '@angular/core';
+ *
+ * @Component({
+ *   templateUrl: 'build/app.html',
+ * })
+ * export class MyClass{}
+ *
+ * ionicBootstrap(MyClass, null, {tabbarPlacement: 'bottom'})
+ * ```
+ */
 function ionicBootstrap(appRootComponent, customProviders, config) {
     // get all Ionic Providers
     var providers = ionicProviders(customProviders, config);
@@ -66013,6 +65082,9 @@ function ionicBootstrap(appRootComponent, customProviders, config) {
     });
 }
 exports.ionicBootstrap = ionicBootstrap;
+/**
+ * @private
+ */
 function ionicPostBootstrap(ngComponentRef) {
     var app = ngComponentRef.injector.get(app_1.App);
     app.setAppInjector(ngComponentRef.injector);
@@ -66027,6 +65099,9 @@ function ionicPostBootstrap(ngComponentRef) {
     return ngComponentRef;
 }
 exports.ionicPostBootstrap = ionicPostBootstrap;
+/**
+ * @private
+ */
 function ionicProviders(customProviders, config) {
     var directives = directives_1.IONIC_DIRECTIVES;
     // add custom providers to Ionic's app
@@ -66067,8 +65142,6 @@ function ionicProviders(customProviders, config) {
         translate_1.Translate,
         tap_click_1.TapClick,
         core_1.provide(core_1.PLATFORM_DIRECTIVES, { useValue: [directives], multi: true }),
-        router_1.ROUTER_PROVIDERS,
-        core_1.provide(common_1.LocationStrategy, { useClass: common_1.HashLocationStrategy }),
         http_1.HTTP_PROVIDERS,
         customProviders
     ];
@@ -66112,6 +65185,9 @@ function setupDom(window, document, config, platform, clickBlock, featureDetect)
     // enable :hover CSS when the "hoverCSS" setting is not false
     if (config.get('hoverCSS') !== false) {
         bodyEle.classList.add('enable-hover');
+    }
+    if (config.getBoolean('clickBlock', true) !== false) {
+        clickBlock.enable();
     }
     // run feature detection tests
     featureDetect.run(window, document);
@@ -66163,7 +65239,7 @@ function addSelector(type, selector) {
 }
 exports.addSelector = addSelector;
 
-},{"../components/app/app":314,"../components/menu/menu-controller":336,"../components/nav/nav-registry":346,"../components/tap-click/tap-click":374,"../platform/platform":392,"../translation/translate":402,"../util/click-block":405,"../util/dom":407,"../util/events":408,"../util/feature-detect":409,"../util/form":410,"../util/keyboard":411,"../util/scroll-view":412,"../util/util":413,"./config":382,"./directives":383,"@angular/common":7,"@angular/core":139,"@angular/http":215,"@angular/platform-browser-dynamic":236,"@angular/router":286}],382:[function(require,module,exports){
+},{"../components/app/app":292,"../components/menu/menu-controller":314,"../components/nav/nav-registry":324,"../components/tap-click/tap-click":352,"../platform/platform":370,"../translation/translate":380,"../util/click-block":383,"../util/dom":385,"../util/events":386,"../util/feature-detect":387,"../util/form":388,"../util/keyboard":390,"../util/scroll-view":391,"../util/util":392,"./config":360,"./directives":361,"@angular/core":139,"@angular/http":215,"@angular/platform-browser-dynamic":236}],360:[function(require,module,exports){
 /**
 * @ngdoc service
 * @name Config
@@ -66495,7 +65571,7 @@ var Config = (function () {
 exports.Config = Config;
 var modeConfigs = {};
 
-},{"../platform/platform":392,"../util/util":413}],383:[function(require,module,exports){
+},{"../platform/platform":370,"../util/util":392}],361:[function(require,module,exports){
 "use strict";
 var common_1 = require('@angular/common');
 var menu_1 = require('../components/menu/menu');
@@ -66540,6 +65616,7 @@ var nav_router_1 = require('../components/nav/nav-router');
 var navbar_1 = require('../components/navbar/navbar');
 var show_hide_when_1 = require('../components/show-hide-when/show-hide-when');
 /**
+ * @private
  * @name IONIC_DIRECTIVES
  * @description
  * The core Ionic directives as well as Angular's `CORE_DIRECTIVES` and `FORM_DIRECTIVES` are
@@ -66584,7 +65661,6 @@ var show_hide_when_1 = require('../components/show-hide-when/show-hide-when');
  * - Icon
  * - Spinner
  * - Searchbar
- * - SearchbarInput
  * - Segment
  * - SegmentButton
  * - Checkbox
@@ -66630,6 +65706,7 @@ exports.IONIC_DIRECTIVES = [
     list_1.ListHeader,
     item_1.Item,
     item_sliding_1.ItemSliding,
+    item_sliding_1.ItemOptions,
     virtual_scroll_1.VirtualScroll,
     virtual_item_1.VirtualItem,
     virtual_item_1.VirtualHeader,
@@ -66650,7 +65727,6 @@ exports.IONIC_DIRECTIVES = [
     spinner_1.Spinner,
     // Forms
     searchbar_1.Searchbar,
-    searchbar_1.SearchbarInput,
     segment_1.Segment,
     segment_1.SegmentButton,
     checkbox_1.Checkbox,
@@ -66675,7 +65751,7 @@ exports.IONIC_DIRECTIVES = [
     show_hide_when_1.HideWhen
 ];
 
-},{"../components/backdrop/backdrop":315,"../components/badge/badge":316,"../components/button/button":317,"../components/checkbox/checkbox":318,"../components/content/content":319,"../components/datetime/datetime":320,"../components/icon/icon":321,"../components/img/img":322,"../components/infinite-scroll/infinite-scroll":324,"../components/infinite-scroll/infinite-scroll-content":323,"../components/input/input":326,"../components/item/item":331,"../components/item/item-sliding":330,"../components/label/label":332,"../components/list/list":333,"../components/menu/menu":340,"../components/menu/menu-close":335,"../components/menu/menu-toggle":338,"../components/nav/nav":348,"../components/nav/nav-push":345,"../components/nav/nav-router":347,"../components/navbar/navbar":351,"../components/option/option":352,"../components/radio/radio-button":355,"../components/radio/radio-group":356,"../components/range/range":357,"../components/refresher/refresher":359,"../components/refresher/refresher-content":358,"../components/scroll/scroll":360,"../components/searchbar/searchbar":361,"../components/segment/segment":362,"../components/select/select":363,"../components/show-hide-when/show-hide-when":364,"../components/slides/slides":365,"../components/spinner/spinner":367,"../components/tabs/tab":370,"../components/tabs/tabs":371,"../components/toggle/toggle":376,"../components/toolbar/toolbar":377,"../components/virtual-scroll/virtual-item":378,"../components/virtual-scroll/virtual-scroll":379,"@angular/common":7}],384:[function(require,module,exports){
+},{"../components/backdrop/backdrop":293,"../components/badge/badge":294,"../components/button/button":295,"../components/checkbox/checkbox":296,"../components/content/content":297,"../components/datetime/datetime":298,"../components/icon/icon":299,"../components/img/img":300,"../components/infinite-scroll/infinite-scroll":302,"../components/infinite-scroll/infinite-scroll-content":301,"../components/input/input":304,"../components/item/item":309,"../components/item/item-sliding":308,"../components/label/label":310,"../components/list/list":311,"../components/menu/menu":318,"../components/menu/menu-close":313,"../components/menu/menu-toggle":316,"../components/nav/nav":326,"../components/nav/nav-push":323,"../components/nav/nav-router":325,"../components/navbar/navbar":329,"../components/option/option":330,"../components/radio/radio-button":333,"../components/radio/radio-group":334,"../components/range/range":335,"../components/refresher/refresher":337,"../components/refresher/refresher-content":336,"../components/scroll/scroll":338,"../components/searchbar/searchbar":339,"../components/segment/segment":340,"../components/select/select":341,"../components/show-hide-when/show-hide-when":342,"../components/slides/slides":343,"../components/spinner/spinner":345,"../components/tabs/tab":348,"../components/tabs/tabs":349,"../components/toggle/toggle":354,"../components/toolbar/toolbar":355,"../components/virtual-scroll/virtual-item":356,"../components/virtual-scroll/virtual-scroll":357,"@angular/common":7}],362:[function(require,module,exports){
 "use strict";
 var config_1 = require('./config');
 // iOS Mode Settings
@@ -66765,7 +65841,7 @@ config_1.Config.setModeConfig('wp', {
     toastLeave: 'toast-wp-slide-out',
 });
 
-},{"./config":382}],385:[function(require,module,exports){
+},{"./config":360}],363:[function(require,module,exports){
 "use strict";
 var core_1 = require('@angular/core');
 var _reflect = Reflect;
@@ -66788,7 +65864,7 @@ function Page(config) {
 }
 exports.Page = Page;
 
-},{"@angular/core":139}],386:[function(require,module,exports){
+},{"@angular/core":139}],364:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -66797,6 +65873,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var gesture_1 = require('./gesture');
 var util_1 = require('../util');
+/**
+ * @private
+ */
 var DragGesture = (function (_super) {
     __extends(DragGesture, _super);
     function DragGesture(element, opts) {
@@ -66833,11 +65912,12 @@ var DragGesture = (function (_super) {
 }(gesture_1.Gesture));
 exports.DragGesture = DragGesture;
 
-},{"../util":404,"./gesture":387}],387:[function(require,module,exports){
+},{"../util":382,"./gesture":365}],365:[function(require,module,exports){
 "use strict";
 var util_1 = require('../util');
 var hammer_1 = require('./hammer');
 /**
+ * @private
  * A gesture recognizer class.
  *
  * TODO(mlynch): Re-enable the DOM event simulation that was causing issues (or verify hammer does this already, it might);
@@ -66900,7 +65980,7 @@ var Gesture = (function () {
 }());
 exports.Gesture = Gesture;
 
-},{"../util":404,"./hammer":388}],388:[function(require,module,exports){
+},{"../util":382,"./hammer":366}],366:[function(require,module,exports){
 "use strict";
 /* tslint:disable */
 var util_1 = require('../util/util');
@@ -69054,7 +68134,7 @@ util_1.assign(Hammer, {
 });
 win.Hammer = Hammer;
 
-},{"../util/util":413}],389:[function(require,module,exports){
+},{"../util/util":392}],367:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -69102,7 +68182,7 @@ var SlideEdgeGesture = (function (_super) {
 }(slide_gesture_1.SlideGesture));
 exports.SlideEdgeGesture = SlideEdgeGesture;
 
-},{"../util/dom":407,"../util/util":413,"./slide-gesture":390}],390:[function(require,module,exports){
+},{"../util/dom":385,"../util/util":392,"./slide-gesture":368}],368:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -69179,7 +68259,7 @@ var SlideGesture = (function (_super) {
 }(drag_gesture_1.DragGesture));
 exports.SlideGesture = SlideGesture;
 
-},{"../util":404,"./drag-gesture":386}],391:[function(require,module,exports){
+},{"../util":382,"./drag-gesture":364}],369:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
@@ -69211,7 +68291,7 @@ require('./transitions/transition-ios');
 require('./transitions/transition-md');
 require('./transitions/transition-wp');
 
-},{"./animations/animation":309,"./animations/builtins":310,"./components":311,"./config/bootstrap":381,"./config/config":382,"./config/directives":383,"./config/modes":384,"./decorators/page":385,"./gestures/drag-gesture":386,"./gestures/gesture":387,"./gestures/slide-edge-gesture":389,"./gestures/slide-gesture":390,"./platform/platform":392,"./platform/registry":393,"./platform/storage":394,"./transitions/transition":401,"./transitions/transition-ios":398,"./transitions/transition-md":399,"./transitions/transition-wp":400,"./translation/translate":402,"./translation/translate_pipe":403,"./util/click-block":405,"./util/events":408,"./util/form":410,"./util/keyboard":411}],392:[function(require,module,exports){
+},{"./animations/animation":287,"./animations/builtins":288,"./components":289,"./config/bootstrap":359,"./config/config":360,"./config/directives":361,"./config/modes":362,"./decorators/page":363,"./gestures/drag-gesture":364,"./gestures/gesture":365,"./gestures/slide-edge-gesture":367,"./gestures/slide-gesture":368,"./platform/platform":370,"./platform/registry":371,"./platform/storage":372,"./transitions/transition":379,"./transitions/transition-ios":376,"./transitions/transition-md":377,"./transitions/transition-wp":378,"./translation/translate":380,"./translation/translate_pipe":381,"./util/click-block":383,"./util/events":386,"./util/form":388,"./util/keyboard":390}],370:[function(require,module,exports){
 "use strict";
 var core_1 = require('@angular/core');
 var util_1 = require('../util/util');
@@ -69246,40 +68326,40 @@ var Platform = (function () {
         if (platforms === void 0) { platforms = []; }
         this._versions = {};
         this._onResizes = [];
+        this._bbActions = [];
         // Events meant to be triggered by the engine
         // **********************************************
         /**
-        * The back button event is emitted when the user presses the native
-        * platform's back button, also referred to as the "hardware" back button.
-        * This event is only emitted within Cordova apps running on Android and
-        * Windows platforms. This event is not fired on iOS since iOS doesn't come
-        * with a hardware back button in the same sense an Android or Windows device
-        * does. It's important to note that this event does not emit when the Ionic
-        * app's back button within the navbar is clicked, but this event is only
-        * referencing the platform's hardware back button.
-        */
+         * @private
+         */
         this.backButton = new core_1.EventEmitter();
         /**
-        * The pause event emits when the native platform puts the application
-        * into the background, typically when the user switches to a different
-        * application. This event would emit when a Cordova app is put into
-        * the background, however, it would not fire on a standard web browser.
-        */
+         * The pause event emits when the native platform puts the application
+         * into the background, typically when the user switches to a different
+         * application. This event would emit when a Cordova app is put into
+         * the background, however, it would not fire on a standard web browser.
+         */
         this.pause = new core_1.EventEmitter();
         /**
-        * The resume event emits when the native platform pulls the application
-        * out from the background. This event would emit when a Cordova app comes
-        * out from the background, however, it would not fire on a standard web browser.
-        */
+         * The resume event emits when the native platform pulls the application
+         * out from the background. This event would emit when a Cordova app comes
+         * out from the background, however, it would not fire on a standard web browser.
+         */
         this.resume = new core_1.EventEmitter();
         this._platforms = platforms;
         this._readyPromise = new Promise(function (res) { _this._readyResolve = res; });
+        this.backButton.subscribe(function () {
+            // the hardware back button event has been fired
+            void 0;
+            // decide which backbutton action should run
+            _this.runBackButtonAction();
+        });
     }
     /**
      * @private
      */
     Platform.prototype.setZone = function (zone) {
-        this._zone = zone;
+        this.zone = zone;
     };
     // Methods
     // **********************************************
@@ -69431,7 +68511,7 @@ var Platform = (function () {
      */
     Platform.prototype.triggerReady = function (readySource) {
         var _this = this;
-        this._zone.run(function () {
+        this.zone.run(function () {
             _this._readyResolve(readySource);
         });
     };
@@ -69450,14 +68530,14 @@ var Platform = (function () {
         });
     };
     /**
-    * Set the app's language direction, which will update the `dir` attribute
-    * on the app's root `<html>` element. We recommend the app's `index.html`
-    * file already has the correct `dir` attribute value set, such as
-    * `<html dir="ltr">` or `<html dir="rtl">`. This method is useful if the
-    * direction needs to be dynamically changed per user/session.
-    * [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
-    * @param {string} dir  Examples: `rtl`, `ltr`
-    */
+     * Set the app's language direction, which will update the `dir` attribute
+     * on the app's root `<html>` element. We recommend the app's `index.html`
+     * file already has the correct `dir` attribute value set, such as
+     * `<html dir="ltr">` or `<html dir="rtl">`. This method is useful if the
+     * direction needs to be dynamically changed per user/session.
+     * [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+     * @param {string} dir  Examples: `rtl`, `ltr`
+     */
     Platform.prototype.setDir = function (dir, updateDocument) {
         this._dir = (dir || '').toLowerCase();
         if (updateDocument !== false) {
@@ -69485,14 +68565,14 @@ var Platform = (function () {
         return (this._dir === 'rtl');
     };
     /**
-    * Set the app's language and optionally the country code, which will update
-    * the `lang` attribute on the app's root `<html>` element.
-    * We recommend the app's `index.html` file already has the correct `lang`
-    * attribute value set, such as `<html lang="en">`. This method is useful if
-    * the language needs to be dynamically changed per user/session.
-    * [W3C: Declaring language in HTML](http://www.w3.org/International/questions/qa-html-language-declarations)
-    * @param {string} language  Examples: `en-US`, `en-GB`, `ar`, `de`, `zh`, `es-MX`
-    */
+     * Set the app's language and optionally the country code, which will update
+     * the `lang` attribute on the app's root `<html>` element.
+     * We recommend the app's `index.html` file already has the correct `lang`
+     * attribute value set, such as `<html lang="en">`. This method is useful if
+     * the language needs to be dynamically changed per user/session.
+     * [W3C: Declaring language in HTML](http://www.w3.org/International/questions/qa-html-language-declarations)
+     * @param {string} language  Examples: `en-US`, `en-GB`, `ar`, `de`, `zh`, `es-MX`
+     */
     Platform.prototype.setLang = function (language, updateDocument) {
         this._lang = language;
         if (updateDocument !== false) {
@@ -69514,81 +68594,131 @@ var Platform = (function () {
     // Provided NOOP methods so they do not error when
     // called by engines (the browser)that do not provide them
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.exitApp = function () { };
+    /**
+     * The back button event is triggered when the user presses the native
+     * platform's back button, also referred to as the "hardware" back button.
+     * This event is only used within Cordova apps running on Android and
+     * Windows platforms. This event is not fired on iOS since iOS doesn't come
+     * with a hardware back button in the same sense an Android or Windows device
+     * does.
+     *
+     * Registering a hardware back button action and setting a priority allows
+     * apps to control which action should be called when the hardware back
+     * button is pressed. This method decides which of the registered back button
+     * actions has the highest priority and should be called.
+     *
+     * @param {Function} callback Called when the back button is pressed,
+     * if this registered action has the highest priority.
+     * @param {number} priority Set the priority for this action. Only the highest priority will execute. Defaults to `0`.
+     * @returns {Function} A function that, when called, will unregister
+     * the its back button action.
+     */
+    Platform.prototype.registerBackButtonAction = function (fn, priority) {
+        var _this = this;
+        if (priority === void 0) { priority = 0; }
+        var action = { fn: fn, priority: priority };
+        this._bbActions.push(action);
+        // return a function to unregister this back button action
+        return function () {
+            var index = _this._bbActions.indexOf(action);
+            if (index > -1) {
+                _this._bbActions.splice(index, 1);
+            }
+        };
+    };
+    /**
+     * @private
+     */
+    Platform.prototype.runBackButtonAction = function () {
+        // decide which one back button action should run
+        var winner = null;
+        this._bbActions.forEach(function (action) {
+            if (!winner || action.priority >= winner.priority) {
+                winner = action;
+            }
+        });
+        // run the winning action if there is one
+        winner && winner.fn && winner.fn();
+    };
     // Getter/Setter Methods
     // **********************************************
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.setUrl = function (url) {
         this._url = url;
         this._qs = util_1.getQuerystring(url);
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.url = function () {
         return this._url;
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.query = function (key) {
         return (this._qs || {})[key];
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.setUserAgent = function (userAgent) {
         this._ua = userAgent;
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.userAgent = function () {
         return this._ua || '';
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.setNavigatorPlatform = function (navigatorPlatform) {
         this._bPlt = navigatorPlatform;
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.navigatorPlatform = function () {
         return this._bPlt || '';
     };
     /**
-    * @private
-    */
+     * Gets the width of the platform's viewport using `window.innerWidth`.
+     * Using this method is preferred since the dimension is a cached value,
+     * which reduces the chance of multiple and expensive DOM reads.
+     */
     Platform.prototype.width = function () {
         return dom_1.windowDimensions().width;
     };
     /**
-    * @private
-    */
+     * Gets the height of the platform's viewport using `window.innerHeight`.
+     * Using this method is preferred since the dimension is a cached value,
+     * which reduces the chance of multiple and expensive DOM reads.
+     */
     Platform.prototype.height = function () {
         return dom_1.windowDimensions().height;
     };
     /**
-    * @private
-    */
+     * Returns `true` if the app is in portait mode.
+     */
     Platform.prototype.isPortrait = function () {
         return this.width() < this.height();
     };
     /**
-    * @private
-    */
+     * Returns `true` if the app is in landscape mode.
+     */
     Platform.prototype.isLandscape = function () {
         return !this.isPortrait();
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.prototype.windowResize = function () {
         var self = this;
         clearTimeout(self._resizeTm);
@@ -69606,7 +68736,6 @@ var Platform = (function () {
     };
     /**
      * @private
-     * @returns Unregister function
      */
     Platform.prototype.onResize = function (cb) {
         var self = this;
@@ -69627,8 +68756,8 @@ var Platform = (function () {
         platformRegistry[platformConfig.name] = platformConfig;
     };
     /**
-    * @private
-    */
+     * @private
+     */
     Platform.registry = function () {
         return platformRegistry;
     };
@@ -69873,7 +69002,7 @@ var PlatformNode = (function () {
 var platformRegistry = {};
 var platformDefault = null;
 
-},{"../util/dom":407,"../util/util":413,"@angular/core":139}],393:[function(require,module,exports){
+},{"../util/dom":385,"../util/util":392,"@angular/core":139}],371:[function(require,module,exports){
 "use strict";
 var platform_1 = require('./platform');
 var dom_1 = require('../util/dom');
@@ -69883,7 +69012,7 @@ platform_1.Platform.register({
     name: 'core',
     settings: {
         mode: 'md',
-        keyboardHeight: 290,
+        keyboardHeight: 290
     }
 });
 platform_1.Platform.setDefault('core');
@@ -69956,7 +69085,6 @@ platform_1.Platform.register({
     ],
     settings: {
         autoFocusAssist: 'delay',
-        clickBlock: true,
         hoverCSS: false,
         inputBlurring: isIOSDevice,
         inputCloning: isIOSDevice,
@@ -70005,7 +69133,6 @@ platform_1.Platform.register({
     settings: {
         mode: 'wp',
         autoFocusAssist: 'immediate',
-        clickBlock: true,
         hoverCSS: false
     },
     isMatch: function (p) {
@@ -70028,13 +69155,19 @@ platform_1.Platform.register({
                     // 3) cordova deviceready event triggered
                     // add cordova listeners to emit platform events
                     doc.addEventListener('backbutton', function (ev) {
-                        p.backButton.emit(ev);
+                        p.zone.run(function () {
+                            p.backButton.emit(ev);
+                        });
                     });
                     doc.addEventListener('pause', function (ev) {
-                        p.pause.emit(ev);
+                        p.zone.run(function () {
+                            p.pause.emit(ev);
+                        });
                     });
                     doc.addEventListener('resume', function (ev) {
-                        p.resume.emit(ev);
+                        p.zone.run(function () {
+                            p.resume.emit(ev);
+                        });
                     });
                     // cordova has its own exitApp method
                     p.exitApp = function () {
@@ -70058,7 +69191,7 @@ function isIOSDevice(p) {
     return p.testNavigatorPlatform('iphone|ipad|ipod');
 }
 
-},{"../util/dom":407,"./platform":392}],394:[function(require,module,exports){
+},{"../util/dom":385,"./platform":370}],372:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
@@ -70067,7 +69200,7 @@ __export(require('./storage/storage'));
 __export(require('./storage/local-storage'));
 __export(require('./storage/sql'));
 
-},{"./storage/local-storage":395,"./storage/sql":396,"./storage/storage":397}],395:[function(require,module,exports){
+},{"./storage/local-storage":373,"./storage/sql":374,"./storage/storage":375}],373:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -70178,7 +69311,7 @@ var LocalStorage = (function (_super) {
 }(storage_1.StorageEngine));
 exports.LocalStorage = LocalStorage;
 
-},{"./storage":397}],396:[function(require,module,exports){
+},{"./storage":375}],374:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -70327,7 +69460,7 @@ var SqlStorage = (function (_super) {
 }(storage_1.StorageEngine));
 exports.SqlStorage = SqlStorage;
 
-},{"../../util/util":413,"./storage":397}],397:[function(require,module,exports){
+},{"../../util/util":392,"./storage":375}],375:[function(require,module,exports){
 "use strict";
 /**
  * Storage is an easy way to store key/value pairs and other complicated
@@ -70408,7 +69541,7 @@ var StorageEngine = (function () {
 }());
 exports.StorageEngine = StorageEngine;
 
-},{}],398:[function(require,module,exports){
+},{}],376:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -70581,7 +69714,7 @@ var IOSTransition = (function (_super) {
 }(transition_1.Transition));
 transition_1.Transition.register('ios-transition', IOSTransition);
 
-},{"../animations/animation":309,"./transition":401}],399:[function(require,module,exports){
+},{"../animations/animation":287,"./transition":379}],377:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -70642,7 +69775,7 @@ var MDTransition = (function (_super) {
 }(transition_1.Transition));
 transition_1.Transition.register('md-transition', MDTransition);
 
-},{"../animations/animation":309,"./transition":401}],400:[function(require,module,exports){
+},{"../animations/animation":287,"./transition":379}],378:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -70701,7 +69834,7 @@ var WPTransition = (function (_super) {
 }(transition_1.Transition));
 transition_1.Transition.register('wp-transition', WPTransition);
 
-},{"../animations/animation":309,"./transition":401}],401:[function(require,module,exports){
+},{"../animations/animation":287,"./transition":379}],379:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -70735,7 +69868,7 @@ var Transition = (function (_super) {
 exports.Transition = Transition;
 var TransitionRegistry = {};
 
-},{"../animations/animation":309}],402:[function(require,module,exports){
+},{"../animations/animation":287}],380:[function(require,module,exports){
 "use strict";
 /**
  * @private
@@ -70800,7 +69933,7 @@ var Translate = (function () {
 }());
 exports.Translate = Translate;
 
-},{}],403:[function(require,module,exports){
+},{}],381:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -70846,7 +69979,7 @@ var TranslatePipe = (function () {
 }());
 exports.TranslatePipe = TranslatePipe;
 
-},{"./translate":402,"@angular/core":139}],404:[function(require,module,exports){
+},{"./translate":380,"@angular/core":139}],382:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
@@ -70856,7 +69989,7 @@ exports.dom = domUtil;
 __export(require('./util/util'));
 __export(require('./util/datetime-util'));
 
-},{"./util/datetime-util":406,"./util/dom":407,"./util/util":413}],405:[function(require,module,exports){
+},{"./util/datetime-util":384,"./util/dom":385,"./util/util":392}],383:[function(require,module,exports){
 "use strict";
 var dom_1 = require('./dom');
 var CSS_CLICK_BLOCK = 'click-block-active';
@@ -70909,7 +70042,7 @@ function hide() {
     }
 }
 
-},{"./dom":407}],406:[function(require,module,exports){
+},{"./dom":385}],384:[function(require,module,exports){
 "use strict";
 var util_1 = require('./util');
 function renderDateTime(template, value, locale) {
@@ -71335,7 +70468,7 @@ var MONTH_SHORT_NAMES = [
     'Dec',
 ];
 
-},{"./util":413}],407:[function(require,module,exports){
+},{"./util":392}],385:[function(require,module,exports){
 "use strict";
 // RequestAnimationFrame Polyfill (Android 4.3 and below)
 /*! @author Paul Irish */
@@ -71602,7 +70735,7 @@ function flushDimensionCache() {
 exports.flushDimensionCache = flushDimensionCache;
 var dimensionCache = {};
 
-},{}],408:[function(require,module,exports){
+},{}],386:[function(require,module,exports){
 "use strict";
 /**
  * @name Events
@@ -71623,8 +70756,9 @@ var dimensionCache = {};
  * }
  *
  * // second page (listen for the user created event)
- * events.subscribe('user:created', (user) => {
- *   console.log('Welcome', user);
+ * events.subscribe('user:created', (userEventData) => {
+ *   // userEventData is an array of parameters, so grab our first and only arg
+ *   console.log('Welcome', userEventData[0]);
  * });
  *
  * ```
@@ -71710,7 +70844,7 @@ var Events = (function () {
 }());
 exports.Events = Events;
 
-},{}],409:[function(require,module,exports){
+},{}],387:[function(require,module,exports){
 "use strict";
 var FeatureDetect = (function () {
     function FeatureDetect() {
@@ -71751,7 +70885,7 @@ FeatureDetect.add('hairlines', function (window, document, body) {
     return canDo;
 });
 
-},{}],410:[function(require,module,exports){
+},{}],388:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -71837,7 +70971,17 @@ var Form = (function () {
 }());
 exports.Form = Form;
 
-},{"@angular/core":139}],411:[function(require,module,exports){
+},{"@angular/core":139}],389:[function(require,module,exports){
+"use strict";
+(function (Key) {
+    Key[Key["ENTER"] = 13] = "ENTER";
+    Key[Key["ESCAPE"] = 27] = "ESCAPE";
+    Key[Key["TAB"] = 9] = "TAB";
+})(exports.Key || (exports.Key = {}));
+var Key = exports.Key;
+;
+
+},{}],390:[function(require,module,exports){
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -71852,6 +70996,7 @@ var core_1 = require('@angular/core');
 var config_1 = require('../config/config');
 var form_1 = require('./form');
 var dom_1 = require('./dom');
+var key_1 = require('./key');
 /**
  * @name Keyboard
  * @description
@@ -71989,7 +71134,7 @@ var Keyboard = (function () {
         }
         // default is to add the focus-outline when the tab key is used
         function keyDown(ev) {
-            if (!isKeyInputEnabled && ev.keyCode === 9) {
+            if (!isKeyInputEnabled && ev.keyCode === key_1.Key.TAB) {
                 isKeyInputEnabled = true;
                 enableKeyInput();
             }
@@ -72021,7 +71166,7 @@ exports.Keyboard = Keyboard;
 var KEYBOARD_CLOSE_POLLING = 150;
 var KEYBOARD_POLLING_CHECKS_MAX = 100;
 
-},{"../config/config":382,"./dom":407,"./form":410,"@angular/core":139}],412:[function(require,module,exports){
+},{"../config/config":360,"./dom":385,"./form":388,"./key":389,"@angular/core":139}],391:[function(require,module,exports){
 "use strict";
 var dom_1 = require('../util/dom');
 var ScrollView = (function () {
@@ -72123,15 +71268,19 @@ var ScrollView = (function () {
         this._js = true;
         this._cb = onScrollCallback;
         this._pos = [];
-        this._el.addEventListener('touchstart', this._start.bind(this));
-        this._el.addEventListener('touchmove', this._move.bind(this));
-        this._el.addEventListener('touchend', this._end.bind(this));
-        this._el.parentElement.classList.add('js-scroll');
+        if (this._el) {
+            this._el.addEventListener('touchstart', this._start.bind(this));
+            this._el.addEventListener('touchmove', this._move.bind(this));
+            this._el.addEventListener('touchend', this._end.bind(this));
+            this._el.parentElement.classList.add('js-scroll');
+        }
         return function () {
-            _this._el.removeEventListener('touchstart', _this._start.bind(_this));
-            _this._el.removeEventListener('touchmove', _this._move.bind(_this));
-            _this._el.removeEventListener('touchend', _this._end.bind(_this));
-            _this._el.parentElement.classList.remove('js-scroll');
+            if (_this._el) {
+                _this._el.removeEventListener('touchstart', _this._start.bind(_this));
+                _this._el.removeEventListener('touchmove', _this._move.bind(_this));
+                _this._el.removeEventListener('touchend', _this._end.bind(_this));
+                _this._el.parentElement.classList.remove('js-scroll');
+            }
         };
     };
     /**
@@ -72244,7 +71393,7 @@ var MIN_VELOCITY_CONTINUE_DECELERATION = 0.12;
 var DECELERATION_FRICTION = 0.97;
 var FRAME_MS = (1000 / 60);
 
-},{"../util/dom":407}],413:[function(require,module,exports){
+},{"../util/dom":385}],392:[function(require,module,exports){
 "use strict";
 /**
  * Given a min and max, restrict the given number
@@ -72435,7 +71584,7 @@ function getQuerystring(url) {
 }
 exports.getQuerystring = getQuerystring;
 
-},{}],414:[function(require,module,exports){
+},{}],393:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -72528,7 +71677,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],415:[function(require,module,exports){
+},{}],394:[function(require,module,exports){
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -72680,7 +71829,7 @@ setTimeout(function () {
     }
 }, DEVICE_READY_TIMEOUT);
 
-},{"./ng1":416,"./plugins/actionsheet":417,"./plugins/appavailability":418,"./plugins/apprate":419,"./plugins/appversion":420,"./plugins/badge":421,"./plugins/barcodescanner":422,"./plugins/base64togallery":423,"./plugins/batterystatus":424,"./plugins/ble":425,"./plugins/calendar":426,"./plugins/camera":427,"./plugins/clipboard":428,"./plugins/contacts":429,"./plugins/datepicker":430,"./plugins/dbmeter":431,"./plugins/device":432,"./plugins/devicemotion":433,"./plugins/deviceorientation":434,"./plugins/diagnostic":435,"./plugins/dialogs":436,"./plugins/facebook":437,"./plugins/file":438,"./plugins/flashlight":439,"./plugins/geolocation":440,"./plugins/globalization":441,"./plugins/hotspot":442,"./plugins/imagepicker":443,"./plugins/inappbrowser":444,"./plugins/keyboard":445,"./plugins/launchnavigator":446,"./plugins/localnotifications":447,"./plugins/network":448,"./plugins/plugin":449,"./plugins/push":450,"./plugins/sms":451,"./plugins/socialsharing":452,"./plugins/spinnerdialog":453,"./plugins/splashscreen":454,"./plugins/statusbar":455,"./plugins/toast":456,"./plugins/touchid":457,"./plugins/vibration":458}],416:[function(require,module,exports){
+},{"./ng1":395,"./plugins/actionsheet":396,"./plugins/appavailability":397,"./plugins/apprate":398,"./plugins/appversion":399,"./plugins/badge":400,"./plugins/barcodescanner":401,"./plugins/base64togallery":402,"./plugins/batterystatus":403,"./plugins/ble":404,"./plugins/calendar":405,"./plugins/camera":406,"./plugins/clipboard":407,"./plugins/contacts":408,"./plugins/datepicker":409,"./plugins/dbmeter":410,"./plugins/device":411,"./plugins/devicemotion":412,"./plugins/deviceorientation":413,"./plugins/diagnostic":414,"./plugins/dialogs":415,"./plugins/facebook":416,"./plugins/file":417,"./plugins/flashlight":418,"./plugins/geolocation":419,"./plugins/globalization":420,"./plugins/hotspot":421,"./plugins/imagepicker":422,"./plugins/inappbrowser":423,"./plugins/keyboard":424,"./plugins/launchnavigator":425,"./plugins/localnotifications":426,"./plugins/network":427,"./plugins/plugin":428,"./plugins/push":429,"./plugins/sms":430,"./plugins/socialsharing":431,"./plugins/spinnerdialog":432,"./plugins/splashscreen":433,"./plugins/statusbar":434,"./plugins/toast":435,"./plugins/touchid":436,"./plugins/vibration":437}],395:[function(require,module,exports){
 /**
  * Initialize the ngCordova Angular module if we're running in ng1
  */
@@ -72705,7 +71854,7 @@ function publishAngular1Service(config, cls) {
 }
 exports.publishAngular1Service = publishAngular1Service;
 
-},{}],417:[function(require,module,exports){
+},{}],396:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72780,7 +71929,7 @@ var ActionSheet = (function () {
 })();
 exports.ActionSheet = ActionSheet;
 
-},{"./plugin":449}],418:[function(require,module,exports){
+},{"./plugin":428}],397:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72839,7 +71988,7 @@ var AppAvailability = (function () {
 })();
 exports.AppAvailability = AppAvailability;
 
-},{"./plugin":449}],419:[function(require,module,exports){
+},{"./plugin":428}],398:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72917,7 +72066,7 @@ var AppRate = (function () {
 })();
 exports.AppRate = AppRate;
 
-},{"./plugin":449}],420:[function(require,module,exports){
+},{"./plugin":428}],399:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72990,7 +72139,7 @@ var AppVersion = (function () {
 })();
 exports.AppVersion = AppVersion;
 
-},{"./plugin":449}],421:[function(require,module,exports){
+},{"./plugin":428}],400:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73087,7 +72236,7 @@ var Badge = (function () {
 })();
 exports.Badge = Badge;
 
-},{"./plugin":449}],422:[function(require,module,exports){
+},{"./plugin":428}],401:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73137,7 +72286,7 @@ var BarcodeScanner = (function () {
 })();
 exports.BarcodeScanner = BarcodeScanner;
 
-},{"./plugin":449}],423:[function(require,module,exports){
+},{"./plugin":428}],402:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73185,7 +72334,7 @@ var Base64ToGallery = (function () {
 })();
 exports.Base64ToGallery = Base64ToGallery;
 
-},{"./plugin":449}],424:[function(require,module,exports){
+},{"./plugin":428}],403:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73263,7 +72412,7 @@ var BatteryStatus = (function () {
 })();
 exports.BatteryStatus = BatteryStatus;
 
-},{"./plugin":449}],425:[function(require,module,exports){
+},{"./plugin":428}],404:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73686,7 +72835,7 @@ var BLE = (function () {
 })();
 exports.BLE = BLE;
 
-},{"./plugin":449}],426:[function(require,module,exports){
+},{"./plugin":428}],405:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73992,7 +73141,7 @@ var Calendar = (function () {
 })();
 exports.Calendar = Calendar;
 
-},{"./plugin":449}],427:[function(require,module,exports){
+},{"./plugin":428}],406:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74057,7 +73206,7 @@ var Camera = (function () {
 })();
 exports.Camera = Camera;
 
-},{"./plugin":449}],428:[function(require,module,exports){
+},{"./plugin":428}],407:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74124,7 +73273,7 @@ var Clipboard = (function () {
 })();
 exports.Clipboard = Clipboard;
 
-},{"./plugin":449}],429:[function(require,module,exports){
+},{"./plugin":428}],408:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74216,7 +73365,7 @@ var Contacts = (function () {
 })();
 exports.Contacts = Contacts;
 
-},{"./plugin":449}],430:[function(require,module,exports){
+},{"./plugin":428}],409:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74272,7 +73421,7 @@ var DatePicker = (function () {
 })();
 exports.DatePicker = DatePicker;
 
-},{"./plugin":449}],431:[function(require,module,exports){
+},{"./plugin":428}],410:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74359,7 +73508,7 @@ var DBMeter = (function () {
 })();
 exports.DBMeter = DBMeter;
 
-},{"./plugin":449}],432:[function(require,module,exports){
+},{"./plugin":428}],411:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74408,7 +73557,7 @@ var Device = (function () {
 })();
 exports.Device = Device;
 
-},{"./plugin":449}],433:[function(require,module,exports){
+},{"./plugin":428}],412:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74489,7 +73638,7 @@ var DeviceMotion = (function () {
 })();
 exports.DeviceMotion = DeviceMotion;
 
-},{"./plugin":449}],434:[function(require,module,exports){
+},{"./plugin":428}],413:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74560,7 +73709,7 @@ var DeviceOrientation = (function () {
 })();
 exports.DeviceOrientation = DeviceOrientation;
 
-},{"./plugin":449}],435:[function(require,module,exports){
+},{"./plugin":428}],414:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74769,7 +73918,7 @@ var Diagnostic = (function () {
 })();
 exports.Diagnostic = Diagnostic;
 
-},{"./plugin":449}],436:[function(require,module,exports){
+},{"./plugin":428}],415:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74873,7 +74022,7 @@ var Dialogs = (function () {
 })();
 exports.Dialogs = Dialogs;
 
-},{"./plugin":449}],437:[function(require,module,exports){
+},{"./plugin":428}],416:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75130,7 +74279,7 @@ var Facebook = (function () {
 })();
 exports.Facebook = Facebook;
 
-},{"./plugin":449}],438:[function(require,module,exports){
+},{"./plugin":428}],417:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75652,7 +74801,7 @@ var File = (function () {
 })();
 exports.File = File;
 
-},{"./plugin":449}],439:[function(require,module,exports){
+},{"./plugin":428}],418:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75730,7 +74879,7 @@ var Flashlight = (function () {
 })();
 exports.Flashlight = Flashlight;
 
-},{"./plugin":449}],440:[function(require,module,exports){
+},{"./plugin":428}],419:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75814,7 +74963,7 @@ var Geolocation = (function () {
 })();
 exports.Geolocation = Geolocation;
 
-},{"./plugin":449}],441:[function(require,module,exports){
+},{"./plugin":428}],420:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75964,7 +75113,7 @@ var Globalization = (function () {
 })();
 exports.Globalization = Globalization;
 
-},{"./plugin":449}],442:[function(require,module,exports){
+},{"./plugin":428}],421:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76110,7 +75259,7 @@ var Hotspot = (function () {
 })();
 exports.Hotspot = Hotspot;
 
-},{"./plugin":449}],443:[function(require,module,exports){
+},{"./plugin":428}],422:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76166,7 +75315,7 @@ var ImagePicker = (function () {
 })();
 exports.ImagePicker = ImagePicker;
 
-},{"./plugin":449}],444:[function(require,module,exports){
+},{"./plugin":428}],423:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76201,7 +75350,7 @@ var InAppBrowser = (function () {
 })();
 exports.InAppBrowser = InAppBrowser;
 
-},{"./plugin":449}],445:[function(require,module,exports){
+},{"./plugin":428}],424:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76297,7 +75446,7 @@ var Keyboard = (function () {
 })();
 exports.Keyboard = Keyboard;
 
-},{"./plugin":449}],446:[function(require,module,exports){
+},{"./plugin":428}],425:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76354,7 +75503,7 @@ var LaunchNavigator = (function () {
 })();
 exports.LaunchNavigator = LaunchNavigator;
 
-},{"./plugin":449}],447:[function(require,module,exports){
+},{"./plugin":428}],426:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76577,7 +75726,7 @@ var LocalNotifications = (function () {
 })();
 exports.LocalNotifications = LocalNotifications;
 
-},{"./plugin":449}],448:[function(require,module,exports){
+},{"./plugin":428}],427:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76719,7 +75868,7 @@ var Connection = (function () {
 })();
 exports.Connection = Connection;
 
-},{"./plugin":449}],449:[function(require,module,exports){
+},{"./plugin":428}],428:[function(require,module,exports){
 var util_1 = require('../util');
 var Observable_1 = require('rxjs/Observable');
 /**
@@ -76969,7 +76118,7 @@ function CordovaProperty(target, key, descriptor) {
 }
 exports.CordovaProperty = CordovaProperty;
 
-},{"../util":459,"rxjs/Observable":460}],450:[function(require,module,exports){
+},{"../util":438,"rxjs/Observable":439}],429:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77042,7 +76191,7 @@ var Push = (function () {
 })();
 exports.Push = Push;
 
-},{"./plugin":449}],451:[function(require,module,exports){
+},{"./plugin":428}],430:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77093,7 +76242,7 @@ var SMS = (function () {
 })();
 exports.SMS = SMS;
 
-},{"./plugin":449}],452:[function(require,module,exports){
+},{"./plugin":428}],431:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77251,7 +76400,7 @@ var SocialSharing = (function () {
 })();
 exports.SocialSharing = SocialSharing;
 
-},{"./plugin":449}],453:[function(require,module,exports){
+},{"./plugin":428}],432:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77310,7 +76459,7 @@ var SpinnerDialog = (function () {
 })();
 exports.SpinnerDialog = SpinnerDialog;
 
-},{"./plugin":449}],454:[function(require,module,exports){
+},{"./plugin":428}],433:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77364,7 +76513,7 @@ var Splashscreen = (function () {
 })();
 exports.Splashscreen = Splashscreen;
 
-},{"./plugin":449}],455:[function(require,module,exports){
+},{"./plugin":428}],434:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77518,7 +76667,7 @@ var StatusBar = (function () {
 })();
 exports.StatusBar = StatusBar;
 
-},{"./plugin":449}],456:[function(require,module,exports){
+},{"./plugin":428}],435:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77667,7 +76816,7 @@ var Toast = (function () {
 })();
 exports.Toast = Toast;
 
-},{"./plugin":449}],457:[function(require,module,exports){
+},{"./plugin":428}],436:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77756,7 +76905,7 @@ var TouchID = (function () {
 })();
 exports.TouchID = TouchID;
 
-},{"./plugin":449}],458:[function(require,module,exports){
+},{"./plugin":428}],437:[function(require,module,exports){
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77811,7 +76960,7 @@ var Vibration = (function () {
 })();
 exports.Vibration = Vibration;
 
-},{"./plugin":449}],459:[function(require,module,exports){
+},{"./plugin":428}],438:[function(require,module,exports){
 function get(obj, path) {
     for (var i = 0, path = path.split('.'), len = path.length; i < len; i++) {
         if (!obj) {
@@ -77824,7 +76973,7 @@ function get(obj, path) {
 exports.get = get;
 ;
 
-},{}],460:[function(require,module,exports){
+},{}],439:[function(require,module,exports){
 "use strict";
 var root_1 = require('./util/root');
 var SymbolShim_1 = require('./util/SymbolShim');
@@ -77949,7 +77098,7 @@ var Observable = (function () {
 }());
 exports.Observable = Observable;
 
-},{"./util/SymbolShim":465,"./util/errorObject":466,"./util/root":470,"./util/toSubscriber":471,"./util/tryCatch":472}],461:[function(require,module,exports){
+},{"./util/SymbolShim":444,"./util/errorObject":445,"./util/root":449,"./util/toSubscriber":450,"./util/tryCatch":451}],440:[function(require,module,exports){
 "use strict";
 exports.empty = {
     isUnsubscribed: true,
@@ -77958,7 +77107,7 @@ exports.empty = {
     complete: function () { }
 };
 
-},{}],462:[function(require,module,exports){
+},{}],441:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -78151,7 +77300,7 @@ var SafeSubscriber = (function (_super) {
     return SafeSubscriber;
 }(Subscriber));
 
-},{"./Observer":461,"./Subscription":463,"./symbol/rxSubscriber":464,"./util/isFunction":468}],463:[function(require,module,exports){
+},{"./Observer":440,"./Subscription":442,"./symbol/rxSubscriber":443,"./util/isFunction":447}],442:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -78272,7 +77421,7 @@ var UnsubscriptionError = (function (_super) {
 }(Error));
 exports.UnsubscriptionError = UnsubscriptionError;
 
-},{"./util/errorObject":466,"./util/isArray":467,"./util/isFunction":468,"./util/isObject":469,"./util/tryCatch":472}],464:[function(require,module,exports){
+},{"./util/errorObject":445,"./util/isArray":446,"./util/isFunction":447,"./util/isObject":448,"./util/tryCatch":451}],443:[function(require,module,exports){
 "use strict";
 var SymbolShim_1 = require('../util/SymbolShim');
 /**
@@ -78283,7 +77432,7 @@ var SymbolShim_1 = require('../util/SymbolShim');
  */
 exports.rxSubscriber = SymbolShim_1.SymbolShim.for('rxSubscriber');
 
-},{"../util/SymbolShim":465}],465:[function(require,module,exports){
+},{"../util/SymbolShim":444}],444:[function(require,module,exports){
 "use strict";
 var root_1 = require('./root');
 function polyfillSymbol(root) {
@@ -78353,30 +77502,30 @@ function ensureObservable(Symbol) {
 exports.ensureObservable = ensureObservable;
 exports.SymbolShim = polyfillSymbol(root_1.root);
 
-},{"./root":470}],466:[function(require,module,exports){
+},{"./root":449}],445:[function(require,module,exports){
 "use strict";
 // typeof any so that it we don't have to cast when comparing a result to the error object
 exports.errorObject = { e: {} };
 
-},{}],467:[function(require,module,exports){
+},{}],446:[function(require,module,exports){
 "use strict";
 exports.isArray = Array.isArray || (function (x) { return x && typeof x.length === 'number'; });
 
-},{}],468:[function(require,module,exports){
+},{}],447:[function(require,module,exports){
 "use strict";
 function isFunction(x) {
     return typeof x === 'function';
 }
 exports.isFunction = isFunction;
 
-},{}],469:[function(require,module,exports){
+},{}],448:[function(require,module,exports){
 "use strict";
 function isObject(x) {
     return x != null && typeof x === 'object';
 }
 exports.isObject = isObject;
 
-},{}],470:[function(require,module,exports){
+},{}],449:[function(require,module,exports){
 (function (global){
 "use strict";
 var objectTypes = {
@@ -78398,7 +77547,7 @@ if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === fre
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],471:[function(require,module,exports){
+},{}],450:[function(require,module,exports){
 "use strict";
 var Subscriber_1 = require('../Subscriber');
 var rxSubscriber_1 = require('../symbol/rxSubscriber');
@@ -78415,7 +77564,7 @@ function toSubscriber(nextOrObserver, error, complete) {
 }
 exports.toSubscriber = toSubscriber;
 
-},{"../Subscriber":462,"../symbol/rxSubscriber":464}],472:[function(require,module,exports){
+},{"../Subscriber":441,"../symbol/rxSubscriber":443}],451:[function(require,module,exports){
 "use strict";
 var errorObject_1 = require('./errorObject');
 var tryCatchTarget;
@@ -78435,11 +77584,11 @@ function tryCatch(fn) {
 exports.tryCatch = tryCatch;
 ;
 
-},{"./errorObject":466}],473:[function(require,module,exports){
+},{"./errorObject":445}],452:[function(require,module,exports){
 "use strict";
 var root_1 = require('./util/root');
-var observable_1 = require('./symbol/observable');
 var toSubscriber_1 = require('./util/toSubscriber');
+var $$observable = require('symbol-observable');
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
  * of RxJS.
@@ -78487,7 +77636,12 @@ var Observable = (function () {
     Observable.prototype.subscribe = function (observerOrNext, error, complete) {
         var operator = this.operator;
         var sink = toSubscriber_1.toSubscriber(observerOrNext, error, complete);
-        sink.add(operator ? operator.call(sink, this) : this._subscribe(sink));
+        if (operator) {
+            operator.call(sink, this);
+        }
+        else {
+            sink.add(this._subscribe(sink));
+        }
         if (sink.syncErrorThrowable) {
             sink.syncErrorThrowable = false;
             if (sink.syncErrorThrown) {
@@ -78551,7 +77705,7 @@ var Observable = (function () {
      * @method Symbol.observable
      * @return {Observable} this instance of the observable
      */
-    Observable.prototype[observable_1.$$observable] = function () {
+    Observable.prototype[$$observable] = function () {
         return this;
     };
     // HACK: Since TypeScript inherits static properties too, we have to
@@ -78571,9 +77725,9 @@ var Observable = (function () {
 }());
 exports.Observable = Observable;
 
-},{"./symbol/observable":481,"./util/root":489,"./util/toSubscriber":491}],474:[function(require,module,exports){
-arguments[4][461][0].apply(exports,arguments)
-},{"dup":461}],475:[function(require,module,exports){
+},{"./util/root":467,"./util/toSubscriber":468,"symbol-observable":470}],453:[function(require,module,exports){
+arguments[4][440][0].apply(exports,arguments)
+},{"dup":440}],454:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -78583,204 +77737,158 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = require('./Observable');
 var Subscriber_1 = require('./Subscriber');
 var Subscription_1 = require('./Subscription');
+var ObjectUnsubscribedError_1 = require('./util/ObjectUnsubscribedError');
 var SubjectSubscription_1 = require('./SubjectSubscription');
 var rxSubscriber_1 = require('./symbol/rxSubscriber');
-var throwError_1 = require('./util/throwError');
-var ObjectUnsubscribedError_1 = require('./util/ObjectUnsubscribedError');
+/**
+ * @class SubjectSubscriber<T>
+ */
+var SubjectSubscriber = (function (_super) {
+    __extends(SubjectSubscriber, _super);
+    function SubjectSubscriber(destination) {
+        _super.call(this, destination);
+        this.destination = destination;
+    }
+    return SubjectSubscriber;
+}(Subscriber_1.Subscriber));
+exports.SubjectSubscriber = SubjectSubscriber;
 /**
  * @class Subject<T>
  */
 var Subject = (function (_super) {
     __extends(Subject, _super);
-    function Subject(destination, source) {
+    function Subject() {
         _super.call(this);
-        this.destination = destination;
-        this.source = source;
         this.observers = [];
         this.isUnsubscribed = false;
         this.isStopped = false;
-        this.hasErrored = false;
-        this.dispatching = false;
-        this.hasCompleted = false;
-        this.source = source;
+        this.hasError = false;
+        this.thrownError = null;
     }
+    Subject.prototype[rxSubscriber_1.$$rxSubscriber] = function () {
+        return new SubjectSubscriber(this);
+    };
     Subject.prototype.lift = function (operator) {
-        var subject = new Subject(this.destination || this, this);
+        var subject = new AnonymousSubject(this, this);
         subject.operator = operator;
         return subject;
     };
-    Subject.prototype.add = function (subscription) {
-        return Subscription_1.Subscription.prototype.add.call(this, subscription);
-    };
-    Subject.prototype.remove = function (subscription) {
-        Subscription_1.Subscription.prototype.remove.call(this, subscription);
-    };
-    Subject.prototype.unsubscribe = function () {
-        Subscription_1.Subscription.prototype.unsubscribe.call(this);
-    };
-    Subject.prototype._subscribe = function (subscriber) {
-        if (this.source) {
-            return this.source.subscribe(subscriber);
-        }
-        else {
-            if (subscriber.isUnsubscribed) {
-                return;
-            }
-            else if (this.hasErrored) {
-                return subscriber.error(this.errorValue);
-            }
-            else if (this.hasCompleted) {
-                return subscriber.complete();
-            }
-            this.throwIfUnsubscribed();
-            var subscription = new SubjectSubscription_1.SubjectSubscription(this, subscriber);
-            this.observers.push(subscriber);
-            return subscription;
-        }
-    };
-    Subject.prototype._unsubscribe = function () {
-        this.source = null;
-        this.isStopped = true;
-        this.observers = null;
-        this.destination = null;
-    };
     Subject.prototype.next = function (value) {
-        this.throwIfUnsubscribed();
-        if (this.isStopped) {
-            return;
+        if (this.isUnsubscribed) {
+            throw new ObjectUnsubscribedError_1.ObjectUnsubscribedError();
         }
-        this.dispatching = true;
-        this._next(value);
-        this.dispatching = false;
-        if (this.hasErrored) {
-            this._error(this.errorValue);
-        }
-        else if (this.hasCompleted) {
-            this._complete();
+        if (!this.isStopped) {
+            var observers = this.observers;
+            var len = observers.length;
+            var copy = observers.slice();
+            for (var i = 0; i < len; i++) {
+                copy[i].next(value);
+            }
         }
     };
     Subject.prototype.error = function (err) {
-        this.throwIfUnsubscribed();
-        if (this.isStopped) {
-            return;
+        if (this.isUnsubscribed) {
+            throw new ObjectUnsubscribedError_1.ObjectUnsubscribedError();
         }
+        this.hasError = true;
+        this.thrownError = err;
         this.isStopped = true;
-        this.hasErrored = true;
-        this.errorValue = err;
-        if (this.dispatching) {
-            return;
+        var observers = this.observers;
+        var len = observers.length;
+        var copy = observers.slice();
+        for (var i = 0; i < len; i++) {
+            copy[i].error(err);
         }
-        this._error(err);
+        this.observers.length = 0;
     };
     Subject.prototype.complete = function () {
-        this.throwIfUnsubscribed();
-        if (this.isStopped) {
-            return;
+        if (this.isUnsubscribed) {
+            throw new ObjectUnsubscribedError_1.ObjectUnsubscribedError();
         }
         this.isStopped = true;
-        this.hasCompleted = true;
-        if (this.dispatching) {
-            return;
+        var observers = this.observers;
+        var len = observers.length;
+        var copy = observers.slice();
+        for (var i = 0; i < len; i++) {
+            copy[i].complete();
         }
-        this._complete();
+        this.observers.length = 0;
+    };
+    Subject.prototype.unsubscribe = function () {
+        this.isStopped = true;
+        this.isUnsubscribed = true;
+        this.observers = null;
+    };
+    Subject.prototype._subscribe = function (subscriber) {
+        if (this.isUnsubscribed) {
+            throw new ObjectUnsubscribedError_1.ObjectUnsubscribedError();
+        }
+        else if (this.hasError) {
+            subscriber.error(this.thrownError);
+            return Subscription_1.Subscription.EMPTY;
+        }
+        else if (this.isStopped) {
+            subscriber.complete();
+            return Subscription_1.Subscription.EMPTY;
+        }
+        else {
+            this.observers.push(subscriber);
+            return new SubjectSubscription_1.SubjectSubscription(this, subscriber);
+        }
     };
     Subject.prototype.asObservable = function () {
-        var observable = new SubjectObservable(this);
+        var observable = new Observable_1.Observable();
+        observable.source = this;
         return observable;
     };
-    Subject.prototype._next = function (value) {
-        if (this.destination) {
-            this.destination.next(value);
-        }
-        else {
-            this._finalNext(value);
-        }
-    };
-    Subject.prototype._finalNext = function (value) {
-        var index = -1;
-        var observers = this.observers.slice(0);
-        var len = observers.length;
-        while (++index < len) {
-            observers[index].next(value);
-        }
-    };
-    Subject.prototype._error = function (err) {
-        if (this.destination) {
-            this.destination.error(err);
-        }
-        else {
-            this._finalError(err);
-        }
-    };
-    Subject.prototype._finalError = function (err) {
-        var index = -1;
-        var observers = this.observers;
-        // optimization to block our SubjectSubscriptions from
-        // splicing themselves out of the observers list one by one.
-        this.observers = null;
-        this.isUnsubscribed = true;
-        if (observers) {
-            var len = observers.length;
-            while (++index < len) {
-                observers[index].error(err);
-            }
-        }
-        this.isUnsubscribed = false;
-        this.unsubscribe();
-    };
-    Subject.prototype._complete = function () {
-        if (this.destination) {
-            this.destination.complete();
-        }
-        else {
-            this._finalComplete();
-        }
-    };
-    Subject.prototype._finalComplete = function () {
-        var index = -1;
-        var observers = this.observers;
-        // optimization to block our SubjectSubscriptions from
-        // splicing themselves out of the observers list one by one.
-        this.observers = null;
-        this.isUnsubscribed = true;
-        if (observers) {
-            var len = observers.length;
-            while (++index < len) {
-                observers[index].complete();
-            }
-        }
-        this.isUnsubscribed = false;
-        this.unsubscribe();
-    };
-    Subject.prototype.throwIfUnsubscribed = function () {
-        if (this.isUnsubscribed) {
-            throwError_1.throwError(new ObjectUnsubscribedError_1.ObjectUnsubscribedError());
-        }
-    };
-    Subject.prototype[rxSubscriber_1.$$rxSubscriber] = function () {
-        return new Subscriber_1.Subscriber(this);
-    };
     Subject.create = function (destination, source) {
-        return new Subject(destination, source);
+        return new AnonymousSubject(destination, source);
     };
     return Subject;
 }(Observable_1.Observable));
 exports.Subject = Subject;
 /**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
+ * @class AnonymousSubject<T>
  */
-var SubjectObservable = (function (_super) {
-    __extends(SubjectObservable, _super);
-    function SubjectObservable(source) {
+var AnonymousSubject = (function (_super) {
+    __extends(AnonymousSubject, _super);
+    function AnonymousSubject(destination, source) {
         _super.call(this);
+        this.destination = destination;
         this.source = source;
     }
-    return SubjectObservable;
-}(Observable_1.Observable));
+    AnonymousSubject.prototype.next = function (value) {
+        var destination = this.destination;
+        if (destination && destination.next) {
+            destination.next(value);
+        }
+    };
+    AnonymousSubject.prototype.error = function (err) {
+        var destination = this.destination;
+        if (destination && destination.error) {
+            this.destination.error(err);
+        }
+    };
+    AnonymousSubject.prototype.complete = function () {
+        var destination = this.destination;
+        if (destination && destination.complete) {
+            this.destination.complete();
+        }
+    };
+    AnonymousSubject.prototype._subscribe = function (subscriber) {
+        var source = this.source;
+        if (source) {
+            return this.source.subscribe(subscriber);
+        }
+        else {
+            return Subscription_1.Subscription.EMPTY;
+        }
+    };
+    return AnonymousSubject;
+}(Subject));
+exports.AnonymousSubject = AnonymousSubject;
 
-},{"./Observable":473,"./SubjectSubscription":476,"./Subscriber":477,"./Subscription":478,"./symbol/rxSubscriber":482,"./util/ObjectUnsubscribedError":483,"./util/throwError":490}],476:[function(require,module,exports){
+},{"./Observable":452,"./SubjectSubscription":455,"./Subscriber":456,"./Subscription":457,"./symbol/rxSubscriber":460,"./util/ObjectUnsubscribedError":461}],455:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -78795,10 +77903,10 @@ var Subscription_1 = require('./Subscription');
  */
 var SubjectSubscription = (function (_super) {
     __extends(SubjectSubscription, _super);
-    function SubjectSubscription(subject, observer) {
+    function SubjectSubscription(subject, subscriber) {
         _super.call(this);
         this.subject = subject;
-        this.observer = observer;
+        this.subscriber = subscriber;
         this.isUnsubscribed = false;
     }
     SubjectSubscription.prototype.unsubscribe = function () {
@@ -78809,10 +77917,10 @@ var SubjectSubscription = (function (_super) {
         var subject = this.subject;
         var observers = subject.observers;
         this.subject = null;
-        if (!observers || observers.length === 0 || subject.isUnsubscribed) {
+        if (!observers || observers.length === 0 || subject.isStopped || subject.isUnsubscribed) {
             return;
         }
-        var subscriberIndex = observers.indexOf(this.observer);
+        var subscriberIndex = observers.indexOf(this.subscriber);
         if (subscriberIndex !== -1) {
             observers.splice(subscriberIndex, 1);
         }
@@ -78821,7 +77929,7 @@ var SubjectSubscription = (function (_super) {
 }(Subscription_1.Subscription));
 exports.SubjectSubscription = SubjectSubscription;
 
-},{"./Subscription":478}],477:[function(require,module,exports){
+},{"./Subscription":457}],456:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -78830,8 +77938,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var isFunction_1 = require('./util/isFunction');
 var Subscription_1 = require('./Subscription');
-var rxSubscriber_1 = require('./symbol/rxSubscriber');
 var Observer_1 = require('./Observer');
+var rxSubscriber_1 = require('./symbol/rxSubscriber');
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -78884,6 +77992,7 @@ var Subscriber = (function (_super) {
                 break;
         }
     }
+    Subscriber.prototype[rxSubscriber_1.$$rxSubscriber] = function () { return this; };
     /**
      * A static factory for a Subscriber, given a (potentially partial) definition
      * of an Observer.
@@ -78954,9 +78063,6 @@ var Subscriber = (function (_super) {
     Subscriber.prototype._complete = function () {
         this.destination.complete();
         this.unsubscribe();
-    };
-    Subscriber.prototype[rxSubscriber_1.$$rxSubscriber] = function () {
-        return this;
     };
     return Subscriber;
 }(Subscription_1.Subscription));
@@ -79073,7 +78179,7 @@ var SafeSubscriber = (function (_super) {
     return SafeSubscriber;
 }(Subscriber));
 
-},{"./Observer":474,"./Subscription":478,"./symbol/rxSubscriber":482,"./util/isFunction":487}],478:[function(require,module,exports){
+},{"./Observer":453,"./Subscription":457,"./symbol/rxSubscriber":460,"./util/isFunction":465}],457:[function(require,module,exports){
 "use strict";
 var isArray_1 = require('./util/isArray');
 var isObject_1 = require('./util/isObject');
@@ -79224,7 +78330,7 @@ var Subscription = (function () {
 }());
 exports.Subscription = Subscription;
 
-},{"./util/UnsubscriptionError":484,"./util/errorObject":485,"./util/isArray":486,"./util/isFunction":487,"./util/isObject":488,"./util/tryCatch":492}],479:[function(require,module,exports){
+},{"./util/UnsubscriptionError":462,"./util/errorObject":463,"./util/isArray":464,"./util/isFunction":465,"./util/isObject":466,"./util/tryCatch":469}],458:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -79247,9 +78353,27 @@ var PromiseObservable = (function (_super) {
         this.scheduler = scheduler;
     }
     /**
-     * @param promise
-     * @param scheduler
-     * @return {PromiseObservable}
+     * Converts a Promise to an Observable.
+     *
+     * <span class="informal">Returns an Observable that just emits the Promise's
+     * resolved value, then completes.</span>
+     *
+     * Converts an ES2015 Promise or a Promises/A+ spec compliant Promise to an
+     * Observable. If the Promise resolves with a value, the output Observable
+     * emits that resolved value as a `next`, and then completes. If the Promise
+     * is rejected, then the output Observable emits the corresponding Error.
+     *
+     * @example <caption>Convert the Promise returned by Fetch to an Observable</caption>
+     * var result = Rx.Observable.fromPromise(fetch('http://myserver.com/'));
+     * result.subscribe(x => console.log(x), e => console.error(e));
+     *
+     * @see {@link bindCallback}
+     * @see {@link from}
+     *
+     * @param {Promise<T>} promise The promise to be converted.
+     * @param {Scheduler} [scheduler] An optional Scheduler to use for scheduling
+     * the delivery of the resolved value (or the rejection).
+     * @return {Observable<T>} An Observable which wraps the Promise.
      * @static true
      * @name fromPromise
      * @owner Observable
@@ -79330,7 +78454,7 @@ function dispatchError(arg) {
     }
 }
 
-},{"../Observable":473,"../util/root":489}],480:[function(require,module,exports){
+},{"../Observable":452,"../util/root":467}],459:[function(require,module,exports){
 "use strict";
 var root_1 = require('../util/root');
 /**
@@ -79359,36 +78483,14 @@ function toPromise(PromiseCtor) {
 }
 exports.toPromise = toPromise;
 
-},{"../util/root":489}],481:[function(require,module,exports){
-"use strict";
-var root_1 = require('../util/root');
-var Symbol = root_1.root.Symbol;
-if (typeof Symbol === 'function') {
-    if (Symbol.observable) {
-        exports.$$observable = Symbol.observable;
-    }
-    else {
-        if (typeof Symbol.for === 'function') {
-            exports.$$observable = Symbol.for('observable');
-        }
-        else {
-            exports.$$observable = Symbol('observable');
-        }
-        Symbol.observable = exports.$$observable;
-    }
-}
-else {
-    exports.$$observable = '@@observable';
-}
-
-},{"../util/root":489}],482:[function(require,module,exports){
+},{"../util/root":467}],460:[function(require,module,exports){
 "use strict";
 var root_1 = require('../util/root');
 var Symbol = root_1.root.Symbol;
 exports.$$rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
     Symbol.for('rxSubscriber') : '@@rxSubscriber';
 
-},{"../util/root":489}],483:[function(require,module,exports){
+},{"../util/root":467}],461:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -79414,7 +78516,7 @@ var ObjectUnsubscribedError = (function (_super) {
 }(Error));
 exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 
-},{}],484:[function(require,module,exports){
+},{}],462:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -79437,15 +78539,15 @@ var UnsubscriptionError = (function (_super) {
 }(Error));
 exports.UnsubscriptionError = UnsubscriptionError;
 
-},{}],485:[function(require,module,exports){
-arguments[4][466][0].apply(exports,arguments)
-},{"dup":466}],486:[function(require,module,exports){
-arguments[4][467][0].apply(exports,arguments)
-},{"dup":467}],487:[function(require,module,exports){
-arguments[4][468][0].apply(exports,arguments)
-},{"dup":468}],488:[function(require,module,exports){
-arguments[4][469][0].apply(exports,arguments)
-},{"dup":469}],489:[function(require,module,exports){
+},{}],463:[function(require,module,exports){
+arguments[4][445][0].apply(exports,arguments)
+},{"dup":445}],464:[function(require,module,exports){
+arguments[4][446][0].apply(exports,arguments)
+},{"dup":446}],465:[function(require,module,exports){
+arguments[4][447][0].apply(exports,arguments)
+},{"dup":447}],466:[function(require,module,exports){
+arguments[4][448][0].apply(exports,arguments)
+},{"dup":448}],467:[function(require,module,exports){
 (function (global){
 "use strict";
 var objectTypes = {
@@ -79467,31 +78569,59 @@ if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === fre
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],490:[function(require,module,exports){
-"use strict";
-function throwError(e) { throw e; }
-exports.throwError = throwError;
-
-},{}],491:[function(require,module,exports){
+},{}],468:[function(require,module,exports){
 "use strict";
 var Subscriber_1 = require('../Subscriber');
 var rxSubscriber_1 = require('../symbol/rxSubscriber');
 function toSubscriber(nextOrObserver, error, complete) {
-    if (nextOrObserver && typeof nextOrObserver === 'object') {
+    if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {
             return nextOrObserver;
         }
-        else if (typeof nextOrObserver[rxSubscriber_1.$$rxSubscriber] === 'function') {
+        if (nextOrObserver[rxSubscriber_1.$$rxSubscriber]) {
             return nextOrObserver[rxSubscriber_1.$$rxSubscriber]();
         }
+    }
+    if (!nextOrObserver && !error && !complete) {
+        return new Subscriber_1.Subscriber();
     }
     return new Subscriber_1.Subscriber(nextOrObserver, error, complete);
 }
 exports.toSubscriber = toSubscriber;
 
-},{"../Subscriber":477,"../symbol/rxSubscriber":482}],492:[function(require,module,exports){
-arguments[4][472][0].apply(exports,arguments)
-},{"./errorObject":485,"dup":472}]},{},[1])
+},{"../Subscriber":456,"../symbol/rxSubscriber":460}],469:[function(require,module,exports){
+arguments[4][451][0].apply(exports,arguments)
+},{"./errorObject":463,"dup":451}],470:[function(require,module,exports){
+(function (global){
+/* global window */
+'use strict';
+
+module.exports = require('./ponyfill')(global || window || this);
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"./ponyfill":471}],471:[function(require,module,exports){
+'use strict';
+
+module.exports = function symbolObservablePonyfill(root) {
+	var result;
+	var Symbol = root.Symbol;
+
+	if (typeof Symbol === 'function') {
+		if (Symbol.observable) {
+			result = Symbol.observable;
+		} else {
+			result = Symbol('observable');
+			Symbol.observable = result;
+		}
+	} else {
+		result = '@@observable';
+	}
+
+	return result;
+};
+
+},{}]},{},[1])
 
 
 //# sourceMappingURL=app.bundle.js.map
