@@ -35,7 +35,7 @@ var copyScripts = require('ionic-gulp-scripts-copy');
 
 gulp.task('watch', ['clean'], function(done){
   runSequence(
-    ['sass', 'html', 'fonts', 'scripts'],
+    ['sass', 'html', 'fonts', 'scripts', 'images'],
     function(){
       gulpWatch('app/**/*.scss', function(){ gulp.start('sass'); });
       gulpWatch('app/**/*.html', function(){ gulp.start('html'); });
@@ -58,4 +58,8 @@ gulp.task('fonts', copyFonts);
 gulp.task('scripts', copyScripts);
 gulp.task('clean', function(){
   return del('www/build');
+});
+gulp.task('images', function(){
+  return gulp.src('app/img/**/*.+(jpg|png|svg)')
+    .pipe(gulp.dest('www/build/img'));
 });

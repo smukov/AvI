@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {Page1} from '../page1/page1';
+import {ProfilePage} from '../profilePage/profilePage';
 
 
 @Component({
@@ -14,10 +14,10 @@ export class LoginPage {
 
   constructor(nav) {
     this.nav = nav;
-    this.nextPage = Page1;
+    this.nextPage = ProfilePage;
   }
 
   login(){
-    this.nav.setRoot(Page1);
+    this.nav.setRoot(ProfilePage);
   }
 }

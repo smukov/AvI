@@ -20,6 +20,7 @@ tmp/
 temp/
 www/build/
 $RECYCLE.BIN/
+platforms/
 
 .DS_Store
 Thumbs.db
