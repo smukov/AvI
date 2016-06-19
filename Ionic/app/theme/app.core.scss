@@ -16,3 +16,28 @@
 @import "../pages/loginPage/loginPage";
 
 @import "../pages/profilePage/profilePage";
+
+.profile-header {
+  font-size: $header-font-size;
+  font-weight: $header-font-weight;
+  margin-left: 10px;
+  line-height: 100%;
+}
+
+.content-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-center-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;;
+}
+
+.content-center-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
