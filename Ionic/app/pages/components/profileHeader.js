@@ -14,6 +14,10 @@ import {IONIC_DIRECTIVES} from 'ionic-angular';
 })
 export class ProfileHeader {
   constructor() {
-    this.fullName = 'Dr. Gregory House';
+    this.fullName = 'Dr. House';
+  }
+
+  setFullName(fullName){
+    this.fullName = fullName;
   }
 }
