@@ -15,13 +15,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.thesis.smukov.anative.interfaces.INavigationFragment;
+import com.thesis.smukov.anative.NavigationFragment.ContactFragment;
+import com.thesis.smukov.anative.NavigationFragment.INavigationFragment;
+import com.thesis.smukov.anative.NavigationFragment.ProfileFragment;
+import com.thesis.smukov.anative.NavigationFragment.SettingsFragment;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
     INavigationFragment currentFragment;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,7 @@ public class NavigationActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,9 +53,10 @@ public class NavigationActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //instantiate the fragmentManager and set the default view to profile
+        currentFragment = new ProfileFragment();
         fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame ,new ProfileFragment())
+                .replace(R.id.content_frame ,(Fragment) currentFragment)
                 .commit();
     }
 
