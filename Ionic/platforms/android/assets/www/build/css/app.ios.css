@@ -10236,3 +10236,7 @@ body {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end; }
+
+ion-item .text-input {
+  margin: 0px;
+  font-size: large; }
