@@ -10168,6 +10168,27 @@ body {
 .loginPage button {
   margin-top: 15px; }
 
+.profilePage ion-label {
+  font-weight: bold;
+  font-size: medium; }
+
+.profilePage ion-input input {
+  margin-left: 0px; }
+
+.contactPage ion-label {
+  font-weight: bold;
+  font-size: medium; }
+
+.contactPage ion-input input {
+  margin-left: 0px;
+  pointer-events: none; }
+
+.contactPage ion-textarea textarea {
+  pointer-events: none; }
+
+.contactPage ion-item::after {
+  border-bottom-width: 0px !important; }
+
 .profile-header {
   font-size: 2.2rem;
   font-weight: 500;
