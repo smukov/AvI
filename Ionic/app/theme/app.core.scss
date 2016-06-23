@@ -17,6 +17,8 @@
 
 @import "../pages/profilePage/profilePage";
 
+@import "../pages/contactPage/contactPage";
+
 .profile-header {
   font-size: $header-font-size;
   font-weight: $header-font-weight;
@@ -40,4 +42,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+ion-item{
+  .text-input {
+    margin: 0px;
+    font-size: large;
+  }
 }

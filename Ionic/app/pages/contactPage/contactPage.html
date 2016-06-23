@@ -1,0 +1,34 @@
+
+<ion-navbar *navbar primary>
+  <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    Contact
+  </ion-title>
+</ion-navbar>
+
+<ion-content padding class="contactPage">
+  <profile-header #header></profile-header>
+
+  <ion-list no-lines style="margin-top:10px">
+    <ion-item>
+      <ion-input readonly type="text" [ngModel]="employment" class="no-bottom-border"></ion-input>
+    </ion-item>
+    <ion-item class="no-bottom-border">
+      <ion-input readonly type="text" [ngModel]="education"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Interests</ion-label>
+      <ion-textarea readonly rows="3" [ngModel]="interests" class="no-bottom-border"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Knowledgeable In</ion-label>
+      <ion-textarea readonly rows="3" [ngModel]="knowledgeable" class="no-bottom-border"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Goals</ion-label>
+      <ion-textarea readonly rows="3" [ngModel]="currentGoals" class="no-bottom-border"></ion-textarea>
+    </ion-item>
+  </ion-list>
+</ion-content>

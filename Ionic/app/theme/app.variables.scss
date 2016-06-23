@@ -29,6 +29,8 @@ $list-background-color: #FAFAFA;
 $header-font-size: 2.2rem;
 $header-font-weight: 500;
 
+
+
 $colors: (
   dark-primary:   #1976D2,
   primary:        #2196F3,
@@ -48,3 +50,14 @@ $colors: (
   googleplus: #dc4e41,
   linkedin:   #0077b5
 );
+
+//To make the input use the secondary color when active, instead of primary
+//https://github.com/driftyco/ionic/blob/2.0/src/components/input/input.md.scss
+//https://github.com/driftyco/ionic/blob/2.0/src/components/label/label.md.scss
+$label-ios-text-color-focused: map-get($colors, secondary);
+$label-md-text-color-focused: map-get($colors, secondary);
+$label-wp-text-color-focused: map-get($colors, secondary);
+
+$text-input-ios-highlight-color: map-get($colors, secondary);
+$text-input-md-highlight-color: map-get($colors, secondary);
+$text-input-wp-highlight-color: map-get($colors, secondary);

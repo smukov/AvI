@@ -1,3 +1,11 @@
 .profilePage {
-  
+  ion-label{
+    font-weight: bold;
+    font-size: medium;
+  }
+  ion-input {
+    input {
+      margin-left: 0px;
+    }
+  }
 }

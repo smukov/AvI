@@ -6448,7 +6448,7 @@ input.text-input:-webkit-autofill {
   padding: 6.5px 8px 6.5px 8px; }
 
 .input-has-focus .text-input {
-  border-color: #2196F3; }
+  border-color: #FF5722; }
 
 ion-input.ng-valid.input-has-value .text-input {
   border-color: #FF5722; }
@@ -6992,7 +6992,7 @@ ion-label[floating] {
 
 .input-has-focus ion-label[stacked],
 .input-has-focus ion-label[floating] {
-  color: #2196F3; }
+  color: #FF5722; }
 
 .input-has-focus ion-label[floating],
 .input-has-value ion-label[floating] {
@@ -14461,6 +14461,27 @@ body {
 .loginPage button {
   margin-top: 15px; }
 
+.profilePage ion-label {
+  font-weight: bold;
+  font-size: medium; }
+
+.profilePage ion-input input {
+  margin-left: 0px; }
+
+.contactPage ion-label {
+  font-weight: bold;
+  font-size: medium; }
+
+.contactPage ion-input input {
+  margin-left: 0px;
+  pointer-events: none; }
+
+.contactPage ion-textarea textarea {
+  pointer-events: none; }
+
+.contactPage ion-item::after {
+  border-bottom-width: 0px !important; }
+
 .profile-header {
   font-size: 2.2rem;
   font-weight: 500;
@@ -14508,3 +14529,7 @@ body {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end; }
+
+ion-item .text-input {
+  margin: 0px;
+  font-size: large; }

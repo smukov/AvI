@@ -1,0 +1,22 @@
+.contactPage {
+  ion-label{
+    font-weight: bold;
+    font-size: medium;
+  }
+  ion-input {
+    input {
+      margin-left: 0px;
+      pointer-events: none;//makes the element non clickable
+    }
+  }
+  ion-textarea {
+    textarea {
+      pointer-events: none;
+    }
+  }
+
+  ion-item::after{
+    border-bottom-width: 0px !important;
+  }
+
+}
