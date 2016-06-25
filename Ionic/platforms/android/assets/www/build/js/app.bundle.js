@@ -329,6 +329,12 @@ var ProfilePage = exports.ProfilePage = (_dec = (0, _core.Component)({
 }), _dec(_class = function () {
   function ProfilePage() {
     _classCallCheck(this, ProfilePage);
+
+    this.employment = '';
+    this.education = '';
+    this.interests = '';
+    this.knowledgeable = '';
+    this.currentGoals = '';
   }
 
   _createClass(ProfilePage, [{
