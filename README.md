@@ -1,5 +1,9 @@
 # Android vs Ionic2
 
+### Disclaimer
+
+This is a work in progress and is not intended to be a blog (at least not yet). I'm a beginner in mobile development on both Android Native and Ionic frameworks, so my solutions are probably going to be far from perfect. 
+
 ### Content
 
 * [Android](https://github.com/smukov/AvI/wiki/Android)
