@@ -29,4 +29,5 @@
     <string name="hint_interests">Chemistry,  Piano , Guitar, Android, Economy, Football...</string>
     <string name="hint_knowledgeable">Classical Music,  Fitness, Movie Trivia, HTML5, Android, JavaScript...</string>
     <string name="hint_goals">Learn Ionic2, Find a team for basketball...</string>
+    <string name="title_activity_chat">ChatActivity</string>
 </resources>

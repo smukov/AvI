@@ -1,5 +1,6 @@
 package com.thesis.smukov.anative.NavigationFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.thesis.smukov.anative.ChatActivity;
+import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
 
 /**
@@ -47,8 +50,8 @@ public class ContactFragment extends BaseNavigationFragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Called from Contact Fragment", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getActivity(), ChatActivity.class);
+                startActivity(intent);
             }
         });
     }
