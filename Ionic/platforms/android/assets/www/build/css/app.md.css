@@ -15098,3 +15098,7 @@ ion-item .text-input {
 p {
   word-wrap: break-word;
   white-space: normal; }
+
+ion-menu ion-content ion-list ion-icon {
+  margin-right: 20px;
+  color: #595959; }
