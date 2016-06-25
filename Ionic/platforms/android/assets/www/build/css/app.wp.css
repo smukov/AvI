@@ -14468,19 +14468,14 @@ body {
 .profilePage ion-input input {
   margin-left: 0px; }
 
-.contactPage ion-label {
+.contactPage .section-name {
   font-weight: bold;
-  font-size: medium; }
+  font-size: medium;
+  color: #727272; }
 
-.contactPage ion-input input {
-  margin-left: 0px;
-  pointer-events: none; }
-
-.contactPage ion-textarea textarea {
-  pointer-events: none; }
-
-.contactPage ion-item::after {
-  border-bottom-width: 0px !important; }
+.contactPage p {
+  font-size: large;
+  color: #212121; }
 
 .profile-header {
   font-size: 2.2rem;
@@ -14533,3 +14528,7 @@ body {
 ion-item .text-input {
   margin: 0px;
   font-size: large; }
+
+p {
+  word-wrap: break-word;
+  white-space: normal; }

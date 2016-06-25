@@ -50,3 +50,9 @@ ion-item{
     font-size: large;
   }
 }
+
+//makes the paragraph properly wrap the text inside it in multiple lines
+p {
+  word-wrap: break-word;
+  white-space: normal;
+}

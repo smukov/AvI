@@ -13,22 +13,22 @@
 
   <ion-list no-lines style="margin-top:10px">
     <ion-item>
-      <ion-input readonly type="text" [ngModel]="employment" class="no-bottom-border"></ion-input>
+      <p>{{employment}}</p>
     </ion-item>
     <ion-item class="no-bottom-border">
-      <ion-input readonly type="text" [ngModel]="education"></ion-input>
+      <p>{{education}}</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Interests</ion-label>
-      <ion-textarea readonly rows="3" [ngModel]="interests" class="no-bottom-border"></ion-textarea>
+      <p class='section-name'>Interests</p>
+      <p>{{interests}}</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Knowledgeable In</ion-label>
-      <ion-textarea readonly rows="3" [ngModel]="knowledgeable" class="no-bottom-border"></ion-textarea>
+      <p class='section-name'>Knowledgeable In</p>
+      <p>{{knowledgeable}}</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Goals</ion-label>
-      <ion-textarea readonly rows="3" [ngModel]="currentGoals" class="no-bottom-border"></ion-textarea>
+      <p class='section-name'>Goals</p>
+      <p>{{currentGoals}}</p>
     </ion-item>
   </ion-list>
 </ion-content>
