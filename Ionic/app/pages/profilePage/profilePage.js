@@ -12,7 +12,11 @@ import {ViewChild} from '@angular/core';
 })
 export class ProfilePage {
   constructor() {
-
+    this.employment = '';
+    this.education = '';
+    this.interests = '';
+    this.knowledgeable = '';
+    this.currentGoals = '';
   }
 
   ionViewWillEnter(){
