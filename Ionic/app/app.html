@@ -3,8 +3,14 @@
    <ion-title >Menu</ion-title>
  </ion-toolbar>
  <ion-content>
-   <ion-list>
-     <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+   <ion-list no-lines>
+     <button ion-item *ngFor="let p of primaryPages" (click)="openPage(p)">
+       <ion-icon name="{{p.icon}}"></ion-icon>
+       {{p.title}}
+     </button>
+     <ion-item-divider style="min-height: 0px; padding:0px;"></ion-item-divider>
+     <button ion-item *ngFor="let p of settingsPages" (click)="openPage(p)">
+       <ion-icon name="{{p.icon}}"></ion-icon>
        {{p.title}}
      </button>
    </ion-list>
