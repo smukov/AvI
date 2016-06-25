@@ -1,5 +1,9 @@
 # Android vs Ionic2
 
+### Disclaimer
+
+This is a work in progress and is not intended to be a blog (at least not yet). I'm a beginner in mobile development on both Android Native and Ionic frameworks, so my solutions are probably going to be far from perfect. 
+
 ### Content
 
 * [Android](https://github.com/smukov/AvI/wiki/Android)
@@ -21,6 +25,11 @@
  * [Menu](https://github.com/smukov/AvI/wiki/Ionic_Menu)
  * [Theming](https://github.com/smukov/AvI/wiki/Ionic_Theming)
  * [Login Screen](https://github.com/smukov/AvI/wiki/Ionic_Login-Screen)
+ * [Adding Images](https://github.com/smukov/AvI/wiki/Ionic_Adding-Images)
+ * [Creating Reusable Layouts](https://github.com/smukov/AvI/wiki/Ionic_Creating-Reusable-Layouts)
+ * [Adding New Icons](https://github.com/smukov/AvI/wiki/Ionic_Adding-New-Icons)
+ * [Profile Screen](https://github.com/smukov/AvI/wiki/Ionic_Profile-Screen)
+ * [Contact Screen](https://github.com/smukov/AvI/wiki/Ionic_Contact-Screen)
 * Ionic Other
  * [Version Updating](https://github.com/smukov/AvI/wiki/Ionic_Version-Updating)
  * [Cordova](https://github.com/smukov/AvI/wiki/Ionic_Cordova)
