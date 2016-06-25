@@ -6,7 +6,6 @@ import {Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {Page1} from './pages/page1/page1';
-import {Page2} from './pages/page2/page2';
 import {Page3} from './pages/page3/page3';
 import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
@@ -34,12 +33,14 @@ export class MyApp {
     this.initializeApp();
 
     // set our app's pages (they appear in menu)
-    this.pages = [
-        { title: 'My Profile', component: ProfilePage },
-        { title: 'Contact', component: ContactPage },
-        { title: 'Page 1', component: Page1 },
-        { title: 'Page 2', component: Page2 },
-        { title: 'Page 3', component: Page3 }
+    this.primaryPages = [
+        { title: 'My Profile', component: ProfilePage, icon: 'person', type: 'page' },
+        { title: 'Contact', component: ContactPage, icon: 'people', type: 'page' }
+    ];
+
+    this.settingsPages = [
+        { title: 'Settings', component: Page1, icon: 'settings', type: 'page' },
+        { title: 'Send Feedback', component: Page3, icon: 'send', type: 'page' }
     ];
 
     this.rootPage = LoginPage;
