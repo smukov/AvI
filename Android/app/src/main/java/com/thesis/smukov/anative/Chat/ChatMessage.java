@@ -31,15 +31,12 @@ public class ChatMessage {
     public long getUserId() {
         return userId;
     }
-
     public void setUserId(long userId) {
         this.userId = userId;
     }
-
     public String getDate() {
         return dateTime;
     }
-
     public void setDate(String dateTime) {
         this.dateTime = dateTime;
     }
