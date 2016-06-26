@@ -24,9 +24,15 @@
     <string name="sign_in_linkedin">LinkedIn</string>
     <string name="welcome">Welcome to Native</string>
     <string name="sign_in_with">Sign In With:</string>
+
+    <!-- My Profile and Contact screen -->
     <string name="hint_faculty">Attended Hopkins University 1979-1984</string>
     <string name="hint_employment">Head of Diagnostic @ PPT Hospital</string>
     <string name="hint_interests">Chemistry,  Piano , Guitar, Android, Economy, Football...</string>
     <string name="hint_knowledgeable">Classical Music,  Fitness, Movie Trivia, HTML5, Android, JavaScript...</string>
     <string name="hint_goals">Learn Ionic2, Find a team for basketball...</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
+    <!-- Chat Activity -->
+    <string name="typeMessage">Type to compose</string>
 </resources>
