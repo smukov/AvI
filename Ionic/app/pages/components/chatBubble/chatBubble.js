@@ -5,11 +5,14 @@ import {Component} from '@angular/core';
   inputs: ['msg: message'],
   template:
   `
-  <div class="chat-bubble {{msg.position}}">
-    <div class="message">{{msg.content}}</div>
-    <div class="message-detail">
-        <span style="font-weight:bold;">{{msg.senderName}} </span>,
-        <span>{{msg.time}}</span>
+  <div class="chatBubble">
+    <img class="profile-pic {{msg.position}}" src="{{msg.img}}">
+    <div class="chat-bubble {{msg.position}}">
+      <div class="message">{{msg.content}}</div>
+      <div class="message-detail">
+          <span style="font-weight:bold;">{{msg.senderName}} </span>,
+          <span>{{msg.time}}</span>
+      </div>
     </div>
   </div>
   `

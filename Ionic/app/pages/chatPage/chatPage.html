@@ -8,9 +8,9 @@
 <ion-content padding class="chatPage">
 
   <ion-list no-lines>
-    <span *ngFor="let msg of messages" >
+    <ion-item *ngFor="let msg of messages" >
       <chat-bubble [message]="msg"></chat-bubble>
-    </span>
+    </ion-item>
   </ion-list>
-  
+
 </ion-content>
