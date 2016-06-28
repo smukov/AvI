@@ -6,5 +6,11 @@
 </ion-navbar>
 
 <ion-content padding class="chatPage">
-  This is a chat page
+
+  <ion-list no-lines>
+    <span *ngFor="let msg of messages" >
+      <chat-bubble [message]="msg"></chat-bubble>
+    </span>
+  </ion-list>
+  
 </ion-content>

@@ -14,6 +14,8 @@
 @import "../pages/contactPage/contactPage";
 @import "../pages/chatPage/chatPage";
 
+@import "../pages/components/chatBubble/chatBubble";
+
 .profile-header {
   font-size: $header-font-size;
   font-weight: $header-font-weight;
