@@ -2,33 +2,31 @@ import {Component, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'elastic-textarea',
-  inputs: ['placeholder'],
+  inputs: ['placeholder', 'lineHeight'],
   template:
   `
-  <textarea #txtArea cols='1'
+  <ion-textarea #ionTxtArea
     placeholder='{{placeholder}}'
-    (keyup)='expandText()'
-    (keydown)='expandText();'
     [(ngModel)]="content"
-    (ngModelChange)='onChange($event)'></textarea>
+    (ngModelChange)='onChange($event)'></ion-textarea>
   `,
   queries: {
-    txtArea: new ViewChild('txtArea')
+    ionTxtArea: new ViewChild('ionTxtArea')
   }
 })
 export class ElasticTextarea {
   constructor() {
     this.content = "";
+    this.lineHeight = "22px";
+  }
+
+  ngAfterViewInit(){
+    this.txtArea = this.ionTxtArea._elementRef.nativeElement.children[0];
+    this.txtArea.style.height = this.lineHeight + "px";
   }
 
   onChange(newValue){
-    console.log('new value');
-    console.log(newValue);
-  }
-
-  expandText(){
-    console.log('expand textarea');
-    this.txtArea.nativeElement.style.height = "33px";
-    this.txtArea.nativeElement.style.height =  this.txtArea.nativeElement.scrollHeight + "px";
+    this.txtArea.style.height = this.lineHeight + "px";
+    this.txtArea.style.height =  this.txtArea.scrollHeight + "px";
   }
 }
