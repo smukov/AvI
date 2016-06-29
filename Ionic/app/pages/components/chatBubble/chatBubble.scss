@@ -52,32 +52,32 @@
   }
 
   .chat-bubble.left {
-    background-color: #e6e5eb;
+    background-color: map-get($chat-bubble, background-left);
     float: left;
     margin-left: 45px;
   }
 
   .chat-bubble.left:before {
-    background-color: #e6e5eb;
+    background-color: map-get($chat-bubble, background-left);
     left: 10px;
     -webkit-transform: rotate(70deg) skew(5deg);
   }
 
   .chat-bubble.right {
-    background-color: #158ffe;
-    color: #fff;
+    background-color: map-get($chat-bubble, background-right);
+    color: #000;
     float: right;
     margin-right: 45px;
   }
 
   .chat-bubble.right:before {
-    background-color: #158ffe;
+    background-color: map-get($chat-bubble, background-right);
     right: 10px;
     -webkit-transform: rotate(118deg) skew(-5deg);
   }
 
   .chat-bubble.right a.autolinker {
-    color: #fff;
+    color: #000;
     font-weight: bold;
   }
 }
