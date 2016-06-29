@@ -4,3 +4,9 @@
       margin: 0px 8px 13px 0;
   }
 }
+
+.chatPageFooter {
+  .toolbar-background {
+    background: map-get($colors, background-color);
+  }
+}
