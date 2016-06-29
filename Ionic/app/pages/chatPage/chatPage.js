@@ -2,10 +2,11 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 
 import {ChatBubble} from '../components/chatBubble/chatBubble';
+import {ElasticTextarea} from '../components/elasticTextarea';
 
 @Component({
   templateUrl: 'build/pages/chatPage/chatPage.html',
-  directives: [ChatBubble]
+  directives: [ChatBubble, ElasticTextarea]
 })
 export class ChatPage {
   static get parameters() {
