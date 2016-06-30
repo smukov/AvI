@@ -48,8 +48,14 @@ $colors: (
 
   facebook:   #3b5998,
   googleplus: #dc4e41,
-  linkedin:   #0077b5
+  linkedin:   #0077b5,
 );
+
+$chat-bubble:(
+  background-left: #fea21c,
+  background-right: #8abefa,
+);
+
 
 //To make the input use the secondary color when active, instead of primary
 //https://github.com/driftyco/ionic/blob/2.0/src/components/input/input.md.scss

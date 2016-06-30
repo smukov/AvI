@@ -1,0 +1,12 @@
+.chatPage {
+  //because chat-bubbles are wrapped inside ion-label when ion-item is rendered
+  ion-label {
+      margin: 0px 8px 13px 0;
+  }
+}
+
+.chatPageFooter {
+  .toolbar-background {
+    background: map-get($colors, background-color);
+  }
+}
