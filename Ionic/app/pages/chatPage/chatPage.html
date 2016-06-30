@@ -5,7 +5,7 @@
   </ion-title>
 </ion-navbar>
 
-<ion-content padding class="chatPage">
+<ion-content #content padding class="chatPage">
 
   <ion-list no-lines>
     <ion-item *ngFor="let msg of messages" >
@@ -21,12 +21,12 @@
     <ion-item>
       <ion-label style="margin:0px;"></ion-label>
       <div item-content style="width:100%;">
-        <elastic-textarea placeholder="Type to compose" lineHeight="22"></elastic-textarea>
+        <elastic-textarea #txtChat placeholder="Type to compose" lineHeight="22"></elastic-textarea>
       </div>
     </ion-item>
 
     <ion-buttons right>
-      <button style="min-width:45px;">
+      <button style="min-width:45px;" (click)="sendMessage()">
         <ion-icon name="send"></ion-icon>
       </button>
     </ion-buttons>

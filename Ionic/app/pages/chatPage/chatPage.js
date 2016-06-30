@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 
 import {ChatBubble} from '../components/chatBubble/chatBubble';
@@ -6,7 +6,11 @@ import {ElasticTextarea} from '../components/elasticTextarea';
 
 @Component({
   templateUrl: 'build/pages/chatPage/chatPage.html',
-  directives: [ChatBubble, ElasticTextarea]
+  directives: [ChatBubble, ElasticTextarea],
+  queries: {
+    txtChat: new ViewChild('txtChat'),
+    content: new ViewChild('content')
+  }
 })
 export class ChatPage {
   static get parameters() {
@@ -42,6 +46,26 @@ export class ChatPage {
         time: '28-Jun-2016 21:57'
       }
     ];
+  }
+
+  sendMessage(){
+    this.messages.push({
+      img: 'build/img/hugh.png',
+      position: 'right',
+      content: this.txtChat.content,
+      senderName: 'Me',
+      time: new Date().toLocaleTimeString()
+    });
+
+    console.log(this.txtChat.content);
+    this.txtChat.clearInput();
+
+    //without this timout the list scrolls
+    //to the second to last element.
+    //It's some kind of race condition
+    setTimeout(() => {
+      this.content.scrollToBottom(300);//300ms animation speed
+    });
   }
 
 }

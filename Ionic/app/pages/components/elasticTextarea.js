@@ -29,4 +29,9 @@ export class ElasticTextarea {
     this.txtArea.style.height = this.lineHeight + "px";
     this.txtArea.style.height =  this.txtArea.scrollHeight + "px";
   }
+
+  clearInput(){
+    this.content = "";
+    this.txtArea.style.height = this.lineHeight + "px";
+  }
 }
