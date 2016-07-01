@@ -18,6 +18,7 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Creating Reusable Layouts](https://github.com/smukov/AvI/wiki/Android_Creating-Reusable-Layouts)
  * [Adding New Icons](https://github.com/smukov/AvI/wiki/Android_Adding-New-Icons)
  * [Profile Screen](https://github.com/smukov/AvI/wiki/Android_Profile-Screen)
+ * [Chat Screen](https://github.com/smukov/AvI/wiki/Android-Chat-Screen)
 * Android Other
 * [Ionic](https://github.com/smukov/AvI/wiki/Ionic)
  * [Getting Started](https://github.com/smukov/AvI/wiki/Ionic_Getting-Started)
@@ -30,6 +31,9 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Adding New Icons](https://github.com/smukov/AvI/wiki/Ionic_Adding-New-Icons)
  * [Profile Screen](https://github.com/smukov/AvI/wiki/Ionic_Profile-Screen)
  * [Contact Screen](https://github.com/smukov/AvI/wiki/Ionic_Contact-Screen)
+ * [Elastic Textarea](https://github.com/smukov/AvI/wiki/Ionic-Elastic-Textarea)
+ * [Chat Bubble](https://github.com/smukov/AvI/wiki/Ionic-Chat-Bubble)
+ * [Chat Screen](https://github.com/smukov/AvI/wiki/Ionic-Chat-Screen)
 * Ionic Other
  * [Version Updating](https://github.com/smukov/AvI/wiki/Ionic_Version-Updating)
  * [Cordova](https://github.com/smukov/AvI/wiki/Ionic_Cordova)
