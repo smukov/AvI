@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.thesis.smukov.anative.NavigationFragment.ContactFragment;
+import com.thesis.smukov.anative.NavigationFragment.ContactsFragment;
 import com.thesis.smukov.anative.NavigationFragment.INavigationFragment;
 import com.thesis.smukov.anative.NavigationFragment.ProfileFragment;
 import com.thesis.smukov.anative.NavigationFragment.SettingsFragment;
@@ -99,7 +100,7 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_contacts) {
-            currentFragment =  new ContactFragment();
+            currentFragment = new ContactsFragment();
 
         } else if (id == R.id.nav_settings) {
             currentFragment = new SettingsFragment();
