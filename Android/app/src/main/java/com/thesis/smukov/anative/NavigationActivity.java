@@ -59,6 +59,8 @@ public class NavigationActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame ,(Fragment) currentFragment)
                 .commit();
+
+        setTitle(R.string.titleMyProfile);
     }
 
     @Override
@@ -98,6 +100,8 @@ public class NavigationActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        setTitle(item.getTitle());
 
         if (id == R.id.nav_contacts) {
             currentFragment = new ContactsFragment();

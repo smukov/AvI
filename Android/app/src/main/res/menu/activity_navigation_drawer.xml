@@ -8,11 +8,11 @@
             android:checked="true"
             android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_person_black_24dp"
-            android:title="My Profile" />
+            android:title="@string/titleMyProfile" />
         <item
             android:id="@+id/nav_contacts"
             android:icon="@drawable/ic_people_black_24dp"
-            android:title="My Contacts" />
+            android:title="@string/titleMyContacts" />
     </group>
 
     <group
@@ -21,11 +21,11 @@
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Settings" />
+            android:title="@string/titleSettings" />
         <item
             android:id="@+id/nav_send_feedback"
             android:icon="@drawable/ic_menu_send"
-            android:title="Send Feedback" />
+            android:title="@string/titleSendFeedback" />
     </group>
 
 </menu>
