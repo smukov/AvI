@@ -12,4 +12,8 @@ public abstract class BaseNavigationListFragment extends ListFragment
     protected FloatingActionButton fab;
 
     protected abstract void prepareFloatingActionButton();
+
+    protected final void setTitle(String title){
+        getActivity().setTitle(title);
+    }
 }

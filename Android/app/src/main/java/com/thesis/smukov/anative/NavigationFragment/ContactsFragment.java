@@ -1,14 +1,18 @@
 package com.thesis.smukov.anative.NavigationFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.thesis.smukov.anative.Adapters.ContactsAdapter;
 import com.thesis.smukov.anative.Models.Contact;
+import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
 
 import java.util.ArrayList;
@@ -20,6 +24,7 @@ public class ContactsFragment extends BaseNavigationListFragment {
 
     private ContactsAdapter adapter;
     private ArrayList<Contact> lstContacts;
+    private ListView listView;
 
     @Nullable
     @Override
@@ -32,9 +37,21 @@ public class ContactsFragment extends BaseNavigationListFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        setTitle(getResources().getString(R.string.titleMyContacts));
         prepareFloatingActionButton();
 
         loadContacts();
+
+        listView = getListView();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ContactFragment contactFragment = new ContactFragment();
+                contactFragment.setContact(adapter.getItem(position));
+
+                ((NavigationActivity)getActivity()).openNewFragment(contactFragment);
+            }
+        });
     }
 
     @Override

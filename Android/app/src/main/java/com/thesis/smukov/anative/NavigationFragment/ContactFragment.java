@@ -12,15 +12,25 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.thesis.smukov.anative.ChatActivity;
+import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by smukov on 18-Jun-16.
  */
 public class ContactFragment extends BaseNavigationFragment {
 
+    Contact contact;
+
     TextView profileName;
+    TextView employment;
+    TextView education;
+    TextView interests;
+    TextView knowledgeable;
+    TextView currentGoals;
 
     @Nullable
     @Override
@@ -33,10 +43,17 @@ public class ContactFragment extends BaseNavigationFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        setTitle(contact.getFullName());
         prepareFloatingActionButton();
 
         profileName = (TextView) view.findViewById(R.id.profile_name);
-        profileName.setText("Dr. Gregory House");
+        employment = (TextView) view.findViewById(R.id.txtEmployment);
+        education = (TextView) view.findViewById(R.id.txtEducation);
+        interests = (TextView) view.findViewById(R.id.txtInterests);
+        knowledgeable = (TextView) view.findViewById(R.id.txtKnowledgeable);
+        currentGoals = (TextView) view.findViewById(R.id.txtCurrentGoals);
+
+        prepareUI(contact);
     }
 
     @Override
@@ -54,5 +71,18 @@ public class ContactFragment extends BaseNavigationFragment {
                 startActivity(intent);
             }
         });
+    }
+
+    public void setContact(Contact contact){
+        this.contact = contact;
+    }
+
+    private void prepareUI(Contact contact){
+        profileName.setText(contact.getFullName());
+        employment.setText(contact.getEmployment());
+        education.setText(contact.getEducation());
+        interests.setText(contact.getInterests());
+        knowledgeable.setText(contact.getKnowledgeableIn());
+        currentGoals.setText(contact.getCurrentGoals());
     }
 }
