@@ -13,6 +13,7 @@
     <string name="titleContact">Contact</string>
     <string name="titleSettings">Settings</string>
     <string name="titleSendFeedback">Send Feedback</string>
+    <string name="titlePendingInvites">Pending Invites</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -42,4 +43,6 @@
 
     <!-- Chat Activity -->
     <string name="typeMessage">Type to compose</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="accept">Accept</string>
 </resources>
