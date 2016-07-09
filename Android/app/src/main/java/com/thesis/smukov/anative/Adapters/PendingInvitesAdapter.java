@@ -77,6 +77,10 @@ public class PendingInvitesAdapter extends BaseAdapter {
         lstContacts.addAll(contacts);
     }
 
+    public void remove(int position){
+        lstContacts.remove(position);
+    }
+
     private ViewHolder createViewHolder(View v) {
         ViewHolder holder = new ViewHolder();
         holder.txtFullName = (TextView) v.findViewById(R.id.profile_name);

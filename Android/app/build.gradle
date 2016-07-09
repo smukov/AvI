@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:support-v4:24.+'
     compile 'com.android.support:design:24.+'
     compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.wdullaer:swipeactionadapter:2.0.0'
 }

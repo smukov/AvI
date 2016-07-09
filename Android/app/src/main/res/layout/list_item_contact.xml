@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="7dp"
-    android:paddingBottom="7dp">
+    android:paddingBottom="7dp"
+    android:background="@color/colorBackground">
 
     <include layout="@layout/profile_header"/>
 

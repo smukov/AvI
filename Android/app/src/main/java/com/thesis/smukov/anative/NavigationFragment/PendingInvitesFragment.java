@@ -8,20 +8,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.thesis.smukov.anative.Adapters.ContactsAdapter;
+import com.thesis.smukov.anative.Adapters.PendingInvitesAdapter;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
+import com.wdullaer.swipeactionadapter.SwipeActionAdapter;
+import com.wdullaer.swipeactionadapter.SwipeDirection;
 
 import java.util.ArrayList;
+
+import static com.wdullaer.swipeactionadapter.SwipeDirection.*;
 
 /**
  * Created by Smukov on 09-Jul-16.
  */
 public class PendingInvitesFragment  extends BaseNavigationListFragment {
 
-    private ContactsAdapter adapter;
+    private PendingInvitesAdapter adapter;
+    private SwipeActionAdapter swipeAdapter;
     private ArrayList<Contact> lstContacts;
     private ListView listView;
 
@@ -83,8 +89,58 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
         con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
         lstContacts.add(con2);
 
-        adapter = new ContactsAdapter(getActivity(), new ArrayList<Contact>());
-        setListAdapter(adapter);
+        adapter = new PendingInvitesAdapter(getActivity(), new ArrayList<Contact>());
+        swipeAdapter = new SwipeActionAdapter(adapter);
+        swipeAdapter.setListView(getListView());
+        setListAdapter(swipeAdapter);
+
+        // Set backgrounds for the swipe directions
+        swipeAdapter.addBackground(DIRECTION_NORMAL_LEFT,R.layout.row_swipe_left_layout)
+                .addBackground(DIRECTION_NORMAL_RIGHT,R.layout.row_swipe_right_layout)
+                .setFixedBackgrounds(true);
+
+        swipeAdapter.setSwipeActionListener(new SwipeActionAdapter.SwipeActionListener(){
+            @Override
+            public boolean hasActions(int position, SwipeDirection direction){
+                if(direction.isLeft()) return true; // Change this to false to disable left swipes
+                if(direction.isRight()) return true;
+                return false;
+            }
+
+            @Override
+            public boolean shouldDismiss(int position, SwipeDirection direction){
+                // Always dismiss items
+                return true;//direction == DIRECTION_NORMAL_LEFT;
+            }
+
+            @Override
+            public void onSwipe(int[] positionList, SwipeDirection[] directionList){
+                for(int i=0;i<positionList.length;i++) {
+                    SwipeDirection direction = directionList[i];
+                    int position = positionList[i];
+                    String action = "";
+
+                    switch (direction) {
+                        case DIRECTION_FAR_LEFT:
+                        case DIRECTION_NORMAL_LEFT:
+                            action = "Dismissed";
+                            break;
+                        case DIRECTION_FAR_RIGHT:
+                        case DIRECTION_NORMAL_RIGHT:
+                            action = "Accepted";
+                            break;
+                    }
+                    Toast.makeText(
+                            getActivity(),
+                            action + " invite from " + adapter.getItem(position).getFullName(),
+                            Toast.LENGTH_SHORT
+                    ).show();
+                    adapter.remove(position);
+                    adapter.notifyDataSetChanged();
+                    swipeAdapter.notifyDataSetChanged();
+                }
+            }
+        });
 
         for(int i=0; i<lstContacts.size(); i++) {
             Contact contact = lstContacts.get(i);
