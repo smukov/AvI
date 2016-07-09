@@ -8,11 +8,10 @@ import {Page1} from './pages/page1/page1';
 import {Page3} from './pages/page3/page3';
 import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
-import {ContactPage} from './pages/contactPage/contactPage';
+import {ContactsPage} from './pages/contactsPage/contactsPage';
 
 
 @Component({
-  //template: '<ion-nav [root]="rootPage"></ion-nav>',
   templateUrl: 'build/app.html',
   queries: {
     nav: new ViewChild('content')
@@ -34,7 +33,7 @@ export class MyApp {
     // set our app's pages (they appear in menu)
     this.primaryPages = [
         { title: 'My Profile', component: ProfilePage, icon: 'person' },
-        { title: 'Contact', component: ContactPage, icon: 'people' }
+        { title: 'My Contacts', component: ContactsPage, icon: 'people' }
     ];
 
     this.settingsPages = [
