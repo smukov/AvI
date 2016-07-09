@@ -13,7 +13,7 @@
 
   <ion-list>
     <ion-item *ngFor="let cnt of contacts" (click)="contactSelected(cnt)">
-      <profile-header ></profile-header>
+      <profile-header [fullName]="cnt.getFullName()" [profileImage]="cnt.profileImage"></profile-header>
       <p style="margin-top:10px">{{cnt.employment}}</p>
       <p>{{cnt.education}}</p>
     </ion-item>

@@ -10,26 +10,29 @@
 </ion-header>
 
 <ion-content padding class="contactPage">
-  <profile-header #header></profile-header>
+  <profile-header
+    [fullName]="contact.getFullName()"
+    [profileImage]="contact.profileImage"
+    ></profile-header>
 
   <ion-list no-lines style="margin-top:10px">
     <ion-item>
-      <p>{{employment}}</p>
+      <p>{{contact.employment}}</p>
     </ion-item>
     <ion-item class="no-bottom-border">
-      <p>{{education}}</p>
+      <p>{{contact.education}}</p>
     </ion-item>
     <ion-item>
       <p class='section-name'>Interests</p>
-      <p>{{interests}}</p>
+      <p>{{contact.interests}}</p>
     </ion-item>
     <ion-item>
       <p class='section-name'>Knowledgeable In</p>
-      <p>{{knowledgeable}}</p>
+      <p>{{contact.knowledgeable}}</p>
     </ion-item>
     <ion-item>
       <p class='section-name'>Goals</p>
-      <p>{{currentGoals}}</p>
+      <p>{{contact.currentGoals}}</p>
     </ion-item>
   </ion-list>
 

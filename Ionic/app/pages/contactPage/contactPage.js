@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ViewChild} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 
 import {ProfileHeader} from '../components/profileHeader';
 
@@ -16,17 +16,20 @@ import {ChatPage} from '../chatPage/chatPage';
 })
 export class ContactPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavController], [NavParams]];
   }
 
-  constructor(nav) {
+  constructor(nav, navParams) {
     this.nav = nav;
+    this.navParams = navParams;
 
-    this.employment = 'Head of Diagnostic @ PPT Hospital';
-    this.education = 'Attended Hopkins University 1979-1984';
-    this.interests = 'Chemistry,  Piano , Guitar, Android, Economy, Football';
-    this.knowledgeable = 'Classical Music,  Fitness, Movie Trivia, HTML5, Android, JavaScript';
-    this.currentGoals = 'Learn Ionic2, Find a team for basketball';
+    this.contact = this.navParams.get('contact');
+
+    // this.employment = 'Head of Diagnostic @ PPT Hospital';
+    // this.education = 'Attended Hopkins University 1979-1984';
+    // this.interests = 'Chemistry,  Piano , Guitar, Android, Economy, Football';
+    // this.knowledgeable = 'Classical Music,  Fitness, Movie Trivia, HTML5, Android, JavaScript';
+    // this.currentGoals = 'Learn Ionic2, Find a team for basketball';
   }
 
   ionViewWillEnter(){
