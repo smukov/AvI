@@ -23,6 +23,7 @@ export class ElasticTextarea {
   ngAfterViewInit(){
     this.txtArea = this.ionTxtArea._elementRef.nativeElement.children[0];
     this.txtArea.style.height = this.lineHeight + "px";
+    this.txtArea.style.resize = 'none';
   }
 
   onChange(newValue){
