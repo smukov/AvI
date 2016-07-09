@@ -39,6 +39,7 @@ public class ProfileFragment extends BaseNavigationFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        setTitle(getResources().getString(R.string.titleMyProfile));
         prepareFloatingActionButton();
 
         profileName = (TextView) view.findViewById(R.id.profile_name);

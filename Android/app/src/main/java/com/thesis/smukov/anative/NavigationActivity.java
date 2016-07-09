@@ -15,7 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.thesis.smukov.anative.NavigationFragment.ContactFragment;
 import com.thesis.smukov.anative.NavigationFragment.ContactsFragment;
 import com.thesis.smukov.anative.NavigationFragment.INavigationFragment;
 import com.thesis.smukov.anative.NavigationFragment.ProfileFragment;
@@ -59,8 +58,6 @@ public class NavigationActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame ,(Fragment) currentFragment)
                 .commit();
-
-        setTitle(R.string.titleMyProfile);
     }
 
     @Override
@@ -101,8 +98,6 @@ public class NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        setTitle(item.getTitle());
-
         if (id == R.id.nav_contacts) {
             currentFragment = new ContactsFragment();
 
@@ -116,12 +111,16 @@ public class NavigationActivity extends AppCompatActivity
             currentFragment = new ProfileFragment();
         }
 
-        fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, (Fragment) currentFragment)
-                .commit();
+        openNewFragment(currentFragment);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void openNewFragment(INavigationFragment newFragment){
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, (Fragment) newFragment)
+                .commit();
     }
 }
