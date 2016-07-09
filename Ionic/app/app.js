@@ -10,6 +10,8 @@ import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
 import {ContactsPage} from './pages/contactsPage/contactsPage';
 
+import {ContactsService} from './services/contactsService';
+
 
 @Component({
   templateUrl: 'build/app.html',
@@ -62,6 +64,6 @@ export class MyApp {
 }
 
 //https://github.com/driftyco/ionic/blob/2.0/CHANGELOG.md#steps-to-upgrade-to-beta-8
-ionicBootstrap(MyApp, [], {
+ionicBootstrap(MyApp, [ContactsService], {
 
 }); // http://ionicframework.com/docs/v2/api/config/Config/);

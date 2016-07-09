@@ -11,4 +11,12 @@
 
 <ion-content padding class="contactsPage">
 
+  <ion-list>
+    <ion-item *ngFor="let cnt of contacts" (click)="contactSelected(cnt)">
+      <profile-header ></profile-header>
+      <p style="margin-top:10px">{{cnt.employment}}</p>
+      <p>{{cnt.education}}</p>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
