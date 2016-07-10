@@ -25,11 +25,12 @@ export class PendingInvitesPage {
     this.nav.push(ContactPage, {contact: cnt});
   }
 
-  dismissInvite(cnt){
-    
+  dismissInvite(cnt,item){
+    this.contacts.pop(cnt);
   }
 
-  acceptInvite(cnt){
-
+  acceptInvite(cnt,item){
+    this.contacts.pop(cnt);
   }
+
 }
