@@ -9,6 +9,7 @@ import {Page3} from './pages/page3/page3';
 import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
 import {ContactsPage} from './pages/contactsPage/contactsPage';
+import {PendingInvitesPage} from './pages/pendingInvitesPage/pendingInvitesPage';
 
 import {ContactsService} from './services/contacts.service';
 
@@ -35,7 +36,8 @@ export class MyApp {
     // set our app's pages (they appear in menu)
     this.primaryPages = [
         { title: 'My Profile', component: ProfilePage, icon: 'person' },
-        { title: 'My Contacts', component: ContactsPage, icon: 'people' }
+        { title: 'My Contacts', component: ContactsPage, icon: 'people' },
+        { title: 'Pending Invites', component: PendingInvitesPage, icon: 'person-add' }
     ];
 
     this.settingsPages = [
