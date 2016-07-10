@@ -10,7 +10,7 @@ import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
 import {ContactsPage} from './pages/contactsPage/contactsPage';
 
-import {ContactsService} from './services/contactsService';
+import {ContactsService} from './services/contacts.service';
 
 
 @Component({
