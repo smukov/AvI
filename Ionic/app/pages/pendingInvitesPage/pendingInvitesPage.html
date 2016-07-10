@@ -12,11 +12,23 @@
 <ion-content padding class="pendingInvitesPage">
 
   <ion-list>
-    <ion-item *ngFor="let cnt of contacts" (click)="contactSelected(cnt)">
-      <profile-header [fullName]="cnt.getFullName()" [profileImage]="cnt.profileImage"></profile-header>
-      <p style="margin-top:10px">{{cnt.employment}}</p>
-      <p>{{cnt.education}}</p>
-    </ion-item>
+    <ion-item-sliding *ngFor="let cnt of contacts">
+
+      <ion-item (click)="openInvite(cnt)">
+        <profile-header [fullName]="cnt.getFullName()" [profileImage]="cnt.profileImage"></profile-header>
+        <p style="margin-top:10px">{{cnt.employment}}</p>
+        <p>{{cnt.education}}</p>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button favorite (click)="acceptInvite(item)">Accept</button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+        <button danger (click)="dismissInvite(cnt)">Dismiss</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
   </ion-list>
 
 </ion-content>

@@ -21,7 +21,15 @@ export class PendingInvitesPage {
     this.contacts = this.contactsService.getContacts();
   }
 
-  contactSelected(cnt){
+  openInvite(cnt){
     this.nav.push(ContactPage, {contact: cnt});
+  }
+
+  dismissInvite(cnt){
+    
+  }
+
+  acceptInvite(cnt){
+
   }
 }
