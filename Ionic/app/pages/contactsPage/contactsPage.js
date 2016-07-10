@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ProfileHeader} from '../components/profileHeader';
-import {ContactsService} from '../../services/contacts.service';
+import {ContactsService} from '../../services/contactsService';
 import {ContactPage} from '../contactPage/contactPage';
 
 
