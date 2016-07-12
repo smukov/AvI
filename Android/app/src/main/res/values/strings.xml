@@ -45,4 +45,7 @@
     <string name="typeMessage">Type to compose</string>
     <string name="dismiss">Dismiss</string>
     <string name="accept">Accept</string>
+    <string name="pref_discoverable">Make me discoverable by others</string>
+    <string name="pref_notify_messages">Notifications for Messages</string>
+    <string name="pref_notify_invites">Notifications for Invites</string>
 </resources>
