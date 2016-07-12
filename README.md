@@ -19,6 +19,8 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Adding New Icons](https://github.com/smukov/AvI/wiki/Android_Adding-New-Icons)
  * [Profile Screen](https://github.com/smukov/AvI/wiki/Android_Profile-Screen)
  * [Chat Screen](https://github.com/smukov/AvI/wiki/Android-Chat-Screen)
+ * [Contacts Screen](https://github.com/smukov/AvI/wiki/Android-Contacts-Screen)
+ * [Pending Invites Screen](https://github.com/smukov/AvI/wiki/Android-Pending-Invites-Screen)
 * Android Other
 * [Ionic](https://github.com/smukov/AvI/wiki/Ionic)
  * [Getting Started](https://github.com/smukov/AvI/wiki/Ionic_Getting-Started)
@@ -34,6 +36,8 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Elastic Textarea](https://github.com/smukov/AvI/wiki/Ionic-Elastic-Textarea)
  * [Chat Bubble](https://github.com/smukov/AvI/wiki/Ionic-Chat-Bubble)
  * [Chat Screen](https://github.com/smukov/AvI/wiki/Ionic-Chat-Screen)
+ * [Contacts Screen](https://github.com/smukov/AvI/wiki/Ionic-Contacts-Screen)
+ * [Pending Invites Screen](https://github.com/smukov/AvI/wiki/Ionic-Pending-Invites-Screen)
 * Ionic Other
  * [Version Updating](https://github.com/smukov/AvI/wiki/Ionic_Version-Updating)
  * [Cordova](https://github.com/smukov/AvI/wiki/Ionic_Cordova)
