@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="pref_discoverable"
         android:title="@string/pref_discoverable"
         android:defaultValue="true" />
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="pref_notification_messages"
         android:title="@string/pref_notify_messages"
         android:defaultValue="true" />
-    <CheckBoxPreference
+    <SwitchPreference
         android:key="pref_notification_invites"
         android:title="@string/pref_notify_invites"
         android:defaultValue="true" />
