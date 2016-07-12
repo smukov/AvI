@@ -1,6 +1,7 @@
 package com.thesis.smukov.anative;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.app.Fragment;
@@ -59,6 +60,9 @@ public class NavigationActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame ,(Fragment) currentFragment)
                 .commit();
+
+        //initialize the default application settings
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
     }
 
     @Override
