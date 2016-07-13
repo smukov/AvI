@@ -10,6 +10,7 @@ import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
 import {ContactsPage} from './pages/contactsPage/contactsPage';
 import {PendingInvitesPage} from './pages/pendingInvitesPage/pendingInvitesPage';
+import {SettingsPage} from './pages/settingsPage/settingsPage';
 
 import {ContactsService} from './services/contacts.service';
 
@@ -41,7 +42,7 @@ export class MyApp {
     ];
 
     this.settingsPages = [
-        { title: 'Settings', component: Page1, icon: 'settings' },
+        { title: 'Settings', component: SettingsPage, icon: 'settings' },
         { title: 'Send Feedback', component: Page3, icon: 'send'}
     ];
 
