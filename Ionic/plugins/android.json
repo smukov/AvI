@@ -51,6 +51,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionic677904"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.ionic677904"
         }
     },
     "dependent_plugins": {}
