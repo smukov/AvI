@@ -10,8 +10,11 @@ import {LoginPage} from './pages/loginPage/loginPage';
 import {ProfilePage} from './pages/profilePage/profilePage';
 import {ContactsPage} from './pages/contactsPage/contactsPage';
 import {PendingInvitesPage} from './pages/pendingInvitesPage/pendingInvitesPage';
+import {SettingsPage} from './pages/settingsPage/settingsPage';
 
 import {ContactsService} from './services/contacts.service';
+import {StorageService} from './services/storage.service';
+import {PreferencesService} from './services/preferences.service';
 
 
 @Component({
@@ -24,13 +27,14 @@ export class MyApp {
 
   //this gets injected into constructor below, it's the order that matters
   static get parameters() {
-    return [[App], [Platform], [MenuController]];
+    return [[App], [Platform], [MenuController], [PreferencesService]];
   }
 
-  constructor(app, platform, menu) {
+  constructor(app, platform, menu, preferencesService) {
     this.app = app;
     this.platform = platform;
     this.menu = menu;
+    this.preferencesService = preferencesService;
     this.initializeApp();
 
     // set our app's pages (they appear in menu)
@@ -41,7 +45,7 @@ export class MyApp {
     ];
 
     this.settingsPages = [
-        { title: 'Settings', component: Page1, icon: 'settings' },
+        { title: 'Settings', component: SettingsPage, icon: 'settings' },
         { title: 'Send Feedback', component: Page3, icon: 'send'}
     ];
 
@@ -53,6 +57,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      this.preferencesService.initializePreferences();
     });
   }
 
@@ -66,6 +71,6 @@ export class MyApp {
 }
 
 //https://github.com/driftyco/ionic/blob/2.0/CHANGELOG.md#steps-to-upgrade-to-beta-8
-ionicBootstrap(MyApp, [ContactsService], {
+ionicBootstrap(MyApp, [ContactsService, StorageService, PreferencesService], {
 
 }); // http://ionicframework.com/docs/v2/api/config/Config/);

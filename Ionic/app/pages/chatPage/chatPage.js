@@ -44,8 +44,54 @@ export class ChatPage {
         content: "This is some really long test that I'm writing here. Let's see how it wraps.",
         senderName: 'Gregory',
         time: '28-Jun-2016 21:57'
+      },
+      {
+        img: 'build/img/hugh.png',
+        position: 'right',
+        content: 'Hi! How are?',
+        senderName: 'Me',
+        time: '28-Jun-2016 21:55'
+      },
+      {
+        img: 'build/img/hugh.png',
+        position: 'left',
+        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
+        senderName: 'Gregory',
+        time: '28-Jun-2016 21:57'
+      },
+      {
+        img: 'build/img/hugh.png',
+        position: 'right',
+        content: 'Hi! How are?',
+        senderName: 'Me',
+        time: '28-Jun-2016 21:55'
+      },
+      {
+        img: 'build/img/hugh.png',
+        position: 'left',
+        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
+        senderName: 'Gregory',
+        time: '28-Jun-2016 21:57'
+      },
+      {
+        img: 'build/img/hugh.png',
+        position: 'right',
+        content: 'Hi! How are?',
+        senderName: 'Me',
+        time: '28-Jun-2016 21:55'
+      },
+      {
+        img: 'build/img/hugh.png',
+        position: 'left',
+        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
+        senderName: 'Gregory',
+        time: '28-Jun-2016 21:57'
       }
     ];
+  }
+
+  ionViewDidEnter(){
+      this.content.scrollToBottom(300);//300ms animation speed
   }
 
   sendMessage(){
@@ -57,10 +103,10 @@ export class ChatPage {
       time: new Date().toLocaleTimeString()
     });
 
-    console.log(this.txtChat.content);
+    //console.log(this.txtChat.content);
     this.txtChat.clearInput();
 
-    //without this timout the list scrolls
+    //without this timeout the list scrolls
     //to the second to last element.
     //It's some kind of race condition
     setTimeout(() => {
