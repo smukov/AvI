@@ -21,6 +21,7 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Chat Screen](https://github.com/smukov/AvI/wiki/Android-Chat-Screen)
  * [Contacts Screen](https://github.com/smukov/AvI/wiki/Android-Contacts-Screen)
  * [Pending Invites Screen](https://github.com/smukov/AvI/wiki/Android-Pending-Invites-Screen)
+ * [Settings Screen](https://github.com/smukov/AvI/wiki/Android-Settings-Screen)
 * Android Other
 * [Ionic](https://github.com/smukov/AvI/wiki/Ionic)
  * [Getting Started](https://github.com/smukov/AvI/wiki/Ionic_Getting-Started)
@@ -38,6 +39,7 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Chat Screen](https://github.com/smukov/AvI/wiki/Ionic-Chat-Screen)
  * [Contacts Screen](https://github.com/smukov/AvI/wiki/Ionic-Contacts-Screen)
  * [Pending Invites Screen](https://github.com/smukov/AvI/wiki/Ionic-Pending-Invites-Screen)
+ * [Settings Screen](https://github.com/smukov/AvI/wiki/Ionic-Settings-Screen)
 * Ionic Other
  * [Version Updating](https://github.com/smukov/AvI/wiki/Ionic_Version-Updating)
  * [Cordova](https://github.com/smukov/AvI/wiki/Ionic_Cordova)
