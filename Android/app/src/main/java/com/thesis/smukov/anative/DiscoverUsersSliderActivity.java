@@ -2,6 +2,7 @@ package com.thesis.smukov.anative;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -9,26 +10,23 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
+import com.thesis.smukov.anative.Adapters.ContactsAdapter;
 import com.thesis.smukov.anative.DiscoverUsers.DiscoverUserFragment;
+import com.thesis.smukov.anative.DiscoverUsers.DiscoverUsersPagerAdapter;
+import com.thesis.smukov.anative.Models.Contact;
+
+import java.util.ArrayList;
 
 public class DiscoverUsersSliderActivity extends AppCompatActivity {
 
-    /**
-     * The number of pages (wizard steps) to show in this demo.
-     */
-    private static final int NUM_PAGES = 5;
+    private ViewPager pager;
+    private DiscoverUsersPagerAdapter pagerAdapter;
+    private ArrayList<Contact> lstContacts;
 
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
-    private ViewPager mPager;
-
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
-    private PagerAdapter mPagerAdapter;
+    FloatingActionButton fabAccept;
+    FloatingActionButton fabDismiss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +34,116 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_discover_users_slider);
 
         // Instantiate a ViewPager and a PagerAdapter.
-        mPager = (ViewPager) findViewById(R.id.pager);
-        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(mPagerAdapter);
+        pager = (ViewPager) findViewById(R.id.pager);
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if(position == pagerAdapter.getCount()-1){
+                    fabAccept.hide();
+                    fabDismiss.hide();
+                }else{
+                    fabAccept.show();
+                    fabDismiss.show();
+                }
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                switch(state)
+                {
+                    case ViewPager.SCROLL_STATE_DRAGGING:
+
+                        break;
+
+                    case ViewPager.SCROLL_STATE_IDLE:
+                        //this happens when the smooth scroll ends
+                        //check if there is any pending item to be deleted
+                        int pendingDeletePosition = pagerAdapter.getItemToDelete();
+                        if(pendingDeletePosition != -1){
+                            pagerAdapter.setItemToDelete(-1);
+
+                            //We need to do this so that ViewPager would delete all its its views.
+                            pager.setAdapter(null);
+
+                            //now remove the item from the adapter, reassign it, and scroll to next item
+                            pagerAdapter.remove(pendingDeletePosition);
+                            pager.setAdapter(pagerAdapter);
+                            pager.setCurrentItem(pendingDeletePosition);
+                        }
+
+                        break;
+
+                    case ViewPager.SCROLL_STATE_SETTLING:
+                        break;
+                }
+            }
+        });
+
+        fabAccept = (FloatingActionButton) findViewById(R.id.fab_accept);
+        fabAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                removeContact(pager.getCurrentItem());
+            }
+        });
+        fabDismiss = (FloatingActionButton) findViewById(R.id.fab_dismiss);
+        fabDismiss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                removeContact(pager.getCurrentItem());
+            }
+        });
+
+        loadContacts();
     }
 
-    /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
-     * sequence.
-     */
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
 
-        @Override
-        public Fragment getItem(int position) {
-            return new DiscoverUserFragment();
-        }
+    public void addContact(Contact contact) {
+        pagerAdapter.add(contact);
+        pagerAdapter.notifyDataSetChanged();
+    }
 
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
+    public void removeContact(int position) {
+        pagerAdapter.setItemToDelete(position);
+        //triggers the OnPageChangeListener above that will handle the item deletion
+        pager.setCurrentItem(position+1);
+    }
+
+    private void loadContacts(){
+
+        lstContacts = new ArrayList<Contact>();
+
+        Contact con = new Contact();
+        con.setFirstName("#1 Gregory");
+        con.setLastName("House");
+        con.setEmployment("Head of Diagnostic @ PPT Hospital");
+        con.setEducation("Attended Hopkins University 1979-1984");
+        lstContacts.add(con);
+        Contact con2 = new Contact();
+        con2.setFirstName("#2 Hugh");
+        con2.setLastName("Laurie");
+        con2.setEmployment("Actor, Writer, Director, Author, etc.");
+        con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
+        lstContacts.add(con2);
+        Contact con3 = new Contact();
+        con3.setFirstName("#3 Gregory");
+        con3.setLastName("House");
+        con3.setEmployment("Head of Diagnostic @ PPT Hospital");
+        con3.setEducation("Attended Hopkins University 1979-1984");
+        lstContacts.add(con3);
+        Contact con4 = new Contact();
+        con4.setFirstName("#4 Hugh");
+        con4.setLastName("Laurie");
+        con4.setEmployment("Actor, Writer, Director, Author, etc.");
+        con4.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
+        lstContacts.add(con4);
+
+        pagerAdapter = new DiscoverUsersPagerAdapter(getSupportFragmentManager(), lstContacts);
+        pager.setAdapter(pagerAdapter);
     }
 }
