@@ -1,19 +1,11 @@
 package com.thesis.smukov.anative;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.thesis.smukov.anative.Adapters.ContactsAdapter;
-import com.thesis.smukov.anative.DiscoverUsers.DiscoverUserFragment;
 import com.thesis.smukov.anative.DiscoverUsers.DiscoverUsersPagerAdapter;
 import com.thesis.smukov.anative.Models.Contact;
 
@@ -88,14 +80,20 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         fabAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                removeContact(pager.getCurrentItem());
+                if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
+                    removeContact(pager.getCurrentItem());
+                    //TODO: update db
+                }
             }
         });
         fabDismiss = (FloatingActionButton) findViewById(R.id.fab_dismiss);
         fabDismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                removeContact(pager.getCurrentItem());
+                if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
+                    removeContact(pager.getCurrentItem());
+                    //TODO: update db
+                }
             }
         });
 

@@ -47,6 +47,7 @@ public class DiscoverUsersPagerAdapter  extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
+        //take into account the last "No More Users.." page
         if (lstContacts != null) {
             return lstContacts.size() + 1;
         } else {
