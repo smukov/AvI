@@ -15,8 +15,12 @@
             android:title="@string/titleMyContacts" />
         <item
             android:id="@+id/nav_pending_invites"
-            android:icon="@drawable/ic_group_add_black_24dp"
+            android:icon="@drawable/ic_person_add_black_24dp"
             android:title="@string/titlePendingInvites" />
+        <item
+            android:id="@+id/nav_discover_users"
+            android:icon="@drawable/ic_group_add_black_24dp"
+            android:title="@string/titleDiscoverUsers" />
     </group>
 
     <group
