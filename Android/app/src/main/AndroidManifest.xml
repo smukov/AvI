@@ -35,8 +35,15 @@
         <activity
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat"
-            android:parentActivityName=".NavigationActivity"
-            >
+            android:parentActivityName=".NavigationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.thesis.smukov.anative.NavigationActivity" />
+        </activity>
+        <activity
+            android:name=".DiscoverUsersSliderActivity"
+            android:label="@string/title_activity_discover_users_slider"
+            android:parentActivityName=".NavigationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.thesis.smukov.anative.NavigationActivity" />

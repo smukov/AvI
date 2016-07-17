@@ -1,5 +1,6 @@
 package com.thesis.smukov.anative;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
@@ -103,12 +104,18 @@ public class NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        boolean openNewFragment = true;
+
         if (id == R.id.nav_contacts) {
             currentFragment = new ContactsFragment();
 
         } else if (id == R.id.nav_pending_invites) {
             currentFragment = new PendingInvitesFragment();
 
+        } else if (id == R.id.nav_discover_users){
+            Intent intent = new Intent(this, DiscoverUsersSliderActivity.class);
+            startActivity(intent);
+            openNewFragment = false;
         } else if (id == R.id.nav_settings) {
             currentFragment = new SettingsFragment();
 
@@ -119,7 +126,9 @@ public class NavigationActivity extends AppCompatActivity
             currentFragment = new ProfileFragment();
         }
 
-        openNewFragment(currentFragment);
+        if(openNewFragment){
+            openNewFragment(currentFragment);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
