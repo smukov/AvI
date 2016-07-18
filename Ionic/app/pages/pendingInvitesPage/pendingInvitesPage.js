@@ -26,11 +26,17 @@ export class PendingInvitesPage {
   }
 
   dismissInvite(cnt){
-    this.contacts.pop(cnt);
+    this._removeContact(cnt);
   }
 
   acceptInvite(cnt){
-    this.contacts.pop(cnt);
+    this._removeContact(cnt);
   }
 
+  _removeContact(cnt){
+    let index = this.contacts.indexOf(cnt);
+    if (index > -1) {
+      this.contacts.splice(index, 1);
+    }
+  }
 }

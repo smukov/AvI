@@ -9,7 +9,47 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="discoverUsersPage">
+  <ion-slides>
+    <ion-slide *ngFor="let usr of users">
+      <profile-header
+        [fullName]="usr.getFullName()"
+        [profileImage]="usr.profileImage"
+        ></profile-header>
+
+        <ion-item>
+          <p>{{usr.employment}}</p>
+        </ion-item>
+        <ion-item class="no-bottom-border">
+          <p>{{usr.education}}</p>
+        </ion-item>
+        <ion-item>
+          <p class='section-name'>Interests</p>
+          <p>{{usr.interests}}</p>
+        </ion-item>
+        <ion-item>
+          <p class='section-name'>Knowledgeable In</p>
+          <p>{{usr.knowledgeable}}</p>
+        </ion-item>
+        <ion-item>
+          <p class='section-name'>Goals</p>
+          <p>{{usr.currentGoals}}</p>
+        </ion-item>
+    </ion-slide>
+    <ion-slide>
+      <div class="Aligner">
+        <div class="Aligner-item">
+          No More Users Nearby
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="Aligner">
+        <div class="Aligner-item">
+          No More Users Nearby
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
 
   <button fab fab-bottom fab-right secondary style="margin-bottom:75px;">
     <ion-icon name="close"></ion-icon>
@@ -17,4 +57,3 @@
   <button fab fab-bottom fab-right secondary>
     <ion-icon name="checkmark"></ion-icon>
   </button>
-</ion-content>
