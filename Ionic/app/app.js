@@ -11,6 +11,7 @@ import {ProfilePage} from './pages/profilePage/profilePage';
 import {ContactsPage} from './pages/contactsPage/contactsPage';
 import {PendingInvitesPage} from './pages/pendingInvitesPage/pendingInvitesPage';
 import {SettingsPage} from './pages/settingsPage/settingsPage';
+import {DiscoverUsersPage} from './pages/discoverUsersPage/discoverUsersPage';
 
 import {ContactsService} from './services/contacts.service';
 import {StorageService} from './services/storage.service';
@@ -40,8 +41,9 @@ export class MyApp {
     // set our app's pages (they appear in menu)
     this.primaryPages = [
         { title: 'My Profile', component: ProfilePage, icon: 'person' },
-        { title: 'My Contacts', component: ContactsPage, icon: 'people' },
-        { title: 'Pending Invites', component: PendingInvitesPage, icon: 'person-add' }
+        { title: 'My Contacts', component: ContactsPage, icon: 'contacts' },
+        { title: 'Pending Invites', component: PendingInvitesPage, icon: 'person-add' },
+        { title: 'Discover Users', component: DiscoverUsersPage, icon: 'people' }
     ];
 
     this.settingsPages = [
