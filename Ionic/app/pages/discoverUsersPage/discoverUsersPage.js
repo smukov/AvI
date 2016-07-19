@@ -7,7 +7,9 @@ import {ContactsService} from '../../services/contacts.service';
   templateUrl: 'build/pages/discoverUsersPage/discoverUsersPage.html',
   directives: [ProfileHeader],
   queries: {
-    slider: new ViewChild('slider')
+    slider: new ViewChild('slider'),
+    btnDismiss: new ViewChild('btnDismiss'),
+    btnAccept: new ViewChild('btnAccept')
   }
 })
 export class DiscoverUsersPage {
@@ -20,23 +22,52 @@ export class DiscoverUsersPage {
     this.contactsService = contactsService;
 
     this.sliderOptions = {
+      nested: true,
+      watchSlidesProgress: true,
       loop: false
     };
 
     this.users = this.contactsService.getNearbyUsers();
+    this.itemToDelete = -1;
   }
 
   onBtnDismissClicked(){
-    console.log('onBtnDismissClicked');
+    let currentIndex = this.slider.getActiveIndex();
+    //TODO: update db
+    this._slideAndRemove(currentIndex)
   }
 
   onBtnAcceptClicked(){
-    console.log('onBtnAcceptClicked');
+    let currentIndex = this.slider.getActiveIndex();
+    //TODO: update db
+    this._slideAndRemove(currentIndex)
   }
 
   onSlideChanged(){
-    let currentIndex = this.slider.getActiveIndex();
-    console.log(this.slider);
-    console.log("Current index is", currentIndex);
- }
+    console.log("onSlideChanged");
+    let pendingDeletePosition = this.itemToDelete;
+    if(pendingDeletePosition !== -1){
+      this.itemToDelete = -1;
+      this.users.splice(pendingDeletePosition, 1);
+      //slider's slider is a swiper
+      this.slider.slider.removeSlide(pendingDeletePosition);
+      this.slider.slider.update();
+    }
+
+    let numberOfUsers = this.users.length;
+    if(numberOfUsers === 1 || this.slider.getActiveIndex() + 1 === numberOfUsers){
+      console.log(this.btnDismiss);
+      //this.btnDismiss.hide();
+      //this.btnAccept.hide();
+    }
+  }
+
+  _slideAndRemove(currentIndex){
+    //don't remove the last "No More Users Nearby" slide
+    if(this.slider.length() === 1 || currentIndex + 1 === this.slider.length())
+      return;
+
+    this.itemToDelete = currentIndex;
+    this.slider.slideTo(currentIndex+1, 500);
+  }
 }
