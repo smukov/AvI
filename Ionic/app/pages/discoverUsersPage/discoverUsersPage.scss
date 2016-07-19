@@ -1,0 +1,18 @@
+.discoverUsersPage {
+  .section-name {
+    font-weight: bold;
+    font-size: medium;
+    color: map-get($colors, secondary-text);
+  }
+
+  p {
+    font-size: large;
+    color: map-get($colors, primary-text);
+  }
+
+  /* prevents the slide content
+    from being centered in the middle */
+  .user-slide .slide-zoom {
+     height: 100%;
+  }
+}
