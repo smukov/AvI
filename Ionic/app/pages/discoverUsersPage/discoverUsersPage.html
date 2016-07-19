@@ -14,7 +14,7 @@
     (ionDidChange)="onSlideChanged()"
     [options]="sliderOptions"
     >
-    <ion-slide *ngFor="let usr of users">
+    <ion-slide *ngFor="let usr of users" class="user-slide">
       <profile-header
         [fullName]="usr.getFullName()"
         [profileImage]="usr.profileImage"
@@ -41,21 +41,19 @@
         </ion-item>
       </ion-list>
     </ion-slide>
-    <ion-slide>
-      <div class="Aligner">
-        <div class="Aligner-item">
-          No More Users Nearby
-        </div>
-      </div>
+    <ion-slide style="padding-bottom:50px;">
+      No More Users Nearby
     </ion-slide>
   </ion-slides>
 
   <button #btnDismiss fab fab-bottom fab-right secondary style="margin-bottom:75px; z-index: 100;"
-    (click)="onBtnDismissClicked()">
+    (click)="onBtnDismissClicked()"
+    @fabState="btnState">
     <ion-icon name="close"></ion-icon>
   </button>
   <button #btnAccept fab fab-bottom fab-right secondary style="z-index: 100;"
-    (click)="onBtnAcceptClicked()">
+    (click)="onBtnAcceptClicked()"
+    @fabState="btnState">
     <ion-icon name="checkmark"></ion-icon>
   </button>
 </ion-content>

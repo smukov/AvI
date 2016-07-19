@@ -1,4 +1,11 @@
 import {Component, ViewChild} from '@angular/core';
+import{
+  Input,
+  trigger,
+  state,
+  style,
+  transition,
+  animate} from '@angular/core';
 import {ProfileHeader} from '../components/profileHeader';
 import {ContactsService} from '../../services/contacts.service';
 
@@ -7,10 +14,19 @@ import {ContactsService} from '../../services/contacts.service';
   templateUrl: 'build/pages/discoverUsersPage/discoverUsersPage.html',
   directives: [ProfileHeader],
   queries: {
-    slider: new ViewChild('slider'),
-    btnDismiss: new ViewChild('btnDismiss'),
-    btnAccept: new ViewChild('btnAccept')
-  }
+    slider: new ViewChild('slider')
+  },
+  animations: [
+    trigger('fabState',[
+      state('inactive', style({
+        transform: 'scale(0)'
+      })),
+      state('active',   style({
+        transform: 'scale(1)'
+      })),
+      transition('inactive <=> active', animate('150ms ease-out'))
+    ])
+  ]
 })
 export class DiscoverUsersPage {
 
@@ -29,6 +45,8 @@ export class DiscoverUsersPage {
 
     this.users = this.contactsService.getNearbyUsers();
     this.itemToDelete = -1;
+
+    this.btnState = 'active';
   }
 
   onBtnDismissClicked(){
@@ -54,11 +72,12 @@ export class DiscoverUsersPage {
       this.slider.slider.update();
     }
 
-    let numberOfUsers = this.users.length;
-    if(numberOfUsers === 1 || this.slider.getActiveIndex() + 1 === numberOfUsers){
-      console.log(this.btnDismiss);
-      //this.btnDismiss.hide();
-      //this.btnAccept.hide();
+    if(this.slider.length() === 1 || this.slider.getActiveIndex() + 1 === this.slider.length()){
+      console.log('inactive');
+      this.btnState= 'inactive';
+    }else{
+      console.log('active');
+      this.btnState= 'active';
     }
   }
 
