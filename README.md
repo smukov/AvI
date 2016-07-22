@@ -2,7 +2,7 @@
 
 ### Disclaimer
 
-This is a work in progress and is not intended to be a blog (at least not yet). I'm a beginner in mobile development on both Android Native and Ionic frameworks, so my solutions are probably going to be far from perfect. 
+This is a work in progress and is not intended to be a blog (at least not yet). I'm a beginner in mobile development on both Android Native and Ionic frameworks, so my solutions are probably going to be far from perfect. The wiki pages are written in a form of blog posts, as that's the easiest way for me to write quickly. The main purpose of them is to help me write my thesis when this project is finally completed.
 
 ### Content
 
@@ -45,3 +45,8 @@ This is a work in progress and is not intended to be a blog (at least not yet). 
  * [Cordova](https://github.com/smukov/AvI/wiki/Ionic_Cordova)
 * [Other](https://github.com/smukov/AvI/wiki/Ideas-to-Cover)
  * [Messaging](https://github.com/smukov/AvI/wiki/Other_Messaging)
+ 
+
+### Single Sign On & Token Based Authentication - Auth0
+
+<a width="150" height="50" href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss" target="_blank" alt="Single Sign On & Token Based Authentication - Auth0"><img width="150" height="50" alt="JWT Auth for open source projects" src="http://cdn.auth0.com/oss/badges/a0-badge-dark.png"/></a>
