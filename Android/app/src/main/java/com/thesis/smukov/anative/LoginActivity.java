@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.auth0.core.Token;
 import com.auth0.core.UserProfile;
 import com.auth0.lock.Lock;
 import com.auth0.lock.LockActivity;
@@ -23,16 +24,20 @@ import com.auth0.lock.LockContext;
  */
 public class LoginActivity extends AppCompatActivity {
 
+    private UserProfile userProfile;
+    private Token accessToken;
+
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            UserProfile userProfile = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_PROFILE_PARAMETER);
-            String accessToken = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_TOKEN_PARAMETER);
+            userProfile = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_PROFILE_PARAMETER);
+            accessToken = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_TOKEN_PARAMETER);
             Log.i("smuk", "User " + userProfile.getName() + " logged in");
 
             final Intent loggedInIntent =
                     new Intent(getApplicationContext(), NavigationActivity.class);
             startActivity(loggedInIntent);
+            finish();
         }
     };
 
