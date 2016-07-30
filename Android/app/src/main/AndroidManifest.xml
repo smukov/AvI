@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -48,6 +50,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.thesis.smukov.anative.NavigationActivity" />
         </activity>
+        <!--Auth0 Lock-->
+        <activity
+            android:name="com.auth0.lock.LockActivity"
+            android:theme="@style/Lock.Theme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="a0imf7oZlYPWOjb7pjSCyLVDjh3MlFieW4" android:host="@string/auth0_domain"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.auth0.lock.client-id" android:value="@string/auth0_client_id"/>
+        <meta-data android:name="com.auth0.lock.domain-url" android:value="@string/auth0_domain"/>
+        <!--Auth0 Lock End-->
     </application>
 
 </manifest>
