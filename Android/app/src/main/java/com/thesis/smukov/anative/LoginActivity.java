@@ -47,29 +47,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         // Set up the login form.
 
-        Button mBtnFacebook = (Button) findViewById(R.id.btnFacebookLogin);
-        mBtnFacebook.setOnClickListener(new OnClickListener() {
+        Button btnLogin = (Button) findViewById(R.id.btnLogIn);
+        btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
 
-        Button mBtnGooglePlus = (Button) findViewById(R.id.btnGooglePlusLogin);
-        mBtnGooglePlus.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                attemptLogin();
-            }
-        });
-
-        Button mBtnLinkedIn = (Button) findViewById(R.id.btnLinkedInLogin);
-        mBtnLinkedIn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                attemptLogin();
-            }
-        });
 
         LockContext.configureLock(
                 new Lock.Builder()
@@ -87,9 +72,6 @@ public class LoginActivity extends AppCompatActivity {
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
-//        Intent intent = new Intent(this, NavigationActivity.class);
-//        startActivity(intent);
-//        finish();
 
         Intent lockIntent = new Intent(this, LockActivity.class);
         startActivity(lockIntent);
