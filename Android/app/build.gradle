@@ -28,4 +28,5 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'com.wdullaer:swipeactionadapter:2.0.0'
     compile 'com.google.code.gson:gson:2.7'
+    compile 'com.auth0.android:lock:1.16.+'
 }

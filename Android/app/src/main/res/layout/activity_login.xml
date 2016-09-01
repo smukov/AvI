@@ -32,45 +32,17 @@
         android:layout_width="20dp"
         android:layout_height="40dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/sign_in_with"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal" />
 
     <Button
-        android:id="@+id/btnFacebookLogin"
+        android:id="@+id/btnLogIn"
         style="?android:textAppearanceInverse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/sign_in_facebook"
+        android:text="@string/action_sign_in"
         android:textStyle="bold"
-        android:background="@color/facebook"
+        android:background="@color/colorPrimary"
          />
 
-    <Button
-        android:id="@+id/btnGooglePlusLogin"
-        style="?android:textAppearanceInverse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/sign_in_googleplus"
-        android:textStyle="bold"
-        android:background="@color/googleplus"
-         />
-
-    <Button
-        android:id="@+id/btnLinkedInLogin"
-        style="?android:textAppearanceInverse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/sign_in_linkedin"
-        android:textStyle="bold"
-        android:background="@color/linkedin"
-         />
 
 </LinearLayout>
