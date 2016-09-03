@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <SwitchPreference
-        android:key="pref_discoverable"
-        android:title="@string/pref_discoverable"
-        android:defaultValue="true" />
-    <SwitchPreference
-        android:key="pref_notification_messages"
-        android:title="@string/pref_notify_messages"
-        android:defaultValue="true" />
-    <SwitchPreference
-        android:key="pref_notification_invites"
-        android:title="@string/pref_notify_invites"
-        android:defaultValue="true" />
-    <Preference android:title="Log Out"
-        android:key="@string/pref_log_out_button"
-        android:summary=""/>
+    <PreferenceCategory
+        android:title="@string/pref_general_settings"
+        android:key="pref_key_storage_settings">
+        <SwitchPreference
+            android:key="pref_discoverable"
+            android:title="@string/pref_discoverable"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="pref_notification_messages"
+            android:title="@string/pref_notify_messages"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="pref_notification_invites"
+            android:title="@string/pref_notify_invites"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/pref_account_settings"
+        android:key="pref_key_storage_settings">
+        <Preference android:title="Log Out"
+            android:key="@string/pref_log_out_button"
+            android:summary=""/>
+    </PreferenceCategory>
 </PreferenceScreen>

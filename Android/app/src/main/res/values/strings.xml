@@ -47,13 +47,16 @@
     <string name="typeMessage">Type to compose</string>
     <string name="dismiss">Dismiss</string>
     <string name="accept">Accept</string>
-    <string name="pref_discoverable">Make me discoverable by others</string>
-    <string name="pref_notify_messages">Notifications for Messages</string>
-    <string name="pref_notify_invites">Notifications for Invites</string>
+
 
     <!-- Discover Users Activity -->
     <string name="title_activity_discover_users_slider">Discover Users</string>
 
     <!-- Preferences Activity -->
+    <string name="pref_general_settings">General</string>
+    <string name="pref_account_settings">Account</string>
+    <string name="pref_discoverable">Make me discoverable by others</string>
+    <string name="pref_notify_messages">Notifications for Messages</string>
+    <string name="pref_notify_invites">Notifications for Invites</string>
     <string name="pref_log_out_button">pref_log_out_button</string>
 </resources>
