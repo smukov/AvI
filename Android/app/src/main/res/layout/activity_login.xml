@@ -32,6 +32,14 @@
         android:layout_width="20dp"
         android:layout_height="40dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/please_wait"
+        android:id="@+id/textPleaseWait"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/btnLogIn"
@@ -42,6 +50,7 @@
         android:text="@string/action_sign_in"
         android:textStyle="bold"
         android:background="@color/colorPrimary"
+        android:visibility="gone"
          />
 
 
