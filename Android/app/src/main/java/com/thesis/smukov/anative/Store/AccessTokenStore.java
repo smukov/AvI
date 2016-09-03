@@ -29,7 +29,7 @@ public class AccessTokenStore {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(PREF_AUTH_ACCESS_TOKEN, accessToken.getAccessToken());
         editor.putString(PREF_AUTH_REFRESH_TOKEN, accessToken.getRefreshToken());
-        editor.putString(PREF_AUTH_ID_TOKEN, accessToken.getAuthIdToken());
+        editor.putString(PREF_AUTH_ID_TOKEN, accessToken.getIdToken());
 
         editor.commit();
     }
@@ -40,7 +40,7 @@ public class AccessTokenStore {
 
         accessToken.setAccessToken(prefs.getString(PREF_AUTH_ACCESS_TOKEN, ""));
         accessToken.setRefreshToken(prefs.getString(PREF_AUTH_REFRESH_TOKEN, ""));
-        accessToken.setAuthIdToken(prefs.getString(PREF_AUTH_ID_TOKEN, ""));
+        accessToken.setIdToken(prefs.getString(PREF_AUTH_ID_TOKEN, ""));
 
         return accessToken;
     }

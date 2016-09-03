@@ -33,6 +33,7 @@
     <string name="sign_in_linkedin">LinkedIn</string>
     <string name="welcome">Welcome to Native</string>
     <string name="sign_in_with">Sign In With:</string>
+    <string name="please_wait">Please wait while we try to sign you in...</string>
 
     <!-- My Profile and Contact screen -->
     <string name="hint_faculty">Attended Hopkins University 1979-1984</string>
@@ -52,4 +53,7 @@
 
     <!-- Discover Users Activity -->
     <string name="title_activity_discover_users_slider">Discover Users</string>
+
+    <!-- Preferences Activity -->
+    <string name="pref_log_out_button">pref_log_out_button</string>
 </resources>

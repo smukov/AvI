@@ -12,4 +12,7 @@
         android:key="pref_notification_invites"
         android:title="@string/pref_notify_invites"
         android:defaultValue="true" />
+    <Preference android:title="Log Out"
+        android:key="@string/pref_log_out_button"
+        android:summary=""/>
 </PreferenceScreen>

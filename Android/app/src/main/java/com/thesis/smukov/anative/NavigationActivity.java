@@ -160,13 +160,10 @@ public class NavigationActivity extends AppCompatActivity
             UserInfo userInfo = new Gson().fromJson(extras.getString("userInfo"), UserInfo.class);
             AccessToken accessToken = new Gson().fromJson(extras.getString("accessToken"), AccessToken.class);
 
-            if(wasLoggedIn){
-                //if  user was logged in, i don't have to store his information
-
-            }else{
+            AccessTokenStore.storeAccessToken(this, accessToken);
+            if(wasLoggedIn == false){
                 //if user wasn't logged in, I should store his information
                 UserInfoStore.storeUserInfo(this, userInfo);
-                AccessTokenStore.storeAccessToken(this, accessToken);
             }
         }
     }

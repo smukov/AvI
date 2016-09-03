@@ -6,7 +6,7 @@ package com.thesis.smukov.anative.Models;
 public class AccessToken {
     private String accessToken;
     private String refreshToken;
-    private String authIdToken;
+    private String idToken;
 
     public String getAccessToken() {
         return accessToken;
@@ -24,11 +24,11 @@ public class AccessToken {
         this.refreshToken = refreshToken;
     }
 
-    public String getAuthIdToken() {
-        return authIdToken;
+    public String getIdToken() {
+        return idToken;
     }
 
-    public void setAuthIdToken(String authIdToken) {
-        this.authIdToken = authIdToken;
+    public void setIdToken(String idToken) {
+        this.idToken = idToken;
     }
 }
