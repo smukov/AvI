@@ -18,6 +18,10 @@ import com.auth0.core.UserProfile;
 import com.auth0.lock.Lock;
 import com.auth0.lock.LockActivity;
 import com.auth0.lock.LockContext;
+import com.google.gson.Gson;
+import com.thesis.smukov.anative.Models.AccessToken;
+import com.thesis.smukov.anative.Models.UserInfo;
+import com.thesis.smukov.anative.Store.AccessTokenStore;
 
 /**
  * A login screen that offers login via oAuth.
@@ -25,17 +29,35 @@ import com.auth0.lock.LockContext;
 public class LoginActivity extends AppCompatActivity {
 
     private UserProfile userProfile;
-    private Token accessToken;
+    private Token token;
 
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             userProfile = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_PROFILE_PARAMETER);
-            accessToken = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_TOKEN_PARAMETER);
-            Log.i("smuk", "User " + userProfile.getName() + " logged in");
+            token = intent.getParcelableExtra(Lock.AUTHENTICATION_ACTION_TOKEN_PARAMETER);
+
+            logTokens(userProfile, token);
+
 
             final Intent loggedInIntent =
                     new Intent(getApplicationContext(), NavigationActivity.class);
+
+            UserInfo userInfo = new UserInfo();
+            userInfo.setName(userProfile.getName());
+            userInfo.setEmail(userProfile.getEmail());
+            userInfo.setPictureUrl(userProfile.getPictureURL());
+            userInfo.setAuthId(userProfile.getId());
+
+            AccessToken accessToken = new AccessToken();
+            accessToken.setAuthIdToken(token.getIdToken());
+            accessToken.setRefreshToken(token.getRefreshToken());
+            accessToken.setAccessToken(token.getAccessToken());
+
+            intent.putExtra("wasLoggedIn", false);
+            intent.putExtra("userInfo", new Gson().toJson(userInfo));
+            intent.putExtra("accessToken", new Gson().toJson(accessToken));
+
             startActivity(loggedInIntent);
             finish();
         }
@@ -76,6 +98,21 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent lockIntent = new Intent(this, LockActivity.class);
         startActivity(lockIntent);
+    }
+
+    private void logTokens(UserProfile userProfile, Token accessToken){
+        Log.i("smuk", "User " + userProfile.getName() + " logged in");
+        Log.i("smuk", "Email  " + userProfile.getEmail());
+        Log.i("smuk", "Id " + userProfile.getId());
+        Log.i("smuk", "Nick " + userProfile.getNickname());
+        Log.i("smuk", "PictureUrl " + userProfile.getPictureURL());
+        Log.i("smuk", "extra info " + userProfile.getExtraInfo());
+        Log.i("smuk", "User identities " + userProfile.getIdentities());
+
+        Log.i("smuk", "AccessToken " + accessToken.getAccessToken());
+        Log.i("smuk", "RefreshToken " + accessToken.getRefreshToken());
+        Log.i("smuk", "IdToken " + accessToken.getIdToken());
+        Log.i("smuk", "Type " + accessToken.getType());
     }
 }
 

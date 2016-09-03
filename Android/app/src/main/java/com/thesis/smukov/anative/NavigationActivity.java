@@ -17,11 +17,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.gson.Gson;
+import com.thesis.smukov.anative.Models.AccessToken;
+import com.thesis.smukov.anative.Models.UserInfo;
 import com.thesis.smukov.anative.NavigationFragment.ContactsFragment;
 import com.thesis.smukov.anative.NavigationFragment.INavigationFragment;
 import com.thesis.smukov.anative.NavigationFragment.PendingInvitesFragment;
 import com.thesis.smukov.anative.NavigationFragment.ProfileFragment;
 import com.thesis.smukov.anative.NavigationFragment.SettingsFragment;
+import com.thesis.smukov.anative.Store.AccessTokenStore;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,6 +41,12 @@ public class NavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent intent = getIntent();
+        if(intent != null){
+            handleIntentExtras(intent);
+        }
+
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -139,5 +150,24 @@ public class NavigationActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, (Fragment) newFragment)
                 .commit();
+    }
+
+    private void handleIntentExtras(Intent intent){
+        Bundle extras = intent.getExtras();
+
+        if(extras != null){
+            Boolean wasLoggedIn = extras.getBoolean("wasLoggedIn", true);
+            UserInfo userInfo = new Gson().fromJson(extras.getString("userInfo"), UserInfo.class);
+            AccessToken accessToken = new Gson().fromJson(extras.getString("accessToken"), AccessToken.class);
+
+            if(wasLoggedIn){
+                //if  user was logged in, i don't have to store his information
+
+            }else{
+                //if user wasn't logged in, I should store his information
+                UserInfoStore.storeUserInfo(this, userInfo);
+                AccessTokenStore.storeAccessToken(this, accessToken);
+            }
+        }
     }
 }
