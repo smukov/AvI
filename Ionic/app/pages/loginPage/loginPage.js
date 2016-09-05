@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ProfilePage} from '../profilePage/profilePage';
+import {AuthService} from '../../services/auth.service';
 
 
 @Component({
@@ -9,15 +10,17 @@ import {ProfilePage} from '../profilePage/profilePage';
 export class LoginPage {
   //this gets injected into constructor below, it's the order that matters
   static get parameters() {
-    return [[NavController]];
+    return [[NavController], [AuthService]];
   }
 
-  constructor(nav) {
+  constructor(nav, auth) {
     this.nav = nav;
+    this.auth = auth;
     this.nextPage = ProfilePage;
   }
 
   login(){
-    this.nav.setRoot(ProfilePage);
+    this.auth.login();
+    //this.nav.setRoot(ProfilePage);
   }
 }
