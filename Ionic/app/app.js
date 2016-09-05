@@ -16,6 +16,7 @@ import {DiscoverUsersPage} from './pages/discoverUsersPage/discoverUsersPage';
 import {ContactsService} from './services/contacts.service';
 import {StorageService} from './services/storage.service';
 import {PreferencesService} from './services/preferences.service';
+import {UserInfoService} from './services/userInfo.service';
 
 import {Http} from '@angular/http';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
@@ -32,14 +33,15 @@ export class MyApp {
 
   //this gets injected into constructor below, it's the order that matters
   static get parameters() {
-    return [[App], [Platform], [MenuController], [PreferencesService], [AuthService]];
+    return [[App], [Platform], [MenuController], [PreferencesService], [AuthService], [UserInfoService]];
   }
 
-  constructor(app, platform, menu, preferencesService, auth) {
+  constructor(app, platform, menu, preferencesService, auth, userInfoService) {
     this.app = app;
     this.platform = platform;
     this.menu = menu;
     this.preferencesService = preferencesService;
+    this.userInfoService = userInfoService;
     this.auth = auth;
     this.initializeApp();
 
@@ -64,7 +66,8 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
-      this.auth.startupTokenRefresh();
+      this.userInfoService.initialize();
+      this.auth.startupTokenRefresh();//TODO: i think that this doesn't work
       this.preferencesService.initializePreferences();
     });
   }
@@ -84,6 +87,7 @@ ionicBootstrap(MyApp,
     ContactsService,
     StorageService,
     PreferencesService,
+    UserInfoService,
     provide(AuthHttp, {
       useFactory: (http) => {
         return new AuthHttp(new AuthConfig({noJwtError: true}), http);

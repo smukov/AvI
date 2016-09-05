@@ -3,15 +3,16 @@ import {AuthHttp, JwtHelper, tokenNotExpired} from 'angular2-jwt';
 import {Injectable, NgZone} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {Secret} from '../secrets/secret';
+import {UserInfoService} from './userInfo.service';
 
 @Injectable()
 export class AuthService {
 
   static get parameters() {
-    return [[AuthHttp], [NgZone]];
+    return [[AuthHttp], [NgZone], [UserInfoService]];
   }
 
-  constructor(authHttp, zone) {
+  constructor(authHttp, zone, userInfoService) {
     this.jwtHelper = new JwtHelper();
     this.auth0 = new Auth0({clientID: Secret.AUTH0_CLIENT_ID, domain: Secret.AUTH0_DOMAIN});
     this.lock = new Auth0Lock(Secret.AUTH0_CLIENT_ID, Secret.AUTH0_DOMAIN, {
@@ -26,6 +27,7 @@ export class AuthService {
     this.refreshSubscription = {};
     this.user = {};
 
+    this.userInfoService = userInfoService;
     this.zoneImpl = zone;
     // Check if there is a profile saved in local storage
     this.local.get('profile').then(profile => {
@@ -48,6 +50,15 @@ export class AuthService {
         console.log(profile);
 
         profile.user_metadata = profile.user_metadata || {};
+
+        if(this.userInfoService.getUserInfo(UserInfoService.PREF_USER_NAME == '')){
+          //there is no user information stored, store the new info obtained from auth0
+          this.userInfoService.setUserInfo(UserInfoService.PREF_USER_NAME, profile.name);
+          this.userInfoService.setUserInfo(UserInfoService.PREF_USER_EMAIL, profile.email);
+          this.userInfoService.setUserInfo(UserInfoService.PREF_USER_AUTH_ID, profile.user_id);
+          this.userInfoService.setUserInfo(UserInfoService.PREF_USER_PICTURE_URL, profile.picture);
+        }
+
         this.local.set('profile', JSON.stringify(profile));
         this.user = profile;
       });
@@ -74,6 +85,10 @@ export class AuthService {
     this.local.remove('profile');
     this.local.remove('id_token');
     this.local.remove('refresh_token');
+    this.userInfoService.setUserInfo(UserInfoService.PREF_USER_NAME, '');
+    this.userInfoService.setUserInfo(UserInfoService.PREF_USER_EMAIL, '');
+    this.userInfoService.setUserInfo(UserInfoService.PREF_USER_AUTH_ID, '');
+    this.userInfoService.setUserInfo(UserInfoService.PREF_USER_PICTURE_URL, '');
     this.zoneImpl.run(() => this.user = null);
     // Unschedule the token refresh
     this.unscheduleRefresh();
@@ -104,7 +119,9 @@ export class AuthService {
 startupTokenRefresh() {
   // If the user is authenticated, use the token stream
   // provided by angular2-jwt and flatMap the token
+  console.log('startupTokenRefresh');
   if (this.authenticated()) {
+    console.log('user is authenticated');
     let source = this.authHttp.tokenStream.flatMap(
       token => {
         // Get the expiry time to generate
@@ -120,6 +137,8 @@ startupTokenRefresh() {
         return Observable.timer(delay);
       });
 
+      console.log('token stream initialized');
+
       // Once the delay time from above is
       // reached, get a new JWT and schedule
       // additional refreshes
@@ -127,6 +146,8 @@ startupTokenRefresh() {
         this.getNewJwt();
         this.scheduleRefresh();
       });
+
+      console.log('token stream subscribed');
   }
 }
 
