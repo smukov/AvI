@@ -13,6 +13,7 @@ export class AuthService {
   }
 
   constructor(authHttp, zone, userInfoService) {
+    this.authHttp = authHttp;
     this.jwtHelper = new JwtHelper();
     this.auth0 = new Auth0({clientID: Secret.AUTH0_CLIENT_ID, domain: Secret.AUTH0_DOMAIN});
     this.lock = new Auth0Lock(Secret.AUTH0_CLIENT_ID, Secret.AUTH0_DOMAIN, {
@@ -95,33 +96,31 @@ export class AuthService {
   }
 
   scheduleRefresh() {
-  // If the user is authenticated, use the token stream
-  // provided by angular2-jwt and flatMap the token
-  let source = this.authHttp.tokenStream.flatMap(
-    token => {
-      // The delay to generate in this case is the difference
-      // between the expiry time and the issued at time
-      let jwtIat = this.jwtHelper.decodeToken(token).iat;
-      let jwtExp = this.jwtHelper.decodeToken(token).exp;
-      let iat = new Date(0);
-      let exp = new Date(0);
+    // If the user is authenticated, use the token stream
+    // provided by angular2-jwt and flatMap the token
+    let source = this.authHttp.tokenStream.flatMap(
+      token => {
+        // The delay to generate in this case is the difference
+        // between the expiry time and the issued at time
+        let jwtIat = this.jwtHelper.decodeToken(token).iat;
+        let jwtExp = this.jwtHelper.decodeToken(token).exp;
+        let iat = new Date(0);
+        let exp = new Date(0);
 
-      let delay = (exp.setUTCSeconds(jwtExp) - iat.setUTCSeconds(jwtIat));
+        let delay = (exp.setUTCSeconds(jwtExp) - iat.setUTCSeconds(jwtIat));
 
-      return Observable.interval(delay);
+        return Observable.interval(delay);
+      });
+
+    this.refreshSubscription = source.subscribe(() => {
+      this.getNewJwt();
     });
-
-  this.refreshSubscription = source.subscribe(() => {
-    this.getNewJwt();
-  });
-}
+  }
 
 startupTokenRefresh() {
   // If the user is authenticated, use the token stream
   // provided by angular2-jwt and flatMap the token
-  console.log('startupTokenRefresh');
   if (this.authenticated()) {
-    console.log('user is authenticated');
     let source = this.authHttp.tokenStream.flatMap(
       token => {
         // Get the expiry time to generate
@@ -137,8 +136,6 @@ startupTokenRefresh() {
         return Observable.timer(delay);
       });
 
-      console.log('token stream initialized');
-
       // Once the delay time from above is
       // reached, get a new JWT and schedule
       // additional refreshes
@@ -146,8 +143,6 @@ startupTokenRefresh() {
         this.getNewJwt();
         this.scheduleRefresh();
       });
-
-      console.log('token stream subscribed');
   }
 }
 
