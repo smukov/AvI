@@ -25,7 +25,7 @@ export class AuthService {
       }
     });
     this.local = new Storage(LocalStorage);
-    this.refreshSubscription = {};
+    this.refreshSubscription = undefined;
     this.user = {};
 
     this.userInfoService = userInfoService;
@@ -62,6 +62,9 @@ export class AuthService {
 
         this.local.set('profile', JSON.stringify(profile));
         this.user = profile;
+        if(this.onAuthenticatedCallback !== null){
+          this.onAuthenticatedCallback();
+        }
       });
 
       this.lock.hide();
@@ -77,12 +80,14 @@ export class AuthService {
     return tokenNotExpired();
   }
 
-  login() {
+  login(onAuthenticatedCallback) {
     // Show the Auth0 Lock widget
     this.lock.show();
+    this.onAuthenticatedCallback = onAuthenticatedCallback;
   }
 
-  logout() {
+  logout(onLogOutCallback) {
+    this.onLogOutCallback = onLogOutCallback;
     this.local.remove('profile');
     this.local.remove('id_token');
     this.local.remove('refresh_token');
@@ -93,6 +98,7 @@ export class AuthService {
     this.zoneImpl.run(() => this.user = null);
     // Unschedule the token refresh
     this.unscheduleRefresh();
+    this.onLogOutCallback();
   }
 
   scheduleRefresh() {
@@ -149,6 +155,7 @@ startupTokenRefresh() {
 unscheduleRefresh() {
   // Unsubscribe fromt the refresh
   if (this.refreshSubscription) {
+    console.log(this.refreshSubscription);
     this.refreshSubscription.unsubscribe();
   }
 }

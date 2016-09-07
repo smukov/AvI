@@ -67,7 +67,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       this.userInfoService.initialize();
-      this.auth.startupTokenRefresh();//TODO: i think that this doesn't work
+      this.auth.startupTokenRefresh();
       this.preferencesService.initializePreferences();
     });
   }
