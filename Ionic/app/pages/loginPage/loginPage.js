@@ -23,12 +23,10 @@ export class LoginPage {
   }
 
   ionViewWillEnter(){
-    console.log('ionViewWillEnter');
     this.showLoginButton = false;
   }
 
   ionViewDidEnter(){
-    console.log('ionViewDidEnter');
     if(this.auth.authenticated()){
       this.nav.setRoot(ProfilePage);
     }else{
