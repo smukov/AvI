@@ -1,5 +1,5 @@
 import 'es6-shim';
-import {Component} from '@angular/core';
+import {Component, provide} from '@angular/core';
 import {ionicBootstrap, Platform, App, MenuController} from 'ionic-angular';
 import {ViewChild} from '@angular/core';
 import {Nav} from 'ionic-angular';
@@ -16,6 +16,11 @@ import {DiscoverUsersPage} from './pages/discoverUsersPage/discoverUsersPage';
 import {ContactsService} from './services/contacts.service';
 import {StorageService} from './services/storage.service';
 import {PreferencesService} from './services/preferences.service';
+import {UserInfoService} from './services/userInfo.service';
+
+import {Http} from '@angular/http';
+import {AuthHttp, AuthConfig} from 'angular2-jwt';
+import {AuthService} from './services/auth.service';
 
 
 @Component({
@@ -28,14 +33,16 @@ export class MyApp {
 
   //this gets injected into constructor below, it's the order that matters
   static get parameters() {
-    return [[App], [Platform], [MenuController], [PreferencesService]];
+    return [[App], [Platform], [MenuController], [PreferencesService], [AuthService], [UserInfoService]];
   }
 
-  constructor(app, platform, menu, preferencesService) {
+  constructor(app, platform, menu, preferencesService, auth, userInfoService) {
     this.app = app;
     this.platform = platform;
     this.menu = menu;
     this.preferencesService = preferencesService;
+    this.userInfoService = userInfoService;
+    this.auth = auth;
     this.initializeApp();
 
     // set our app's pages (they appear in menu)
@@ -59,6 +66,8 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      this.userInfoService.initialize();
+      this.auth.startupTokenRefresh();
       this.preferencesService.initializePreferences();
     });
   }
@@ -73,6 +82,21 @@ export class MyApp {
 }
 
 //https://github.com/driftyco/ionic/blob/2.0/CHANGELOG.md#steps-to-upgrade-to-beta-8
-ionicBootstrap(MyApp, [ContactsService, StorageService, PreferencesService], {
+ionicBootstrap(MyApp,
+  [
+    ContactsService,
+    StorageService,
+    PreferencesService,
+    UserInfoService,
+    provide(AuthHttp, {
+      useFactory: (http) => {
+        return new AuthHttp(new AuthConfig({noJwtError: true}), http);
+      },
+      deps: [Http]
+    }),
+    AuthService
+  ],
+  {
 
-}); // http://ionicframework.com/docs/v2/api/config/Config/);
+  }
+); // http://ionicframework.com/docs/v2/api/config/Config/);

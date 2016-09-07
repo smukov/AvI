@@ -10,7 +10,10 @@
 </ion-header>
 
 <ion-content padding class="settingsPage">
-  <ion-list>
+  <ion-list secondary>
+    <ion-list-header>
+       General
+    </ion-list-header>
     <ion-item>
       <ion-label>Make me discoverable by others</ion-label>
       <ion-toggle secondary
@@ -29,5 +32,11 @@
         [ngModel]='preferences[PREF_NOTIFY_INVITES]'
         (ionChange)='changePreference($event, PREF_NOTIFY_INVITES)'></ion-toggle>
     </ion-item>
+    <ion-list-header secondary>
+       Account
+    </ion-list-header>
+    <button ion-item (click)="logout()">
+      Log Out
+    </button>
   </ion-list>
 </ion-content>

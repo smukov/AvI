@@ -11,10 +11,8 @@
 <div class="Aligner">
   <div class="Aligner-item">
     <h4 text-center style="margin-bottom:15vh;">Welcome to Ionic</h4><!--separation is 15% of the viewport's height -->
-    <h4 text-center>Sign In With:</h4>
-    <button facebook full (click)="login()">Facebook</button>
-    <button googleplus full (click)="login()">Google+</button>
-    <button linkedin full (click)="login()">LinkedIn</button>
+    <p text-center secondary-text *ngIf="showLoginButton!=true">Please wait while we try to sign you in...</p>
+    <button primary full (click)="login()" *ngIf="showLoginButton==true">Sign in or register</button>
   </div>
 </div>
 
