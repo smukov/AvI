@@ -62,15 +62,16 @@ export class AuthService {
 
         this.local.set('profile', JSON.stringify(profile));
         this.user = profile;
-        if(this.onAuthenticatedCallback !== null){
-          this.onAuthenticatedCallback();
-        }
       });
 
       this.lock.hide();
 
       this.local.set('refresh_token', authResult.refreshToken);
       this.zoneImpl.run(() => this.user = authResult.profile);
+
+      if(this.onAuthenticatedCallback != null){
+        this.onAuthenticatedCallback();
+      }
     });
 
   }
@@ -98,7 +99,9 @@ export class AuthService {
     this.zoneImpl.run(() => this.user = null);
     // Unschedule the token refresh
     this.unscheduleRefresh();
-    this.onLogOutCallback();
+    if(this.onLogOutCallback != null){
+      this.onLogOutCallback();
+    }
   }
 
   scheduleRefresh() {

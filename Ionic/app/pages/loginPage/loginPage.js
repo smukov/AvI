@@ -23,10 +23,12 @@ export class LoginPage {
   }
 
   ionViewWillEnter(){
+    console.log('ionViewWillEnter');
     this.showLoginButton = false;
   }
 
   ionViewDidEnter(){
+    console.log('ionViewDidEnter');
     if(this.auth.authenticated()){
       this.nav.setRoot(ProfilePage);
     }else{
@@ -35,6 +37,12 @@ export class LoginPage {
   }
 
   login(){
-    this.auth.login(() => this.nav.setRoot(ProfilePage));
+    this.auth.login(() =>
+      setTimeout(() => {
+        this.nav.setRoot(ProfilePage)
+      }, 1000)//I need this delay because otherwise the navigation occurs
+              //before the InAppBrowser closes, and the content ends up under
+              //the top bar.
+    );
   }
 }
