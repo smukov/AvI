@@ -15,30 +15,35 @@
   <ion-item style="margin-top:10px">
     <ion-input type="text"
       placeholder="Head of Diagnostic @ PPT Hospital"
-      [(ngModel)]="employment"></ion-input>
+      [(ngModel)]="employment"
+      [disabled]="!isEditMode"></ion-input>
   </ion-item>
   <ion-item>
     <ion-input type="text"
       placeholder="Attended Hopkins University 1979-1984"
-      [(ngModel)]="education"></ion-input>
+      [(ngModel)]="education"
+      [disabled]="!isEditMode"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>Interests</ion-label>
     <ion-textarea rows="3"
       placeholder="Chemistry,  Piano , Guitar, Android, Economy, Football..."
-      [(ngModel)]="interests"></ion-textarea>
+      [(ngModel)]="interests"
+      [disabled]="!isEditMode"></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-label stacked>Knowledgeable In</ion-label>
     <ion-textarea rows="3"
       placeholder="Classical Music,  Fitness, Movie Trivia, HTML5, Android, JavaScript..."
-      [(ngModel)]="knowledgeable"></ion-textarea>
+      [(ngModel)]="knowledgeable"
+      [disabled]="!isEditMode"></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-label stacked>Goals</ion-label>
     <ion-textarea rows="3"
       placeholder="Learn Ionic2, Find a team for basketball..."
-      [(ngModel)]="currentGoals"></ion-textarea>
+      [(ngModel)]="currentGoals"
+      [disabled]="!isEditMode"></ion-textarea>
   </ion-item>
 
   <button fab fab-bottom fab-right secondary (click)="edit()" style="position:fixed;">
