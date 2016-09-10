@@ -28,7 +28,10 @@ export class LoginPage {
 
   ionViewDidEnter(){
     if(this.auth.authenticated()){
-      this.nav.setRoot(ProfilePage);
+      //give some time for local storage to initialize
+      setTimeout(() => {
+        this.nav.setRoot(ProfilePage);
+      }, 1000)
     }else{
       this.showLoginButton = true;
     }

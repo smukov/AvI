@@ -92,7 +92,7 @@ export class UserInfoService {
   }
 
   getUserInfo(key){
-    return this._getUserInfo(key);
+    return this._userInfo[key];
   }
 
   setUserInfo(key, value){
