@@ -95,6 +95,8 @@ export class ChatPage {
   }
 
   sendMessage(){
+    this.txtChat.setFocus();
+
     this.messages.push({
       img: 'build/img/hugh.png',
       position: 'right',

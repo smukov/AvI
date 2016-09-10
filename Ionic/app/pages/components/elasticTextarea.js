@@ -35,4 +35,8 @@ export class ElasticTextarea {
     this.content = "";
     this.txtArea.style.height = this.lineHeight + "px";
   }
+
+  setFocus(){
+    this.ionTxtArea.setFocus()
+  }
 }
