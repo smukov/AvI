@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content padding class="profilePage">
-  <profile-header #header></profile-header>
+  <profile-header [fullName]="fullName" [profileImage]="profileImageUrl"></profile-header>
 
   <ion-item style="margin-top:10px">
     <ion-input type="text"
@@ -40,4 +40,9 @@
       placeholder="Learn Ionic2, Find a team for basketball..."
       [(ngModel)]="currentGoals"></ion-textarea>
   </ion-item>
+
+  <button fab fab-bottom fab-right secondary (click)="edit()" style="position:fixed;">
+    <ion-icon *ngIf="isEditMode" name="checkmark"></ion-icon>
+    <ion-icon *ngIf="!isEditMode" name="create"></ion-icon>
+  </button>
 </ion-content>

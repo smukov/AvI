@@ -90,7 +90,7 @@ export class ChatPage {
     ];
   }
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
       this.content.scrollToBottom(300);//300ms animation speed
   }
 

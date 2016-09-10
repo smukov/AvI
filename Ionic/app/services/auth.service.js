@@ -52,7 +52,7 @@ export class AuthService {
 
         profile.user_metadata = profile.user_metadata || {};
 
-        if(this.userInfoService.getUserInfo(UserInfoService.PREF_USER_NAME == '')){
+        if(this.userInfoService.getUserInfo(UserInfoService.PREF_USER_NAME) === ''){
           //there is no user information stored, store the new info obtained from auth0
           this.userInfoService.setUserInfo(UserInfoService.PREF_USER_NAME, profile.name);
           this.userInfoService.setUserInfo(UserInfoService.PREF_USER_EMAIL, profile.email);

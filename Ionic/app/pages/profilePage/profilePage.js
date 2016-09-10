@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ProfileHeader} from '../components/profileHeader';
 import {ViewChild} from '@angular/core';
+import {UserInfoService} from '../../services/userInfo.service';
 
 
 @Component({
@@ -11,15 +12,30 @@ import {ViewChild} from '@angular/core';
   }
 })
 export class ProfilePage {
-  constructor() {
-    this.employment = '';
-    this.education = '';
-    this.interests = '';
-    this.knowledgeable = '';
-    this.currentGoals = '';
+
+  static get parameters(){
+    return [[UserInfoService]];
   }
 
-  ionViewWillEnter(){
-    this.header.setFullName("Dr. Gregory House");
+  constructor(userInfo) {
+    this.userInfo = userInfo;
+    this.isEditMode = false;
+
+    this.fullName = userInfo.getUserInfo(UserInfoService.PREF_USER_NAME);
+    this.profileImageUrl = userInfo.getUserInfo(UserInfoService.PREF_USER_PICTURE_URL);
+    this.employment = userInfo.getUserInfo(UserInfoService.PREF_USER_EMPLOYMENT);
+    this.education = userInfo.getUserInfo(UserInfoService.PREF_USER_EDUCATION);
+    this.interests = userInfo.getUserInfo(UserInfoService.PREF_USER_INTERESTS);
+    this.knowledgeable = userInfo.getUserInfo(UserInfoService.PREF_USER_KNOWLEDGEABLE_IN);
+    this.currentGoals = userInfo.getUserInfo(UserInfoService.PREF_USER_CURRENT_GOALS);
+  }
+
+  edit(){
+    if(this.isEditMode){
+
+    }else{
+
+    }
+    this.isEditMode = !this.isEditMode;
   }
 }
