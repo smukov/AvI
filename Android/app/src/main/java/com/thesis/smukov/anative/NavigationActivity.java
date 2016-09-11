@@ -1,6 +1,7 @@
 package com.thesis.smukov.anative;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
@@ -131,7 +132,12 @@ public class NavigationActivity extends AppCompatActivity
             currentFragment = new SettingsFragment();
 
         } else if (id == R.id.nav_send_feedback) {
-
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse(
+                    "mailto:" + getResources().getString(R.string.feedback_email) +
+                    "?subject=" + getResources().getString(R.string.feedback_subject)));
+            startActivity(Intent.createChooser(intent, ""));
+            openNewFragment = false;
         } else {
             //by default always go to nav_my_profile fragment
             currentFragment = new ProfileFragment();
