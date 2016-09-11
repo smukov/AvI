@@ -21,6 +21,7 @@ import {UserInfoService} from './services/userInfo.service';
 import {Http} from '@angular/http';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {AuthService} from './services/auth.service';
+import {Secret} from './secrets/secret';
 
 
 @Component({
@@ -54,8 +55,7 @@ export class MyApp {
     ];
 
     this.settingsPages = [
-        { title: 'Settings', component: SettingsPage, icon: 'settings' },
-        { title: 'Send Feedback', component: Page3, icon: 'send'}
+        { title: 'Settings', component: SettingsPage, icon: 'settings' }
     ];
 
     this.rootPage = LoginPage;
@@ -78,6 +78,12 @@ export class MyApp {
     // navigate to the new page if it is not the current page
     //let nav = this.app.getComponent('nav');
     this.nav.setRoot(page.component);
+  }
+
+  sendFeedback(){
+    window.open(
+      'mailto:' + Secret.FEEDBACK_EMAIL +
+      '?subject=' + Secret.FEEDBACK_SUBJECT, '_system');
   }
 }
 
