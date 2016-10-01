@@ -17,7 +17,7 @@ export class ProfileHeader {
 
   constructor() {
     this.fullName = 'Dr. House';
-    this.profileImage = 'build/img/hugh.png';
+    this.profileImage = 'assets/img/hugh.png';
   }
 
   public setFullName(fullName){

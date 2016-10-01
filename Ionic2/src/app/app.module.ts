@@ -1,4 +1,4 @@
-import { NgModule, provide } from '@angular/core';
+import { NgModule } from '@angular/core';//TODO: provide
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -20,7 +20,7 @@ import {ProfileHeader} from '../components/profileHeader';
 import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 //services (providers)
-import {AuthService} from '../services/auth.service';
+//TODO: import {AuthService} from '../services/auth.service';
 import {ContactsService} from '../services/contacts.service';
 import {PreferencesService} from '../services/preferences.service';
 import {StorageService} from '../services/storage.service';
@@ -71,13 +71,14 @@ import {AuthHttp, AuthConfig} from 'angular2-jwt';
     PreferencesService,
     StorageService,
     UserInfoService,
-    provide(AuthHttp, {
-      useFactory: (http) => {
-        return new AuthHttp(new AuthConfig({noJwtError: true}), http);
-      },
-      deps: [Http]
-    }),
-    AuthService
+    //TODO:
+    // provide(AuthHttp, {
+    //   useFactory: (http) => {
+    //     return new AuthHttp(new AuthConfig({noJwtError: true}), http);
+    //   },
+    //   deps: [Http]
+    // }),
+    // AuthService
   ]
 })
 export class AppModule {}

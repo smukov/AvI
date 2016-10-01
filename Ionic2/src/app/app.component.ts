@@ -1,4 +1,4 @@
-import { Component, ViewChild, provide } from '@angular/core';
+import { Component, ViewChild } from '@angular/core'; //TODO: provide
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
@@ -19,21 +19,22 @@ import {UserInfoService} from '../services/userInfo.service';
 
 import {Http} from '@angular/http';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
-import {AuthService} from '../services/auth.service';
+//TODO: import {AuthService} from '../services/auth.service';
 import {Secret} from '../secrets/secret';
 
 @Component({
   templateUrl: `app.html`
 })
 export class MyApp {
-  @ViewChild('nav') nav: Nav;
+  @ViewChild('content') nav: Nav;
   public primaryPages:any[];
   public settingsPages:any[];
   public rootPage:any;
 
   constructor(public platform: Platform, public menu: MenuController,
     public preferencesService: PreferencesService,
-    public auth: AuthService, public userInfoService: UserInfoService) {
+    //TODO: public auth: AuthService,
+    public userInfoService: UserInfoService) {
 
     this.initializeApp();
 
@@ -49,7 +50,7 @@ export class MyApp {
         { title: 'Settings', component: SettingsPage, icon: 'settings' }
     ];
 
-    this.rootPage = LoginPage;
+    this.rootPage = ProfilePage;//LoginPage;
   }
 
   initializeApp() {
@@ -59,7 +60,7 @@ export class MyApp {
       StatusBar.styleDefault();
       this.userInfoService.initialize();
       this.preferencesService.initializePreferences();
-      this.auth.startupTokenRefresh();
+      //TODO: this.auth.startupTokenRefresh();
     });
   }
 

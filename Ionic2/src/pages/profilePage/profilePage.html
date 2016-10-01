@@ -46,8 +46,11 @@
       [disabled]="!isEditMode"></ion-textarea>
   </ion-item>
 
-  <button  ion-button icon-only fab fab-bottom fab-right color="secondary" (click)="edit()" style="position:fixed;">
-    <ion-icon *ngIf="isEditMode" name="checkmark"></ion-icon>
-    <ion-icon *ngIf="!isEditMode" name="create"></ion-icon>
-  </button>
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="edit()">
+      <ion-icon *ngIf="isEditMode" name="checkmark"></ion-icon>
+      <ion-icon *ngIf="!isEditMode" name="create"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>

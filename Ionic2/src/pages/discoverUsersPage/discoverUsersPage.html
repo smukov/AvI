@@ -46,14 +46,16 @@
     </ion-slide>
   </ion-slides>
 
-  <button ion-button icon-only #btnDismiss fab fab-bottom fab-right secondary style="margin-bottom:75px; z-index: 100;"
-    (click)="onBtnDismissClicked()"
-    @fabState="btnState">
-    <ion-icon name="close"></ion-icon>
-  </button>
-  <button  ion-button icon-only #btnAccept fab fab-bottom fab-right secondary style="z-index: 100;"
-    (click)="onBtnAcceptClicked()"
-    @fabState="btnState">
-    <ion-icon name="checkmark"></ion-icon>
-  </button>
+  <ion-fab bottom right>
+    <button ion-fab #btnDismiss color="secondary" style="margin-bottom:10px; z-index: 100;"
+      (click)="onBtnDismissClicked()"
+      [@fabState]="btnState">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <button ion-fab #btnAccept color="secondary" style="z-index: 100;"
+      (click)="onBtnAcceptClicked()"
+      [@fabState]="btnState">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

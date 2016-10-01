@@ -36,7 +36,10 @@
     </ion-item>
   </ion-list>
 
-  <button ion-button icon-only fab fab-bottom fab-right secondary (click)='openChat()'>
-    <ion-icon name="chatboxes"></ion-icon>
-  </button>
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)='openChat()'>
+      <ion-icon name="chatboxes"></ion-icon>
+    </button>
+  </ion-fab>
+
 </ion-content>

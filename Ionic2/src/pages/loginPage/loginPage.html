@@ -12,7 +12,7 @@
   <div class="Aligner-item">
     <h4 text-center style="margin-bottom:15vh;">Welcome to Ionic</h4><!--separation is 15% of the viewport's height -->
     <p text-center secondary-text *ngIf="showLoginButton!=true">Please wait while we try to sign you in...</p>
-    <button  ion-button icon-only color="primary" full (click)="login()" *ngIf="showLoginButton==true">Sign in or register</button>
+    <button ion-button color="primary" full (click)="login()" *ngIf="showLoginButton==true">Sign in or register</button>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {PreferencesService} from '../../services/preferences.service';
-import {AuthService} from '../../services/auth.service';
+//TODO: import {AuthService} from '../../services/auth.service';
 import {LoginPage} from '../loginPage/loginPage';
 
 
@@ -15,7 +15,9 @@ export class SettingsPage {
   public PREF_NOTIFY_MESSAGES:string;
   public PREF_NOTIFY_INVITES:string;
 
-  constructor(public nav: NavController, public preferencesService:PreferencesService, public auth:AuthService) {
+  constructor(public nav: NavController, public preferencesService:PreferencesService,
+     //TODO:  public auth:AuthService
+    ) {
     this.preferences = {};
 
     this.PREF_DISCOVERABLE = PreferencesService.PREF_DISCOVERABLE;
@@ -37,6 +39,6 @@ export class SettingsPage {
   }
 
   public logout(){
-    this.auth.logout(() => this.nav.setRoot(LoginPage));
+    //TODO: this.auth.logout(() => this.nav.setRoot(LoginPage));
   }
 }
