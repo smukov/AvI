@@ -24,7 +24,7 @@ export class ContactPage {
   }
 
   public ionViewWillEnter(){
-    this.header.setFullName("Dr. Gregory House");
+    //this.header.setFullName("Dr. Gregory House");
   }
 
   public openChat(){

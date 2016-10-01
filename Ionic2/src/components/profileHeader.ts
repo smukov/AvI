@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
   `
   <div class="content-center-left">
     <img src="{{profileImage}}" style="border-radius: 50%; width: 60px; height: 60px;">
-    <span class="profile-header">{{fullName}}</span>
+    <span class="profile-header-name">{{fullName}}</span>
   </div>
   `
 })

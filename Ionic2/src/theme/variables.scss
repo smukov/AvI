@@ -76,6 +76,54 @@ $text-input-wp-highlight-color: map-get($colors, secondary);
 
 @import "ionic.theme.default";
 
+.profile-header-name {
+  font-size: $header-font-size;
+  font-weight: $header-font-weight;
+  margin-left: 10px;
+  line-height: 100%;
+}
+
+.content-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-center-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;;
+}
+
+.content-center-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+ion-item{
+  .text-input {
+    font-size: large;
+  }
+}
+
+//makes the paragraph properly wrap the text inside it in multiple lines
+p {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+ion-menu{
+  ion-content{
+    ion-list{
+      ion-icon{
+        margin-right: 20px;
+        color: #595959;
+      }
+    }
+  }
+}
+
 
 // Ionicons
 // --------------------------------------------------
