@@ -16,6 +16,7 @@ export class ElasticTextarea {
   public txtArea:any;
   public content:string;
   public lineHeight:string;
+  public placeholder:string;
 
   constructor() {
     this.content = "";
