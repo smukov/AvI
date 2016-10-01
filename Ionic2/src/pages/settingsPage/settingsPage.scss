@@ -1,0 +1,9 @@
+page-settings {
+  ion-list-header{
+    color: map-get($colors, secondary);
+    border-bottom: none !important;
+    ion-label{
+      margin-bottom: -5px !important;
+    }
+  }
+}

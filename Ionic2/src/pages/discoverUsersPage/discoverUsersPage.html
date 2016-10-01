@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Discover Users
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="discoverUsersPage">
+  <ion-slides #slider
+    (ionDidChange)="onSlideChanged()"
+    [options]="sliderOptions"
+    >
+    <ion-slide *ngFor="let usr of users" class="user-slide">
+      <profile-header
+        [fullName]="usr.getFullName()"
+        [profileImage]="usr.profileImage"
+        ></profile-header>
+
+      <ion-list no-lines style="margin-top:10px">
+        <ion-item>
+          <p>{{usr.employment}}</p>
+        </ion-item>
+        <ion-item class="no-bottom-border">
+          <p>{{usr.education}}</p>
+        </ion-item>
+        <ion-item>
+          <p class='section-name'>Interests</p>
+          <p>{{usr.interests}}</p>
+        </ion-item>
+        <ion-item>
+          <p class='section-name'>Knowledgeable In</p>
+          <p>{{usr.knowledgeable}}</p>
+        </ion-item>
+        <ion-item>
+          <p class='section-name'>Goals</p>
+          <p>{{usr.currentGoals}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide style="padding-bottom:50px;">
+      No More Users Nearby
+    </ion-slide>
+  </ion-slides>
+
+  <button ion-button icon-only #btnDismiss fab fab-bottom fab-right secondary style="margin-bottom:75px; z-index: 100;"
+    (click)="onBtnDismissClicked()"
+    @fabState="btnState">
+    <ion-icon name="close"></ion-icon>
+  </button>
+  <button  ion-button icon-only #btnAccept fab fab-bottom fab-right secondary style="z-index: 100;"
+    (click)="onBtnAcceptClicked()"
+    @fabState="btnState">
+    <ion-icon name="checkmark"></ion-icon>
+  </button>
+</ion-content>

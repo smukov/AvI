@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="contactPage">
+  <profile-header
+    [fullName]="contact.getFullName()"
+    [profileImage]="contact.profileImage"
+    ></profile-header>
+
+  <ion-list no-lines style="margin-top:10px">
+    <ion-item>
+      <p>{{contact.employment}}</p>
+    </ion-item>
+    <ion-item class="no-bottom-border">
+      <p>{{contact.education}}</p>
+    </ion-item>
+    <ion-item>
+      <p class='section-name'>Interests</p>
+      <p>{{contact.interests}}</p>
+    </ion-item>
+    <ion-item>
+      <p class='section-name'>Knowledgeable In</p>
+      <p>{{contact.knowledgeable}}</p>
+    </ion-item>
+    <ion-item>
+      <p class='section-name'>Goals</p>
+      <p>{{contact.currentGoals}}</p>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button icon-only fab fab-bottom fab-right secondary (click)='openChat()'>
+    <ion-icon name="chatboxes"></ion-icon>
+  </button>
+</ion-content>

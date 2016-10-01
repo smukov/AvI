@@ -11,7 +11,16 @@
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 $text-color:        #000;
-$background-color:  #fff;
+
+$background-ios-color: #FAFAFA;
+$background-md-color: #FAFAFA;
+$background-wp-color: #FAFAFA;
+
+$list-background-color: #FAFAFA;
+
+$header-font-size: 2.2rem;
+$header-font-weight: 500;
+
 
 
 // Named Color Variables
@@ -23,14 +32,40 @@ $background-color:  #fff;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
+  dark-primary:   #1976D2,
+  primary:        #2196F3,
+  light:          #BBDEFB,
+  text-icons:     #FFFFFF,
+  secondary:      #FF5722,
+  primary-text:   #212121,
+  secondary-text: #727272,
+  divider:        #B6B6B6,
+  background-color:     #FAFAFA,
+
   danger:     #f53d3d,
-  light:      #f4f4f4,
   dark:       #222,
-  favorite:   #69BB7B
+  favorite:    #8bc34a, /* #69BB7B */
+
+  facebook:   #3b5998,
+  googleplus: #dc4e41,
+  linkedin:   #0077b5,
 );
 
+$chat-bubble:(
+  background-left: #fea21c,
+  background-right: #8abefa,
+);
+
+//To make the input use the secondary color when active, instead of primary
+//https://github.com/driftyco/ionic/blob/2.0/src/components/input/input.md.scss
+//https://github.com/driftyco/ionic/blob/2.0/src/components/label/label.md.scss
+$label-ios-text-color-focused: map-get($colors, secondary);
+$label-md-text-color-focused: map-get($colors, secondary);
+$label-wp-text-color-focused: map-get($colors, secondary);
+
+$text-input-ios-highlight-color: map-get($colors, secondary);
+$text-input-md-highlight-color: map-get($colors, secondary);
+$text-input-wp-highlight-color: map-get($colors, secondary);
 
 // App Theme
 // --------------------------------------------------

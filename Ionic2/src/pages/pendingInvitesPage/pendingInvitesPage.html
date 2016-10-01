@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Pending Invites
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="pendingInvitesPage">
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let cnt of contacts">
+
+      <ion-item (click)="openInvite(cnt)">
+        <profile-header [fullName]="cnt.getFullName()" [profileImage]="cnt.profileImage"></profile-header>
+        <p style="margin-top:10px">{{cnt.employment}}</p>
+        <p>{{cnt.education}}</p>
+      </ion-item>
+
+      <ion-item-options side="left">
+        <button ion-button favorite (click)="acceptInvite(cnt)">Accept</button>
+      </ion-item-options>
+
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="dismissInvite(cnt)">Dismiss</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
