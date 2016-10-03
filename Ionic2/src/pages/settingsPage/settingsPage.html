@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="settingsPage">
+  <ion-list color="secondary">
+    <ion-list-header>
+       General
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Make me discoverable by others</ion-label>
+      <ion-toggle color="secondary"
+        [ngModel]='preferences[PREF_DISCOVERABLE]'
+        (ionChange)='changePreference($event, PREF_DISCOVERABLE)'></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notifications for Messages</ion-label>
+      <ion-toggle color="secondary"
+        [ngModel]='preferences[PREF_NOTIFY_MESSAGES]'
+        (ionChange)='changePreference($event, PREF_NOTIFY_MESSAGES)'></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notifications for Invites</ion-label>
+      <ion-toggle color="secondary"
+        [ngModel]='preferences[PREF_NOTIFY_INVITES]'
+        (ionChange)='changePreference($event, PREF_NOTIFY_INVITES)'></ion-toggle>
+    </ion-item>
+    <ion-list-header>
+       Account
+    </ion-list-header>
+    <button ion-item (click)="logout()">
+      Log Out
+    </button>
+  </ion-list>
+</ion-content>

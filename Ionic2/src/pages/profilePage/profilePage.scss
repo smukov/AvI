@@ -1,0 +1,24 @@
+page-profile {
+  ion-label{
+    font-weight: bold;
+    font-size: medium;
+  }
+  ion-input {
+    input {
+      margin-left: 0px;
+    }
+  }
+
+  /*
+    hack to prevent border highlight in input elements.
+   */
+  .item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: #dedede !important;
+    box-shadow: none !important;
+  }
+
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: #dedede !important;
+    box-shadow: none !important;
+  }
+}

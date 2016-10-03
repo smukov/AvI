@@ -1,0 +1,13 @@
+page-contact {
+
+  .section-name {
+    font-weight: bold;
+    font-size: medium;
+    color: map-get($colors, secondary-text);
+  }
+
+  p {
+    font-size: large;
+    color: map-get($colors, primary-text);
+  }
+}

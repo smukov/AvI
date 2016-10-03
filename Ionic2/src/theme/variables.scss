@@ -1,0 +1,134 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color:        #000;
+
+$background-ios-color: #FAFAFA;
+$background-md-color: #FAFAFA;
+$background-wp-color: #FAFAFA;
+
+$list-background-color: #FAFAFA;
+
+$header-font-size: 2.2rem;
+$header-font-weight: 500;
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  dark-primary:   #1976D2,
+  primary:        #2196F3,
+  light:          #BBDEFB,
+  text-icons:     #FFFFFF,
+  secondary:      #FF5722,
+  primary-text:   #212121,
+  secondary-text: #727272,
+  divider:        #B6B6B6,
+  background-color:     #FAFAFA,
+
+  danger:     #f53d3d,
+  dark:       #222,
+  favorite:    #8bc34a, /* #69BB7B */
+
+  facebook:   #3b5998,
+  googleplus: #dc4e41,
+  linkedin:   #0077b5,
+);
+
+$chat-bubble:(
+  background-left: #fea21c,
+  background-right: #8abefa,
+);
+
+//To make the input use the secondary color when active, instead of primary
+//https://github.com/driftyco/ionic/blob/2.0/src/components/input/input.md.scss
+//https://github.com/driftyco/ionic/blob/2.0/src/components/label/label.md.scss
+$label-ios-text-color-focused: map-get($colors, secondary);
+$label-md-text-color-focused: map-get($colors, secondary);
+$label-wp-text-color-focused: map-get($colors, secondary);
+
+$text-input-ios-highlight-color: map-get($colors, secondary);
+$text-input-md-highlight-color: map-get($colors, secondary);
+$text-input-wp-highlight-color: map-get($colors, secondary);
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+.profile-header-name {
+  font-size: $header-font-size;
+  font-weight: $header-font-weight;
+  margin-left: 10px;
+  line-height: 100%;
+}
+
+.content-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-center-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;;
+}
+
+.content-center-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+ion-item{
+  .text-input {
+    font-size: large;
+  }
+}
+
+//makes the paragraph properly wrap the text inside it in multiple lines
+p {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+ion-menu{
+  ion-content{
+    ion-list{
+      ion-icon{
+        margin-right: 20px;
+        color: #595959;
+      }
+    }
+  }
+}
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";

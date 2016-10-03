@@ -1,0 +1,36 @@
+{
+  "name": "ionic-2",
+  "author": "Miroslav Smukov",
+  "homepage": "http://smukov.github.io",
+  "private": true,
+  "scripts": {
+    "build": "ionic-app-scripts build",
+    "watch": "ionic-app-scripts watch",
+    "serve:before": "watch",
+    "emulate:before": "build",
+    "deploy:before": "build",
+    "build:before": "build",
+    "run:before": "build"
+  },
+  "dependencies": {
+    "ionic-angular": "^2.0.0-rc.0",
+    "ionicons": "^3.0.0",
+    "@ionic/storage": "^1.0.3",
+    "ionic-native": "^2.0.3",
+    "angular2-jwt": "^0.1.21"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "^0.0.23",
+    "typescript": "^2.0.3"
+  },
+  "description": "Ionic2: An Ionic project",
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": []
+}

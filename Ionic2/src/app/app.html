@@ -1,0 +1,24 @@
+<ion-menu [content]="content" >
+  <ion-toolbar color="primary">
+    <ion-title >Menu</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-list no-lines>
+      <button ion-item *ngFor="let p of primaryPages" (click)="openPage(p)">
+       <ion-icon name="{{p.icon}}"></ion-icon>
+       {{p.title}}
+      </button>
+      <ion-item-divider style="min-height: 0px; padding:0px; height: 0px;"></ion-item-divider>
+      <button ion-item *ngFor="let p of settingsPages" (click)="openPage(p)">
+       <ion-icon name="{{p.icon}}"></ion-icon>
+       {{p.title}}
+      </button>
+      <button ion-item (click)="sendFeedback()">
+       <ion-icon name="send"></ion-icon>
+       Send Feedback
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage" ></ion-nav>
