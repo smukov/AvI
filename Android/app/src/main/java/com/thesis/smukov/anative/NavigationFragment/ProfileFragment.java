@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.thesis.smukov.anative.Models.UserInfo;
 import com.thesis.smukov.anative.R;
 import com.thesis.smukov.anative.Store.UserInfoStore;
@@ -82,6 +84,7 @@ public class ProfileFragment extends BaseNavigationFragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                testFirebase();
                 isEditable = !isEditable;
                 toggleEditMode(isEditable);
                 if(isEditable == false){
@@ -89,6 +92,15 @@ public class ProfileFragment extends BaseNavigationFragment {
                 }
             }
         });
+    }
+
+    private void testFirebase(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.goOnline();
+        DatabaseReference myRef = database.getReference("users");
+
+        myRef.setValue("Hello, World!");
+        myRef.push();
     }
 
     private void toggleEditMode(Boolean isEditable){

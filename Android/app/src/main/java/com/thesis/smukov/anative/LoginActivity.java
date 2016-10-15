@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.auth0.api.ParameterBuilder;
 import com.auth0.api.authentication.AuthenticationAPIClient;
 import com.auth0.api.authentication.DelegationRequest;
 import com.auth0.api.callback.BaseCallback;
@@ -25,11 +27,19 @@ import com.auth0.core.UserProfile;
 import com.auth0.lock.Lock;
 import com.auth0.lock.LockActivity;
 import com.auth0.lock.LockContext;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.thesis.smukov.anative.Models.AccessToken;
 import com.thesis.smukov.anative.Models.UserInfo;
 import com.thesis.smukov.anative.Store.AccessTokenStore;
 import com.thesis.smukov.anative.Store.UserInfoStore;
+
+import java.util.Map;
 
 /**
  * A login screen that offers login via oAuth.
@@ -57,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
             accessToken.setIdToken(token.getIdToken());
             accessToken.setRefreshToken(token.getRefreshToken());
             accessToken.setAccessToken(token.getAccessToken());
+
+            authenticateFirebase(token.getIdToken());
 
             navigateToNavigationActivity(accessToken, userInfo, false);
             finish();
@@ -105,6 +117,8 @@ public class LoginActivity extends AppCompatActivity {
                         public void onSuccess(final UserProfile payload) {
                             // Valid ID > Navigate to the app's MainActivity
                             startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
+
+                            authenticateFirebase(accessToken.getIdToken());
 
                             navigateToNavigationActivity(
                                     AccessTokenStore.getAccessToken(thisActivity),
@@ -189,6 +203,53 @@ public class LoginActivity extends AppCompatActivity {
         Log.i("smuk", "RefreshToken " + accessToken.getRefreshToken());
         Log.i("smuk", "IdToken " + accessToken.getIdToken());
         Log.i("smuk", "Type " + accessToken.getType());
+    }
+
+    private void authenticateFirebase(String idToken){
+        Lock lock = LockContext.getLock(this);
+        if(lock == null){
+            LockContext.configureLock(
+                    new Lock.Builder()
+                            .loadFromApplication(getApplication())
+                            .closable(true));
+            lock = LockContext.getLock(this);
+        }
+        AuthenticationAPIClient client = lock.getAuthenticationAPIClient();
+        String apiType = "firebase";
+        String token = idToken; //Your Auth0 id_token of the logged in User
+        Map<String, Object> parameters = ParameterBuilder.newEmptyBuilder()
+                .set("id_token", token)
+                .set("api_type", apiType)
+                .asDictionary();
+
+        final AppCompatActivity thisActivity = this;
+        //Auth0 Delegation
+        client.delegation()
+                .addParameters(parameters).start(new BaseCallback<Map<String, Object>>() {
+            @Override
+            public void onSuccess(Map<String, Object> payload) {
+                //Your Firebase token will be in payload
+                Log.i("smuk", "Logged in Firebase via Auth0");
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signInWithCustomToken((String) payload.get("id_token"))
+                    .addOnCompleteListener(thisActivity, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.i("smuk", "firebase signInWithCustomToken:onComplete:" + task.isSuccessful());
+
+                            if (!task.isSuccessful()) {
+                                Log.i("smuk", "firebase failed signInWithCustomToken", task.getException());
+                            }
+                        }
+                    });
+            }
+
+            @Override
+            public void onFailure(Throwable error) {
+                //Delegation call failed
+                Log.i("smuk", "Failed to log in Firebase via Auth0");
+            }
+        });
     }
 
     private class AuthenticationException extends Exception{
