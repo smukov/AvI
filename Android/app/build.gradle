@@ -29,4 +29,8 @@ dependencies {
     compile 'com.wdullaer:swipeactionadapter:2.0.0'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.auth0.android:lock:1.16.+'
+    compile 'com.google.firebase:firebase-core:9.6.1'
+    compile 'com.google.firebase:firebase-database:9.6.1'
 }
+
+apply plugin: 'com.google.gms.google-services'
