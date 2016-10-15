@@ -1,8 +1,11 @@
 package com.thesis.smukov.anative.Models;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by Smukov on 03-Sep-16.
  */
+@IgnoreExtraProperties
 public class UserInfo {
 
     private String name;

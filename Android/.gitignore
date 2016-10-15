@@ -7,3 +7,4 @@
 /build
 /captures
 /app/src/main/res/values/secrets.xml
+/app/google-services.json
