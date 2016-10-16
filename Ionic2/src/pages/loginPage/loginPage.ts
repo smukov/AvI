@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ProfilePage} from '../profilePage/profilePage';
-//TODO: import {AuthService} from '../../services/auth.service';
+import {AuthService} from '../../services/auth.service';
 import {UserInfoService} from '../../services/userInfo.service';
 
 
@@ -14,38 +14,38 @@ export class LoginPage {
   public showLoginButton:boolean;
 
   constructor(public nav: NavController,
-      //TODO: public auth: AuthService,
+      public auth: AuthService,
       public userInfoService: UserInfoService) {
     this.nextPage = ProfilePage;
-    this.showLoginButton = !false;
+    this.showLoginButton = false;
   }
 
   public ionViewWillEnter(){
-    this.showLoginButton = !false;
+    this.showLoginButton = false;
   }
 
   public ionViewDidEnter(){
-      this.nav.setRoot(ProfilePage);
-     //TODO:
-    // if(this.auth.authenticated()){
-    //   //give some time for local storage to initialize
-    //   setTimeout(() => {
-    //     this.nav.setRoot(ProfilePage);
-    //   }, 1000)
-    // }else{
-    //   this.showLoginButton = true;
-    // }
+    //give some time for local storage to initialize
+    //so that the stored token can be obtained
+    setTimeout(() => {
+      if(this.auth.authenticated()){
+
+        this.nav.setRoot(ProfilePage);
+      }else{
+        this.showLoginButton = true;
+      }
+    }, 3000)
+
   }
 
   public login(){
-       this.nav.setRoot(ProfilePage);
-      //TODO:
-    // this.auth.login(() =>
-    //   setTimeout(() => {
-    //     this.nav.setRoot(ProfilePage)
-    //   }, 1000)//I need this delay because otherwise the navigation occurs
-    //           //before the InAppBrowser closes, and the content ends up under
-    //           //the top bar.
-    // );
+    this.auth.login(() => {    
+      this.showLoginButton = false;
+      setTimeout(() => {
+        this.nav.setRoot(ProfilePage)
+      }, 3000)//I need this delay because otherwise the navigation occurs
+              //before the InAppBrowser closes, and the content ends up under
+              //the top bar.
+    });
   }
 }

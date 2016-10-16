@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';//TODO: provide
+import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Storage } from '@ionic/storage';
 
 //pages
 import {Page1} from '../pages/page1/page1';
@@ -20,7 +21,7 @@ import {ProfileHeader} from '../components/profileHeader';
 import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 //services (providers)
-//TODO: import {AuthService} from '../services/auth.service';
+import {AuthService} from '../services/auth.service';
 import {ContactsService} from '../services/contacts.service';
 import {PreferencesService} from '../services/preferences.service';
 import {StorageService} from '../services/storage.service';
@@ -29,6 +30,15 @@ import {UserInfoService} from '../services/userInfo.service';
 //external
 import {Http} from '@angular/http';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
+
+let storage: Storage = new Storage();
+
+export function getAuthHttp(http) {
+  return new AuthHttp(new AuthConfig({
+    globalHeaders: [{'Accept': 'application/json'}],
+    tokenGetter: (() => storage.get('id_token'))
+  }), http);
+}
 
 @NgModule({
   declarations: [
@@ -71,14 +81,12 @@ import {AuthHttp, AuthConfig} from 'angular2-jwt';
     PreferencesService,
     StorageService,
     UserInfoService,
-    //TODO:
-    // provide(AuthHttp, {
-    //   useFactory: (http) => {
-    //     return new AuthHttp(new AuthConfig({noJwtError: true}), http);
-    //   },
-    //   deps: [Http]
-    // }),
-    // AuthService
+    AuthService,
+    {
+        provide: AuthHttp,
+        useFactory: getAuthHttp,
+        deps:[Http]
+    }
   ]
 })
 export class AppModule {}

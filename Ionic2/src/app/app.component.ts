@@ -1,9 +1,7 @@
-import { Component, ViewChild } from '@angular/core'; //TODO: provide
+import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import {Page1} from '../pages/page1/page1';
-import {Page3} from '../pages/page3/page3';
 import {LoginPage} from '../pages/loginPage/loginPage';
 import {ProfilePage} from '../pages/profilePage/profilePage';
 import {ContactsPage} from '../pages/contactsPage/contactsPage';
@@ -11,15 +9,10 @@ import {PendingInvitesPage} from '../pages/pendingInvitesPage/pendingInvitesPage
 import {SettingsPage} from '../pages/settingsPage/settingsPage';
 import {DiscoverUsersPage} from '../pages/discoverUsersPage/discoverUsersPage';
 
-
-import {ContactsService} from '../services/contacts.service';
-import {StorageService} from '../services/storage.service';
 import {PreferencesService} from '../services/preferences.service';
 import {UserInfoService} from '../services/userInfo.service';
 
-import {Http} from '@angular/http';
-import {AuthHttp, AuthConfig} from 'angular2-jwt';
-//TODO: import {AuthService} from '../services/auth.service';
+import {AuthService} from '../services/auth.service';
 import {Secret} from '../secrets/secret';
 
 @Component({
@@ -33,7 +26,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public menu: MenuController,
     public preferencesService: PreferencesService,
-    //TODO: public auth: AuthService,
+    public auth: AuthService,
     public userInfoService: UserInfoService) {
 
     this.initializeApp();
@@ -50,7 +43,7 @@ export class MyApp {
         { title: 'Settings', component: SettingsPage, icon: 'settings' }
     ];
 
-    this.rootPage = ProfilePage;//LoginPage;
+    this.rootPage = LoginPage;
   }
 
   initializeApp() {
@@ -60,7 +53,7 @@ export class MyApp {
       StatusBar.styleDefault();
       this.userInfoService.initialize();
       this.preferencesService.initializePreferences();
-      //TODO: this.auth.startupTokenRefresh();
+      this.auth.startupTokenRefresh();
     });
   }
 
