@@ -40,6 +40,7 @@ export class AuthService {
     });
 
     this.storage.get('id_token').then(token => {
+      console.log('token loaded from storage: ' + token);    
       this.idToken = token;
     });
 

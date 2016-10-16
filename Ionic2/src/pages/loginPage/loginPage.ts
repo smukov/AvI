@@ -25,23 +25,27 @@ export class LoginPage {
   }
 
   public ionViewDidEnter(){
-    if(this.auth.authenticated()){
-      //give some time for local storage to initialize
-      setTimeout(() => {
+    //give some time for local storage to initialize
+    //so that the stored token can be obtained
+    setTimeout(() => {
+      if(this.auth.authenticated()){
+
         this.nav.setRoot(ProfilePage);
-      }, 1000)
-    }else{
-      this.showLoginButton = true;
-     }
+      }else{
+        this.showLoginButton = true;
+      }
+    }, 3000)
+
   }
 
   public login(){
-    this.auth.login(() =>
+    this.auth.login(() => {    
+      this.showLoginButton = false;
       setTimeout(() => {
         this.nav.setRoot(ProfilePage)
-    }, 1000)//I need this delay because otherwise the navigation occurs
+      }, 3000)//I need this delay because otherwise the navigation occurs
               //before the InAppBrowser closes, and the content ends up under
               //the top bar.
-    );
+    });
   }
 }
