@@ -39,7 +39,7 @@ export class LoginPage {
   }
 
   public login(){
-    this.auth.login(() => {    
+    this.auth.login(() => {
       this.showLoginButton = false;
       setTimeout(() => {
         this.nav.setRoot(ProfilePage)

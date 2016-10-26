@@ -1,7 +1,9 @@
 <ion-menu [content]="content" >
-  <ion-toolbar color="primary">
-    <ion-title >Menu</ion-title>
-  </ion-toolbar>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title >Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
   <ion-content>
     <ion-list no-lines>
       <button ion-item *ngFor="let p of primaryPages" (click)="openPage(p)">
