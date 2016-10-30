@@ -84,23 +84,7 @@ export class AuthService {
         this.user = profile;
       });
 
-      // Set the options to retreive a firebase delegation token
-      let options = {
-        id_token : this.idToken,
-        api : 'firebase',
-        scope : 'openid name email displayName',
-        target: Secret.AUTH0_CLIENT_ID
-      };
-
-      // Make a call to the Auth0 '/delegate'
-      this.auth0.getDelegationToken(options, function(err, result) {
-          if(!err) {
-            // Exchange the delegate token for a Firebase auth token
-            firebase.auth().signInWithCustomToken(result.id_token).then(msg => console.log(msg)).catch(function(error) {
-              console.log(error);
-            });
-          }
-      });
+      this.authenticateFirebase();
 
       this.lock.hide();
 
@@ -115,6 +99,26 @@ export class AuthService {
       }
     });
 
+  }
+
+  public authenticateFirebase(){
+    // Set the options to retreive a firebase delegation token
+    let options = {
+      id_token : this.idToken,
+      api : 'firebase',
+      scope : 'openid name email displayName',
+      target: Secret.AUTH0_CLIENT_ID
+    };
+
+    // Make a call to the Auth0 '/delegate'
+    this.auth0.getDelegationToken(options, function(err, result) {
+        if(!err) {
+          // Exchange the delegate token for a Firebase auth token
+          firebase.auth().signInWithCustomToken(result.id_token).then(msg => console.log(msg)).catch(function(error) {
+            console.log(error);
+          });
+        }
+    });
   }
 
   public authenticated() {

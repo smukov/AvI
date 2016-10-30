@@ -29,7 +29,7 @@ export class LoginPage {
     //so that the stored token can be obtained
     setTimeout(() => {
       if(this.auth.authenticated()){
-
+        this.auth.authenticateFirebase();
         this.nav.setRoot(ProfilePage);
       }else{
         this.showLoginButton = true;
