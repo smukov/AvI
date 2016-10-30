@@ -26,6 +26,7 @@ import {ContactsService} from '../services/contacts.service';
 import {PreferencesService} from '../services/preferences.service';
 import {StorageService} from '../services/storage.service';
 import {UserInfoService} from '../services/userInfo.service';
+import {FirebaseService} from '../services/firebase.service';
 
 //external
 import {Http} from '@angular/http';
@@ -86,7 +87,8 @@ export function getAuthHttp(http) {
         provide: AuthHttp,
         useFactory: getAuthHttp,
         deps:[Http]
-    }
+    },
+    FirebaseService
   ]
 })
 export class AppModule {}

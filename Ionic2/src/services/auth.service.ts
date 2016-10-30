@@ -9,6 +9,16 @@ import {UserInfoService} from './userInfo.service';
 declare var Auth0: any;
 declare var Auth0Lock: any;
 
+declare var firebase: any;
+
+export const firebaseConfig = {
+  apiKey: Secret.FIREBASE_API_KEY,
+  authDomain: Secret.FIREBASE_AUTH_DOMAIN,
+  databaseURL: Secret.FIREBASE_DATABASE_URL,
+  storageBucket: Secret.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: Secret.FIREBASE_MESSEGING_SENDER_ID
+};
+
 @Injectable()
 export class AuthService {
   public onAuthenticatedCallback: any = null;
@@ -40,9 +50,11 @@ export class AuthService {
     });
 
     this.storage.get('id_token').then(token => {
-      console.log('token loaded from storage: ' + token);    
+      console.log('token loaded from storage: ' + token);
       this.idToken = token;
     });
+
+    firebase.initializeApp(firebaseConfig);
 
     this.lock.on('authenticated', authResult => {
       this.storage.set('id_token', authResult.idToken);
@@ -72,6 +84,8 @@ export class AuthService {
         this.user = profile;
       });
 
+      this.authenticateFirebase();
+
       this.lock.hide();
 
       this.storage.set('refresh_token', authResult.refreshToken);
@@ -85,6 +99,26 @@ export class AuthService {
       }
     });
 
+  }
+
+  public authenticateFirebase(){
+    // Set the options to retreive a firebase delegation token
+    let options = {
+      id_token : this.idToken,
+      api : 'firebase',
+      scope : 'openid name email displayName',
+      target: Secret.AUTH0_CLIENT_ID
+    };
+
+    // Make a call to the Auth0 '/delegate'
+    this.auth0.getDelegationToken(options, function(err, result) {
+        if(!err) {
+          // Exchange the delegate token for a Firebase auth token
+          firebase.auth().signInWithCustomToken(result.id_token).then(msg => console.log(msg)).catch(function(error) {
+            console.log(error);
+          });
+        }
+    });
   }
 
   public authenticated() {
