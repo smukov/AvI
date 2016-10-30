@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UserInfoService} from '../../services/userInfo.service';
+import {FirebaseService} from '../../services/firebase.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ProfilePage {
   public knowledgeable:string;
   public currentGoals:string;
 
-  constructor(public userInfo:UserInfoService) {
+  constructor(public userInfo:UserInfoService, public firebase:FirebaseService) {
     this.isEditMode = false;
   }
 
@@ -32,6 +33,8 @@ export class ProfilePage {
   }
 
   public edit(){
+    this.firebase.writeSomeData();
+
     if(this.isEditMode){
       //it was in edit mode, so save the changes
       this.userInfo.setUserInfo(UserInfoService.PREF_USER_EMPLOYMENT, this.employment);
