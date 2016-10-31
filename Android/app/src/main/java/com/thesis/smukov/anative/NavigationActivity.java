@@ -169,7 +169,8 @@ public class NavigationActivity extends AppCompatActivity
             AccessTokenStore.storeAccessToken(this, accessToken);
             if(wasLoggedIn == false){
                 //if user wasn't logged in, I should store his information
-                UserInfoStore.storeUserInfo(this, userInfo);
+                UserInfoStore userInfoStore = new UserInfoStore();
+                userInfoStore.storeUserInfo(this, userInfo);
             }
         }
     }

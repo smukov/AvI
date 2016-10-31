@@ -1,6 +1,5 @@
 package com.thesis.smukov.anative;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 
 import com.auth0.api.ParameterBuilder;
 import com.auth0.api.authentication.AuthenticationAPIClient;
-import com.auth0.api.authentication.DelegationRequest;
 import com.auth0.api.callback.BaseCallback;
 import com.auth0.api.callback.RefreshIdTokenCallback;
 import com.auth0.core.Auth0;
@@ -29,10 +27,8 @@ import com.auth0.lock.LockActivity;
 import com.auth0.lock.LockContext;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.thesis.smukov.anative.Models.AccessToken;
 import com.thesis.smukov.anative.Models.UserInfo;
@@ -48,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private UserProfile userProfile;
     private Token token;
+    private UserInfoStore userInfoStore = new UserInfoStore();
 
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -71,7 +68,6 @@ public class LoginActivity extends AppCompatActivity {
             authenticateFirebase(token.getIdToken());
 
             navigateToNavigationActivity(accessToken, userInfo, false);
-            finish();
         }
     };
 
@@ -94,7 +90,6 @@ public class LoginActivity extends AppCompatActivity {
         final TextView txtPleaseWait = (TextView) findViewById(R.id.textPleaseWait);
         txtPleaseWait.setVisibility(View.VISIBLE);
 
-
         //try to get the login token and log in automatically
         final AccessToken accessToken = AccessTokenStore.getAccessToken(this);
         if(accessToken.getIdToken() == ""){
@@ -116,13 +111,11 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(final UserProfile payload) {
                             // Valid ID > Navigate to the app's MainActivity
-                            startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
-
                             authenticateFirebase(accessToken.getIdToken());
 
                             navigateToNavigationActivity(
                                     AccessTokenStore.getAccessToken(thisActivity),
-                                    UserInfoStore.getUserInfo(thisActivity),
+                                    userInfoStore.getUserInfo(thisActivity),
                                     true
                                     );
                         }
@@ -139,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                             navigateToNavigationActivity(
                                                     AccessTokenStore.getAccessToken(thisActivity),
-                                                    UserInfoStore.getUserInfo(thisActivity),
+                                                    userInfoStore.getUserInfo(thisActivity),
                                                     true
                                             );
                                         }
@@ -177,6 +170,7 @@ public class LoginActivity extends AppCompatActivity {
         loggedInIntent.putExtra("accessToken", new Gson().toJson(accessToken));
 
         startActivity(loggedInIntent);
+        finish();
     }
 
     private void instantiateRequiredObjectsForLogin(){

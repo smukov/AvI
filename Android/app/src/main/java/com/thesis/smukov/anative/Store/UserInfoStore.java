@@ -3,6 +3,8 @@ package com.thesis.smukov.anative.Store;
 import android.app.Activity;
 import android.content.SharedPreferences;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.thesis.smukov.anative.Models.UserInfo;
 
 
@@ -22,6 +24,12 @@ public class UserInfoStore {
     public static String PREF_USER_INTERESTS = "pref_user_interests";
     public static String PREF_USER_CURRENT_GOALS = "pref_user_current_goals";
 
+    private DatabaseReference firebaseDb;
+
+    public UserInfoStore(){
+        firebaseDb = FirebaseDatabase.getInstance().getReference();
+    }
+
 
     public static void storeUserProfileInfo(Activity activity, com.auth0.core.UserProfile userProfile){
         SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
@@ -34,7 +42,7 @@ public class UserInfoStore {
         editor.commit();
     }
 
-    public static void storeUserInfo(Activity activity, UserInfo userInfo){
+    public void storeUserInfo(Activity activity, UserInfo userInfo){
         SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(PREF_USER_NAME, userInfo.getName());
@@ -48,9 +56,11 @@ public class UserInfoStore {
         editor.putString(PREF_USER_CURRENT_GOALS, userInfo.getCurrentGoals());
 
         editor.commit();
+
+        firebaseDb.child("users").child(userInfo.getId()).setValue(userInfo.toMap());
     }
 
-    public static UserInfo getUserInfo(Activity activity){
+    public UserInfo getUserInfo(Activity activity){
         SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
         UserInfo userInfo = new UserInfo();
 
@@ -66,4 +76,6 @@ public class UserInfoStore {
 
         return userInfo;
     }
+
+
 }
