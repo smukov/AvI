@@ -1,12 +1,17 @@
 package com.thesis.smukov.anative.Models;
 
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
+import com.google.firebase.database.ServerValue;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Smukov on 03-Sep-16.
  */
 @IgnoreExtraProperties
-public class UserInfo {
+public class UserInfo implements IFirebaseObject{
 
     private String name;
     private String email;
@@ -18,6 +23,8 @@ public class UserInfo {
     private String knowledgeableIn;
     private String interests;
     private String currentGoals;
+
+    public String getId() {return authId;}
 
     public String getName() {
         return name;
@@ -89,5 +96,23 @@ public class UserInfo {
 
     public void setCurrentGoals(String currentGoals) {
         this.currentGoals = currentGoals;
+    }
+
+    @Exclude
+    @Override
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("lastModifiedTime", ServerValue.TIMESTAMP);
+        result.put("authId", authId);
+        result.put("name", name);
+        result.put("email", email);
+        result.put("pictureUrl", pictureUrl);
+        result.put("employment", employment);
+        result.put("education", education);
+        result.put("knowledgeableIn", knowledgeableIn);
+        result.put("interests", interests);
+        result.put("currentGoals", currentGoals);
+
+        return result;
     }
 }
