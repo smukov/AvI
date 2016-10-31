@@ -33,8 +33,6 @@ export class ProfilePage {
   }
 
   public edit(){
-    this.firebase.writeSomeData();
-
     if(this.isEditMode){
       //it was in edit mode, so save the changes
       this.userInfo.setUserInfo(UserInfoService.PREF_USER_EMPLOYMENT, this.employment);
@@ -42,6 +40,7 @@ export class ProfilePage {
       this.userInfo.setUserInfo(UserInfoService.PREF_USER_INTERESTS, this.interests);
       this.userInfo.setUserInfo(UserInfoService.PREF_USER_KNOWLEDGEABLE_IN, this.knowledgeable);
       this.userInfo.setUserInfo(UserInfoService.PREF_USER_CURRENT_GOALS, this.currentGoals);
+      this.firebase.storeUserInfo();
     }
     this.isEditMode = !this.isEditMode;
   }
