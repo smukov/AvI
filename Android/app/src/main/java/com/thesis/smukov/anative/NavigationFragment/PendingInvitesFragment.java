@@ -77,14 +77,12 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
         lstContacts = new ArrayList<Contact>();
 
         Contact con = new Contact();
-        con.setFirstName("Gregory");
-        con.setLastName("House");
+        con.setName("Gregory House");
         con.setEmployment("Head of Diagnostic @ PPT Hospital");
         con.setEducation("Attended Hopkins University 1979-1984");
         lstContacts.add(con);
         Contact con2 = new Contact();
-        con2.setFirstName("Hugh");
-        con2.setLastName("Laurie");
+        con2.setName("Hugh Laurie");
         con2.setEmployment("Actor, Writer, Director, Author, etc.");
         con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
         lstContacts.add(con2);
@@ -132,7 +130,7 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
                     }
                     Toast.makeText(
                             getActivity(),
-                            action + " invite from " + adapter.getItem(position).getFullName(),
+                            action + " invite from " + adapter.getItem(position).getName(),
                             Toast.LENGTH_SHORT
                     ).show();
                     adapter.remove(position);

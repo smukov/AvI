@@ -43,7 +43,7 @@ public class ContactFragment extends BaseNavigationFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setTitle(contact.getFullName());
+        setTitle(contact.getName());
         prepareFloatingActionButton();
 
         profileName = (TextView) view.findViewById(R.id.profile_name);
@@ -78,7 +78,7 @@ public class ContactFragment extends BaseNavigationFragment {
     }
 
     private void prepareUI(Contact contact){
-        profileName.setText(contact.getFullName());
+        profileName.setText(contact.getName());
         employment.setText(contact.getEmployment());
         education.setText(contact.getEducation());
         interests.setText(contact.getInterests());

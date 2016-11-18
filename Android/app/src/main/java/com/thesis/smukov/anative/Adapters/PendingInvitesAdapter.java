@@ -62,7 +62,7 @@ public class PendingInvitesAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.txtFullName.setText(contact.getFullName());
+        holder.txtFullName.setText(contact.getName());
         holder.txtEmployment.setText(contact.getEmployment());
         holder.txtEducation.setText(contact.getEducation());
 

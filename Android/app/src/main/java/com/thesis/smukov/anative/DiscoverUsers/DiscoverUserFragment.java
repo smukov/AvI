@@ -55,7 +55,7 @@ public class DiscoverUserFragment extends Fragment{
     }
 
     private void prepareUI(Contact contact){
-        profileName.setText(contact.getFullName());
+        profileName.setText(contact.getName());
         employment.setText(contact.getEmployment());
         education.setText(contact.getEducation());
         interests.setText(contact.getInterests());
