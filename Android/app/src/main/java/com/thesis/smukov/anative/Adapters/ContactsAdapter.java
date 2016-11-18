@@ -78,6 +78,10 @@ public class ContactsAdapter extends BaseAdapter {
         lstContacts.addAll(contacts);
     }
 
+    public void clear(){
+        lstContacts.clear();
+    }
+
     private ViewHolder createViewHolder(View v) {
         ViewHolder holder = new ViewHolder();
         holder.txtFullName = (TextView) v.findViewById(R.id.profile_name);

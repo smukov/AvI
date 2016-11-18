@@ -77,4 +77,8 @@ public class DiscoverUsersPagerAdapter  extends FragmentStatePagerAdapter {
         }
     }
 
+    public void clear(){
+        lstContacts.clear();
+    }
+
 }

@@ -4,10 +4,18 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.DiscoverUsers.DiscoverUsersPagerAdapter;
+import com.thesis.smukov.anative.Models.Connections;
 import com.thesis.smukov.anative.Models.Contact;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 
 import java.util.ArrayList;
 
@@ -15,7 +23,9 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
 
     private ViewPager pager;
     private DiscoverUsersPagerAdapter pagerAdapter;
-    private ArrayList<Contact> lstContacts;
+
+    private DatabaseReference firebaseDb =
+            FirebaseDatabase.getInstance().getReference();
 
     FloatingActionButton fabAccept;
     FloatingActionButton fabDismiss;
@@ -97,47 +107,94 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
             }
         });
 
-        loadContacts();
+        setFirebaseListeners(UserInfoStore.getUserInfo(this).getId());
     }
 
+    private void setFirebaseListeners(String userId){
+        firebaseDb.child("connections").child(userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Connections connections =
+                        dataSnapshot.getValue(Connections.class);
 
-    public void addContact(Contact contact) {
+                if(connections == null){
+                    Log.i("smuk", "No connections found in Firebase");
+                    getPotentialConnections(new Connections());
+                }else{
+                    Log.i("smuk", "Retrieved connections from Firebase");
+                    Log.i("smuk", "Number of connections: " + connections.size());
+
+                    getPotentialConnections(connections);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getPotentialConnections(final Connections connections){
+        //now that I have connections, get the users that aren't connected
+        firebaseDb.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Contact> contacts = new ArrayList<Contact>();
+
+                Log.i("smuk", "Retrieved users from Firebase");
+
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    if (connections.containsKey(child.getKey()) == false) {
+                        contacts.add(child.getValue(Contact.class));
+                        Log.i("smuk", "Found new contact");
+                    }
+                }
+                loadContacts(contacts);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void addContact(Contact contact) {
         pagerAdapter.add(contact);
         pagerAdapter.notifyDataSetChanged();
     }
 
-    public void removeContact(int position) {
+    private void removeContact(int position) {
         pagerAdapter.setItemToDelete(position);
         //triggers the OnPageChangeListener above that will handle the item deletion
         pager.setCurrentItem(position+1);
     }
 
-    private void loadContacts(){
+    private void loadContacts(ArrayList<Contact> lstContacts){
+        if(pagerAdapter == null){
+            pagerAdapter = new DiscoverUsersPagerAdapter(getSupportFragmentManager(), lstContacts);
+            pager.setAdapter(pagerAdapter);
+        }else {
+            pagerAdapter.clear();
+            pagerAdapter.add(lstContacts);
+            pagerAdapter.notifyDataSetChanged();
+        }
+    }
 
-        lstContacts = new ArrayList<Contact>();
+    private void setConnection(String userId,
+                              String newConnectionId,
+                              boolean isConnected){
+        firebaseDb
+                .child("connections")
+                .child(userId)
+                .child(newConnectionId)
+                .setValue(isConnected);
 
-        Contact con = new Contact();
-        con.setName("#1 Gregory House");
-        con.setEmployment("Head of Diagnostic @ PPT Hospital");
-        con.setEducation("Attended Hopkins University 1979-1984");
-        lstContacts.add(con);
-        Contact con2 = new Contact();
-        con2.setName("#2 Hugh Laurie");
-        con2.setEmployment("Actor, Writer, Director, Author, etc.");
-        con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
-        lstContacts.add(con2);
-        Contact con3 = new Contact();
-        con3.setName("#3 Gregory House");
-        con3.setEmployment("Head of Diagnostic @ PPT Hospital");
-        con3.setEducation("Attended Hopkins University 1979-1984");
-        lstContacts.add(con3);
-        Contact con4 = new Contact();
-        con4.setName("#4 Hugh Laurie");
-        con4.setEmployment("Actor, Writer, Director, Author, etc.");
-        con4.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
-        lstContacts.add(con4);
-
-        pagerAdapter = new DiscoverUsersPagerAdapter(getSupportFragmentManager(), lstContacts);
-        pager.setAdapter(pagerAdapter);
+        firebaseDb
+                .child("connections")
+                .child(newConnectionId)
+                .child(userId)
+                .setValue(isConnected);
     }
 }

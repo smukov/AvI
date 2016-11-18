@@ -1,19 +1,26 @@
 package com.thesis.smukov.anative.NavigationFragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.Adapters.ContactsAdapter;
+import com.thesis.smukov.anative.Models.Connections;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 
 import java.util.ArrayList;
 
@@ -23,8 +30,10 @@ import java.util.ArrayList;
 public class ContactsFragment extends BaseNavigationListFragment {
 
     private ContactsAdapter adapter;
-    private ArrayList<Contact> lstContacts;
     private ListView listView;
+
+    private DatabaseReference firebaseDb =
+            FirebaseDatabase.getInstance().getReference();
 
     @Nullable
     @Override
@@ -40,7 +49,7 @@ public class ContactsFragment extends BaseNavigationListFragment {
         setTitle(getResources().getString(R.string.titleMyContacts));
         prepareFloatingActionButton();
 
-        loadContacts();
+        setFirebaseListeners(UserInfoStore.getUserInfo(getActivity()).getId());
 
         listView = getListView();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,6 +59,52 @@ public class ContactsFragment extends BaseNavigationListFragment {
                 contactFragment.setContact(adapter.getItem(position));
 
                 ((NavigationActivity)getActivity()).openNewFragment(contactFragment);
+            }
+        });
+    }
+
+    private void setFirebaseListeners(String userId){
+        firebaseDb.child("connections").child(userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                final Connections connections =
+                        dataSnapshot.getValue(Connections.class);
+
+                if(connections == null){
+                    Log.i("smuk", "No connections found in Firebase");
+                    loadContacts(new ArrayList<Contact>());
+                }else{
+                    Log.i("smuk", "Retrieved connections from Firebase");
+                    Log.i("smuk", "Number of connections: " + connections.size());
+
+                    //now that I have connections, get the contacts
+                    firebaseDb.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            ArrayList<Contact> contacts = new ArrayList<Contact>();
+
+                            Log.i("smuk", "Retrieved users from Firebase");
+
+                            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                                if (connections.containsKey(child.getKey())) {
+                                    contacts.add(child.getValue(Contact.class));
+                                    Log.i("smuk", "Found existing contact");
+                                }
+                            }
+                            loadContacts(contacts);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }
@@ -67,27 +122,15 @@ public class ContactsFragment extends BaseNavigationListFragment {
         adapter.notifyDataSetChanged();
     }
 
-    private void loadContacts(){
-
-        lstContacts = new ArrayList<Contact>();
-
-        Contact con = new Contact();
-        con.setName("Gregory House");
-        con.setEmployment("Head of Diagnostic @ PPT Hospital");
-        con.setEducation("Attended Hopkins University 1979-1984");
-        lstContacts.add(con);
-        Contact con2 = new Contact();
-        con2.setName("Hugh Laurie");
-        con2.setEmployment("Actor, Writer, Director, Author, etc.");
-        con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
-        lstContacts.add(con2);
-
-        adapter = new ContactsAdapter(getActivity(), new ArrayList<Contact>());
-        setListAdapter(adapter);
-
-        for(int i=0; i<lstContacts.size(); i++) {
-            Contact contact = lstContacts.get(i);
-            displayContact(contact);
+    private void loadContacts(ArrayList<Contact> lstContacts){
+        if(adapter == null){
+            adapter = new ContactsAdapter(getActivity(), lstContacts);
+            setListAdapter(adapter);
+        }
+        else{
+            adapter.clear();
+            adapter.add(lstContacts);
+            adapter.notifyDataSetChanged();
         }
     }
 }
