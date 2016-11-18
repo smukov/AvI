@@ -60,7 +60,7 @@ public class UserInfoStore {
         firebaseDb.child("users").child(userInfo.getId()).setValue(userInfo.toMap());
     }
 
-    public UserInfo getUserInfo(Activity activity){
+    public static UserInfo getUserInfo(Activity activity){
         SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
         UserInfo userInfo = new UserInfo();
 
@@ -76,6 +76,5 @@ public class UserInfoStore {
 
         return userInfo;
     }
-
 
 }

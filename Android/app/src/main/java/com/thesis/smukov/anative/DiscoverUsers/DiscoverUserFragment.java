@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.R;
+import com.thesis.smukov.anative.Utils.DownloadImageTask;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Smukov on 17-Jul-16.
@@ -19,6 +22,7 @@ public class DiscoverUserFragment extends Fragment{
 
     private Contact contact;
 
+    CircleImageView profileImage;
     TextView profileName;
     TextView employment;
     TextView education;
@@ -44,6 +48,7 @@ public class DiscoverUserFragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        profileImage = (CircleImageView) view.findViewById(R.id.profile_image);
         profileName = (TextView) view.findViewById(R.id.profile_name);
         employment = (TextView) view.findViewById(R.id.txtEmployment);
         education = (TextView) view.findViewById(R.id.txtEducation);
@@ -55,7 +60,11 @@ public class DiscoverUserFragment extends Fragment{
     }
 
     private void prepareUI(Contact contact){
-        profileName.setText(contact.getFullName());
+        if(contact.getPictureUrl() != null && contact.getPictureUrl().isEmpty() == false){
+            new DownloadImageTask(profileImage)
+                    .execute(contact.getPictureUrl());
+        }
+        profileName.setText(contact.getName());
         employment.setText(contact.getEmployment());
         education.setText(contact.getEducation());
         interests.setText(contact.getInterests());

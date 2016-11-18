@@ -4,21 +4,34 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.DiscoverUsers.DiscoverUsersPagerAdapter;
 import com.thesis.smukov.anative.Models.Contact;
+import com.thesis.smukov.anative.Store.ConnectionsStore;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DiscoverUsersSliderActivity extends AppCompatActivity {
 
     private ViewPager pager;
     private DiscoverUsersPagerAdapter pagerAdapter;
-    private ArrayList<Contact> lstContacts;
+
+    private DatabaseReference firebaseDb =
+            FirebaseDatabase.getInstance().getReference();
 
     FloatingActionButton fabAccept;
     FloatingActionButton fabDismiss;
+
+    private String userId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,68 +93,101 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         fabAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
-                    removeContact(pager.getCurrentItem());
-                    //TODO: update db
-                }
+            if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
+                int currentItem = pager.getCurrentItem();
+                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem), Contact.CONNECION_PENDING);
+                removeContact(currentItem);
+            }
             }
         });
         fabDismiss = (FloatingActionButton) findViewById(R.id.fab_dismiss);
         fabDismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
-                    removeContact(pager.getCurrentItem());
-                    //TODO: update db
-                }
+            if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
+                int currentItem = pager.getCurrentItem();
+                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem), Contact.CONNECION_DECLINED);
+                removeContact(currentItem);
+            }
             }
         });
 
-        loadContacts();
+        userId = UserInfoStore.getUserInfo(this).getId();
+        setFirebaseListeners(userId);
     }
 
+    private void setFirebaseListeners(String userId){
+        firebaseDb.child("connections").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                HashMap<String, String> connections =
+                    (HashMap<String, String>) dataSnapshot.getValue();
 
-    public void addContact(Contact contact) {
+                if(connections == null){
+                    Log.i("smuk", "No connections found in Firebase");
+                    getPotentialConnections(new HashMap<String, String>());
+                }else{
+                    Log.i("smuk", "Retrieved connections from Firebase");
+                    Log.i("smuk", "Number of connections: " + connections.size());
+
+                    getPotentialConnections(connections);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getPotentialConnections(final HashMap<String, String> connections){
+        //now that I have connections, get the users that aren't connected
+        firebaseDb.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Contact> contacts = new ArrayList<Contact>();
+
+                Log.i("smuk", "Retrieved users from Firebase");
+
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    if (connections.containsKey(child.getKey()) == false) {
+                        contacts.add(child.getValue(Contact.class));
+                        Log.i("smuk", "Found new contact");
+                    }
+                }
+                loadContacts(contacts);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void addContact(Contact contact) {
         pagerAdapter.add(contact);
         pagerAdapter.notifyDataSetChanged();
     }
 
-    public void removeContact(int position) {
+    private void removeContact(int position) {
         pagerAdapter.setItemToDelete(position);
         //triggers the OnPageChangeListener above that will handle the item deletion
         pager.setCurrentItem(position+1);
     }
 
-    private void loadContacts(){
-
-        lstContacts = new ArrayList<Contact>();
-
-        Contact con = new Contact();
-        con.setFirstName("#1 Gregory");
-        con.setLastName("House");
-        con.setEmployment("Head of Diagnostic @ PPT Hospital");
-        con.setEducation("Attended Hopkins University 1979-1984");
-        lstContacts.add(con);
-        Contact con2 = new Contact();
-        con2.setFirstName("#2 Hugh");
-        con2.setLastName("Laurie");
-        con2.setEmployment("Actor, Writer, Director, Author, etc.");
-        con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
-        lstContacts.add(con2);
-        Contact con3 = new Contact();
-        con3.setFirstName("#3 Gregory");
-        con3.setLastName("House");
-        con3.setEmployment("Head of Diagnostic @ PPT Hospital");
-        con3.setEducation("Attended Hopkins University 1979-1984");
-        lstContacts.add(con3);
-        Contact con4 = new Contact();
-        con4.setFirstName("#4 Hugh");
-        con4.setLastName("Laurie");
-        con4.setEmployment("Actor, Writer, Director, Author, etc.");
-        con4.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
-        lstContacts.add(con4);
-
-        pagerAdapter = new DiscoverUsersPagerAdapter(getSupportFragmentManager(), lstContacts);
-        pager.setAdapter(pagerAdapter);
+    private void loadContacts(ArrayList<Contact> lstContacts){
+        if(pagerAdapter == null){
+            pagerAdapter = new DiscoverUsersPagerAdapter(getSupportFragmentManager(), lstContacts);
+            pager.setAdapter(pagerAdapter);
+        }else {
+            pagerAdapter.clear();
+            pagerAdapter.add(lstContacts);
+            pager.setCurrentItem(0);
+            pagerAdapter.notifyDataSetChanged();
+        }
     }
+
+
 }

@@ -13,16 +13,16 @@ import java.util.Map;
 @IgnoreExtraProperties
 public class UserInfo implements IFirebaseObject{
 
-    private String name;
-    private String email;
-    private String pictureUrl;
-    private String authId;
+    protected String authId;
+    protected String name;
+    protected String email;
+    protected String pictureUrl;
 
-    private String employment;
-    private String education;
-    private String knowledgeableIn;
-    private String interests;
-    private String currentGoals;
+    protected String employment;
+    protected String education;
+    protected String knowledgeableIn;
+    protected String interests;
+    protected String currentGoals;
 
     public String getId() {return authId;}
 

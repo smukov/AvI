@@ -59,6 +59,10 @@ public class DiscoverUsersPagerAdapter  extends FragmentStatePagerAdapter {
         this.itemToDelete = position;
     }
 
+    public String getItemId(int position){
+        return lstContacts.get(position).getId();
+    }
+
     public int getItemToDelete(){
         return this.itemToDelete;
     }
@@ -75,6 +79,10 @@ public class DiscoverUsersPagerAdapter  extends FragmentStatePagerAdapter {
         if(lstContacts.size() != 0 && position < lstContacts.size()) {
             lstContacts.remove(position);
         }
+    }
+
+    public void clear(){
+        lstContacts.clear();
     }
 
 }
