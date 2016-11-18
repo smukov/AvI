@@ -67,8 +67,8 @@ public class ContactsFragment extends BaseNavigationListFragment {
         firebaseDb.child("connections").child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                final HashMap<String, Boolean> connections =
-                        (HashMap<String, Boolean>) dataSnapshot.getValue();
+                final HashMap<String, String> connections =
+                        (HashMap<String, String>) dataSnapshot.getValue();
 
                 if(connections == null){
                     Log.i("smuk", "No connections found in Firebase");
@@ -87,7 +87,7 @@ public class ContactsFragment extends BaseNavigationListFragment {
 
                             for (DataSnapshot child : dataSnapshot.getChildren()) {
                                 if (connections.containsKey(child.getKey())
-                                        && connections.get(child.getKey())) {
+                                        && connections.get(child.getKey()).equals(Contact.CONNECION_ACCEPTED)) {
                                     contacts.add(child.getValue(Contact.class));
                                     Log.i("smuk", "Found existing contact");
                                 }

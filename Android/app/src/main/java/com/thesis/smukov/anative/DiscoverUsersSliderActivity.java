@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.DiscoverUsers.DiscoverUsersPagerAdapter;
 import com.thesis.smukov.anative.Models.Contact;
+import com.thesis.smukov.anative.Store.ConnectionsStore;
 import com.thesis.smukov.anative.Store.UserInfoStore;
 
 import java.util.ArrayList;
@@ -94,7 +95,7 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
             public void onClick(View view) {
             if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
                 int currentItem = pager.getCurrentItem();
-                setConnection(userId, pagerAdapter.getItemId(currentItem), true);
+                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem), Contact.CONNECION_PENDING);
                 removeContact(currentItem);
             }
             }
@@ -105,7 +106,7 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
             public void onClick(View view) {
             if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
                 int currentItem = pager.getCurrentItem();
-                setConnection(userId, pagerAdapter.getItemId(currentItem), false);
+                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem), Contact.CONNECION_DECLINED);
                 removeContact(currentItem);
             }
             }
@@ -119,12 +120,12 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         firebaseDb.child("connections").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                HashMap<String, Boolean> connections =
-                    (HashMap<String, Boolean>) dataSnapshot.getValue();
+                HashMap<String, String> connections =
+                    (HashMap<String, String>) dataSnapshot.getValue();
 
                 if(connections == null){
                     Log.i("smuk", "No connections found in Firebase");
-                    getPotentialConnections(new HashMap<String, Boolean>());
+                    getPotentialConnections(new HashMap<String, String>());
                 }else{
                     Log.i("smuk", "Retrieved connections from Firebase");
                     Log.i("smuk", "Number of connections: " + connections.size());
@@ -140,7 +141,7 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         });
     }
 
-    private void getPotentialConnections(final HashMap<String, Boolean> connections){
+    private void getPotentialConnections(final HashMap<String, String> connections){
         //now that I have connections, get the users that aren't connected
         firebaseDb.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -188,23 +189,5 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         }
     }
 
-    private void setConnection(String userId,
-                              String newConnectionId,
-                              boolean isConnected){
-        Log.i("smuk", "userId: " + userId);
-        Log.i("smuk", "newConnectionId: " + newConnectionId);
 
-
-        firebaseDb
-                .child("connections")
-                .child(userId)
-                .child(newConnectionId)
-                .setValue(isConnected);
-
-        firebaseDb
-                .child("connections")
-                .child(newConnectionId)
-                .child(userId)
-                .setValue(isConnected);
-    }
 }

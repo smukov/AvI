@@ -10,8 +10,11 @@ import android.widget.TextView;
 
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.R;
+import com.thesis.smukov.anative.Utils.DownloadImageTask;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Smukov on 09-Jul-16.
@@ -62,6 +65,10 @@ public class PendingInvitesAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+        if(contact.getPictureUrl() != null && contact.getPictureUrl().isEmpty() == false){
+            new DownloadImageTask(holder.profileImage)
+                    .execute(contact.getPictureUrl());
+        }
         holder.txtFullName.setText(contact.getName());
         holder.txtEmployment.setText(contact.getEmployment());
         holder.txtEducation.setText(contact.getEducation());
@@ -77,12 +84,17 @@ public class PendingInvitesAdapter extends BaseAdapter {
         lstContacts.addAll(contacts);
     }
 
+    public void clear(){
+        lstContacts.clear();
+    }
+
     public void remove(int position){
         lstContacts.remove(position);
     }
 
     private ViewHolder createViewHolder(View v) {
         ViewHolder holder = new ViewHolder();
+        holder.profileImage = (CircleImageView) v.findViewById(R.id.profile_image);
         holder.txtFullName = (TextView) v.findViewById(R.id.profile_name);
         holder.txtEmployment = (TextView) v.findViewById(R.id.txtEmployment);
         holder.txtEducation = (TextView) v.findViewById(R.id.txtEducation);
@@ -90,6 +102,7 @@ public class PendingInvitesAdapter extends BaseAdapter {
     }
 
     private static class ViewHolder {
+        public CircleImageView profileImage;
         public TextView txtFullName;
         public TextView txtEmployment;
         public TextView txtEducation;

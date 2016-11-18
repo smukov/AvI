@@ -12,6 +12,13 @@ import java.util.Map;
 public class Contact extends UserInfo{
 
     @Exclude
+    public static final String CONNECION_ACCEPTED = "Accepted";
+    @Exclude
+    public static final String CONNECION_DECLINED = "Declined";
+    @Exclude
+    public static final String CONNECION_PENDING = "Pending";
+
+    @Exclude
     @Override
     public Map<String, Object> toMap() {
         Map<String, Object> map = super.toMap();

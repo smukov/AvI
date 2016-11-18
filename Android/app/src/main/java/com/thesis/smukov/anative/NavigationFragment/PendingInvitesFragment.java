@@ -3,6 +3,7 @@ package com.thesis.smukov.anative.NavigationFragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +11,22 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.Adapters.PendingInvitesAdapter;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
+import com.thesis.smukov.anative.Store.ConnectionsStore;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 import com.wdullaer.swipeactionadapter.SwipeActionAdapter;
 import com.wdullaer.swipeactionadapter.SwipeDirection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static com.wdullaer.swipeactionadapter.SwipeDirection.*;
 
@@ -28,8 +37,11 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
 
     private PendingInvitesAdapter adapter;
     private SwipeActionAdapter swipeAdapter;
-    private ArrayList<Contact> lstContacts;
     private ListView listView;
+
+    private String userId = "";
+    private DatabaseReference firebaseDb =
+            FirebaseDatabase.getInstance().getReference();
 
     @Nullable
     @Override
@@ -45,7 +57,8 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
         setTitle(getResources().getString(R.string.titlePendingInvites));
         prepareFloatingActionButton();
 
-        loadContacts();
+        userId = UserInfoStore.getUserInfo(getActivity()).getId();
+        setFirebaseListeners(userId);
 
         listView = getListView();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,82 +80,117 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
         fab.hide();
     }
 
+    private void setFirebaseListeners(String userId){
+        firebaseDb.child("connections").child(userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                final HashMap<String, String> connections =
+                        (HashMap<String, String>) dataSnapshot.getValue();
+
+                if(connections == null){
+                    Log.i("smuk", "No connections found in Firebase");
+                    loadContacts(new ArrayList<Contact>());
+                }else{
+                    Log.i("smuk", "Retrieved connections from Firebase");
+                    Log.i("smuk", "Number of connections: " + connections.size());
+
+                    //now that I have connections, get the contacts
+                    firebaseDb.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            ArrayList<Contact> contacts = new ArrayList<Contact>();
+
+                            Log.i("smuk", "Retrieved users from Firebase");
+
+                            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                                if (connections.containsKey(child.getKey())
+                                        && connections.get(child.getKey()).equals(Contact.CONNECION_PENDING)) {
+                                    contacts.add(child.getValue(Contact.class));
+                                    Log.i("smuk", "Found existing contact");
+                                }
+                            }
+                            loadContacts(contacts);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     public void displayContact(Contact contact) {
         adapter.add(contact);
         adapter.notifyDataSetChanged();
     }
 
-    private void loadContacts(){
+    private void loadContacts(ArrayList<Contact> lstContacts){
 
-        lstContacts = new ArrayList<Contact>();
+        if(adapter == null) {
+            adapter = new PendingInvitesAdapter(getActivity(), lstContacts);
+            swipeAdapter = new SwipeActionAdapter(adapter);
+            swipeAdapter.setListView(getListView());
+            setListAdapter(swipeAdapter);
 
-        Contact con = new Contact();
-        con.setName("Gregory House");
-        con.setEmployment("Head of Diagnostic @ PPT Hospital");
-        con.setEducation("Attended Hopkins University 1979-1984");
-        lstContacts.add(con);
-        Contact con2 = new Contact();
-        con2.setName("Hugh Laurie");
-        con2.setEmployment("Actor, Writer, Director, Author, etc.");
-        con2.setEducation("Attended Selwyn College, Cambridge 1978 - 1984");
-        lstContacts.add(con2);
+            // Set backgrounds for the swipe directions
+            swipeAdapter.addBackground(DIRECTION_NORMAL_LEFT,R.layout.row_swipe_left_layout)
+                    .addBackground(DIRECTION_NORMAL_RIGHT,R.layout.row_swipe_right_layout)
+                    .setFixedBackgrounds(true);
 
-        adapter = new PendingInvitesAdapter(getActivity(), new ArrayList<Contact>());
-        swipeAdapter = new SwipeActionAdapter(adapter);
-        swipeAdapter.setListView(getListView());
-        setListAdapter(swipeAdapter);
-
-        // Set backgrounds for the swipe directions
-        swipeAdapter.addBackground(DIRECTION_NORMAL_LEFT,R.layout.row_swipe_left_layout)
-                .addBackground(DIRECTION_NORMAL_RIGHT,R.layout.row_swipe_right_layout)
-                .setFixedBackgrounds(true);
-
-        swipeAdapter.setSwipeActionListener(new SwipeActionAdapter.SwipeActionListener(){
-            @Override
-            public boolean hasActions(int position, SwipeDirection direction){
-                if(direction.isLeft()) return true; // Change this to false to disable left swipes
-                if(direction.isRight()) return true;
-                return false;
-            }
-
-            @Override
-            public boolean shouldDismiss(int position, SwipeDirection direction){
-                // Always dismiss items
-                return true;//direction == DIRECTION_NORMAL_LEFT;
-            }
-
-            @Override
-            public void onSwipe(int[] positionList, SwipeDirection[] directionList){
-                for(int i=0;i<positionList.length;i++) {
-                    SwipeDirection direction = directionList[i];
-                    int position = positionList[i];
-                    String action = "";
-
-                    switch (direction) {
-                        case DIRECTION_FAR_LEFT:
-                        case DIRECTION_NORMAL_LEFT:
-                            action = "Dismissed";
-                            break;
-                        case DIRECTION_FAR_RIGHT:
-                        case DIRECTION_NORMAL_RIGHT:
-                            action = "Accepted";
-                            break;
-                    }
-                    Toast.makeText(
-                            getActivity(),
-                            action + " invite from " + adapter.getItem(position).getName(),
-                            Toast.LENGTH_SHORT
-                    ).show();
-                    adapter.remove(position);
-                    adapter.notifyDataSetChanged();
-                    swipeAdapter.notifyDataSetChanged();
+            swipeAdapter.setSwipeActionListener(new SwipeActionAdapter.SwipeActionListener(){
+                @Override
+                public boolean hasActions(int position, SwipeDirection direction){
+                    if(direction.isLeft()) return true; // Change this to false to disable left swipes
+                    if(direction.isRight()) return true;
+                    return false;
                 }
-            }
-        });
 
-        for(int i=0; i<lstContacts.size(); i++) {
-            Contact contact = lstContacts.get(i);
-            displayContact(contact);
+                @Override
+                public boolean shouldDismiss(int position, SwipeDirection direction){
+                    // Always dismiss items
+                    return true;//direction == DIRECTION_NORMAL_LEFT;
+                }
+
+                @Override
+                public void onSwipe(int[] positionList, SwipeDirection[] directionList){
+                    for(int i=0;i<positionList.length;i++) {
+                        SwipeDirection direction = directionList[i];
+                        int position = positionList[i];
+                        String action = "";
+
+                        switch (direction) {
+                            case DIRECTION_FAR_LEFT:
+                            case DIRECTION_NORMAL_LEFT:
+                                action = Contact.CONNECION_DECLINED;
+
+                                break;
+                            case DIRECTION_FAR_RIGHT:
+                            case DIRECTION_NORMAL_RIGHT:
+                                action = Contact.CONNECION_ACCEPTED;
+                                break;
+                        }
+
+                        ConnectionsStore.setConnection(firebaseDb, userId,
+                                adapter.getItem(position).getId(), action);
+
+                        adapter.remove(position);
+                        adapter.notifyDataSetChanged();
+                        swipeAdapter.notifyDataSetChanged();
+                    }
+                }
+            });
+        }else{
+            adapter.clear();
+            adapter.add(lstContacts);
+            adapter.notifyDataSetChanged();
         }
     }
 }
