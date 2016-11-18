@@ -16,13 +16,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.Adapters.ContactsAdapter;
-import com.thesis.smukov.anative.Models.Connections;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
 import com.thesis.smukov.anative.Store.UserInfoStore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by smuko on 05-Jul-16.
@@ -67,8 +67,8 @@ public class ContactsFragment extends BaseNavigationListFragment {
         firebaseDb.child("connections").child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                final Connections connections =
-                        dataSnapshot.getValue(Connections.class);
+                final HashMap<String, Boolean> connections =
+                        (HashMap<String, Boolean>) dataSnapshot.getValue();
 
                 if(connections == null){
                     Log.i("smuk", "No connections found in Firebase");
@@ -86,7 +86,8 @@ public class ContactsFragment extends BaseNavigationListFragment {
                             Log.i("smuk", "Retrieved users from Firebase");
 
                             for (DataSnapshot child : dataSnapshot.getChildren()) {
-                                if (connections.containsKey(child.getKey())) {
+                                if (connections.containsKey(child.getKey())
+                                        && connections.get(child.getKey())) {
                                     contacts.add(child.getValue(Contact.class));
                                     Log.i("smuk", "Found existing contact");
                                 }

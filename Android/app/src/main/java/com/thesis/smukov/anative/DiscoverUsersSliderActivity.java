@@ -13,11 +13,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.thesis.smukov.anative.DiscoverUsers.DiscoverUsersPagerAdapter;
-import com.thesis.smukov.anative.Models.Connections;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.Store.UserInfoStore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DiscoverUsersSliderActivity extends AppCompatActivity {
 
@@ -29,6 +29,8 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
 
     FloatingActionButton fabAccept;
     FloatingActionButton fabDismiss;
+
+    private String userId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,36 +92,39 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         fabAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
-                    removeContact(pager.getCurrentItem());
-                    //TODO: update db
-                }
+            if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
+                int currentItem = pager.getCurrentItem();
+                setConnection(userId, pagerAdapter.getItemId(currentItem), true);
+                removeContact(currentItem);
+            }
             }
         });
         fabDismiss = (FloatingActionButton) findViewById(R.id.fab_dismiss);
         fabDismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
-                    removeContact(pager.getCurrentItem());
-                    //TODO: update db
-                }
+            if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
+                int currentItem = pager.getCurrentItem();
+                setConnection(userId, pagerAdapter.getItemId(currentItem), false);
+                removeContact(currentItem);
+            }
             }
         });
 
-        setFirebaseListeners(UserInfoStore.getUserInfo(this).getId());
+        userId = UserInfoStore.getUserInfo(this).getId();
+        setFirebaseListeners(userId);
     }
 
     private void setFirebaseListeners(String userId){
-        firebaseDb.child("connections").child(userId).addValueEventListener(new ValueEventListener() {
+        firebaseDb.child("connections").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Connections connections =
-                        dataSnapshot.getValue(Connections.class);
+                HashMap<String, Boolean> connections =
+                    (HashMap<String, Boolean>) dataSnapshot.getValue();
 
                 if(connections == null){
                     Log.i("smuk", "No connections found in Firebase");
-                    getPotentialConnections(new Connections());
+                    getPotentialConnections(new HashMap<String, Boolean>());
                 }else{
                     Log.i("smuk", "Retrieved connections from Firebase");
                     Log.i("smuk", "Number of connections: " + connections.size());
@@ -135,7 +140,7 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         });
     }
 
-    private void getPotentialConnections(final Connections connections){
+    private void getPotentialConnections(final HashMap<String, Boolean> connections){
         //now that I have connections, get the users that aren't connected
         firebaseDb.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -178,6 +183,7 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
         }else {
             pagerAdapter.clear();
             pagerAdapter.add(lstContacts);
+            pager.setCurrentItem(0);
             pagerAdapter.notifyDataSetChanged();
         }
     }
@@ -185,6 +191,10 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
     private void setConnection(String userId,
                               String newConnectionId,
                               boolean isConnected){
+        Log.i("smuk", "userId: " + userId);
+        Log.i("smuk", "newConnectionId: " + newConnectionId);
+
+
         firebaseDb
                 .child("connections")
                 .child(userId)
