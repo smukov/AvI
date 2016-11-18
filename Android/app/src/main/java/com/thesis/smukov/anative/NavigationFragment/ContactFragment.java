@@ -15,8 +15,11 @@ import com.thesis.smukov.anative.ChatActivity;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.NavigationActivity;
 import com.thesis.smukov.anative.R;
+import com.thesis.smukov.anative.Utils.DownloadImageTask;
 
 import org.w3c.dom.Text;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by smukov on 18-Jun-16.
@@ -25,6 +28,7 @@ public class ContactFragment extends BaseNavigationFragment {
 
     Contact contact;
 
+    CircleImageView profileImage;
     TextView profileName;
     TextView employment;
     TextView education;
@@ -46,6 +50,7 @@ public class ContactFragment extends BaseNavigationFragment {
         setTitle(contact.getName());
         prepareFloatingActionButton();
 
+        profileImage = (CircleImageView) view.findViewById(R.id.profile_image);
         profileName = (TextView) view.findViewById(R.id.profile_name);
         employment = (TextView) view.findViewById(R.id.txtEmployment);
         education = (TextView) view.findViewById(R.id.txtEducation);
@@ -78,6 +83,10 @@ public class ContactFragment extends BaseNavigationFragment {
     }
 
     private void prepareUI(Contact contact){
+        if(contact.getPictureUrl() != null && contact.getPictureUrl().isEmpty() == false){
+            new DownloadImageTask(profileImage)
+                    .execute(contact.getPictureUrl());
+        }
         profileName.setText(contact.getName());
         employment.setText(contact.getEmployment());
         education.setText(contact.getEducation());
