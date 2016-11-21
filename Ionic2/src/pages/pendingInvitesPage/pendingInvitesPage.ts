@@ -1,18 +1,32 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+
+import {ContactModel} from '../../models/contactModel';
 import {ContactsService} from '../../services/contacts.service';
+import {UserInfoService} from '../../services/userInfo.service';
+import {FirebaseService} from '../../services/firebase.service';
 import {ContactPage} from '../contactPage/contactPage';
 
+declare var firebase: any;
 
 @Component({
   selector: 'page-pending-invites',
   templateUrl: 'pendingInvitesPage.html'
 })
 export class PendingInvitesPage {
-  public contacts:any[];
 
-  constructor(public nav: NavController, public contactsService:ContactsService) {
-    this.contacts = this.contactsService.getContacts();
+  public contacts:Array<ContactModel>;
+
+  private userId:string;
+
+  constructor(public nav: NavController,
+    public contactsService: ContactsService,
+    public userInfoService: UserInfoService,
+    public firebaseService: FirebaseService) {
+
+    this.contacts = new Array<ContactModel>();//this.contactsService.getContacts();
+    this.userId = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID);
+    this._setFirebaseListeners(this.userId);
   }
 
   public openInvite(cnt){
@@ -20,17 +34,63 @@ export class PendingInvitesPage {
   }
 
   public dismissInvite(cnt){
+    this.firebaseService.setUserConnection(
+      this.userId,
+      cnt.id,
+      ContactModel.CONNECTION_DECLINED
+    );
     this._removeContact(cnt);
   }
 
   public acceptInvite(cnt){
+    this.firebaseService.setUserConnection(
+      this.userId,
+      cnt.id,
+      ContactModel.CONNECTION_ACCEPTED
+    );
     this._removeContact(cnt);
   }
 
-  public _removeContact(cnt){
+  private _removeContact(cnt){
     let index = this.contacts.indexOf(cnt);
     if (index > -1) {
       this.contacts.splice(index, 1);
     }
+  }
+
+  private _setFirebaseListeners(userId : String){
+    let thisRef = this;
+    firebase.database().ref('/connections/' + userId).on('value', function(snapshot){
+      let connections = new Map<String, String>();
+
+      if(snapshot.hasChildren() === false){
+        console.log('no pending connections found');
+        thisRef._loadContacts(new Array<ContactModel>());
+      }else{
+        console.log('pending connections found');
+        snapshot.forEach(function(childSnapshot) {
+          connections.set(childSnapshot.key, childSnapshot.val());
+        });
+
+        //now get the information about pending connection users
+        firebase.database().ref('/users/').once('value').then(function(snapshot){
+          let contacts = new Array<ContactModel>();
+
+          //get the users that aren't an existing connection
+          snapshot.forEach(function(childSnapshot) {
+            if(connections.has(childSnapshot.key)
+              && connections.get(childSnapshot.key) === ContactModel.CONNECTION_PENDING){
+              contacts.push(ContactModel.fromFirebaseObject(childSnapshot.val()));
+            }
+          });
+
+          thisRef._loadContacts(contacts);
+        });
+      }
+    });
+  }
+
+  private _loadContacts(contacts : Array<ContactModel>){
+    this.contacts = contacts;
   }
 }
