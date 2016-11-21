@@ -4,9 +4,12 @@ declare var firebase: any;
 
 export class ContactModel implements IFirebaseObject{
 
+    static get CONNECTION_ACCEPTED() { return 'Accepted';}
+    static get CONNECTION_DECLINED() { return 'Declined';}
+    static get CONNECTION_PENDING() { return 'Pending';}
+
     public id:string;
-    public firstName:string;
-    public lastName:string;
+    public name: string;
     public employment:string;
     public education:string;
     public knowledgeableIn:string;
@@ -14,11 +17,10 @@ export class ContactModel implements IFirebaseObject{
     public currentGoals:string;
     public profileImage:string;
 
-    constructor(firstName, lastName, employment, education){
+    constructor(name, employment, education){
 
         this.id = '';
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.employment = employment || '';
         this.education = education || '';
         this.knowledgeableIn = '';
@@ -28,20 +30,35 @@ export class ContactModel implements IFirebaseObject{
     }
 
     public getFullName(){
-      return this.firstName + ' ' + this.lastName;
+      return this.name; //this.firstName + ' ' + this.lastName;
     }
 
     public toFirebaseObject():Object{
       return {
         lastModifiedTime : firebase.database.ServerValue.TIMESTAMP,
-        id : this.id,
+        authId : this.id,
         name : this.getFullName(),
         employment : this.employment,
         education : this.education,
         knowledgeableIn : this.knowledgeableIn,
         interests : this.interests,
         currentGoals : this.currentGoals,
-        profileImage : this.profileImage
+        pictureUrl : this.profileImage
       }
+    }
+
+    static fromFirebaseObject(firebaseObj : any) : ContactModel {
+      let retVal = new ContactModel(
+        firebaseObj['name'],
+        firebaseObj['employment'],
+        firebaseObj['education']);
+
+      retVal.id = firebaseObj['authId'];
+      retVal.knowledgeableIn = firebaseObj['knowledgeableIn'];
+      retVal.interests = firebaseObj['interests'];
+      retVal.currentGoals = firebaseObj['currentGoals'];
+      retVal.profileImage = firebaseObj['pictureUrl'];
+
+      return retVal;
     }
 }
