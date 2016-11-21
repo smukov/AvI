@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, NgZone } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ContactModel} from '../../models/contactModel';
 import {ContactsService} from '../../services/contacts.service';
@@ -16,7 +16,8 @@ export class ContactsPage {
 
   constructor(public nav:NavController,
     public contactsService:ContactsService,
-    public userInfoService: UserInfoService) {
+    public userInfoService: UserInfoService,
+    private _zone: NgZone) {
     this.contacts = new Array<ContactModel>();//this.contactsService.getContacts();
     this._setFirebaseListeners(this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID));
   }
@@ -58,6 +59,8 @@ export class ContactsPage {
   }
 
   private _loadContacts(contacts : Array<ContactModel>){
-    this.contacts = contacts;
+    // HACK: Workaround for a bug in zone.js (0.6.12):
+    // https://github.com/angular/zone.js/issues/304
+    this._zone.run(() => this.contacts = contacts);
   }
 }

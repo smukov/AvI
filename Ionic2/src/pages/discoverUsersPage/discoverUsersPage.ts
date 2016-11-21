@@ -50,29 +50,33 @@ export class DiscoverUsersPage {
 
     this.users = new Array<ContactModel>();//this.contactsService.getNearbyUsers();
     this.itemToDelete = -1;
-    
+
     this.userId = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID);
     this._setFirebaseListeners(this.userId);
   }
 
   public onBtnDismissClicked(){
     let currentIndex = this.slider.getActiveIndex();
-    this.firebaseService.setUserConnection(
-      this.userId,
-      this.users[currentIndex].id,
-      ContactModel.CONNECTION_DECLINED
-    );
-    this._slideAndRemove(currentIndex)
+    if(this.users[currentIndex] != null){
+      this.firebaseService.setUserConnection(
+        this.userId,
+        this.users[currentIndex].id,
+        ContactModel.CONNECTION_DECLINED
+      );
+      this._slideAndRemove(currentIndex)
+    }
   }
 
   public onBtnAcceptClicked(){
     let currentIndex = this.slider.getActiveIndex();
-    this.firebaseService.setUserConnection(
-      this.userId,
-      this.users[currentIndex].id,
-      ContactModel.CONNECTION_PENDING
-    );
-    this._slideAndRemove(currentIndex)
+    if(this.users[currentIndex] != null){
+      this.firebaseService.setUserConnection(
+        this.userId,
+        this.users[currentIndex].id,
+        ContactModel.CONNECTION_PENDING
+      );
+      this._slideAndRemove(currentIndex)
+    }
   }
 
   public onSlideChanged(){
