@@ -18,12 +18,24 @@ export class FirebaseService {
       authId: this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID),
       name : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_NAME),
       email: this.userInfoService.getUserInfo(UserInfoService.PREF_USER_EMAIL),
-      pictureURl : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_PICTURE_URL),
+      pictureUrl : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_PICTURE_URL),
       employment : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_EMPLOYMENT),
       education : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_EDUCATION),
       interests : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_INTERESTS),
       currentGoals : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_CURRENT_GOALS),
       knowledgeableIn : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_KNOWLEDGEABLE_IN),
     });
+  }
+
+  public setUserConnection(userId : String, newConnectionId : String, connectionStatus: String){
+    firebase.database().ref('/connections/')
+      .child(userId)
+      .child(newConnectionId)
+      .set(connectionStatus);
+
+    firebase.database().ref('/connections/')
+      .child(newConnectionId)
+      .child(userId)
+      .set(connectionStatus);
   }
 }
