@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler  } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler  } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 
@@ -78,6 +78,7 @@ export function getAuthHttp(http) {
     ContactPage
   ],
   providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     ContactsService,
     PreferencesService,
     StorageService,
