@@ -1,13 +1,18 @@
 package com.thesis.smukov.anative;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,6 +23,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
 import com.thesis.smukov.anative.Models.AccessToken;
 import com.thesis.smukov.anative.Models.UserInfo;
@@ -30,11 +38,13 @@ import com.thesis.smukov.anative.Store.AccessTokenStore;
 import com.thesis.smukov.anative.Store.UserInfoStore;
 
 public class NavigationActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     FragmentManager fragmentManager;
     INavigationFragment currentFragment;
     FloatingActionButton fab;
+    GoogleApiClient googleApiClient;
+    boolean googleApiClientReady = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +54,7 @@ public class NavigationActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        if(intent != null){
+        if (intent != null) {
             handleIntentExtras(intent);
         }
 
@@ -71,11 +81,39 @@ public class NavigationActivity extends AppCompatActivity
         currentFragment = new ProfileFragment();
         fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame ,(Fragment) currentFragment)
+                .replace(R.id.content_frame, (Fragment) currentFragment)
                 .commit();
 
         //initialize the default application settings
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+
+        // Create an instance of GoogleAPIClient.
+        if (googleApiClient == null) {
+            googleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        googleApiClient.connect();
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateUserLocation();
+    }
+
+    @Override
+    protected void onStop() {
+        updateUserLocation();
+        googleApiClient.disconnect();
+        super.onStop();
     }
 
     @Override
@@ -124,7 +162,7 @@ public class NavigationActivity extends AppCompatActivity
         } else if (id == R.id.nav_pending_invites) {
             currentFragment = new PendingInvitesFragment();
 
-        } else if (id == R.id.nav_discover_users){
+        } else if (id == R.id.nav_discover_users) {
             Intent intent = new Intent(this, DiscoverUsersSliderActivity.class);
             startActivity(intent);
             openNewFragment = false;
@@ -135,7 +173,7 @@ public class NavigationActivity extends AppCompatActivity
             Intent intent = new Intent(Intent.ACTION_SENDTO);
             intent.setData(Uri.parse(
                     "mailto:" + getResources().getString(R.string.feedback_email) +
-                    "?subject=" + getResources().getString(R.string.feedback_subject)));
+                            "?subject=" + getResources().getString(R.string.feedback_subject)));
             startActivity(Intent.createChooser(intent, ""));
             openNewFragment = false;
         } else {
@@ -143,7 +181,7 @@ public class NavigationActivity extends AppCompatActivity
             currentFragment = new ProfileFragment();
         }
 
-        if(openNewFragment){
+        if (openNewFragment) {
             openNewFragment(currentFragment);
         }
 
@@ -152,26 +190,65 @@ public class NavigationActivity extends AppCompatActivity
         return true;
     }
 
-    public void openNewFragment(INavigationFragment newFragment){
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        googleApiClientReady = true;
+        updateUserLocation();
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        googleApiClientReady  = false;
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        googleApiClientReady = false;
+    }
+
+    public void openNewFragment(INavigationFragment newFragment) {
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, (Fragment) newFragment)
                 .commit();
     }
 
-    private void handleIntentExtras(Intent intent){
+    private void handleIntentExtras(Intent intent) {
         Bundle extras = intent.getExtras();
 
-        if(extras != null){
+        if (extras != null) {
             Boolean wasLoggedIn = extras.getBoolean("wasLoggedIn", true);
             UserInfo userInfo = new Gson().fromJson(extras.getString("userInfo"), UserInfo.class);
             AccessToken accessToken = new Gson().fromJson(extras.getString("accessToken"), AccessToken.class);
 
             AccessTokenStore.storeAccessToken(this, accessToken);
-            if(wasLoggedIn == false){
+            if (wasLoggedIn == false) {
                 //if user wasn't logged in, I should store his information
                 UserInfoStore userInfoStore = new UserInfoStore();
                 userInfoStore.storeUserInfo(this, userInfo);
             }
+        }
+    }
+
+    private Location getCurrentLocation() {
+        if (googleApiClientReady == true) {
+            if (ActivityCompat.checkSelfPermission(this,
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                //TODO: might request for permission here again
+                return null;
+            }
+            return LocationServices.FusedLocationApi.getLastLocation(
+                    googleApiClient);
+        }else{
+            return null;
+        }
+    }
+
+    private void updateUserLocation(){
+        Location location = getCurrentLocation();
+        if(location != null){
+            String userId = UserInfoStore.getUserId(this);
+            UserInfoStore userInfoStore = new UserInfoStore();
+            userInfoStore.storeUserLocation(this, userId, location);
         }
     }
 }

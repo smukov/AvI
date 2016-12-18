@@ -2,6 +2,7 @@ package com.thesis.smukov.anative.Store;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.location.Location;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,6 +35,10 @@ public class UserInfoStore {
         firebaseDb = FirebaseDatabase.getInstance().getReference();
     }
 
+    public static String getUserId(Activity activity){
+        SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
+        return prefs.getString(PREF_USER_AUTH_ID, "N/A");
+    }
 
     public static void storeUserProfileInfo(Activity activity, com.auth0.core.UserProfile userProfile){
         SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
@@ -58,8 +63,6 @@ public class UserInfoStore {
         editor.putString(PREF_USER_KNOWLEDGEABLE_IN, userInfo.getKnowledgeableIn());
         editor.putString(PREF_USER_INTERESTS, userInfo.getInterests());
         editor.putString(PREF_USER_CURRENT_GOALS, userInfo.getCurrentGoals());
-        editor.putLong(PREF_USER_LOCATION_LAT, Double.doubleToRawLongBits(userInfo.getLocationLat()));
-        editor.putLong(PREF_USER_LOCATION_LON, Double.doubleToRawLongBits(userInfo.getLocationLon()));
 
         editor.commit();
 
@@ -72,7 +75,7 @@ public class UserInfoStore {
 
         userInfo.setName(prefs.getString(PREF_USER_NAME, "N/A"));
         userInfo.setEmail(prefs.getString(PREF_USER_EMAIL, ""));
-        userInfo.setAuthId(prefs.getString(PREF_USER_AUTH_ID, ""));
+        userInfo.setAuthId(prefs.getString(PREF_USER_AUTH_ID, "N/A"));
         userInfo.setPictureUrl(prefs.getString(PREF_USER_PICTURE_URL, ""));
         userInfo.setEmployment(prefs.getString(PREF_USER_EMPLOYMENT, ""));
         userInfo.setEducation(prefs.getString(PREF_USER_EDUCATION, ""));
@@ -87,6 +90,34 @@ public class UserInfoStore {
                     prefs.getLong(PREF_USER_LOCATION_LON, Double.doubleToRawLongBits(20.1424149))));
 
         return userInfo;
+    }
+
+    public static Location getLocation(Activity activity){
+        SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
+
+        double latitude = Double.longBitsToDouble(
+            prefs.getLong(PREF_USER_LOCATION_LAT, Double.doubleToRawLongBits(44.8149028)));
+        double longitude = Double.longBitsToDouble(
+            prefs.getLong(PREF_USER_LOCATION_LON, Double.doubleToRawLongBits(20.1424149)));
+
+        Location retVal = new Location("User_Location");
+        retVal.setLatitude(latitude);
+        retVal.setLongitude(longitude);
+
+        return retVal;
+    }
+
+    public void storeUserLocation(Activity activity, String userId, Location location){
+        SharedPreferences prefs = activity.getSharedPreferences(Constants.PREF_FILE_NAME, 0);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putLong(PREF_USER_LOCATION_LAT, Double.doubleToRawLongBits(location.getLatitude()));
+        editor.putLong(PREF_USER_LOCATION_LON, Double.doubleToRawLongBits(location.getLongitude()));
+
+        editor.commit();
+
+        firebaseDb.child("users").child(userId).child("locationLat").setValue(location.getLatitude());
+        firebaseDb.child("users").child(userId).child("locationLon").setValue(location.getLongitude());
     }
 
 }
