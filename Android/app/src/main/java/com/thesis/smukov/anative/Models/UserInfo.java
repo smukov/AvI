@@ -24,6 +24,9 @@ public class UserInfo implements IFirebaseObject{
     protected String interests;
     protected String currentGoals;
 
+    protected double locationLat;
+    protected double locationLon;
+
     public String getId() {return authId;}
 
     public String getName() {
@@ -98,6 +101,22 @@ public class UserInfo implements IFirebaseObject{
         this.currentGoals = currentGoals;
     }
 
+    public double getLocationLat() {
+        return locationLat;
+    }
+
+    public void setLocationLat(double locationLat) {
+        this.locationLat = locationLat;
+    }
+
+    public double getLocationLon() {
+        return locationLon;
+    }
+
+    public void setLocationLon(double locationLon) {
+        this.locationLon = locationLon;
+    }
+
     @Exclude
     @Override
     public Map<String, Object> toMap() {
@@ -112,6 +131,8 @@ public class UserInfo implements IFirebaseObject{
         result.put("knowledgeableIn", knowledgeableIn);
         result.put("interests", interests);
         result.put("currentGoals", currentGoals);
+        result.put("locationLat", locationLat);
+        result.put("locationLon", locationLon);
 
         return result;
     }

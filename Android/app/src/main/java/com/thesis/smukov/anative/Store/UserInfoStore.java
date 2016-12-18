@@ -24,6 +24,10 @@ public class UserInfoStore {
     public static String PREF_USER_INTERESTS = "pref_user_interests";
     public static String PREF_USER_CURRENT_GOALS = "pref_user_current_goals";
 
+    public static String PREF_USER_LOCATION_LON = "pref_user_location_lon";
+    public static String PREF_USER_LOCATION_LAT = "pref_user_location_lat";
+
+
     private DatabaseReference firebaseDb;
 
     public UserInfoStore(){
@@ -54,6 +58,8 @@ public class UserInfoStore {
         editor.putString(PREF_USER_KNOWLEDGEABLE_IN, userInfo.getKnowledgeableIn());
         editor.putString(PREF_USER_INTERESTS, userInfo.getInterests());
         editor.putString(PREF_USER_CURRENT_GOALS, userInfo.getCurrentGoals());
+        editor.putLong(PREF_USER_LOCATION_LAT, Double.doubleToRawLongBits(userInfo.getLocationLat()));
+        editor.putLong(PREF_USER_LOCATION_LON, Double.doubleToRawLongBits(userInfo.getLocationLon()));
 
         editor.commit();
 
@@ -73,6 +79,12 @@ public class UserInfoStore {
         userInfo.setKnowledgeableIn(prefs.getString(PREF_USER_KNOWLEDGEABLE_IN, ""));
         userInfo.setInterests(prefs.getString(PREF_USER_INTERESTS, ""));
         userInfo.setCurrentGoals(prefs.getString(PREF_USER_CURRENT_GOALS, ""));
+        userInfo.setLocationLat(
+                Double.longBitsToDouble(
+                        prefs.getLong(PREF_USER_LOCATION_LAT, Double.doubleToRawLongBits(44.8149028))));
+        userInfo.setLocationLon(
+                Double.longBitsToDouble(
+                    prefs.getLong(PREF_USER_LOCATION_LON, Double.doubleToRawLongBits(20.1424149))));
 
         return userInfo;
     }
