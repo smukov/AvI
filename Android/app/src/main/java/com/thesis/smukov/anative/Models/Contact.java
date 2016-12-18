@@ -1,5 +1,7 @@
 package com.thesis.smukov.anative.Models;
 
+import android.location.Location;
+
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 
@@ -17,6 +19,18 @@ public class Contact extends UserInfo{
     public static final String CONNECION_DECLINED = "Declined";
     @Exclude
     public static final String CONNECION_PENDING = "Pending";
+
+    @Exclude
+    public float calculateDistance(Location distanceTo){
+        float distanceInMeters = this.getLocation().distanceTo(distanceTo);
+        return distanceInMeters / 1000;
+    }
+
+    @Exclude
+    public String getDistanceAsString(Location distanceTo){
+        float distanceInKm = calculateDistance(distanceTo);
+        return String.format("%.2f", distanceInKm) + " km";
+    }
 
     @Exclude
     @Override

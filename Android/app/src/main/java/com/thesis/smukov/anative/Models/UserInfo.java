@@ -1,5 +1,7 @@
 package com.thesis.smukov.anative.Models;
 
+import android.location.Location;
+
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ServerValue;
@@ -23,6 +25,9 @@ public class UserInfo implements IFirebaseObject{
     protected String knowledgeableIn;
     protected String interests;
     protected String currentGoals;
+
+    protected double locationLat;
+    protected double locationLon;
 
     public String getId() {return authId;}
 
@@ -98,6 +103,31 @@ public class UserInfo implements IFirebaseObject{
         this.currentGoals = currentGoals;
     }
 
+    public double getLocationLat() {
+        return locationLat;
+    }
+
+    public void setLocationLat(double locationLat) {
+        this.locationLat = locationLat;
+    }
+
+    public double getLocationLon() {
+        return locationLon;
+    }
+
+    public void setLocationLon(double locationLon) {
+        this.locationLon = locationLon;
+    }
+
+    @Exclude
+    public Location getLocation(){
+        Location retVal = new Location("Contact_Location");
+        retVal.setLatitude(this.locationLat);
+        retVal.setLongitude(this.locationLon);
+
+        return retVal;
+    }
+
     @Exclude
     @Override
     public Map<String, Object> toMap() {
@@ -112,6 +142,8 @@ public class UserInfo implements IFirebaseObject{
         result.put("knowledgeableIn", knowledgeableIn);
         result.put("interests", interests);
         result.put("currentGoals", currentGoals);
+        result.put("locationLat", locationLat);
+        result.put("locationLon", locationLon);
 
         return result;
     }

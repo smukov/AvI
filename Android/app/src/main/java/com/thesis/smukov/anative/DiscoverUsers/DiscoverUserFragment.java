@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.R;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 import com.thesis.smukov.anative.Utils.DownloadImageTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -29,6 +30,7 @@ public class DiscoverUserFragment extends Fragment{
     TextView interests;
     TextView knowledgeable;
     TextView currentGoals;
+    TextView distance;
 
 
     @Override
@@ -55,6 +57,7 @@ public class DiscoverUserFragment extends Fragment{
         interests = (TextView) view.findViewById(R.id.txtInterests);
         knowledgeable = (TextView) view.findViewById(R.id.txtKnowledgeable);
         currentGoals = (TextView) view.findViewById(R.id.txtCurrentGoals);
+        distance = (TextView) view.findViewById(R.id.txtDistance);
 
         prepareUI(contact);
     }
@@ -70,6 +73,8 @@ public class DiscoverUserFragment extends Fragment{
         interests.setText(contact.getInterests());
         knowledgeable.setText(contact.getKnowledgeableIn());
         currentGoals.setText(contact.getCurrentGoals());
+        distance.setText(contact.getDistanceAsString(
+            UserInfoStore.getLocation(getActivity())));
     }
 
 }
