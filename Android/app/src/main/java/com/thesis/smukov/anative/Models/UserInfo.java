@@ -1,5 +1,7 @@
 package com.thesis.smukov.anative.Models;
 
+import android.location.Location;
+
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ServerValue;
@@ -115,6 +117,15 @@ public class UserInfo implements IFirebaseObject{
 
     public void setLocationLon(double locationLon) {
         this.locationLon = locationLon;
+    }
+
+    @Exclude
+    public Location getLocation(){
+        Location retVal = new Location("Contact_Location");
+        retVal.setLatitude(this.locationLat);
+        retVal.setLongitude(this.locationLon);
+
+        return retVal;
     }
 
     @Exclude
