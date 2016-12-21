@@ -27,6 +27,7 @@ import {PreferencesService} from '../services/preferences.service';
 import {StorageService} from '../services/storage.service';
 import {UserInfoService} from '../services/userInfo.service';
 import {FirebaseService} from '../services/firebase.service';
+import {MathService} from '../services/math.service';
 
 //external
 import {Http} from '@angular/http';
@@ -89,7 +90,8 @@ export function getAuthHttp(http) {
         useFactory: getAuthHttp,
         deps:[Http]
     },
-    FirebaseService
+    FirebaseService,
+    MathService
   ]
 })
 export class AppModule {}
