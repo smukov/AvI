@@ -34,6 +34,10 @@
       <p class='section-name'>Goals</p>
       <p>{{contact.currentGoals}}</p>
     </ion-item>
+    <ion-item>
+      <p class='section-name'>Distance</p>
+      <p>{{calculateDistance(contact) | number : '1.2-2'}} km</p>
+    </ion-item>
   </ion-list>
 
   <ion-fab bottom right>
