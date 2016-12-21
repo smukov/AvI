@@ -16,6 +16,10 @@ export class UserInfoService {
   static get PREF_USER_INTERESTS() { return 'pref_user_interests';}
   static get PREF_USER_CURRENT_GOALS() { return 'pref_user_current_goals';}
 
+  static get PREF_USER_LOCATION_LAT() { return 'pref_user_location_lat';}
+  static get PREF_USER_LOCATION_LON() { return 'pref_user_location_lon';}
+
+
   public _userInfo:any;
   public _keys:string[];
 
@@ -32,6 +36,8 @@ export class UserInfoService {
       UserInfoService.PREF_USER_KNOWLEDGEABLE_IN,
       UserInfoService.PREF_USER_INTERESTS,
       UserInfoService.PREF_USER_CURRENT_GOALS,
+      UserInfoService.PREF_USER_LOCATION_LAT,
+      UserInfoService.PREF_USER_LOCATION_LON
     ];
   }
 
@@ -52,6 +58,8 @@ export class UserInfoService {
         this._storageService.storage.set(UserInfoService.PREF_USER_INTERESTS, '');
         this._storageService.storage.set(UserInfoService.PREF_USER_CURRENT_GOALS, '');
 
+        this._storageService.storage.set(UserInfoService.PREF_USER_LOCATION_LAT, 44.8149028);
+        this._storageService.storage.set(UserInfoService.PREF_USER_LOCATION_LON, 20.1424149);
 
         //initialize in memory
         this._userInfo[UserInfoService.PREF_USER_NAME] = '';
@@ -64,6 +72,9 @@ export class UserInfoService {
         this._userInfo[UserInfoService.PREF_USER_KNOWLEDGEABLE_IN] = '';
         this._userInfo[UserInfoService.PREF_USER_INTERESTS] = '';
         this._userInfo[UserInfoService.PREF_USER_CURRENT_GOALS] = '';
+
+        this._userInfo[UserInfoService.PREF_USER_LOCATION_LAT] = 44.8149028;
+        this._userInfo[UserInfoService.PREF_USER_LOCATION_LON] = 20.1424149;
       }else{
         console.log('user info obtained from storage');
 

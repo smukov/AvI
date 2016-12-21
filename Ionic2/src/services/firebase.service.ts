@@ -24,7 +24,25 @@ export class FirebaseService {
       interests : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_INTERESTS),
       currentGoals : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_CURRENT_GOALS),
       knowledgeableIn : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_KNOWLEDGEABLE_IN),
+      locationLat : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LAT),
+      locationLon : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LON)
     });
+  }
+
+  public storeUserLocationFromPrefs(){
+    this.storeUserLocation(
+      this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LAT),
+      this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LON));
+  }
+
+  public storeUserLocation(locationLat: Number, locationLon: Number){
+    firebase.database().ref('users/' + this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID))
+      .child('locationLat')
+      .set(locationLat);
+
+    firebase.database().ref('users/' + this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID))
+      .child('locationLon')
+      .set(locationLon);
   }
 
   public setUserConnection(userId : String, newConnectionId : String, connectionStatus: String){
