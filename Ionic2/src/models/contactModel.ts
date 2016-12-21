@@ -17,6 +17,9 @@ export class ContactModel implements IFirebaseObject{
     public currentGoals:string;
     public profileImage:string;
 
+    public locationLat:number;
+    public locationLon:number;
+
     constructor(name, employment, education){
 
         this.id = '';
@@ -27,6 +30,9 @@ export class ContactModel implements IFirebaseObject{
         this.interests = '';
         this.currentGoals = '';
         this.profileImage = '';
+
+        this.locationLat = 44.8149028;
+        this.locationLon = 20.1424149;
     }
 
     public getFullName(){
@@ -43,7 +49,9 @@ export class ContactModel implements IFirebaseObject{
         knowledgeableIn : this.knowledgeableIn,
         interests : this.interests,
         currentGoals : this.currentGoals,
-        pictureUrl : this.profileImage
+        pictureUrl : this.profileImage,
+        locationLat: this.locationLat,
+        locationLon: this.locationLon
       }
     }
 
@@ -58,6 +66,9 @@ export class ContactModel implements IFirebaseObject{
       retVal.interests = firebaseObj['interests'];
       retVal.currentGoals = firebaseObj['currentGoals'];
       retVal.profileImage = firebaseObj['pictureUrl'];
+
+      retVal.locationLat = firebaseObj['locationLat'];
+      retVal.locationLon = firebaseObj['locationLon'];
 
       return retVal;
     }

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Geolocation} from 'ionic-native';
 import {UserInfoService} from '../../services/userInfo.service';
 import {FirebaseService} from '../../services/firebase.service';
 
@@ -32,6 +33,14 @@ export class ProfilePage {
     this.currentGoals = this.userInfo.getUserInfo(UserInfoService.PREF_USER_CURRENT_GOALS);
   }
 
+  public ionViewDidEnter(){
+    this.updateUserLocation();
+  }
+
+  public ionViewWillUnload(){
+    this.updateUserLocation();
+  }
+
   public edit(){
     if(this.isEditMode){
       //it was in edit mode, so save the changes
@@ -43,5 +52,16 @@ export class ProfilePage {
       this.firebase.storeUserInfo();
     }
     this.isEditMode = !this.isEditMode;
+  }
+
+  private updateUserLocation(){
+    Geolocation.getCurrentPosition().then((resp) => {
+     this.userInfo.setUserInfo(UserInfoService.PREF_USER_LOCATION_LAT, resp.coords.latitude);
+     this.userInfo.setUserInfo(UserInfoService.PREF_USER_LOCATION_LON, resp.coords.longitude);
+
+     this.firebase.storeUserLocationFromPrefs();
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
   }
 }

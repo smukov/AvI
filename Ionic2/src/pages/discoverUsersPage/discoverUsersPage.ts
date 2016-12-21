@@ -12,6 +12,7 @@ import {ContactModel} from '../../models/contactModel';
 import {ContactsService} from '../../services/contacts.service';
 import {UserInfoService} from '../../services/userInfo.service';
 import {FirebaseService} from '../../services/firebase.service';
+import {MathService} from '../../services/math.service';
 
 declare var firebase: any;
 
@@ -41,7 +42,8 @@ export class DiscoverUsersPage {
 
   constructor(public contactsService: ContactsService,
     public userInfoService: UserInfoService,
-    public firebaseService: FirebaseService) {
+    public firebaseService: FirebaseService,
+    public mathService: MathService) {
     this.sliderOptions = {
       nested: true,
       watchSlidesProgress: true,
@@ -97,6 +99,15 @@ export class DiscoverUsersPage {
       console.log('active');
       this.btnState= 'active';
     }
+  }
+
+  public calculateDistance(contact: ContactModel){
+    let contactLat = contact.locationLat;
+    let contactLon = contact.locationLon;
+    let userLat = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LAT);
+    let userLon = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LON);
+
+    return this.mathService.getDistanceFromLatLonInKm(contactLat, contactLon, userLat, userLon);
   }
 
   private _slideAndRemove(currentIndex){

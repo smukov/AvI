@@ -39,6 +39,10 @@
           <p class='section-name'>Goals</p>
           <p>{{usr.currentGoals}}</p>
         </ion-item>
+        <ion-item>
+          <p class='section-name'>Distance</p>
+          <p>{{calculateDistance(usr) | number : '1.2-2'}} km</p>
+        </ion-item>
       </ion-list>
     </ion-slide>
     <ion-slide style="padding-bottom:50px;">

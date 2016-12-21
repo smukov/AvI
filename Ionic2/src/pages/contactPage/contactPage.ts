@@ -4,6 +4,8 @@ import {NavController, NavParams} from 'ionic-angular';
 
 import {ChatPage} from '../chatPage/chatPage';
 
+import {UserInfoService} from '../../services/userInfo.service';
+import {MathService} from '../../services/math.service';
 
 @Component({
   selector: 'page-contact',
@@ -13,21 +15,22 @@ export class ContactPage {
   @ViewChild('header') header:any;
   public contact:any;
 
-  constructor(public nav: NavController, public navParams:NavParams) {
+  constructor(public nav: NavController, public navParams:NavParams,
+    public userInfoService: UserInfoService,
+    public mathService: MathService) {
     this.contact = this.navParams.get('contact');
-
-    // this.employment = 'Head of Diagnostic @ PPT Hospital';
-    // this.education = 'Attended Hopkins University 1979-1984';
-    // this.interests = 'Chemistry,  Piano , Guitar, Android, Economy, Football';
-    // this.knowledgeable = 'Classical Music,  Fitness, Movie Trivia, HTML5, Android, JavaScript';
-    // this.currentGoals = 'Learn Ionic2, Find a team for basketball';
-  }
-
-  public ionViewWillEnter(){
-    //this.header.setFullName("Dr. Gregory House");
   }
 
   public openChat(){
     this.nav.push(ChatPage, {contactName: "Dr. Gregory House"});
+  }
+
+  public calculateDistance(contact){
+    let contactLat = contact.locationLat;
+    let contactLon = contact.locationLon;
+    let userLat = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LAT);
+    let userLon = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LON);
+
+    return this.mathService.getDistanceFromLatLonInKm(contactLat, contactLon, userLat, userLon);
   }
 }
