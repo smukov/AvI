@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.thesis.smukov.anative.ChatActivity;
 import com.thesis.smukov.anative.Models.Contact;
 import com.thesis.smukov.anative.Models.UserInfo;
@@ -77,6 +78,7 @@ public class ContactFragment extends BaseNavigationFragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ChatActivity.class);
+                intent.putExtra("contact", new Gson().toJson(contact));
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.thesis.smukov.anative.Chat;
+package com.thesis.smukov.anative.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.thesis.smukov.anative.Models.ChatMessage;
 import com.thesis.smukov.anative.R;
 
 import java.util.List;

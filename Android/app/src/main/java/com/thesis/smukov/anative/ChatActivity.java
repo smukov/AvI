@@ -1,22 +1,36 @@
 package com.thesis.smukov.anative;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.thesis.smukov.anative.Chat.ChatAdapter;
-import com.thesis.smukov.anative.Chat.ChatMessage;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.thesis.smukov.anative.Adapters.ChatAdapter;
+import com.thesis.smukov.anative.Models.ChatMessage;
+import com.thesis.smukov.anative.Models.Contact;
+import com.thesis.smukov.anative.Store.ChatStore;
+import com.thesis.smukov.anative.Store.UserInfoStore;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ChatActivity extends AppCompatActivity {
+
+    private Contact contact;
+    private String userId;
+    private String groupId;
 
     private EditText messageET;
     private ListView messagesContainer;
@@ -24,21 +38,36 @@ public class ChatActivity extends AppCompatActivity {
     private ChatAdapter adapter;
     private ArrayList<ChatMessage> chatHistory;
 
+    private DatabaseReference firebaseDb =
+            FirebaseDatabase.getInstance().getReference();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        setTitle("Dr. Gregory House");//hard-coded now, it should be the other person's name
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            handleIntentExtras(intent);
+        }
+
+        setTitle(contact.getName());
         initControls();
+
+        this.userId = UserInfoStore.getUserInfo(this).getId();
+        setFirebaseListeners(this.userId);
     }
 
     private void initControls() {
         messagesContainer = (ListView) findViewById(R.id.messagesContainer);
+
+        if(adapter == null){
+            adapter = new ChatAdapter(ChatActivity.this, new ArrayList<ChatMessage>());
+        }
+        messagesContainer.setAdapter(adapter);
+
         messageET = (EditText) findViewById(R.id.messageEdit);
         sendBtn = (ImageButton) findViewById(R.id.chatSendButton);
-
-        RelativeLayout container = (RelativeLayout) findViewById(R.id.container);
-        loadDummyHistory();
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,14 +78,79 @@ public class ChatActivity extends AppCompatActivity {
                 }
 
                 ChatMessage chatMessage = new ChatMessage();
-                chatMessage.setId(122);//dummy
+                chatMessage.setSenderId(userId);
                 chatMessage.setMessage(messageText);
-                chatMessage.setDate(DateFormat.getDateTimeInstance().format(new Date()));
-                chatMessage.setMe(true);
+
+                ChatStore.addMessage(firebaseDb, groupId, chatMessage);
 
                 messageET.setText("");
+            }
+        });
+    }
 
-                displayMessage(chatMessage);
+    private void handleIntentExtras(Intent intent) {
+        Bundle extras = intent.getExtras();
+
+        if (extras != null) {
+            this.contact = new Gson().fromJson(extras.getString("contact"), Contact.class);
+        }
+    }
+
+    private void setFirebaseListeners(final String userId){
+
+        //first get the group id
+        firebaseDb.child("chat").child("users").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild(contact.getId())) {
+                    //there is an existing chat group with this user
+                    groupId = (String) dataSnapshot.child(contact.getId()).getValue();
+                }else{
+                    //there is no existing chat group with this user, so create one
+                    groupId = ChatStore.createChatGroup(firebaseDb, userId, contact.getId());
+                }
+
+                //now start listening for messages in this chat group
+                firebaseDb.child("chat").child("messages").child(groupId)
+                        .orderByChild("timestamp").limitToLast(500).addChildEventListener(new ChildEventListener() { //TODO: lower amount of messages and implement drag to load
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                        ChatMessage newMessage = new ChatMessage();
+
+                        String senderId = (String) dataSnapshot.child("sender").getValue();
+                        newMessage.setSenderId(senderId);
+                        newMessage.setMe(senderId.equals(userId));
+                        newMessage.setMessage((String) dataSnapshot.child("message").getValue());
+                        newMessage.setTimestamp((Long) dataSnapshot.child("timestamp").getValue());
+
+                        displayMessage(newMessage);
+                    }
+
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }
@@ -71,29 +165,4 @@ public class ChatActivity extends AppCompatActivity {
         messagesContainer.setSelection(messagesContainer.getCount() - 1);
     }
 
-    private void loadDummyHistory(){
-
-        chatHistory = new ArrayList<ChatMessage>();
-
-        ChatMessage msg = new ChatMessage();
-        msg.setId(1);
-        msg.setMe(false);
-        msg.setMessage("Hi");
-        msg.setDate(DateFormat.getDateTimeInstance().format(new Date()));
-        chatHistory.add(msg);
-        ChatMessage msg1 = new ChatMessage();
-        msg1.setId(2);
-        msg1.setMe(false);
-        msg1.setMessage("How r u doing???");
-        msg1.setDate(DateFormat.getDateTimeInstance().format(new Date()));
-        chatHistory.add(msg1);
-
-        adapter = new ChatAdapter(ChatActivity.this, new ArrayList<ChatMessage>());
-        messagesContainer.setAdapter(adapter);
-
-        for(int i=0; i<chatHistory.size(); i++) {
-            ChatMessage message = chatHistory.get(i);
-            displayMessage(message);
-        }
-    }
 }
