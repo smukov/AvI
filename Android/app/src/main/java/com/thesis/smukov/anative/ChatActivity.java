@@ -9,8 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.thesis.smukov.anative.Chat.ChatAdapter;
-import com.thesis.smukov.anative.Chat.ChatMessage;
+import com.thesis.smukov.anative.Adapters.ChatAdapter;
+import com.thesis.smukov.anative.Models.ChatMessage;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
