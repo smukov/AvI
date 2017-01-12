@@ -10,7 +10,7 @@ import com.thesis.smukov.anative.Models.ChatMessage;
  */
 public class ChatStore {
 
-    public static void addMessage(
+    public static ChatMessage addMessage(
             DatabaseReference firebaseDb,
             String groupId,
             ChatMessage message){
@@ -22,9 +22,12 @@ public class ChatStore {
                 .push();
 
         pushRef.setValue(message.toMap());
+
+        message.setId(pushRef.getKey());
+        return message;
     }
 
-    public static void createChatGroup(
+    public static String createChatGroup(
             DatabaseReference firebaseDb,
             String firstUserId,
             String secondUserId){
@@ -44,6 +47,8 @@ public class ChatStore {
                 .child(secondUserId)
                 .child(firstUserId)
                 .setValue(groupName);
+
+        return groupName;
     }
 
 }

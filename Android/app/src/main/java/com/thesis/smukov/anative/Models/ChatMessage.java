@@ -14,18 +14,18 @@ import java.util.Map;
  */
 @IgnoreExtraProperties
 public class ChatMessage implements IFirebaseObject {
-    private long id;
+    private String id;
+    private String senderId;
     private String message;
-    private Long userId;
     private Long timestamp;
 
     private boolean isMe;
     private String dateTime;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
     public boolean getIsme() {
@@ -40,17 +40,14 @@ public class ChatMessage implements IFirebaseObject {
     public void setMessage(String message) {
         this.message = message;
     }
-    public long getUserId() {
-        return userId;
+    public String getSenderId() {
+        return senderId;
     }
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setSenderId(String senderId) {
+        this.senderId = senderId;
     }
     public String getDate() {
         return dateTime;
-    }
-    public void setDate(String dateTime) {
-        this.dateTime = dateTime;
     }
     public Long getTimestamp() {
         return timestamp;
@@ -65,7 +62,7 @@ public class ChatMessage implements IFirebaseObject {
     @Override
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("sender", userId);
+        result.put("sender", senderId);
         result.put("message", message);
         result.put("timestamp", ServerValue.TIMESTAMP);
         return result;
