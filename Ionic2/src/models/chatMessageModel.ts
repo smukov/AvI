@@ -9,20 +9,26 @@ export class ChatMessageModel implements IFirebaseObject{
   public message:string;
   public timestamp:number;
 
+  public image:string;
   public isMe:boolean;
-  public dateTime:string;
+  private time:string;
 
-  constructor(senderId, message, timestamp){
+  constructor(senderId, message){
     this.id = '';
     this.senderId = senderId || '';
     this.message = message || '';
-    this.timestamp = timestamp || 0;
+    this.timestamp = 0;
     this.isMe = false;
-    this.dateTime = new Date(this.timestamp).toLocaleTimeString();
+    this.time = new Date(this.timestamp).toLocaleTimeString();
   }
 
-  public getDateTime() : string {
-    return new Date(this.timestamp).toLocaleTimeString();
+  public setTimestamp(timestamp:number){
+    this.timestamp = timestamp;
+    this.time = new Date(this.timestamp).toLocaleTimeString();
+  }
+
+  public getTime() : string {
+    return this.time;
   }
 
   public toFirebaseObject():Object{
@@ -36,8 +42,9 @@ export class ChatMessageModel implements IFirebaseObject{
   static fromFirebaseObject(firebaseObj : any) : ChatMessageModel {
     let retVal = new ChatMessageModel(
       firebaseObj['sender'],
-      firebaseObj['message'],
-      firebaseObj['timestamp']);
+      firebaseObj['message']);
+
+    retVal.setTimestamp(firebaseObj['timestamp']);
 
     return retVal;
   }

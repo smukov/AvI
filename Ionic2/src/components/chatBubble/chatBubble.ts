@@ -6,11 +6,11 @@ import {Component} from '@angular/core';
   template:
   `
   <div class="chatBubble">
-    <img class="profile-pic {{msg.position}}" src="{{msg.img}}">
-    <div class="chat-bubble {{msg.position}}">
-      <div class="message">{{msg.content}}</div>
+    <img class="profile-pic {{msg.isMe === true ? 'right' : 'left'}}" src="{{msg.image}}">
+    <div class="chat-bubble {{msg.isMe === true ? 'right' : 'left'}}">
+      <div class="message">{{msg.message}}</div>
       <div class="message-detail">
-          <span style="font-weight:bold;">{{msg.senderName}} </span>,
+          <!--span style="font-weight:bold;">{{msg.senderName}} </span>,-->
           <span>{{msg.time}}</span>
       </div>
     </div>
@@ -23,9 +23,9 @@ export class ChatBubble {
   constructor() {
     this.msg = {
       content :  'Am I dreaming?',
-      position : 'left',
+      isMe : true,
       time : '12/3/2016',
-      senderName : 'Gregory'
+      senderName : ''
     }
   }
 }

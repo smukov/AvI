@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {StorageService} from './storage.service';
 import {UserInfoService} from './userInfo.service';
 
+import {ChatMessageModel} from '../models/chatMessageModel';
+
 declare var firebase: any;
 
 @Injectable()
@@ -55,5 +57,32 @@ export class FirebaseService {
       .child(newConnectionId)
       .child(userId)
       .set(connectionStatus);
+  }
+
+  public addChatMessage(groupId:string, message: ChatMessageModel):ChatMessageModel{
+    let pushRef = firebase.database().ref('/chat/messages/')
+      .child(groupId)
+      .push();
+
+    pushRef.set(message.toFirebaseObject());
+
+    message.id = pushRef.getKey();
+    return message;
+  }
+
+  public createChatGroup(firstUserId:string, secondUserId:string):string {
+    let groupName = firstUserId + secondUserId;
+
+    firebase.database().ref('/chat/users/')
+      .child(firstUserId)
+      .child(secondUserId)
+      .set(groupName);
+
+    firebase.database().ref('/chat/users/')
+      .child(secondUserId)
+      .child(firstUserId)
+      .set(groupName);
+
+    return groupName;
   }
 }
