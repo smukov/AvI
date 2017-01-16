@@ -38,10 +38,6 @@ export class ChatPage {
     this._setFirebaseListeners(this.userId);
   }
 
-  // public ionViewDidEnter(){
-  //     this.content.scrollToBottom(300);//300ms animation speed
-  // }
-
   public sendMessage(){
     this.txtChat.setFocus();
 
@@ -57,7 +53,7 @@ export class ChatPage {
     let thisRef = this;
     firebase.database().ref('/chat/users/' + userId).once('value', function(snapshot){
 
-      if(snapshot.hasChildren() === true){
+      if(snapshot.hasChild(thisRef.contact.id) === true){
         console.log('an existing chat room found with this user');
         thisRef.groupId = snapshot.child(thisRef.contact.id).val();
       }else{
