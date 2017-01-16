@@ -22,7 +22,7 @@ export class ContactPage {
   }
 
   public openChat(){
-    this.nav.push(ChatPage, {contactName: "Dr. Gregory House"});
+    this.nav.push(ChatPage, {contact: this.contact});
   }
 
   public calculateDistance(contact){
