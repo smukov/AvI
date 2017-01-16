@@ -9,10 +9,11 @@ export class ChatPage {
   @ViewChild('txtChat') txtChat:any;
   @ViewChild('content') content:any;
   public messages:any[];
-  public contactName:string;
+  public contact:any;
+
 
   constructor(public nav: NavController, public navParams: NavParams) {
-    this.contactName = this.navParams.get('contactName');
+    this.contact = this.navParams.get('contact');
 
     this.messages = [
       {
@@ -28,55 +29,6 @@ export class ChatPage {
         content: 'Hi! How are?',
         senderName: 'Me',
         time: '28-Jun-2016 21:55'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'left',
-        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
-        senderName: 'Gregory',
-        time: '28-Jun-2016 21:57'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'right',
-        content: 'Hi! How are?',
-        senderName: 'Me',
-        time: '28-Jun-2016 21:55'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'left',
-        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
-        senderName: 'Gregory',
-        time: '28-Jun-2016 21:57'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'right',
-        content: 'Hi! How are?',
-        senderName: 'Me',
-        time: '28-Jun-2016 21:55'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'left',
-        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
-        senderName: 'Gregory',
-        time: '28-Jun-2016 21:57'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'right',
-        content: 'Hi! How are?',
-        senderName: 'Me',
-        time: '28-Jun-2016 21:55'
-      },
-      {
-        img: 'assets/img/hugh.png',
-        position: 'left',
-        content: "This is some really long test that I'm writing here. Let's see how it wraps.",
-        senderName: 'Gregory',
-        time: '28-Jun-2016 21:57'
       }
     ];
   }
