@@ -63,6 +63,7 @@ export class DiscoverUsersPage {
       this.firebaseService.setUserConnection(
         this.userId,
         this.users[currentIndex].id,
+        ContactModel.CONNECTION_DECLINED,
         ContactModel.CONNECTION_DECLINED
       );
       this._slideAndRemove(currentIndex)
@@ -75,7 +76,8 @@ export class DiscoverUsersPage {
       this.firebaseService.setUserConnection(
         this.userId,
         this.users[currentIndex].id,
-        ContactModel.CONNECTION_PENDING
+        ContactModel.CONNECTION_OUTGOING,
+        ContactModel.CONNECTION_INCOMING
       );
       this._slideAndRemove(currentIndex)
     }
@@ -143,7 +145,8 @@ export class DiscoverUsersPage {
 
       //get the users that aren't an existing connection
       snapshot.forEach(function(childSnapshot) {
-        if(connections.has(childSnapshot.key) == false){
+        if(connections.has(childSnapshot.key) == false &&
+            thisRef.userId !== childSnapshot.key){
           console.log(childSnapshot.val());
           contacts.push(ContactModel.fromFirebaseObject(childSnapshot.val()));
         }

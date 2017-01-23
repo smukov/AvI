@@ -6,7 +6,8 @@ export class ContactModel implements IFirebaseObject{
 
     static get CONNECTION_ACCEPTED() { return 'Accepted';}
     static get CONNECTION_DECLINED() { return 'Declined';}
-    static get CONNECTION_PENDING() { return 'Pending';}
+    static get CONNECTION_INCOMING() { return 'Incoming';}
+    static get CONNECTION_OUTGOING() { return 'Outgoing';}
 
     public id:string;
     public name: string;
