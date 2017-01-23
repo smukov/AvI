@@ -15,35 +15,37 @@
     [options]="sliderOptions"
     >
     <ion-slide *ngFor="let usr of users" class="user-slide">
-      <profile-header
-        [fullName]="usr.getFullName()"
-        [profileImage]="usr.profileImage"
-        ></profile-header>
+      <ion-content>
+        <profile-header
+          [fullName]="usr.getFullName()"
+          [profileImage]="usr.profileImage"
+          ></profile-header>
 
-      <ion-list no-lines style="margin-top:10px">
-        <ion-item>
-          <p>{{usr.employment}}</p>
-        </ion-item>
-        <ion-item class="no-bottom-border">
-          <p>{{usr.education}}</p>
-        </ion-item>
-        <ion-item>
-          <p class='section-name'>Interests</p>
-          <p>{{usr.interests}}</p>
-        </ion-item>
-        <ion-item>
-          <p class='section-name'>Knowledgeable In</p>
-          <p>{{usr.knowledgeable}}</p>
-        </ion-item>
-        <ion-item>
-          <p class='section-name'>Goals</p>
-          <p>{{usr.currentGoals}}</p>
-        </ion-item>
-        <ion-item>
-          <p class='section-name'>Distance</p>
-          <p>{{calculateDistance(usr) | number : '1.2-2'}} km</p>
-        </ion-item>
-      </ion-list>
+        <ion-list no-lines style="margin-top:10px">
+          <ion-item>
+            <p>{{usr.employment}}</p>
+          </ion-item>
+          <ion-item class="no-bottom-border">
+            <p>{{usr.education}}</p>
+          </ion-item>
+          <ion-item>
+            <p class='section-name'>Interests</p>
+            <p>{{usr.interests}}</p>
+          </ion-item>
+          <ion-item>
+            <p class='section-name'>Knowledgeable In</p>
+            <p>{{usr.knowledgeable}}</p>
+          </ion-item>
+          <ion-item>
+            <p class='section-name'>Goals</p>
+            <p>{{usr.currentGoals}}</p>
+          </ion-item>
+          <ion-item>
+            <p class='section-name'>Distance</p>
+            <p>{{calculateDistance(usr) | number : '1.2-2'}} km</p>
+          </ion-item>
+        </ion-list>
+      </ion-content>
     </ion-slide>
     <ion-slide style="padding-bottom:50px;">
       No More Users Nearby
