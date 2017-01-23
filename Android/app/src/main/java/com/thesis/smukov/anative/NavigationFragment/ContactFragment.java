@@ -51,6 +51,9 @@ public class ContactFragment extends BaseNavigationFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if(savedInstanceState != null){
+            contact = new Gson().fromJson(savedInstanceState.getString("contact"), Contact.class);
+        }
         setTitle(contact.getName());
         prepareFloatingActionButton();
 
@@ -64,6 +67,12 @@ public class ContactFragment extends BaseNavigationFragment {
         distance = (TextView) view.findViewById(R.id.txtDistance);
 
         prepareUI(contact);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("contact", new Gson().toJson(contact));
+        super.onSaveInstanceState(outState);
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -45,6 +46,7 @@ public class NavigationActivity extends AppCompatActivity
     FloatingActionButton fab;
     GoogleApiClient googleApiClient;
     boolean googleApiClientReady = false;
+    String fragmentTag = "my_fragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +80,16 @@ public class NavigationActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //instantiate the fragmentManager and set the default view to profile
-        currentFragment = new ProfileFragment();
         fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, (Fragment) currentFragment)
-                .commit();
+        if(fragmentManager.findFragmentByTag(fragmentTag) == null) {
+            currentFragment = new ProfileFragment();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, (Fragment) currentFragment, fragmentTag)
+                    .commit();
+        }else{
+            currentFragment = (INavigationFragment) fragmentManager.findFragmentByTag(fragmentTag);
+        }
+
 
         //initialize the default application settings
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -208,7 +215,7 @@ public class NavigationActivity extends AppCompatActivity
 
     public void openNewFragment(INavigationFragment newFragment) {
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, (Fragment) newFragment)
+                .replace(R.id.content_frame, (Fragment) newFragment, fragmentTag)
                 .commit();
     }
 
