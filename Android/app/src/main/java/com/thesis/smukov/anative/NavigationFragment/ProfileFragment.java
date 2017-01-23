@@ -49,6 +49,10 @@ public class ProfileFragment extends BaseNavigationFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if(savedInstanceState != null){
+            isEditable = savedInstanceState.getBoolean("isEditable");
+        }
+
         setTitle(getResources().getString(R.string.titleMyProfile));
         prepareFloatingActionButton();
 
@@ -66,6 +70,13 @@ public class ProfileFragment extends BaseNavigationFragment {
         populateUserInfo();
         toggleEditMode(isEditable);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("isEditable", isEditable);
+        super.onSaveInstanceState(outState);
+    }
+
 
     @Override
     protected void prepareFloatingActionButton(){
