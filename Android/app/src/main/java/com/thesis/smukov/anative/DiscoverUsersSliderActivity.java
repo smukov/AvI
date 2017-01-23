@@ -150,8 +150,10 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
 
                 Log.i("smuk", "Retrieved users from Firebase");
 
+
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    if (connections.containsKey(child.getKey()) == false) {
+                    if (connections.containsKey(child.getKey()) == false &&
+                            !userId.equals(child.getKey())) {
                         contacts.add(child.getValue(Contact.class));
                         Log.i("smuk", "Found new contact");
                     }
