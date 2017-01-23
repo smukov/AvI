@@ -14,11 +14,13 @@ import java.util.Map;
 public class Contact extends UserInfo{
 
     @Exclude
-    public static final String CONNECION_ACCEPTED = "Accepted";
+    public static final String CONNECTION_ACCEPTED = "Accepted";
     @Exclude
-    public static final String CONNECION_DECLINED = "Declined";
+    public static final String CONNECTION_DECLINED = "Declined";
     @Exclude
-    public static final String CONNECION_PENDING = "Pending";
+    public static final String CONNECTION_INCOMING = "Incoming";
+    @Exclude
+    public static final String CONNECTION_OUTGOING = "Outgoing";
 
     @Exclude
     public float calculateDistance(Location distanceTo){
