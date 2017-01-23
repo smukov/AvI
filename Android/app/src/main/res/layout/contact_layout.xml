@@ -1,115 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <include layout="@layout/profile_header"/>
+        <include layout="@layout/profile_header"/>
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:id="@+id/txtEmployment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/hint_employment"
-        android:textSize="16sp"
-        android:ellipsize="middle"
-         />
+        <TextView
+            android:id="@+id/txtEmployment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/hint_employment"
+            android:textSize="16sp"
+            android:ellipsize="middle"
+             />
 
 
-    <TextView
-        android:id="@+id/txtEducation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_gravity="center_horizontal"
-        android:hint="@string/hint_faculty" />
+        <TextView
+            android:id="@+id/txtEducation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/hint_faculty" />
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Interests"
-        android:labelFor="@+id/txtInterests"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Interests"
+            android:labelFor="@+id/txtInterests"/>
 
-    <TextView
-        android:id="@id/txtInterests"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/hint_interests" />
+        <TextView
+            android:id="@id/txtInterests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/hint_interests" />
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Knowledgeable In"
-        android:labelFor="@+id/txtKnowledgeable"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Knowledgeable In"
+            android:labelFor="@+id/txtKnowledgeable"/>
 
-    <TextView
-        android:id="@id/txtKnowledgeable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/hint_knowledgeable" />
+        <TextView
+            android:id="@id/txtKnowledgeable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/hint_knowledgeable" />
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Current Goals"
-        android:labelFor="@+id/txtCurrentGoals"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Current Goals"
+            android:labelFor="@+id/txtCurrentGoals"/>
 
-    <TextView
-        android:id="@id/txtCurrentGoals"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/hint_goals" />
+        <TextView
+            android:id="@id/txtCurrentGoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/hint_goals" />
 
-    <Space
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Distance"
-        android:labelFor="@+id/txtDistance"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Distance"
+            android:labelFor="@+id/txtDistance"/>
 
-    <TextView
-        android:id="@id/txtDistance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_gravity="center_horizontal"
-        android:text="" />
+        <TextView
+            android:id="@id/txtDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:text="" />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
