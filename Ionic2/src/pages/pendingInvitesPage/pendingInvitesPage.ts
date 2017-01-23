@@ -38,6 +38,7 @@ export class PendingInvitesPage {
     this.firebaseService.setUserConnection(
       this.userId,
       cnt.id,
+      ContactModel.CONNECTION_DECLINED,
       ContactModel.CONNECTION_DECLINED
     );
     this._removeContact(cnt);
@@ -47,6 +48,7 @@ export class PendingInvitesPage {
     this.firebaseService.setUserConnection(
       this.userId,
       cnt.id,
+      ContactModel.CONNECTION_ACCEPTED,
       ContactModel.CONNECTION_ACCEPTED
     );
     this._removeContact(cnt);
@@ -80,7 +82,7 @@ export class PendingInvitesPage {
           //get the users that aren't an existing connection
           snapshot.forEach(function(childSnapshot) {
             if(connections.has(childSnapshot.key)
-              && connections.get(childSnapshot.key) === ContactModel.CONNECTION_PENDING){
+              && connections.get(childSnapshot.key) === ContactModel.CONNECTION_INCOMING){
               contacts.push(ContactModel.fromFirebaseObject(childSnapshot.val()));
             }
           });

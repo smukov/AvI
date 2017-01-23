@@ -63,6 +63,7 @@ export class DiscoverUsersPage {
       this.firebaseService.setUserConnection(
         this.userId,
         this.users[currentIndex].id,
+        ContactModel.CONNECTION_DECLINED,
         ContactModel.CONNECTION_DECLINED
       );
       this._slideAndRemove(currentIndex)
@@ -75,7 +76,8 @@ export class DiscoverUsersPage {
       this.firebaseService.setUserConnection(
         this.userId,
         this.users[currentIndex].id,
-        ContactModel.CONNECTION_PENDING
+        ContactModel.CONNECTION_OUTGOING,
+        ContactModel.CONNECTION_INCOMING
       );
       this._slideAndRemove(currentIndex)
     }

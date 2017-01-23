@@ -47,16 +47,17 @@ export class FirebaseService {
       .set(locationLon);
   }
 
-  public setUserConnection(userId : String, newConnectionId : String, connectionStatus: String){
+  public setUserConnection(userId : String, newConnectionId : String,
+      connectionStatusCurrentUser: String, connectionStatusTargetUser: String){
     firebase.database().ref('/connections/')
       .child(userId)
       .child(newConnectionId)
-      .set(connectionStatus);
+      .set(connectionStatusCurrentUser);
 
     firebase.database().ref('/connections/')
       .child(newConnectionId)
       .child(userId)
-      .set(connectionStatus);
+      .set(connectionStatusTargetUser);
   }
 
   public addChatMessage(groupId:string, message: ChatMessageModel):ChatMessageModel{
