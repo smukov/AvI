@@ -87,7 +87,7 @@ public class ContactsFragment extends BaseNavigationListFragment {
 
                             for (DataSnapshot child : dataSnapshot.getChildren()) {
                                 if (connections.containsKey(child.getKey())
-                                        && connections.get(child.getKey()).equals(Contact.CONNECION_ACCEPTED)) {
+                                        && connections.get(child.getKey()).equals(Contact.CONNECTION_ACCEPTED)) {
                                     contacts.add(child.getValue(Contact.class));
                                     Log.i("smuk", "Found existing contact");
                                 }

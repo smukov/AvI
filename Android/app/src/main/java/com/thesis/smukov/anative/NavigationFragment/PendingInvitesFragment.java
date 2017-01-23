@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -104,7 +103,7 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
 
                             for (DataSnapshot child : dataSnapshot.getChildren()) {
                                 if (connections.containsKey(child.getKey())
-                                        && connections.get(child.getKey()).equals(Contact.CONNECION_PENDING)) {
+                                        && connections.get(child.getKey()).equals(Contact.CONNECTION_INCOMING)) {
                                     contacts.add(child.getValue(Contact.class));
                                     Log.i("smuk", "Found existing contact");
                                 }
@@ -169,17 +168,17 @@ public class PendingInvitesFragment  extends BaseNavigationListFragment {
                         switch (direction) {
                             case DIRECTION_FAR_LEFT:
                             case DIRECTION_NORMAL_LEFT:
-                                action = Contact.CONNECION_DECLINED;
+                                action = Contact.CONNECTION_DECLINED;
 
                                 break;
                             case DIRECTION_FAR_RIGHT:
                             case DIRECTION_NORMAL_RIGHT:
-                                action = Contact.CONNECION_ACCEPTED;
+                                action = Contact.CONNECTION_ACCEPTED;
                                 break;
                         }
 
                         ConnectionsStore.setConnection(firebaseDb, userId,
-                                adapter.getItem(position).getId(), action);
+                                adapter.getItem(position).getId(), action, action);
 
                         adapter.remove(position);
                         adapter.notifyDataSetChanged();

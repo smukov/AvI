@@ -12,7 +12,8 @@ public class ConnectionsStore {
             DatabaseReference firebaseDb,
             String userId,
             String newConnectionId,
-            String connectionStatus){
+            String connectionStatusCurrentUser,
+            String connectionStatusTargetUser){
 
         Log.i("smuk", "userId: " + userId);
         Log.i("smuk", "newConnectionId: " + newConnectionId);
@@ -21,12 +22,12 @@ public class ConnectionsStore {
                 .child("connections")
                 .child(userId)
                 .child(newConnectionId)
-                .setValue(connectionStatus);
+                .setValue(connectionStatusCurrentUser);
 
         firebaseDb
                 .child("connections")
                 .child(newConnectionId)
                 .child(userId)
-                .setValue(connectionStatus);
+                .setValue(connectionStatusTargetUser);
     }
 }

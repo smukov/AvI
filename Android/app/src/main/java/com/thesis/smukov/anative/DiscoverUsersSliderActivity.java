@@ -95,7 +95,8 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
             public void onClick(View view) {
             if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
                 int currentItem = pager.getCurrentItem();
-                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem), Contact.CONNECION_PENDING);
+                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem),
+                        Contact.CONNECTION_OUTGOING, Contact.CONNECTION_INCOMING);
                 removeContact(currentItem);
             }
             }
@@ -106,7 +107,8 @@ public class DiscoverUsersSliderActivity extends AppCompatActivity {
             public void onClick(View view) {
             if(pager.getCurrentItem() < pagerAdapter.getCount()-1){
                 int currentItem = pager.getCurrentItem();
-                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem), Contact.CONNECION_DECLINED);
+                ConnectionsStore.setConnection(firebaseDb, userId, pagerAdapter.getItemId(currentItem),
+                        Contact.CONNECTION_DECLINED, Contact.CONNECTION_DECLINED);
                 removeContact(currentItem);
             }
             }
