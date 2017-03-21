@@ -22,7 +22,6 @@ import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 //services (providers)
 import {AuthService} from '../services/auth.service';
-import {ContactsService} from '../services/contacts.service';
 import {PreferencesService} from '../services/preferences.service';
 import {StorageService} from '../services/storage.service';
 import {UserInfoService} from '../services/userInfo.service';
@@ -80,7 +79,6 @@ export function getAuthHttp(http) {
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ContactsService,
     PreferencesService,
     StorageService,
     UserInfoService,

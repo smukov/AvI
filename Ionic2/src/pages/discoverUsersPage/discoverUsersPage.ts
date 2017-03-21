@@ -9,7 +9,6 @@ import{
 
 import {ContactModel} from '../../models/contactModel';
 
-import {ContactsService} from '../../services/contacts.service';
 import {UserInfoService} from '../../services/userInfo.service';
 import {FirebaseService} from '../../services/firebase.service';
 import {MathService} from '../../services/math.service';
@@ -40,8 +39,7 @@ export class DiscoverUsersPage {
 
   private userId:string;
 
-  constructor(public contactsService: ContactsService,
-    public userInfoService: UserInfoService,
+  constructor(public userInfoService: UserInfoService,
     public firebaseService: FirebaseService,
     public mathService: MathService) {
     this.sliderOptions = {
@@ -50,7 +48,7 @@ export class DiscoverUsersPage {
       loop: false
     };
 
-    this.users = new Array<ContactModel>();//this.contactsService.getNearbyUsers();
+    this.users = new Array<ContactModel>();
     this.itemToDelete = -1;
 
     this.userId = this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID);

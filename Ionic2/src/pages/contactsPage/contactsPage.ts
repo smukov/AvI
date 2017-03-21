@@ -1,7 +1,6 @@
 import {Component, NgZone } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ContactModel} from '../../models/contactModel';
-import {ContactsService} from '../../services/contacts.service';
 import {UserInfoService} from '../../services/userInfo.service';
 import {ContactPage} from '../contactPage/contactPage';
 
@@ -15,10 +14,9 @@ export class ContactsPage {
   public contacts:Array<ContactModel>;
 
   constructor(public nav:NavController,
-    public contactsService:ContactsService,
     public userInfoService: UserInfoService,
     private _zone: NgZone) {
-    this.contacts = new Array<ContactModel>();//this.contactsService.getContacts();
+    this.contacts = new Array<ContactModel>();
     this._setFirebaseListeners(this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID));
   }
 
