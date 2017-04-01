@@ -4,8 +4,6 @@ import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 
 //pages
-import {Page1} from '../pages/page1/page1';
-import {Page3} from '../pages/page3/page3';
 import {LoginPage} from '../pages/loginPage/loginPage';
 import {ProfilePage} from '../pages/profilePage/profilePage';
 import {ContactsPage} from '../pages/contactsPage/contactsPage';
@@ -44,8 +42,6 @@ export function getAuthHttp(http) {
 @NgModule({
   declarations: [
     MyApp,
-    Page1,
-    Page3,
     LoginPage,
     ProfilePage,
     ContactsPage,
@@ -66,8 +62,6 @@ export function getAuthHttp(http) {
   ],
   entryComponents: [
     MyApp,
-    Page1,
-    Page3,
     LoginPage,
     ProfilePage,
     ContactsPage,

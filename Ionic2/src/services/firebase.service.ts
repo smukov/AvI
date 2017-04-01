@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {StorageService} from './storage.service';
 import {UserInfoService} from './userInfo.service';
+import {PreferencesService} from './preferences.service';
 
 import {ChatMessageModel} from '../models/chatMessageModel';
 
@@ -10,7 +11,7 @@ declare var firebase: any;
 export class FirebaseService {
   database: any;
 
-  constructor(public userInfoService: UserInfoService){
+  constructor(public userInfoService: UserInfoService, public preferencesService: PreferencesService){
     this.database = firebase.database();
   }
 
@@ -27,8 +28,21 @@ export class FirebaseService {
       currentGoals : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_CURRENT_GOALS),
       knowledgeableIn : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_KNOWLEDGEABLE_IN),
       locationLat : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LAT),
-      locationLon : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LON)
+      locationLon : this.userInfoService.getUserInfo(UserInfoService.PREF_USER_LOCATION_LON),
+      isDiscoverable : this.preferencesService.getPreference(PreferencesService.PREF_DISCOVERABLE)
     });
+  }
+
+  public initIsDiscoverable(){
+    firebase.database().ref('users/' + this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID))
+      .child('isDiscoverable')
+      .set(this.preferencesService.getPreference(PreferencesService.PREF_DISCOVERABLE));
+  }
+
+  public setIsDiscoverable(isDiscoverable : boolean){
+    firebase.database().ref('users/' + this.userInfoService.getUserInfo(UserInfoService.PREF_USER_AUTH_ID))
+      .child('isDiscoverable')
+      .set(isDiscoverable);
   }
 
   public storeUserLocationFromPrefs(){

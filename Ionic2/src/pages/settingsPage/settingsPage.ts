@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {PreferencesService} from '../../services/preferences.service';
+import {FirebaseService} from '../../services/firebase.service';
 import {AuthService} from '../../services/auth.service';
 import {LoginPage} from '../loginPage/loginPage';
 
@@ -16,7 +17,7 @@ export class SettingsPage {
   public PREF_NOTIFY_INVITES:string;
 
   constructor(public nav: NavController, public preferencesService:PreferencesService,
-     public auth:AuthService
+     public auth:AuthService, public firebaseService:FirebaseService
     ) {
     this.preferences = {};
 
@@ -36,6 +37,9 @@ export class SettingsPage {
 
   public changePreference(event, key){
     this.preferencesService.setPreference(key, event.checked);
+    if(key === this.PREF_DISCOVERABLE){
+      this.firebaseService.setIsDiscoverable(event.checked);
+    }
   }
 
   public logout(){

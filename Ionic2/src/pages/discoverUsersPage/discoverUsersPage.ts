@@ -138,7 +138,7 @@ export class DiscoverUsersPage {
 
   private _getPotentialConnections(connections : Map<String, String>){
     let thisRef = this;
-    firebase.database().ref('/users/').once('value').then(function(snapshot){
+    firebase.database().ref('/users/').orderByChild('isDiscoverable').equalTo(true).once('value').then(function(snapshot){
       let contacts = new Array<ContactModel>();
 
       //get the users that aren't an existing connection

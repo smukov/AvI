@@ -14,13 +14,13 @@
     <ion-list-header>
        General
     </ion-list-header>
-    <ion-item>
+    <ion-item no-lines>
       <ion-label>Make me discoverable by others</ion-label>
       <ion-toggle color="secondary"
         [ngModel]='preferences[PREF_DISCOVERABLE]'
         (ionChange)='changePreference($event, PREF_DISCOVERABLE)'></ion-toggle>
     </ion-item>
-    <ion-item>
+    <!--ion-item>
       <ion-label>Notifications for Messages</ion-label>
       <ion-toggle color="secondary"
         [ngModel]='preferences[PREF_NOTIFY_MESSAGES]'
@@ -31,7 +31,7 @@
       <ion-toggle color="secondary"
         [ngModel]='preferences[PREF_NOTIFY_INVITES]'
         (ionChange)='changePreference($event, PREF_NOTIFY_INVITES)'></ion-toggle>
-    </ion-item>
+    </ion-item-->
     <ion-list-header>
        Account
     </ion-list-header>
