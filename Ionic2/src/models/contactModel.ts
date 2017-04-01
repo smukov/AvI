@@ -17,6 +17,7 @@ export class ContactModel implements IFirebaseObject{
     public interests:string;
     public currentGoals:string;
     public profileImage:string;
+    public isDiscoverable:boolean;
 
     public locationLat:number;
     public locationLon:number;
@@ -31,6 +32,7 @@ export class ContactModel implements IFirebaseObject{
         this.interests = '';
         this.currentGoals = '';
         this.profileImage = '';
+        this.isDiscoverable = true;
 
         this.locationLat = 44.8149028;
         this.locationLon = 20.1424149;
@@ -52,7 +54,8 @@ export class ContactModel implements IFirebaseObject{
         currentGoals : this.currentGoals,
         pictureUrl : this.profileImage,
         locationLat: this.locationLat,
-        locationLon: this.locationLon
+        locationLon: this.locationLon,
+        isDiscoverable: this.isDiscoverable
       }
     }
 
@@ -67,6 +70,7 @@ export class ContactModel implements IFirebaseObject{
       retVal.interests = firebaseObj['interests'];
       retVal.currentGoals = firebaseObj['currentGoals'];
       retVal.profileImage = firebaseObj['pictureUrl'];
+      retVal.isDiscoverable = firebaseObj['isDiscoverable'];
 
       retVal.locationLat = firebaseObj['locationLat'];
       retVal.locationLon = firebaseObj['locationLon'];

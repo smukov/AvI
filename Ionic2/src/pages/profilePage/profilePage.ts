@@ -35,6 +35,7 @@ export class ProfilePage {
 
   public ionViewDidEnter(){
     this.updateUserLocation();
+    this.firebase.initIsDiscoverable();
   }
 
   public ionViewWillUnload(){

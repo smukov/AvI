@@ -19,8 +19,4 @@ export class ProfileHeader {
     this.fullName = 'Dr. House';
     this.profileImage = 'assets/img/hugh.png';
   }
-
-  public setFullName(fullName){
-    this.fullName = fullName;
-  }
 }

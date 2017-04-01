@@ -4,8 +4,6 @@ import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 
 //pages
-import {Page1} from '../pages/page1/page1';
-import {Page3} from '../pages/page3/page3';
 import {LoginPage} from '../pages/loginPage/loginPage';
 import {ProfilePage} from '../pages/profilePage/profilePage';
 import {ContactsPage} from '../pages/contactsPage/contactsPage';
@@ -22,7 +20,6 @@ import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 //services (providers)
 import {AuthService} from '../services/auth.service';
-import {ContactsService} from '../services/contacts.service';
 import {PreferencesService} from '../services/preferences.service';
 import {StorageService} from '../services/storage.service';
 import {UserInfoService} from '../services/userInfo.service';
@@ -45,8 +42,6 @@ export function getAuthHttp(http) {
 @NgModule({
   declarations: [
     MyApp,
-    Page1,
-    Page3,
     LoginPage,
     ProfilePage,
     ContactsPage,
@@ -67,8 +62,6 @@ export function getAuthHttp(http) {
   ],
   entryComponents: [
     MyApp,
-    Page1,
-    Page3,
     LoginPage,
     ProfilePage,
     ContactsPage,
@@ -80,7 +73,6 @@ export function getAuthHttp(http) {
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ContactsService,
     PreferencesService,
     StorageService,
     UserInfoService,
